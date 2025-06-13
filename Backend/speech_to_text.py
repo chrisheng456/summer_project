@@ -5,13 +5,17 @@ speech_to_text.py
 • 说话人分离（Diarization）
 • 保存为 Word 和 JSON（带时间戳文件名）
 """
-
+import time
 import os
 import json
 import uuid
 import threading
 from datetime import datetime
+from datetime import timedelta
+from decimal import Decimal           # 用来做高精度毫秒取整
 from pathlib import Path
+
+
 
 import azure.cognitiveservices.speech as speechsdk     # pip install -U azure-cognitiveservices-speech
 from docx import Document                              # pip install python-docx
@@ -23,7 +27,7 @@ from docx import Document                              # pip install python-docx
 # load_dotenv()                                       # 若项目根有 .env，可启用
 
 speech_key     = os.getenv("AZURE_SPEECH_KEY")
-service_region = os.getenv("AZURE_SPEECH_REGION", "eastus")
+service_region = os.getenv("AZURE_SPEECH_REGION", "ukwest")
 
 if not speech_key:
     raise RuntimeError("❌ 找不到 AZURE_SPEECH_KEY，请先在系统变量或 .env 中设置")
@@ -70,15 +74,23 @@ done  = threading.Event()           # 等待识别结束用
 
 def _on_transcribed(evt: speechsdk.SpeechRecognitionEventArgs):
     if evt.result.reason == speechsdk.ResultReason.RecognizedSpeech:
+
+        # --- ① 计算起始时间（秒 -> HH:MM:SS） ---
+        sec_total = int(evt.result.offset / 10_000_000)   # 100 ns → 秒（取整）
+        start_ts  = time.strftime("%H:%M:%S", time.gmtime(sec_total))
+
+        # --- ② 存入行对象 ---
         lines.append({
-            "speaker" : evt.result.speaker_id or "Unknown",
-            "text"    : evt.result.text,
-            "offset"  : evt.result.offset,      # 100-ns
-            "duration": evt.result.duration,
+            "speaker"   : evt.result.speaker_id or "Unknown",
+            "text"      : evt.result.text,
+            "offset"    : evt.result.offset,
+            "duration"  : evt.result.duration,
+            "start_time": start_ts,
         })
-        print(f"[{lines[-1]['speaker']}] {lines[-1]['text']}")
-    elif evt.result.reason == speechsdk.ResultReason.NoMatch:
-        print("NOMATCH: 该片段无法识别")
+
+        # --- ③ 终端实时输出 ---
+        print(f"[{start_ts}] {lines[-1]['speaker']}: {lines[-1]['text']}")
+
 
 def _on_session_stopped(_):
     print("=== 识别结束 ===")
@@ -105,7 +117,10 @@ transcriber.stop_transcribing_async()
 # 6. 整理 & 生成带时间戳文件名
 # ─────────────────────────────────────────────────────
 lines.sort(key=lambda x: x["offset"])
-plain_text = "\n".join(f"{ln['speaker']}: {ln['text']}" for ln in lines)
+# plain_text（给 transcription 字段 & Word 用）
+plain_text = "\n".join(
+    f"[{ln['start_time']}] {ln['speaker']}: {ln['text']}" for ln in lines
+)
 
 stamp      = datetime.now().strftime("%Y%m%d_%H%M%S")
 docx_name  = f"meeting_transcription_{stamp}.docx"
@@ -116,13 +131,14 @@ out_id     = str(uuid.uuid4())
 doc = Document()
 doc.add_heading("会议逐字稿", level=1)
 for ln in lines:
-    doc.add_paragraph(f"{ln['speaker']}: {ln['text']}")
+    doc.add_paragraph(f"[{ln['start_time']}] {ln['speaker']}: {ln['text']}")
 doc.save(docx_name)
 print(f"✅ 已保存 Word：{docx_name}")
 
 # (b) JSON
 output = {
     "id"              : out_id,
+    "timestamp"       : stamp,
     "transcription"   : plain_text,
     "lines"           : lines,
     "abstract_summary": None,
