@@ -5,29 +5,32 @@ from qdrant_client.models import PointStruct, VectorParams, Distance
 from sentence_transformers import SentenceTransformer
 
 # 1. 读 MS MARCO passages 文件
-#    假设你已用 ir_datasets 导出： collection.tsv
-#    内容格式：pid \t passage_text
+#    假设已经导出 dev-small 子集至 collection.tsv
+#    格式：pid \t passage_text
 
 df = pd.read_csv(
     "collection.tsv",
     sep="\t",
     names=["pid", "text"],
     dtype={"pid": int, "text": str},
-    quoting=3  # 不去除引号
+    quoting=3
 )
 print(f"Loaded {len(df)} passages for indexing")
 
-# 2. 初始化 Qdrant 客户端
+# 2. 载入模型并获取向量维度
+model_id = "sentence-transformers/all-mpnet-base-v2"
+model = SentenceTransformer(model_id)
+dim = model.get_sentence_embedding_dimension()
+print(f"Using model {model_id} with embedding dimension = {dim}")
+
+# 3. 初始化 Qdrant 客户端
 client = QdrantClient(host="localhost", port=6333)
 
-# 3. (重)建 collection，注意参数名称 vectors_config
+# 4. (重)建 collection，使用动态维度
 client.recreate_collection(
     collection_name="msmarco_passages",
-    vectors_config=VectorParams(size=384, distance=Distance.COSINE)
+    vectors_config=VectorParams(size=dim, distance=Distance.COSINE)
 )
-
-# 4. 载入模型
-model = SentenceTransformer("all-MiniLM-L6-v2")
 
 # 5. 分批 upsert 到 Qdrant
 batch_size = 512
@@ -35,7 +38,6 @@ for start in range(0, len(df), batch_size):
     batch = df.iloc[start : start + batch_size]
     texts = batch.text.tolist()
     pids = batch.pid.tolist()
-    # 编码
     vectors = model.encode(texts, show_progress_bar=False)
     points = [
         PointStruct(id=pid, vector=vec.tolist(), payload={"text": txt})
