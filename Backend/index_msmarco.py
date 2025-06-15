@@ -1,48 +1,46 @@
-# index_msmarco.py
-import pandas as pd
+# index_msmarco.py  ✨可配置版
+import argparse, pandas as pd
 from qdrant_client import QdrantClient
 from qdrant_client.models import PointStruct, VectorParams, Distance
 from sentence_transformers import SentenceTransformer
 
-# 1. 读 MS MARCO passages 文件
-#    假设已经导出 dev-small 子集至 collection.tsv
-#    格式：pid \t passage_text
+# ─── CLI 参数 ──────────────────────────────────────────────────────────────
+parser = argparse.ArgumentParser()
+parser.add_argument('--col',   default='msmarco_passages',
+                    help='Qdrant collection name')
+parser.add_argument('--model', default='all-MiniLM-L6-v2',
+                    help='Sentence-Transformers model id')
+parser.add_argument('--file',  default='collection.tsv',
+                    help='TSV with columns: pid \\t passage')
+parser.add_argument('--batch', type=int, default=512,
+                    help='Batch size for upsert')
+args = parser.parse_args()
 
-df = pd.read_csv(
-    "collection.tsv",
-    sep="\t",
-    names=["pid", "text"],
-    dtype={"pid": int, "text": str},
-    quoting=3
-)
-print(f"Loaded {len(df)} passages for indexing")
+# ─── 1. 读语料 ─────────────────────────────────────────────────────────────
+df = pd.read_csv(args.file, sep='\t', names=['pid', 'text'],
+                 dtype={'pid': int, 'text': str}, quoting=3)
+print(f'Loaded {len(df):,} passages from {args.file}')
 
-# 2. 载入模型并获取向量维度
-model_id = "sentence-transformers/all-mpnet-base-v2"
-model = SentenceTransformer(model_id)
-dim = model.get_sentence_embedding_dimension()
-print(f"Using model {model_id} with embedding dimension = {dim}")
+# ─── 2. 加载模型 ───────────────────────────────────────────────────────────
+model = SentenceTransformer(args.model)
+dim   = model.get_sentence_embedding_dimension()
+print(f'Using model {args.model}  (dim = {dim})')
 
-# 3. 初始化 Qdrant 客户端
-client = QdrantClient(host="localhost", port=6333)
+# ─── 3. 准备 Qdrant ────────────────────────────────────────────────────────
+client = QdrantClient(host='localhost', port=6333)
 
-# 4. (重)建 collection，使用动态维度
+# 如已存在同名 collection，可以带 --force 重建，或自己改逻辑
 client.recreate_collection(
-    collection_name="msmarco_passages",
+    collection_name=args.col,
     vectors_config=VectorParams(size=dim, distance=Distance.COSINE)
 )
 
-# 5. 分批 upsert 到 Qdrant
-batch_size = 512
-for start in range(0, len(df), batch_size):
-    batch = df.iloc[start : start + batch_size]
-    texts = batch.text.tolist()
-    pids = batch.pid.tolist()
-    vectors = model.encode(texts, show_progress_bar=False)
-    points = [
-        PointStruct(id=pid, vector=vec.tolist(), payload={"text": txt})
-        for pid, vec, txt in zip(pids, vectors, texts)
-    ]
-    client.upsert(collection_name="msmarco_passages", points=points)
+# ─── 4. 批量写入 ──────────────────────────────────────────────────────────
+for i in range(0, len(df), args.batch):
+    chunk = df.iloc[i:i+args.batch]
+    vecs  = model.encode(chunk.text.tolist(), show_progress_bar=False)
+    pts   = [PointStruct(id=int(pid), vector=v.tolist(), payload={'text': t})
+             for pid, v, t in zip(chunk.pid, vecs, chunk.text)]
+    client.upsert(collection_name=args.col, points=pts)
 
-print(f"✅ Indexed {len(df)} MS MARCO passages into 'msmarco_passages'.")
+print(f'✅ Indexed {len(df):,} passages into "{args.col}"')

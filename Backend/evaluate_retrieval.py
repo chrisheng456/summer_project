@@ -51,7 +51,8 @@ class Retriever:
     def __init__(self,
                  qdrant_host: str = "localhost",
                  qdrant_port: int = 6333,
-                 model_name: str = "all-MiniLM-L6-v2",
+                 #model_name: str = "all-MiniLM-L6-v2",
+                 model_name: str = "all-mpnet-base-v2",
                  collection_name: str = "meeting_minutes"):
         self.client = QdrantClient(host=qdrant_host, port=qdrant_port)
         self.model  = SentenceTransformer(model_name)
