@@ -1,1 +1,1 @@
-// interface 
+// interface 确定传输进来的接口数据格式一致
