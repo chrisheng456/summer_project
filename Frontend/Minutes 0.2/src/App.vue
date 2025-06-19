@@ -4,7 +4,9 @@
     <div class="main-content" v-if="showMain">
       <h1>欢迎</h1>
       <div @click="start" class="start-button">点击开始使用</div>
-
+    <!-- <div>
+      <el-button type="primary" @click="start2">点击我</el-button>
+    </div>尝试导入element plus组件 -->
     </div>
     <!-- RouterView 永远展示 -->
     <RouterView></RouterView>
@@ -26,6 +28,12 @@ function start(){
     router.push('/logInPage')   // 跳转到登录页
 
 }
+//尝试导入element plus组件
+// import { ElMessage } from 'element-plus'
+
+// function sayHello() {
+//   ElMessage.success('你好！这是 Element Plus 的提示框！')
+// }
 </script> 
 
 <!-- 加入局部样式，使得css作用域是本vue的html -->
