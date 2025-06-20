@@ -2,13 +2,13 @@
   <div class="page-wrapper">
     <div class="login-container">
       <h2>LOGO</h2>
-      <input v-model="username" type="text" placeholder="用户名" />
-      <input v-model="password" type="password" placeholder="密码" />
-      <button class="login-button" @click="handleLogin">登录</button>
+      <input v-model="username" type="text" placeholder="Username" />
+      <input v-model="password" type="password" placeholder="Password" />
+      <button class="login-button" @click="handleLogin">Login</button>
       <div class="links">
-        <a href="#">忘记密码</a>
-        <a href="#">注册账号</a>
-        <a href="#">其他帮助</a>
+        <a href="#">Forgot Password</a>
+        <a href="#">Register Account</a>
+        <a href="#">Other Help</a>
       </div>
     </div>
   </div>
@@ -23,7 +23,7 @@ const username = ref('')
 const password = ref('')
 
 function handleLogin() {
-  router.push('/translatePage') 
+  router.push('/UploadHistory') 
   console.log('登录中：', username.value, password.value)
   // 可以用 axios 发送请求
   
@@ -61,7 +61,7 @@ input {
   width: 80%;
   padding: 10px;
   margin: 20px 0;
-  background-color: #007BFF;
+  background-color: #14191f;
   border: none;
   border-radius: 5px;
   color: white;
