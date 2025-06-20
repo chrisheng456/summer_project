@@ -1,53 +1,76 @@
-from qdrant_client import QdrantClient
-from qdrant_client.models import Distance, VectorParams, PointStruct
-from sentence_transformers import SentenceTransformer
+# qdrant_utils.py
+# 功能：将长转录文本拆分成短段，并索引到 Qdrant，使用方案 B：指定 HNSW 参数（HnswConfigDiff）
+
 import json
-import uuid
+import re
+import textwrap
 from pathlib import Path
+from qdrant_client import QdrantClient
+from qdrant_client.models import PointStruct, VectorParams, Distance
+from qdrant_client.http.models import HnswConfigDiff
+from sentence_transformers import SentenceTransformer
+
+# 配置参数
+MODEL_ID        = "sentence-transformers/all-mpnet-base-v2"
+COLLECTION_NAME = "meeting_minutes"
+BATCH_SIZE      = 512
+CHUNK_SIZE      = 300  # 超长段再拆分的最大长度
+HNSW_EF         = 200
+HNSW_M          = 48
+FULL_SCAN_THRESH = 10000  # HNSW 全扫描阈值
+
 
 def upload_meeting_minutes_vectors():
-    # 连接本地 Qdrant
-    client = QdrantClient("localhost", port=6333)
+    # 1. 找到最新的 本地转录 JSON 文件
+    fp = sorted(Path('.').glob('meeting_minutes_*_local.json'))[-1]
+    data = json.loads(fp.read_text(encoding='utf-8'))
+    meeting_id = fp.stem
+    raw_text = data.get('transcription', '')
 
-    # 创建或重建集合
-    client.recreate_collection(
-        collection_name="meeting_minutes",
-        vectors_config=VectorParams(size=384, distance=Distance.COSINE)
+    # 2. 文本拆分：先按中英文句号、感叹问号等切句，再对过长句子按固定长度拆分
+    segments = []
+    for sent in re.split(r'(?<=[。！？\.!?])\s*', raw_text):
+        s = sent.strip()
+        if not s:
+            continue
+        if len(s) <= CHUNK_SIZE:
+            segments.append(s)
+        else:
+            segments.extend(textwrap.wrap(s, CHUNK_SIZE))
+    print(f"→ Splitted into {len(segments)} segments for indexing.")
+
+    # 3. 初始化模型和 Qdrant 客户端
+    model = SentenceTransformer(MODEL_ID)
+    dim   = model.get_sentence_embedding_dimension()
+    client = QdrantClient()
+
+    # 4. (重)建 collection，指定 HNSWConfigDiff 参数
+    vectors_config = VectorParams(size=dim, distance=Distance.COSINE)
+    hnsw_config    = HnswConfigDiff(
+        m=HNSW_M,
+        ef_construct=HNSW_EF,
+        full_scan_threshold=FULL_SCAN_THRESH
     )
-    print("✅ 已创建或重建集合 meeting_minutes")
+    client.recreate_collection(
+        collection_name=COLLECTION_NAME,
+        vectors_config=vectors_config,
+        hnsw_config=hnsw_config
+    )
 
-    # 加载 SentenceTransformer 模型
-    encoder = SentenceTransformer("all-MiniLM-L6-v2")
-
-    # 找到最新的会议纪要 JSON 文件
-    files = sorted(Path(".").glob("meeting_minutes_*_local.json"))
-    if not files:
-        print("❌ 未找到会议纪要 JSON 文件！")
-        return
-
-    file = files[-1]
-    data = json.loads(file.read_text(encoding="utf-8"))
-
-    # 准备要编码的文本（摘要 + 每个行动项的 task）
-    texts = [data.get("abstract_summary", "")] + [item.get("task", "") for item in data.get("action_items", [])]
-    print(f"🔄 编码文本数量: {len(texts)}")
-
-    # 生成向量
-    vectors = encoder.encode(texts)
-
-    # 构建上传点列表
+    # 5. 批量编码并上传
     points = []
-    for vec, text in zip(vectors, texts):
-        point = PointStruct(
-            id=str(uuid.uuid4()),
-            vector=vec.tolist(),
-            payload={"text": text}
-        )
-        points.append(point)
+    for idx, text in enumerate(segments):
+        vec = model.encode(text)
+        uid = idx
+        points.append(PointStruct(id=uid, vector=vec.tolist(), payload={'text': text}))
+        if len(points) >= BATCH_SIZE:
+            client.upsert(collection_name=COLLECTION_NAME, points=points)
+            points = []
+    if points:
+        client.upsert(collection_name=COLLECTION_NAME, points=points)
 
-    # 上传向量
-    client.upsert(collection_name="meeting_minutes", points=points)
-    print(f"✅ 上传完成，文件: {file.name}")
+    print(f"✅ Indexed {len(segments)} segments into '{COLLECTION_NAME}'.")
 
-if __name__ == "__main__":
+
+if __name__ == '__main__':
     upload_meeting_minutes_vectors()
