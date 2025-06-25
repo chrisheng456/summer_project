@@ -73,23 +73,32 @@ lines = []                          # 保存每一句
 done  = threading.Event()           # 等待识别结束用
 
 def _on_transcribed(evt: speechsdk.SpeechRecognitionEventArgs):
-    if evt.result.reason == speechsdk.ResultReason.RecognizedSpeech:
+    # 只要最终识别的结果
+    if evt.result.reason != speechsdk.ResultReason.RecognizedSpeech:
+        return
 
-        # --- ① 计算起始时间（秒 -> HH:MM:SS） ---
-        sec_total = int(evt.result.offset / 10_000_000)   # 100 ns → 秒（取整）
-        start_ts  = time.strftime("%H:%M:%S", time.gmtime(sec_total))
+    text = evt.result.text.strip()
+    # 过滤掉：1) 没有说话人  2) 文本也是空的
+    if not evt.result.speaker_id or not text:
+        return
 
-        # --- ② 存入行对象 ---
-        lines.append({
-            "speaker"   : evt.result.speaker_id or "Unknown",
-            "text"      : evt.result.text,
-            "offset"    : evt.result.offset,
-            "duration"  : evt.result.duration,
-            "start_time": start_ts,
-        })
+    # 计算起始时间
+    sec_total = int(evt.result.offset / 10_000_000)
+    start_ts  = time.strftime("%H:%M:%S", time.gmtime(sec_total))
 
-        # --- ③ 终端实时输出 ---
-        print(f"[{start_ts}] {lines[-1]['speaker']}: {lines[-1]['text']}")
+    # 存入行对象
+    speaker = evt.result.speaker_id
+    lines.append({
+        "speaker"   : speaker,
+        "text"      : text,
+        "offset"    : evt.result.offset,
+        "duration"  : evt.result.duration,
+        "start_time": start_ts,
+    })
+
+    # 实时输出
+    print(f"[{start_ts}] {speaker}: {text}")
+
 
 
 def _on_session_stopped(_):
