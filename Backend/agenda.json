@@ -1,0 +1,18 @@
+{
+  "agenda": [
+    {
+      "id": 1,
+      "start_time": "0:00:00",
+      "duration_sec": 175,
+      "speaker": "Guest-1",
+      "topic": " Sync Plus had a stellar Q2 with a revenue of 125 million, a 25%"
+    },
+    {
+      "id": 2,
+      "start_time": "0:02:55",
+      "duration_sec": 0,
+      "speaker": "Unknown",
+      "topic": " CNN.com will feature iReporter photos in a weekly Travel Snapshots gallery ."
+    }
+  ]
+}
