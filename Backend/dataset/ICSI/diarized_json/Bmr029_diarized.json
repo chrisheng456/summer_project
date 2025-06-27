@@ -1,0 +1,4904 @@
+[
+  {
+    "speaker": "SPEAKER_01",
+    "start": 1.069,
+    "end": 1.389,
+    "text": "OK ."
+  },
+  {
+    "speaker": "SPEAKER_05",
+    "start": 98.616,
+    "end": 99.016,
+    "text": "That 's true ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 145.262,
+    "end": 145.732,
+    "text": "Hub - five ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 318.96,
+    "end": 319.7,
+    "text": "Well , that 's only male ."
+  },
+  {
+    "speaker": "SPEAKER_02",
+    "start": 328.0,
+    "end": 331.27,
+    "text": "We could only jus just do the male only right ?"
+  },
+  {
+    "speaker": "SPEAKER_02",
+    "start": 331.27,
+    "end": 333.78,
+    "text": "Or will we run into trouble when we g ?"
+  },
+  {
+    "speaker": "SPEAKER_05",
+    "start": 334.97,
+    "end": 335.2,
+    "text": "Yeah ."
+  },
+  {
+    "speaker": "SPEAKER_05",
+    "start": 385.843,
+    "end": 386.743,
+    "text": "That 's what I was thinking ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 387.283,
+    "end": 387.603,
+    "text": "Yeah ."
+  },
+  {
+    "speaker": "SPEAKER_02",
+    "start": 399.989,
+    "end": 409.44,
+    "text": "S So We - Yo - So , one thing I was wondering is , did you already do that middle one or should we re - do that one , too ?"
+  },
+  {
+    "speaker": "SPEAKER_05",
+    "start": 412.1,
+    "end": 412.58,
+    "text": "You didn't do that ."
+  },
+  {
+    "speaker": "SPEAKER_05",
+    "start": 412.58,
+    "end": 412.9,
+    "text": "OK ."
+  },
+  {
+    "speaker": "SPEAKER_05",
+    "start": 415.67,
+    "end": 415.73,
+    "text": "Yeah ."
+  },
+  {
+    "speaker": "SPEAKER_02",
+    "start": 415.73,
+    "end": 417.02,
+    "text": "That 's what I was gonna say next ."
+  },
+  {
+    "speaker": "SPEAKER_02",
+    "start": 417.02,
+    "end": 422.96,
+    "text": "We hafta cut the , uh W s so is Morgan , is the plan to just pick one of the far - field mikes ?"
+  },
+  {
+    "speaker": "SPEAKER_05",
+    "start": 423.37,
+    "end": 464.574,
+    "text": "Uh Do you know when he 'll have the the comparison ?"
+  },
+  {
+    "speaker": "SPEAKER_02",
+    "start": 478.51,
+    "end": 479.1,
+    "text": "Oh , OK ."
+  },
+  {
+    "speaker": "SPEAKER_02",
+    "start": 479.1,
+    "end": 485.852,
+    "text": "So cuz I don't think the new data will be ready , uh , for a couple days may probably ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 486.97,
+    "end": 488.24,
+    "text": "So , the training ."
+  },
+  {
+    "speaker": "SPEAKER_05",
+    "start": 495.497,
+    "end": 495.777,
+    "text": "Yeah ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 525.103,
+    "end": 525.823,
+    "text": "I think it 's that one ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 525.823,
+    "end": 525.913,
+    "text": "Right ?"
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 527.908,
+    "end": 528.098,
+    "text": "F ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 528.588,
+    "end": 529.208,
+    "text": "Yeah , that 's it ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 530.07,
+    "end": 530.35,
+    "text": "That 's F ."
+  },
+  {
+    "speaker": "SPEAKER_02",
+    "start": 531.8,
+    "end": 533.81,
+    "text": "It 's the second nearest the machine room ."
+  },
+  {
+    "speaker": "SPEAKER_02",
+    "start": 547.7,
+    "end": 547.88,
+    "text": "OK ."
+  },
+  {
+    "speaker": "SPEAKER_02",
+    "start": 547.88,
+    "end": 551.19,
+    "text": "So , uh , I just want to make sure I understand what we need to run ."
+  },
+  {
+    "speaker": "SPEAKER_02",
+    "start": 551.38,
+    "end": 555.75,
+    "text": "Um Let 's see ."
+  },
+  {
+    "speaker": "SPEAKER_02",
+    "start": 555.75,
+    "end": 560.64,
+    "text": "So , it 's OK , so if we 're talking about Let 's let 's assume that we 're gonna use the new segmentations ."
+  },
+  {
+    "speaker": "SPEAKER_02",
+    "start": 561.34,
+    "end": 567.816,
+    "text": "We need to , um , run recognition o just looking at the no overlap column ."
+  },
+  {
+    "speaker": "SPEAKER_02",
+    "start": 568.35,
+    "end": 571.73,
+    "text": "Basically , we have to d r do recognitions for all three of those cases ."
+  },
+  {
+    "speaker": "SPEAKER_02",
+    "start": 571.98,
+    "end": 572.29,
+    "text": "Right ?"
+  },
+  {
+    "speaker": "SPEAKER_02",
+    "start": 573.39,
+    "end": 579.67,
+    "text": "Um , because we 're gonna be using the just the male , uh , model short training set for the male ."
+  },
+  {
+    "speaker": "SPEAKER_05",
+    "start": 579.67,
+    "end": 587.83,
+    "text": "So we need to have results for all three of those , even though we have OK ."
+  },
+  {
+    "speaker": "SPEAKER_05",
+    "start": 627.275,
+    "end": 627.845,
+    "text": "Mm - hmm ."
+  },
+  {
+    "speaker": "SPEAKER_05",
+    "start": 634.22,
+    "end": 634.48,
+    "text": "Right ."
+  },
+  {
+    "speaker": "SPEAKER_05",
+    "start": 636.19,
+    "end": 636.38,
+    "text": "Yeah ."
+  },
+  {
+    "speaker": "SPEAKER_02",
+    "start": 647.339,
+    "end": 650.489,
+    "text": "And if we 're re - doing the baseline anyways , it it it would be OK ."
+  },
+  {
+    "speaker": "SPEAKER_02",
+    "start": 650.489,
+    "end": 650.819,
+    "text": "Right ?"
+  },
+  {
+    "speaker": "SPEAKER_02",
+    "start": 650.819,
+    "end": 657.595,
+    "text": "I mean To to just limit ourselves to a smaller How long would it take to run recognition , if we did that ?"
+  },
+  {
+    "speaker": "SPEAKER_02",
+    "start": 667.06,
+    "end": 670.41,
+    "text": "I mean , is is it like a day or is it a few hours or roughly ?"
+  },
+  {
+    "speaker": "SPEAKER_02",
+    "start": 672.41,
+    "end": 675.64,
+    "text": "For yeah , let 's say we just did the Meeting Recorder meetings for our test set ."
+  },
+  {
+    "speaker": "SPEAKER_02",
+    "start": 685.26,
+    "end": 685.83,
+    "text": "Oh , really ."
+  },
+  {
+    "speaker": "SPEAKER_02",
+    "start": 685.83,
+    "end": 687.35,
+    "text": "I didn't realize each test took that long ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 0.0,
+    "end": 714.92,
+    "text": "Mmm ."
+  },
+  {
+    "speaker": "SPEAKER_05",
+    "start": 714.92,
+    "end": 715.94,
+    "text": "Four hours per meeting ."
+  },
+  {
+    "speaker": "Unknown",
+    "start": 717.392,
+    "end": 717.752,
+    "text": "Wow ."
+  },
+  {
+    "speaker": "SPEAKER_02",
+    "start": 736.91,
+    "end": 738.45,
+    "text": "S six hour test set ."
+  },
+  {
+    "speaker": "SPEAKER_02",
+    "start": 739.13,
+    "end": 739.92,
+    "text": "Six meetings ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 739.92,
+    "end": 740.29,
+    "text": "OK ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 803.08,
+    "end": 803.23,
+    "text": "OK ."
+  },
+  {
+    "speaker": "SPEAKER_02",
+    "start": 803.23,
+    "end": 803.99,
+    "text": "So Alright ."
+  },
+  {
+    "speaker": "SPEAKER_02",
+    "start": 803.99,
+    "end": 820.058,
+    "text": "So if we got a list of the , uh , segmentations for these five Meeting Recorder meetings , we could start , uh , the first two experiments going right away , using the short male models ."
+  },
+  {
+    "speaker": "SPEAKER_02",
+    "start": 821.624,
+    "end": 829.983,
+    "text": "So , you could get those going while Dave is , um , creating waveforms for the r retraining the short male models ."
+  },
+  {
+    "speaker": "SPEAKER_02",
+    "start": 832.02,
+    "end": 832.26,
+    "text": "Right ."
+  },
+  {
+    "speaker": "SPEAKER_02",
+    "start": 832.68,
+    "end": 833.05,
+    "text": "OK ."
+  },
+  {
+    "speaker": "SPEAKER_02",
+    "start": 833.34,
+    "end": 833.72,
+    "text": "OK ."
+  },
+  {
+    "speaker": "SPEAKER_02",
+    "start": 833.72,
+    "end": 836.34,
+    "text": "And then OK ."
+  },
+  {
+    "speaker": "SPEAKER_02",
+    "start": 836.61,
+    "end": 845.023,
+    "text": "So , do we w also want to run that bottom experiment without retraining the short male models on his thing ?"
+  },
+  {
+    "speaker": "SPEAKER_02",
+    "start": 845.023,
+    "end": 845.873,
+    "text": "Did you want that ?"
+  },
+  {
+    "speaker": "SPEAKER_00",
+    "start": 847.65,
+    "end": 847.95,
+    "text": "Or ?"
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 853.437,
+    "end": 853.727,
+    "text": "OK ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 853.807,
+    "end": 854.627,
+    "text": "So , we 'll save that ."
+  },
+  {
+    "speaker": "SPEAKER_02",
+    "start": 886.04,
+    "end": 894.345,
+    "text": "Well , i it Well , on a more basic level , also , it means that that third experiment , there are actually two differences between the other experiments , not one ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 895.128,
+    "end": 899.08,
+    "text": "So , it 's hard to know Right ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 913.457,
+    "end": 914.097,
+    "text": "Mm - hmm ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 915.891,
+    "end": 916.281,
+    "text": "Right ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 926.906,
+    "end": 927.536,
+    "text": "Mm - hmm ."
+  },
+  {
+    "speaker": "SPEAKER_02",
+    "start": 961.84,
+    "end": 962.45,
+    "text": "On the far - field ?"
+  },
+  {
+    "speaker": "SPEAKER_05",
+    "start": 998.846,
+    "end": 999.196,
+    "text": "Mm - hmm ."
+  },
+  {
+    "speaker": "SPEAKER_02",
+    "start": 1012.25,
+    "end": 1016.42,
+    "text": "So when you said you were gonna start that top one , were you gonna use the new segmentations ?"
+  },
+  {
+    "speaker": "SPEAKER_05",
+    "start": 1021.47,
+    "end": 1021.64,
+    "text": "OK ."
+  },
+  {
+    "speaker": "SPEAKER_05",
+    "start": 1030.5,
+    "end": 1030.72,
+    "text": "Right ."
+  },
+  {
+    "speaker": "SPEAKER_05",
+    "start": 1030.81,
+    "end": 1031.11,
+    "text": "OK ."
+  },
+  {
+    "speaker": "Unknown",
+    "start": 1048.3,
+    "end": 1048.89,
+    "text": "Can we ?"
+  },
+  {
+    "speaker": "SPEAKER_02",
+    "start": 1109.49,
+    "end": 1112.73,
+    "text": "So , does that mean you turn off speaker normalization when you run it ?"
+  },
+  {
+    "speaker": "SPEAKER_03",
+    "start": 1112.73,
+    "end": 1115.06,
+    "text": "Or you just let it do what it would do , an ?"
+  },
+  {
+    "speaker": "Unknown",
+    "start": 0.0,
+    "end": 0.0,
+    "text": "Hmm ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 0.0,
+    "end": 1217.37,
+    "text": "Hmm ."
+  },
+  {
+    "speaker": "SPEAKER_05",
+    "start": 1217.37,
+    "end": 1218.25,
+    "text": "Mm - hmm ."
+  },
+  {
+    "speaker": "SPEAKER_02",
+    "start": 1447.37,
+    "end": 1447.91,
+    "text": "You 'll have email ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 1447.91,
+    "end": 1448.18,
+    "text": "Right ?"
+  },
+  {
+    "speaker": "SPEAKER_05",
+    "start": 1490.33,
+    "end": 1490.59,
+    "text": "So ?"
+  },
+  {
+    "speaker": "SPEAKER_05",
+    "start": 1512.78,
+    "end": 1513.43,
+    "text": "Segmentation ?"
+  },
+  {
+    "speaker": "SPEAKER_02",
+    "start": 1520.55,
+    "end": 1523.11,
+    "text": "S So , um ."
+  },
+  {
+    "speaker": "SPEAKER_02",
+    "start": 1523.25,
+    "end": 1526.04,
+    "text": "I don't want you to have to be burdened with doing a lot of stuff ."
+  },
+  {
+    "speaker": "SPEAKER_02",
+    "start": 1526.04,
+    "end": 1527.32,
+    "text": "What what can I do to ?"
+  },
+  {
+    "speaker": "SPEAKER_02",
+    "start": 1529.1,
+    "end": 1537.8,
+    "text": "Y y you said it would be easy for you to do that top one there , and I guess Don can do the segmentations of the , uh , channel F ?"
+  },
+  {
+    "speaker": "SPEAKER_02",
+    "start": 1541.75,
+    "end": 1547.64,
+    "text": "I mean , I can certainly help with , uh , retraining the short male models , uh , once we have the new data ."
+  },
+  {
+    "speaker": "SPEAKER_05",
+    "start": 1571.66,
+    "end": 1572.38,
+    "text": "The top one is done ."
+  },
+  {
+    "speaker": "SPEAKER_05",
+    "start": 1572.38,
+    "end": 1575.03,
+    "text": "I c I can re - do the next one ."
+  },
+  {
+    "speaker": "SPEAKER_05",
+    "start": 1575.38,
+    "end": 1575.69,
+    "text": "Yeah ."
+  },
+  {
+    "speaker": "SPEAKER_05",
+    "start": 1577.24,
+    "end": 1577.6,
+    "text": "Mm - hmm ."
+  },
+  {
+    "speaker": "SPEAKER_05",
+    "start": 1580.33,
+    "end": 1580.61,
+    "text": "Yeah ."
+  },
+  {
+    "speaker": "SPEAKER_05",
+    "start": 1580.68,
+    "end": 1580.95,
+    "text": "Sure ."
+  },
+  {
+    "speaker": "SPEAKER_02",
+    "start": 1582.05,
+    "end": 1591.99,
+    "text": "Yeah , the the bottom one would b just be a matter of pointing it at a new set of files and kicking it off , so that would be re I mean , th not the bottom one , but the middle one would be really easy once you 've got the top one going ."
+  },
+  {
+    "speaker": "SPEAKER_02",
+    "start": 1592.27,
+    "end": 1592.94,
+    "text": "I could do that ."
+  },
+  {
+    "speaker": "SPEAKER_02",
+    "start": 1594.08,
+    "end": 1594.4,
+    "text": "OK ."
+  },
+  {
+    "speaker": "SPEAKER_05",
+    "start": 1594.68,
+    "end": 1626.45,
+    "text": "So I guess I just need to get Don to , uh Mm - hmm ."
+  },
+  {
+    "speaker": "SPEAKER_02",
+    "start": 1628.73,
+    "end": 1630.67,
+    "text": "To keep it the same but j just change them all to channel F ?"
+  },
+  {
+    "speaker": "SPEAKER_05",
+    "start": 1635.04,
+    "end": 1635.29,
+    "text": "Right ."
+  },
+  {
+    "speaker": "SPEAKER_05",
+    "start": 1635.71,
+    "end": 1635.96,
+    "text": "Right ."
+  },
+  {
+    "speaker": "SPEAKER_05",
+    "start": 1637.8,
+    "end": 1638.01,
+    "text": "Yeah ."
+  },
+  {
+    "speaker": "SPEAKER_05",
+    "start": 1644.43,
+    "end": 1644.62,
+    "text": "Yeah ."
+  },
+  {
+    "speaker": "SPEAKER_05",
+    "start": 1645.77,
+    "end": 1646.01,
+    "text": "OK ."
+  },
+  {
+    "speaker": "SPEAKER_05",
+    "start": 1648.57,
+    "end": 1648.78,
+    "text": "OK ."
+  },
+  {
+    "speaker": "SPEAKER_02",
+    "start": 1652.85,
+    "end": 1653.15,
+    "text": "OK ."
+  },
+  {
+    "speaker": "SPEAKER_02",
+    "start": 1653.51,
+    "end": 1655.43,
+    "text": "And so that 's something that Don would do right ?"
+  },
+  {
+    "speaker": "SPEAKER_02",
+    "start": 1655.43,
+    "end": 1656.35,
+    "text": "when he creates these ."
+  },
+  {
+    "speaker": "SPEAKER_02",
+    "start": 1657.17,
+    "end": 1657.46,
+    "text": "OK ."
+  },
+  {
+    "speaker": "SPEAKER_02",
+    "start": 1657.8,
+    "end": 1658.19,
+    "text": "OK ."
+  },
+  {
+    "speaker": "SPEAKER_02",
+    "start": 1659.84,
+    "end": 1661.96,
+    "text": "So will you talk to him about that , or do you want me to talk to him ?"
+  },
+  {
+    "speaker": "SPEAKER_05",
+    "start": 1663.73,
+    "end": 1664.03,
+    "text": "OK ."
+  },
+  {
+    "speaker": "SPEAKER_02",
+    "start": 1666.85,
+    "end": 1671.03,
+    "text": "And then the bottom one in terms of the test will be ?"
+  },
+  {
+    "speaker": "SPEAKER_02",
+    "start": 1672.02,
+    "end": 1680.86,
+    "text": "Uh That will just be a copy of the one above it , except for different models from training ."
+  },
+  {
+    "speaker": "SPEAKER_02",
+    "start": 1683.79,
+    "end": 1684.15,
+    "text": "Ah ."
+  },
+  {
+    "speaker": "SPEAKER_02",
+    "start": 1684.15,
+    "end": 1684.64,
+    "text": "OK ."
+  },
+  {
+    "speaker": "SPEAKER_02",
+    "start": 1685.77,
+    "end": 1687.32,
+    "text": "So , we need to run ?"
+  },
+  {
+    "speaker": "SPEAKER_02",
+    "start": 1687.77,
+    "end": 1688.08,
+    "text": "OK ."
+  },
+  {
+    "speaker": "SPEAKER_02",
+    "start": 1688.96,
+    "end": 1698.44,
+    "text": "Well , once we have the new , uh Well , once I do that , uh , second experiment , we 'll have the , um , files , and I can give you those to to process ."
+  },
+  {
+    "speaker": "SPEAKER_02",
+    "start": 1716.01,
+    "end": 1719.75,
+    "text": "So , do you create this continuous stream from the individual utterance files ?"
+  },
+  {
+    "speaker": "SPEAKER_03",
+    "start": 1747.41,
+    "end": 1747.7,
+    "text": "Yeah ."
+  },
+  {
+    "speaker": "SPEAKER_02",
+    "start": 1760.43,
+    "end": 1760.76,
+    "text": "OK ."
+  },
+  {
+    "speaker": "SPEAKER_02",
+    "start": 1760.93,
+    "end": 1765.51,
+    "text": "I 'm gonna I 'll check with , um , Markham , and see what happened with the the disks ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 1765.62,
+    "end": 1770.47,
+    "text": "He went to put those on a couple of weeks ago and something Oh , OK ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 1770.47,
+    "end": 1771.49,
+    "text": "I 'll ask David , then ."
+  },
+  {
+    "speaker": "SPEAKER_02",
+    "start": 1772.57,
+    "end": 1774.56,
+    "text": "You haven't seen new disks pop up , have you ?"
+  },
+  {
+    "speaker": "SPEAKER_04",
+    "start": 1775.5,
+    "end": 1775.83,
+    "text": "OK ."
+  },
+  {
+    "speaker": "SPEAKER_04",
+    "start": 1776.4,
+    "end": 1776.88,
+    "text": "Yeah ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 1780.87,
+    "end": 1782.47,
+    "text": "Well , he went to put them on Yeah ."
+  },
+  {
+    "speaker": "SPEAKER_02",
+    "start": 1783.89,
+    "end": 1785.63,
+    "text": "He went to put them on and then something happened ."
+  },
+  {
+    "speaker": "SPEAKER_02",
+    "start": 1785.63,
+    "end": 1790.75,
+    "text": "And he sent around a note saying \" Oh , uh , it didn't work , and we 'll have to schedule another time ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 0.0,
+    "end": 1792.74,
+    "text": "\" And then , didn't see nothing happened ."
+  },
+  {
+    "speaker": "SPEAKER_02",
+    "start": 1792.74,
+    "end": 1794.43,
+    "text": "So I 'll check with David about that ."
+  },
+  {
+    "speaker": "SPEAKER_05",
+    "start": 1795.39,
+    "end": 1795.52,
+    "text": "OK ."
+  },
+  {
+    "speaker": "SPEAKER_02",
+    "start": 1906.48,
+    "end": 1916.24,
+    "text": "So , basically , Dave , so y for you to get your processing going , you need the list of the , uh , wave Well , I guess it 'll dep you 'll you 'll we 'll need to get the segmentations ."
+  },
+  {
+    "speaker": "SPEAKER_02",
+    "start": 1916.87,
+    "end": 1919.3,
+    "text": "Figure out whether we 're using the new or the old from Don ."
+  },
+  {
+    "speaker": "SPEAKER_02",
+    "start": 1919.76,
+    "end": 1929.36,
+    "text": "And then , uh , from that you need the from the segmentations you 'll have the list of wavefiles that the short , uh , set is trained on ."
+  },
+  {
+    "speaker": "SPEAKER_02",
+    "start": 1929.84,
+    "end": 1931.51,
+    "text": "And then you 'll need disk space ."
+  },
+  {
+    "speaker": "SPEAKER_02",
+    "start": 1931.51,
+    "end": 1935.03,
+    "text": "And once you 've got those things , then you can start your processing ."
+  },
+  {
+    "speaker": "SPEAKER_02",
+    "start": 1935.03,
+    "end": 1935.26,
+    "text": "Right ?"
+  },
+  {
+    "speaker": "Unknown",
+    "start": 1935.72,
+    "end": 1936.04,
+    "text": "OK ."
+  },
+  {
+    "speaker": "SPEAKER_05",
+    "start": 1981.89,
+    "end": 1982.97,
+    "text": "Do you have this , uh ?"
+  },
+  {
+    "speaker": "SPEAKER_02",
+    "start": 2057.81,
+    "end": 2068.12,
+    "text": "Oh , there 's there 's one other issue , uh , and that is that Dave throws out speakers that have less than twelve seconds of training data ."
+  },
+  {
+    "speaker": "SPEAKER_02",
+    "start": 2069.55,
+    "end": 2072.59,
+    "text": "And he said there were a few in the Macrophone set like that ."
+  },
+  {
+    "speaker": "SPEAKER_02",
+    "start": 2074.52,
+    "end": 2082.64,
+    "text": "So , do we need to wait to find out who he 's gonna throw out , so that we create a new set of short models that don't include those speakers ?"
+  },
+  {
+    "speaker": "SPEAKER_02",
+    "start": 2087.64,
+    "end": 2101.39,
+    "text": "So i in Th - the problem is that if we proceed like we just described , um , when he goes to m um , create the new s training data with his processing , he throws out some speakers ."
+  },
+  {
+    "speaker": "SPEAKER_02",
+    "start": 2101.69,
+    "end": 2103.46,
+    "text": "So the t two training sets won't be identical ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 2107.65,
+    "end": 2107.9,
+    "text": "Yeah ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 2108.18,
+    "end": 2109.32,
+    "text": "Have just a little bit ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 2110.84,
+    "end": 2111.14,
+    "text": "OK ."
+  },
+  {
+    "speaker": "SPEAKER_05",
+    "start": 2121.91,
+    "end": 2122.16,
+    "text": "Yeah ."
+  },
+  {
+    "speaker": "SPEAKER_02",
+    "start": 2130.6,
+    "end": 2131.56,
+    "text": "So you think it 's OK , then ?"
+  },
+  {
+    "speaker": "SPEAKER_05",
+    "start": 2160.65,
+    "end": 2161.0,
+    "text": "It 's read ."
+  },
+  {
+    "speaker": "SPEAKER_05",
+    "start": 2181.08,
+    "end": 2182.38,
+    "text": "We sh M Right ."
+  },
+  {
+    "speaker": "SPEAKER_02",
+    "start": 2182.77,
+    "end": 2193.36,
+    "text": "A actually you should be able to figure out , Dave , right , once you know the segmentations , uh , who you 're going to which speakers will get left out , even before you run your processing ."
+  },
+  {
+    "speaker": "SPEAKER_02",
+    "start": 2193.36,
+    "end": 2193.62,
+    "text": "Right ?"
+  },
+  {
+    "speaker": "SPEAKER_02",
+    "start": 2194.79,
+    "end": 2194.96,
+    "text": "Yeah ."
+  },
+  {
+    "speaker": "SPEAKER_02",
+    "start": 2194.96,
+    "end": 2196.2,
+    "text": "The segmentations from Don ?"
+  },
+  {
+    "speaker": "SPEAKER_02",
+    "start": 2196.58,
+    "end": 2197.04,
+    "text": "Once we ?"
+  },
+  {
+    "speaker": "SPEAKER_05",
+    "start": 2200.78,
+    "end": 2201.08,
+    "text": "Ah ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 2201.08,
+    "end": 2202.0,
+    "text": "Right , right , right , right , right ."
+  },
+  {
+    "speaker": "SPEAKER_02",
+    "start": 2206.38,
+    "end": 2206.49,
+    "text": "Right ."
+  },
+  {
+    "speaker": "SPEAKER_02",
+    "start": 2206.49,
+    "end": 2210.22,
+    "text": "But I 'm just wondering how long it will take to get that information ."
+  },
+  {
+    "speaker": "Unknown",
+    "start": 2230.8,
+    "end": 2231.08,
+    "text": "OK ."
+  },
+  {
+    "speaker": "SPEAKER_04",
+    "start": 2257.18,
+    "end": 2258.12,
+    "text": "Sorry , Robert did what ?"
+  },
+  {
+    "speaker": "SPEAKER_02",
+    "start": 2258.71,
+    "end": 2259.46,
+    "text": "Robert took what ?"
+  },
+  {
+    "speaker": "SPEAKER_04",
+    "start": 2264.38,
+    "end": 2264.64,
+    "text": "Uh - huh ."
+  },
+  {
+    "speaker": "SPEAKER_04",
+    "start": 2267.1,
+    "end": 2267.2,
+    "text": "Oh ."
+  },
+  {
+    "speaker": "SPEAKER_04",
+    "start": 2269.36,
+    "end": 2270.17,
+    "text": "Is he gone now ?"
+  },
+  {
+    "speaker": "SPEAKER_04",
+    "start": 2270.95,
+    "end": 2271.09,
+    "text": "Oh ."
+  },
+  {
+    "speaker": "SPEAKER_04",
+    "start": 2273.14,
+    "end": 2273.5,
+    "text": "Oh , oh ."
+  },
+  {
+    "speaker": "SPEAKER_04",
+    "start": 2273.51,
+    "end": 2273.9,
+    "text": "Oh , OK ."
+  },
+  {
+    "speaker": "Unknown",
+    "start": 0.0,
+    "end": 0.0,
+    "text": "Ah ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 0.0,
+    "end": 2316.8,
+    "text": "Hmm ."
+  },
+  {
+    "speaker": "SPEAKER_02",
+    "start": 2316.8,
+    "end": 2320.03,
+    "text": "Are you are you interfacing to that thing with the C - plus - plus routines ?"
+  },
+  {
+    "speaker": "SPEAKER_02",
+    "start": 2320.03,
+    "end": 2322.15,
+    "text": "Or are you is there another interface that you use ?"
+  },
+  {
+    "speaker": "SPEAKER_04",
+    "start": 2323.19,
+    "end": 2323.35,
+    "text": "Yeah ."
+  },
+  {
+    "speaker": "SPEAKER_04",
+    "start": 2331.42,
+    "end": 2331.63,
+    "text": "Oh ."
+  },
+  {
+    "speaker": "SPEAKER_04",
+    "start": 2332.91,
+    "end": 2338.88,
+    "text": "And it saves it in a I see ."
+  },
+  {
+    "speaker": "SPEAKER_02",
+    "start": 2340.28,
+    "end": 2340.75,
+    "text": "Oh , that 's neat ."
+  },
+  {
+    "speaker": "SPEAKER_02",
+    "start": 2357.58,
+    "end": 2357.85,
+    "text": "Ah ."
+  },
+  {
+    "speaker": "SPEAKER_02",
+    "start": 2357.85,
+    "end": 2358.27,
+    "text": "OK ."
+  },
+  {
+    "speaker": "Unknown",
+    "start": 0.0,
+    "end": 0.0,
+    "text": "Transcript L dash two eight eight ."
+  },
+  {
+    "speaker": "Unknown",
+    "start": 0.0,
+    "end": 0.0,
+    "text": "Five two three , eight one seven , seven one nine ."
+  },
+  {
+    "speaker": "Unknown",
+    "start": 0.0,
+    "end": 0.0,
+    "text": "Four two three , one five , eight eight two three ."
+  },
+  {
+    "speaker": "Unknown",
+    "start": 0.0,
+    "end": 0.0,
+    "text": "Seven six eight , six O eight , two two one two ."
+  },
+  {
+    "speaker": "Unknown",
+    "start": 0.0,
+    "end": 0.0,
+    "text": "Six nine two six , nine , two four nine ."
+  },
+  {
+    "speaker": "Unknown",
+    "start": 0.0,
+    "end": 0.0,
+    "text": "Five seven , three six , zero one , zero six , four five ."
+  },
+  {
+    "speaker": "Unknown",
+    "start": 0.0,
+    "end": 0.0,
+    "text": "One three one , three three four , three nine eight ."
+  },
+  {
+    "speaker": "Unknown",
+    "start": 0.0,
+    "end": 0.0,
+    "text": "One , six one two , six six , nine one one , eight ."
+  },
+  {
+    "speaker": "Unknown",
+    "start": 0.0,
+    "end": 0.0,
+    "text": "Zero two two , six seven , six six five one ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 526.674,
+    "end": 527.444,
+    "text": "It 's e F ."
+  },
+  {
+    "speaker": "SPEAKER_03",
+    "start": 941.271,
+    "end": 949.499,
+    "text": "u I I I think , um , for the far - mike HTK system I was using , it did help somewhat ."
+  },
+  {
+    "speaker": "SPEAKER_03",
+    "start": 949.499,
+    "end": 950.399,
+    "text": "I could re - check that ."
+  },
+  {
+    "speaker": "SPEAKER_03",
+    "start": 950.399,
+    "end": 954.228,
+    "text": "But it was such a bad baseline that I don't know what that means ."
+  },
+  {
+    "speaker": "SPEAKER_03",
+    "start": 957.163,
+    "end": 960.013,
+    "text": "Cuz the baseline word error rate was around forty percent on digits ."
+  },
+  {
+    "speaker": "SPEAKER_03",
+    "start": 962.63,
+    "end": 962.9,
+    "text": "Right ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 1337.04,
+    "end": 1680.05,
+    "text": "What wo Uh , I I think also for the log spectral mean subtraction , uh , we wanna know which speaker 's talking when , cuz we wanna chain together the audio from one particular speaker to calculate the mean and subtract it , and we don't Hmm ."
+  },
+  {
+    "speaker": "SPEAKER_03",
+    "start": 1680.05,
+    "end": 1682.1,
+    "text": "Well , we also have to mean subtract the test data ."
+  },
+  {
+    "speaker": "SPEAKER_03",
+    "start": 1698.69,
+    "end": 1699.04,
+    "text": "OK ."
+  },
+  {
+    "speaker": "SPEAKER_03",
+    "start": 1699.36,
+    "end": 1709.87,
+    "text": "And there 's , um , S so the way this means subtraction expects to work , is it expects to have , um , this continuous stream of audio data from a particular speaker to operate on ."
+  },
+  {
+    "speaker": "SPEAKER_03",
+    "start": 1709.87,
+    "end": 1715.66,
+    "text": "And it goes along it with this sliding window , calculating the mean using the data in the window , and then subtracting that ."
+  },
+  {
+    "speaker": "SPEAKER_02",
+    "start": 1716.06,
+    "end": 1723.02,
+    "text": "I mean , uh That 's that 's how I 've been doing it , just by concatenating files together ."
+  },
+  {
+    "speaker": "SPEAKER_03",
+    "start": 1723.42,
+    "end": 1730.95,
+    "text": "Um , and if these files and the since they 're individual utterance files , um , s long silence periods are removed , which is a good thing ."
+  },
+  {
+    "speaker": "SPEAKER_03",
+    "start": 1731.55,
+    "end": 1735.63,
+    "text": "Because this method might estimate the mean badly , if it had to face long silence periods ."
+  },
+  {
+    "speaker": "SPEAKER_03",
+    "start": 1736.27,
+    "end": 1752.23,
+    "text": "But that does mean that I need as much I need twice as much disk space as the original set cuz I need while I 'm running it cuz I need to create this intermediate set , um , of these big files , and then create the finally , the mean subtracted , um , little files ."
+  },
+  {
+    "speaker": "SPEAKER_03",
+    "start": 1752.77,
+    "end": 1754.54,
+    "text": "And then I can get rid of the big files ."
+  },
+  {
+    "speaker": "SPEAKER_03",
+    "start": 1756.09,
+    "end": 1759.91,
+    "text": "But st while I 'm doing the processing , I 'll nee I need twice as much disk space ."
+  },
+  {
+    "speaker": "SPEAKER_03",
+    "start": 1802.4,
+    "end": 1810.71,
+    "text": "Right , an and So so , Andreas , um , in U doctor speech data SRI Hub - five , there 's this , uh , Hub - five training set ."
+  },
+  {
+    "speaker": "SPEAKER_03",
+    "start": 1810.71,
+    "end": 1812.48,
+    "text": "Now , is that the long training set there ?"
+  },
+  {
+    "speaker": "SPEAKER_05",
+    "start": 1814.17,
+    "end": 1814.47,
+    "text": "OK ."
+  },
+  {
+    "speaker": "SPEAKER_05",
+    "start": 1818.43,
+    "end": 1818.79,
+    "text": "OK ."
+  },
+  {
+    "speaker": "SPEAKER_03",
+    "start": 1818.79,
+    "end": 1820.58,
+    "text": "I th I think you already did , actually ."
+  },
+  {
+    "speaker": "SPEAKER_03",
+    "start": 1821.02,
+    "end": 1821.29,
+    "text": "OK ."
+  },
+  {
+    "speaker": "SPEAKER_03",
+    "start": 1821.29,
+    "end": 1826.89,
+    "text": "And so , say the Macrophone files that are included in this short training , are just a subset of the Macrophone files ."
+  },
+  {
+    "speaker": "SPEAKER_03",
+    "start": 1826.89,
+    "end": 1827.2,
+    "text": "Right ?"
+  },
+  {
+    "speaker": "SPEAKER_03",
+    "start": 1829.76,
+    "end": 1830.12,
+    "text": "OK ."
+  },
+  {
+    "speaker": "SPEAKER_03",
+    "start": 1830.42,
+    "end": 1835.41,
+    "text": "So so , um when you You did some TI - digits t t experiments training on Macrophone ."
+  },
+  {
+    "speaker": "SPEAKER_03",
+    "start": 1836.13,
+    "end": 1836.6,
+    "text": "Um ."
+  },
+  {
+    "speaker": "SPEAKER_03",
+    "start": 1837.46,
+    "end": 1842.13,
+    "text": "But that 's not necessarily any less data than the SRI Hub - five set ."
+  },
+  {
+    "speaker": "SPEAKER_03",
+    "start": 1842.13,
+    "end": 1845.47,
+    "text": "It 's not a it 's not a subset of the short SRI Hu - Hub - five set ."
+  },
+  {
+    "speaker": "SPEAKER_03",
+    "start": 1845.47,
+    "end": 1845.81,
+    "text": "Right ?"
+  },
+  {
+    "speaker": "SPEAKER_03",
+    "start": 1854.21,
+    "end": 1859.62,
+    "text": "Uh , whe when you trained on Macrophone , um , to do those digits experiments , did you use the entire Macrophone corpus ?"
+  },
+  {
+    "speaker": "SPEAKER_05",
+    "start": 1861.76,
+    "end": 1862.45,
+    "text": "Oh ."
+  },
+  {
+    "speaker": "SPEAKER_05",
+    "start": 1862.65,
+    "end": 1863.05,
+    "text": "OK ."
+  },
+  {
+    "speaker": "SPEAKER_03",
+    "start": 1873.85,
+    "end": 1874.5,
+    "text": "OK - OK ."
+  },
+  {
+    "speaker": "SPEAKER_03",
+    "start": 1874.81,
+    "end": 1887.48,
+    "text": "So Um I I I got confused , cuz I thought I thought you were using the whole Macrophone set ."
+  },
+  {
+    "speaker": "SPEAKER_03",
+    "start": 1887.69,
+    "end": 1888.08,
+    "text": "Um ."
+  },
+  {
+    "speaker": "SPEAKER_03",
+    "start": 1888.17,
+    "end": 1888.6,
+    "text": "OK ."
+  },
+  {
+    "speaker": "SPEAKER_03",
+    "start": 1888.88,
+    "end": 1892.69,
+    "text": "Well , if if if I just need to use that subset , I I can get it processed ."
+  },
+  {
+    "speaker": "SPEAKER_03",
+    "start": 1892.69,
+    "end": 1898.0,
+    "text": "I actually got I think I got f into it before , and then I thought I was doing the wrong thing and I stopped ."
+  },
+  {
+    "speaker": "SPEAKER_03",
+    "start": 1898.0,
+    "end": 1899.59,
+    "text": "And it shouldn it shouldn't take that long to do ."
+  },
+  {
+    "speaker": "SPEAKER_05",
+    "start": 1904.65,
+    "end": 1904.81,
+    "text": "Oh , OK ."
+  },
+  {
+    "speaker": "SPEAKER_02",
+    "start": 1916.53,
+    "end": 1916.8,
+    "text": "Yeah ."
+  },
+  {
+    "speaker": "SPEAKER_02",
+    "start": 1935.18,
+    "end": 1935.44,
+    "text": "Yeah ."
+  },
+  {
+    "speaker": "SPEAKER_05",
+    "start": 2175.34,
+    "end": 2175.61,
+    "text": "Right ."
+  },
+  {
+    "speaker": "SPEAKER_02",
+    "start": 2187.17,
+    "end": 2187.46,
+    "text": "Mm - hmm ."
+  },
+  {
+    "speaker": "SPEAKER_02",
+    "start": 2193.61,
+    "end": 2194.66,
+    "text": "The segmentations ?"
+  },
+  {
+    "speaker": "SPEAKER_02",
+    "start": 2196.95,
+    "end": 2197.25,
+    "text": "Oh ."
+  },
+  {
+    "speaker": "SPEAKER_03",
+    "start": 2211.59,
+    "end": 2224.19,
+    "text": "Um I I have i I have it for for Macrophone , um , already , I think , and , um , I think by tomorrow I 'll have it for th for the rest ."
+  },
+  {
+    "speaker": "Unknown",
+    "start": 0.0,
+    "end": 0.0,
+    "text": "Transcript L dash two nine zero ."
+  },
+  {
+    "speaker": "Unknown",
+    "start": 0.0,
+    "end": 0.0,
+    "text": "Four two eight zero , two three one three , one three eight two ."
+  },
+  {
+    "speaker": "Unknown",
+    "start": 0.0,
+    "end": 0.0,
+    "text": "Three , five two six , zero five , nine eight eight , one ."
+  },
+  {
+    "speaker": "Unknown",
+    "start": 0.0,
+    "end": 0.0,
+    "text": "One five , eight five , nine nine , four one , five six ."
+  },
+  {
+    "speaker": "Unknown",
+    "start": 0.0,
+    "end": 0.0,
+    "text": "Eight eight three , seven nine two , two seven two ."
+  },
+  {
+    "speaker": "Unknown",
+    "start": 0.0,
+    "end": 0.0,
+    "text": "Three nine seven , three three three , two two six ."
+  },
+  {
+    "speaker": "Unknown",
+    "start": 0.0,
+    "end": 0.0,
+    "text": "Zero zero six , three eight , zero three three one ."
+  },
+  {
+    "speaker": "Unknown",
+    "start": 0.0,
+    "end": 0.0,
+    "text": "Eight three six three , four six four six , seven four seven three ."
+  },
+  {
+    "speaker": "Unknown",
+    "start": 0.0,
+    "end": 0.0,
+    "text": "Five nine , two two , zero zero , eight two , seven nine ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 2.572,
+    "end": 2.762,
+    "text": "OK ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 2.762,
+    "end": 12.34,
+    "text": "So the one one thing I knew I wanted to talk about was about , uh , sort of last minute stuff to to , uh , try to get some recognition results ."
+  },
+  {
+    "speaker": "SPEAKER_05",
+    "start": 14.766,
+    "end": 14.986,
+    "text": "Yeah ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 15.55,
+    "end": 18.2,
+    "text": "So , uh , on on on meeting data ."
+  },
+  {
+    "speaker": "SPEAKER_05",
+    "start": 18.945,
+    "end": 34.3,
+    "text": "And so , I 'm I 'm not sure exactly what you 're doing already , and and there 's some stuff I 've talked to Dave OK ."
+  },
+  {
+    "speaker": "SPEAKER_05",
+    "start": 34.3,
+    "end": 37.895,
+    "text": "So Um Right ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 37.895,
+    "end": 45.461,
+    "text": "So so , we have some stuff with no overlap , uh , for which there would be near near - field results ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 45.961,
+    "end": 48.201,
+    "text": "We wanted to get the far - field results for that ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 48.857,
+    "end": 61.95,
+    "text": "And then this this real , uh , long shot thing would be , that we 'd apply Dave 's processing to , uh , potentially training and test data and do the look at the same thing ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 62.01,
+    "end": 80.949,
+    "text": "And in talking this morning with , uh , Chuck and with Dave one thought was to use We couldn't remember how different the numbers were , but if you just worked with males only and used the short training there 're there 're uh , I think Chuck 's recollection was that when he was doing the feature stuff , it took maybe a day and a half to do the training ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 80.949,
+    "end": 81.259,
+    "text": "Yeah ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 101.089,
+    "end": 107.419,
+    "text": "Um , how much worse is the short training set than the large one , in terms of the ultimate performance ?"
+  },
+  {
+    "speaker": "SPEAKER_05",
+    "start": 113.56,
+    "end": 113.7,
+    "text": "Yep ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 115.885,
+    "end": 118.185,
+    "text": "So , it 's that should be fine for this , I would think ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 119.446,
+    "end": 125.397,
+    "text": "So we an and you have the short you have short training results for the close case ?"
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 142.203,
+    "end": 143.083,
+    "text": "So , how do you know it 's ?"
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 143.083,
+    "end": 146.093,
+    "text": "Oh , it 's three percent on on , uh , on Hub - five ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 147.03,
+    "end": 147.39,
+    "text": "I see ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 148.65,
+    "end": 148.78,
+    "text": "Yeah ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 148.78,
+    "end": 152.77,
+    "text": "But we have the models so we could get that number , and So the question is , what ?"
+  },
+  {
+    "speaker": "SPEAKER_05",
+    "start": 153.49,
+    "end": 173.265,
+    "text": "w It has to be enough so that I mean , it 's the non - overlap only ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 174.868,
+    "end": 183.48,
+    "text": "Um And it has to be enough to be sort of comparable to what you folks were seeing and what you reported already ."
+  },
+  {
+    "speaker": "SPEAKER_05",
+    "start": 186.664,
+    "end": 193.371,
+    "text": "I mean No ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 193.371,
+    "end": 194.221,
+    "text": "He has to create that ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 194.221,
+    "end": 203.35,
+    "text": "But but s but so Um We have a whole parallel set of things over here which are all with digits ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 203.71,
+    "end": 207.41,
+    "text": "And and and Dave has been working with that and there 's all of those issues ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 207.904,
+    "end": 212.821,
+    "text": "But I know that if I go in with something that 's not just digits it would be good ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 213.86,
+    "end": 225.93,
+    "text": "And , um , so We already have these results that you I mean , on uh , a l a lot tha tha a particular test set , that you that we reported at HLT ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 226.872,
+    "end": 228.772,
+    "text": "Um , it 'd be nice to have something more than that ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 228.862,
+    "end": 238.12,
+    "text": "And w we had talked about was having distant Um , and then , uh , if we could on top of that I mean , so this is gonna be a lot worse ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 238.12,
+    "end": 238.45,
+    "text": "Right ?"
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 238.62,
+    "end": 240.99,
+    "text": "Whatever comparison we w w one would presume ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 241.05,
+    "end": 245.085,
+    "text": "But we don't know how much worse , w w uh , which is certainly one interesting thing ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 245.91,
+    "end": 260.376,
+    "text": "And then , um , Dave I think we figured that it 'd probably take a day or two to compute the the , uh uh Well How many hours of training ?"
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 273.8,
+    "end": 274.11,
+    "text": "Yeah ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 279.412,
+    "end": 285.992,
+    "text": "Yeah , but we also have to do this other processing , so having a smaller training set , if it 's only a few percent difference , it might be be worth doing it ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 286.497,
+    "end": 289.337,
+    "text": "But - m How big is the small training set ?"
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 291.836,
+    "end": 292.246,
+    "text": "Do you remember ?"
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 314.301,
+    "end": 314.841,
+    "text": "It 's around there ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 315.22,
+    "end": 317.66,
+    "text": "And ha and and male is roughly half of that , or ?"
+  },
+  {
+    "speaker": "SPEAKER_05",
+    "start": 319.009,
+    "end": 320.359,
+    "text": "Or or or was that only male ?"
+  },
+  {
+    "speaker": "SPEAKER_05",
+    "start": 328.117,
+    "end": 328.477,
+    "text": "OK ."
+  },
+  {
+    "speaker": "SPEAKER_00",
+    "start": 339.344,
+    "end": 339.644,
+    "text": "Yeah ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 342.004,
+    "end": 343.182,
+    "text": "So Yeah ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 343.182,
+    "end": 348.532,
+    "text": "So that 's certainly part of the issue , is that right now he 's he hasn't written his stuff for efficiency ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 348.672,
+    "end": 348.832,
+    "text": "Yeah ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 348.832,
+    "end": 354.071,
+    "text": "It 's it 's in Matlab and so on , and And , uh , it 's not an impossible amount of time ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 354.071,
+    "end": 358.961,
+    "text": "We we were guestimating it was like one and a half times faster than real time , or something ?"
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 359.9,
+    "end": 368.369,
+    "text": "So , if there 's thirty hours of data , you can calculate that he can do , uh , the enhancement in a day and something ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 368.509,
+    "end": 373.629,
+    "text": "So But if we were dealing with two hundred hours or something , I think it 'd be prohibitive ."
+  },
+  {
+    "speaker": "SPEAKER_05",
+    "start": 377.97,
+    "end": 378.18,
+    "text": "Yeah ."
+  },
+  {
+    "speaker": "SPEAKER_05",
+    "start": 385.967,
+    "end": 386.207,
+    "text": "Yeah ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 388.556,
+    "end": 388.716,
+    "text": "Yeah ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 388.716,
+    "end": 397.896,
+    "text": "So , I mean , it 's a bit of a push , but it seems like , OK , we 've got some models , we 've got some training data , we have software that works , he 's got a method that helps with , you know , other ta another task ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 398.68,
+    "end": 402.27,
+    "text": "Um It , you know , appears to be , you know , debugged ."
+  },
+  {
+    "speaker": "SPEAKER_02",
+    "start": 402.845,
+    "end": 425.173,
+    "text": "Um Yes ."
+  },
+  {
+    "speaker": "SPEAKER_02",
+    "start": 477.5,
+    "end": 477.66,
+    "text": "Oh ."
+  },
+  {
+    "speaker": "SPEAKER_02",
+    "start": 477.73,
+    "end": 478.32,
+    "text": "Well , that 's not bad ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 486.911,
+    "end": 487.581,
+    "text": "You mean the training ."
+  },
+  {
+    "speaker": "SPEAKER_05",
+    "start": 489.152,
+    "end": 489.372,
+    "text": "Yeah ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 493.256,
+    "end": 493.986,
+    "text": "For the test ."
+  },
+  {
+    "speaker": "SPEAKER_05",
+    "start": 495.25,
+    "end": 501.241,
+    "text": "Yeah , fo Right ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 503.22,
+    "end": 503.42,
+    "text": "Yeah ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 505.548,
+    "end": 513.238,
+    "text": "I mean , it it 'd be really great if it was all automatic , but I think that , you know , given the pressure of time , if i i I mean , since you 're gonna find out in a short amount of time , that 's great ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 513.462,
+    "end": 521.93,
+    "text": "But i if if it doesn't work out , I think we would rather charge ahead with the older segmentations and Um , and we were gonna use one of the P Z Ms ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 522.06,
+    "end": 526.4,
+    "text": "I don I don't know what Probably whatever one you 've been using for for for the digits ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 526.4,
+    "end": 526.98,
+    "text": "Is it this one ?"
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 528.604,
+    "end": 529.374,
+    "text": "I I 'd which ?"
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 529.534,
+    "end": 530.024,
+    "text": "That 's F ?"
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 530.024,
+    "end": 530.954,
+    "text": "How do you know ?"
+  },
+  {
+    "speaker": "SPEAKER_02",
+    "start": 534.003,
+    "end": 534.203,
+    "text": "Oh ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 537.276,
+    "end": 539.096,
+    "text": "Bien sur OK ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 540.016,
+    "end": 542.768,
+    "text": "Alright , so Bet they 'll have fun with that one ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 542.828,
+    "end": 543.268,
+    "text": "OK , so ."
+  },
+  {
+    "speaker": "SPEAKER_02",
+    "start": 545.25,
+    "end": 572.282,
+    "text": "Uh Mm - hmm ."
+  },
+  {
+    "speaker": "SPEAKER_02",
+    "start": 573.385,
+    "end": 573.595,
+    "text": "Right ."
+  },
+  {
+    "speaker": "SPEAKER_05",
+    "start": 591.494,
+    "end": 592.785,
+    "text": "Well Maybe ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 592.785,
+    "end": 595.45,
+    "text": "But , I I mean , how long does it take for the test ?"
+  },
+  {
+    "speaker": "SPEAKER_05",
+    "start": 628.74,
+    "end": 629.07,
+    "text": "Right ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 636.571,
+    "end": 640.923,
+    "text": "Bu - But what what was your result for uh , that we had at the HLT ?"
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 640.923,
+    "end": 642.673,
+    "text": "Was that a combination of me ?"
+  },
+  {
+    "speaker": "SPEAKER_05",
+    "start": 695.6,
+    "end": 718.826,
+    "text": "So you were doing like Yeah ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 719.046,
+    "end": 722.556,
+    "text": "But if you So , if you do half a dozen meetings , that 's that 's about a day ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 722.946,
+    "end": 724.226,
+    "text": "We also have more machines now ."
+  },
+  {
+    "speaker": "SPEAKER_05",
+    "start": 724.876,
+    "end": 728.281,
+    "text": "well Yeah ."
+  },
+  {
+    "speaker": "SPEAKER_05",
+    "start": 729.474,
+    "end": 729.624,
+    "text": "Yeah ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 729.624,
+    "end": 732.364,
+    "text": "I mean , if we had about six A six hour test set 's not bad ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 732.364,
+    "end": 732.664,
+    "text": "Right ?"
+  },
+  {
+    "speaker": "SPEAKER_02",
+    "start": 739.16,
+    "end": 739.38,
+    "text": "You know ?"
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 740.899,
+    "end": 741.329,
+    "text": "Right ?"
+  },
+  {
+    "speaker": "SPEAKER_05",
+    "start": 741.329,
+    "end": 752.205,
+    "text": "I mean , a lot of the evaluations have been Four that you worked with ?"
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 756.784,
+    "end": 757.534,
+    "text": "That would be OK , too ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 757.694,
+    "end": 765.757,
+    "text": "I mean , I 'm i So , if they have a set that they worked with , and you you got Did you do similarly in performance between them and the other meetings , or was it ?"
+  },
+  {
+    "speaker": "SPEAKER_05",
+    "start": 775.259,
+    "end": 775.509,
+    "text": "Yeah ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 788.51,
+    "end": 789.6,
+    "text": "And overlap or not ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 789.6,
+    "end": 789.84,
+    "text": "Yeah ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 790.124,
+    "end": 795.786,
+    "text": "So maybe just with the the the Meeting Recorder set of the De - th that you did before ."
+  },
+  {
+    "speaker": "SPEAKER_05",
+    "start": 800.99,
+    "end": 801.19,
+    "text": "Yeah ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 801.19,
+    "end": 803.08,
+    "text": "So we want to do the same same thing ."
+  },
+  {
+    "speaker": "SPEAKER_02",
+    "start": 827.13,
+    "end": 827.35,
+    "text": "Yeah ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 829.96,
+    "end": 831.74,
+    "text": "Once we know which segmentations we 're using ."
+  },
+  {
+    "speaker": "SPEAKER_02",
+    "start": 831.92,
+    "end": 832.08,
+    "text": "Yeah ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 848.333,
+    "end": 853.663,
+    "text": "Um , I I agree that that would be an interesting thing to do , but I sort of regard it as secondary ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 853.793,
+    "end": 860.486,
+    "text": "So if there 's sort of machines sitting around and people sitting around and they 're waiting for other things to finish , then sure ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 860.486,
+    "end": 875.105,
+    "text": "But Uh , Chuck had been asking about that earlier as kind of a control to know , um Cuz , I mean , you could imagine a fantasy in which you said that Dave 's processing made the , uh , far microphone like the near microphone ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 875.105,
+    "end": 878.17,
+    "text": "In which case you shouldn't have to actually retrain ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 878.821,
+    "end": 880.391,
+    "text": "But it 's it 's not really true ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 880.391,
+    "end": 881.601,
+    "text": "It 's it 's sort of fantasy ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 881.601,
+    "end": 884.421,
+    "text": "It does it does muck up the data in in some funny ways ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 884.421,
+    "end": 887.485,
+    "text": "And so , I 'm I 'm kind of questioning that ."
+  },
+  {
+    "speaker": "SPEAKER_02",
+    "start": 887.485,
+    "end": 894.779,
+    "text": "But But Right ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 896.586,
+    "end": 900.72,
+    "text": "It involves retraining and it involves a Uh , that 's right ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 902.994,
+    "end": 909.27,
+    "text": "I mean the other thing which which it might come in to is if there was some problem in the retraining ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 910.789,
+    "end": 913.429,
+    "text": "I mean , maybe you 'd just have some mechanical thing we do wrong ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 915.06,
+    "end": 926.819,
+    "text": "Uh , that , uh since Dave 's experience was that it didn't help as much if you didn't retrain , but it does help some , that we would hopefully see that ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 927.425,
+    "end": 928.885,
+    "text": "So , that that 's that 's true ."
+  },
+  {
+    "speaker": "SPEAKER_05",
+    "start": 929.98,
+    "end": 968.372,
+    "text": "I i Right ."
+  },
+  {
+    "speaker": "SPEAKER_05",
+    "start": 969.177,
+    "end": 980.14,
+    "text": "So Yeah ."
+  },
+  {
+    "speaker": "SPEAKER_05",
+    "start": 998.843,
+    "end": 999.073,
+    "text": "Yeah ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 1000.78,
+    "end": 1004.0,
+    "text": "I mean , do you ha do you have to rely on his segmentations at all to do the top one ?"
+  },
+  {
+    "speaker": "SPEAKER_05",
+    "start": 1007.8,
+    "end": 1008.4,
+    "text": "Oh ."
+  },
+  {
+    "speaker": "SPEAKER_05",
+    "start": 1008.4,
+    "end": 1008.68,
+    "text": "OK ."
+  },
+  {
+    "speaker": "SPEAKER_05",
+    "start": 1010.46,
+    "end": 1010.74,
+    "text": "Got it ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 1048.94,
+    "end": 1050.35,
+    "text": "We we talked about this before ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 1050.46,
+    "end": 1065.33,
+    "text": "I think what we were saying was that , um , the very fact that in both cases we 're ignoring the overlap section means that , um , uh , we 're to some extent finessing that ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 1065.33,
+    "end": 1075.97,
+    "text": "So , um , I think , for the purposes of just determining whether a far - field microphone uh , what the effect of the far - field microphone is , we should do the same to both ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 1077.33,
+    "end": 1096.19,
+    "text": "I mean We want to i incorporate certain data that would not be available during final tests , uh , under a a full fair test of it , much as we are in the all the numbers that we have so far ."
+  },
+  {
+    "speaker": "SPEAKER_05",
+    "start": 1104.08,
+    "end": 1104.22,
+    "text": "Yeah ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 1104.59,
+    "end": 1108.92,
+    "text": "We we simply wanna determine what 's the difference in performance due to being distant versus close ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 1125.35,
+    "end": 1130.37,
+    "text": "I mean to a lesser extent you had that same magic the other way , too , because you have leakage into other microphones ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 1130.37,
+    "end": 1130.63,
+    "text": "Right ?"
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 1130.68,
+    "end": 1135.1,
+    "text": "But , it 's just you 're using the fact that this is where this person is ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 1135.1,
+    "end": 1135.33,
+    "text": "Right ?"
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 1135.33,
+    "end": 1135.59,
+    "text": "So ."
+  },
+  {
+    "speaker": "SPEAKER_05",
+    "start": 1138.4,
+    "end": 1139.45,
+    "text": "It 's just easier to do ."
+  },
+  {
+    "speaker": "SPEAKER_05",
+    "start": 1147.31,
+    "end": 1147.67,
+    "text": "Yeah ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 1152.42,
+    "end": 1155.82,
+    "text": "So , how do you determine what you use to group together to be a a ?"
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 1178.36,
+    "end": 1181.53,
+    "text": "The only other alternative would be to turn off speaker adaptation in both ."
+  },
+  {
+    "speaker": "SPEAKER_05",
+    "start": 1194.09,
+    "end": 1194.57,
+    "text": "Mm - hmm ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 1226.24,
+    "end": 1226.51,
+    "text": "OK ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 1227.64,
+    "end": 1227.78,
+    "text": "Yeah ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 1227.98,
+    "end": 1243.51,
+    "text": "An - and e so that will tell us what the difference it between the mikes , and then , uh , in order to The the other difference that we 'd have to take care of is that , uh yeah , we we don't have a mike that , uh , is particular to a person ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 1243.72,
+    "end": 1249.64,
+    "text": "And so we 'll have to do some clustering , and that 'll be another another , uh , issue , too ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 1252.21,
+    "end": 1271.92,
+    "text": "But , it it I could be wrong , but it seems to me that that the speaker the the level of degradation that you get from having the distant mike in a normal acoustic is much greater than what you get from , say , not applying speaker adaptation or applying speaker adaptation ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 1272.21,
+    "end": 1274.25,
+    "text": "I think that the I mean , we 'll see ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 1274.33,
+    "end": 1282.22,
+    "text": "But but , I think that the kind of gains that we 've seen from speaker adaptation on Hub - five sort of things are like a few percent ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 1282.27,
+    "end": 1282.62,
+    "text": "Right ?"
+  },
+  {
+    "speaker": "SPEAKER_05",
+    "start": 1282.77,
+    "end": 1302.99,
+    "text": "And Yeah ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 1312.91,
+    "end": 1314.57,
+    "text": "It doesn't make that much difference , I think ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 1314.57,
+    "end": 1316.82,
+    "text": "I would doubt that it would be a huge amount of difference for that ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 1317.8,
+    "end": 1321.03,
+    "text": "So , I mean , I I think that that difference would definitely be marginal ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 1321.71,
+    "end": 1325.42,
+    "text": "I think the main thing is to do something to do some cepstral mean subtraction on some level ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 1326.17,
+    "end": 1331.39,
+    "text": "And , uh , so what 's different about this processing is just that we 're doing it at a much longer time scale ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 1331.39,
+    "end": 1331.58,
+    "text": "Right ?"
+  },
+  {
+    "speaker": "SPEAKER_05",
+    "start": 1331.9,
+    "end": 1349.84,
+    "text": "But Um That 's right ."
+  },
+  {
+    "speaker": "SPEAKER_05",
+    "start": 1354.22,
+    "end": 1354.48,
+    "text": "Yeah ."
+  },
+  {
+    "speaker": "SPEAKER_03",
+    "start": 1355.96,
+    "end": 1356.17,
+    "text": "Yeah ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 1369.4,
+    "end": 1369.63,
+    "text": "Right ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 1372.87,
+    "end": 1373.66,
+    "text": "Um ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 1373.66,
+    "end": 1374.33,
+    "text": "Yeah , I guess ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 1375.71,
+    "end": 1386.07,
+    "text": "But , um , I also think that a again once we got into it , that , um , using some kind of clustering would probably work reasonably well there , too ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 1387.48,
+    "end": 1401.99,
+    "text": "Certainly for the the two microphone case , which we 're not gonna mess with because it 's another whole deal with the low - quality microphones , um , we ought to be able to at least tell that it appears that things are coming from a particular direction ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 1402.76,
+    "end": 1405.8,
+    "text": "So we ought to be able to use that information , um , as well ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 1406.86,
+    "end": 1420.9,
+    "text": "But , I think we might be able to do not too bad a job of separating out sp uh , segments that appear to come from a single speaker both in terms of s acoustic similarity and in terms of direction ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 1421.26,
+    "end": 1425.17,
+    "text": "So , I mean But that 's another research thing to do and probably won't get done the next week ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 1429.61,
+    "end": 1443.98,
+    "text": "Well , I mean , I 'm I 'm leaving for for the , uh , the New Orleans meeting , uh , next Saturday , and and , um , it 'd be kinda nice to have some results at least a day or two before that , so that I could figure out what I wanted to say about it ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 1448.3,
+    "end": 1448.53,
+    "text": "Yeah ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 1450.04,
+    "end": 1455.11,
+    "text": "Uh , not to mention that that , uh , Mari 's putting together this report next week , too , you know ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 1455.11,
+    "end": 1472.31,
+    "text": "So Uh , what we were hoping was that over the weekend we could do , uh , the , um , calculation on the training set and , uh uh , maybe , you know , we could by the end of the weekend , we could have the top one , and and then early next week , do these ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 1472.59,
+    "end": 1474.4,
+    "text": "If we had enough machines , maybe do them in parallel ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 1475.22,
+    "end": 1478.12,
+    "text": "So that by the middle of the week we had s had some kind of result ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 1478.12,
+    "end": 1480.73,
+    "text": "I mean , it 's it 's one of these Hail Mary kinds of things ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 1480.73,
+    "end": 1485.61,
+    "text": "I mean , it it , uh might might not work out ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 1485.98,
+    "end": 1488.25,
+    "text": "But , uh , f figured I may as well ask for it ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 1519.82,
+    "end": 1520.04,
+    "text": "Right ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 1547.83,
+    "end": 1548.99,
+    "text": "You have models of short males ?"
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 1767.42,
+    "end": 1769.67,
+    "text": "I think Markham 's out on vacation ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 1769.98,
+    "end": 1771.13,
+    "text": "I think , che check with Dave ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 1771.2,
+    "end": 1771.43,
+    "text": "Yeah ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 1779.57,
+    "end": 1780.72,
+    "text": "I thought they were like mushrooms ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 1781.75,
+    "end": 1782.38,
+    "text": "They 're popping up ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 1797.35,
+    "end": 1797.62,
+    "text": "Yeah ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 1797.97,
+    "end": 1803.17,
+    "text": "Cuz we still all have tha the that other one going , which is the , uh the Macrophone training ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 1862.6,
+    "end": 1864.48,
+    "text": "That was in the Hub - five small training set ?"
+  },
+  {
+    "speaker": "SPEAKER_05",
+    "start": 1870.18,
+    "end": 1870.44,
+    "text": "Yes ."
+  },
+  {
+    "speaker": "SPEAKER_05",
+    "start": 1902.2,
+    "end": 1902.55,
+    "text": "OK ."
+  },
+  {
+    "speaker": "SPEAKER_05",
+    "start": 1992.13,
+    "end": 1993.3,
+    "text": "I wonder about that , though ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 1993.67,
+    "end": 1999.97,
+    "text": "I mean , because all we 're doing The only reason we 're using the short training set is is for speed ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 2001.25,
+    "end": 2005.22,
+    "text": "And there we 're not really making any claims about using a smaller training set ."
+  },
+  {
+    "speaker": "SPEAKER_05",
+    "start": 2005.95,
+    "end": 2015.86,
+    "text": "So as long as we 're not using any testing data from Yeah ."
+  },
+  {
+    "speaker": "SPEAKER_05",
+    "start": 2022.42,
+    "end": 2024.12,
+    "text": "Oh , you mean for for his normalizations ."
+  },
+  {
+    "speaker": "SPEAKER_05",
+    "start": 2024.83,
+    "end": 2025.49,
+    "text": "Oh , oh , oh ."
+  },
+  {
+    "speaker": "SPEAKER_05",
+    "start": 2025.49,
+    "end": 2025.81,
+    "text": "I 'm sorry ."
+  },
+  {
+    "speaker": "SPEAKER_05",
+    "start": 2027.84,
+    "end": 2028.08,
+    "text": "Right ."
+  },
+  {
+    "speaker": "SPEAKER_00",
+    "start": 2030.35,
+    "end": 2030.57,
+    "text": "Yeah ."
+  },
+  {
+    "speaker": "SPEAKER_05",
+    "start": 2042.8,
+    "end": 2042.96,
+    "text": "Mm - hmm ."
+  },
+  {
+    "speaker": "SPEAKER_02",
+    "start": 2086.06,
+    "end": 2086.65,
+    "text": "Say this again ?"
+  },
+  {
+    "speaker": "SPEAKER_02",
+    "start": 2087.02,
+    "end": 2087.58,
+    "text": "Sorry I missed it ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 2104.74,
+    "end": 2107.29,
+    "text": "He throws out some speakers that are that are very small ."
+  },
+  {
+    "speaker": "SPEAKER_05",
+    "start": 2110.39,
+    "end": 2110.63,
+    "text": "Yeah ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 2110.63,
+    "end": 2113.77,
+    "text": "I think there was only a few we thought to be the case ."
+  },
+  {
+    "speaker": "SPEAKER_05",
+    "start": 2113.77,
+    "end": 2113.94,
+    "text": "Righ - ?"
+  },
+  {
+    "speaker": "SPEAKER_05",
+    "start": 2122.13,
+    "end": 2122.3,
+    "text": "Right ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 2202.11,
+    "end": 2202.17,
+    "text": "No ."
+  },
+  {
+    "speaker": "SPEAKER_03",
+    "start": 2202.17,
+    "end": 2235.54,
+    "text": "The training set he could go through right now , and see how how long the At that one ?"
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 2236.29,
+    "end": 2236.59,
+    "text": "Maybe ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 2237.53,
+    "end": 2240.98,
+    "text": "Uh Been looking at synthesizers ?"
+  },
+  {
+    "speaker": "SPEAKER_04",
+    "start": 2243.32,
+    "end": 2244.09,
+    "text": "You were looking at Festival ."
+  },
+  {
+    "speaker": "SPEAKER_04",
+    "start": 2244.09,
+    "end": 2244.29,
+    "text": "Yeah ."
+  },
+  {
+    "speaker": "SPEAKER_04",
+    "start": 2290.87,
+    "end": 2291.04,
+    "text": "Right ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 2291.94,
+    "end": 2298.12,
+    "text": "This was a business about , uh , um , coming up with something that that was purely prosodic ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 2298.36,
+    "end": 2309.21,
+    "text": "And so , uh , we 're just gonna use a pitch detector , drive a synthesizer , and since it doesn't have a hook in it for , uh , modifying energy , we 'll have a little box at the output that 'll modify the energy ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 2309.37,
+    "end": 2312.98,
+    "text": "So So ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 0.0,
+    "end": 2316.11,
+    "text": "Rrrrr - rrrrm - rr ."
+  },
+  {
+    "speaker": "SPEAKER_02",
+    "start": 2316.11,
+    "end": 2316.59,
+    "text": "Something like that ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 2347.16,
+    "end": 2347.38,
+    "text": "OK ?"
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 2348.41,
+    "end": 2348.79,
+    "text": "Digits ?"
+  },
+  {
+    "speaker": "Unknown",
+    "start": 0.0,
+    "end": 0.0,
+    "text": "Transcript L dash two eight seven ."
+  },
+  {
+    "speaker": "Unknown",
+    "start": 0.0,
+    "end": 0.0,
+    "text": "One eight three , eight eight eight , eight one five five ."
+  },
+  {
+    "speaker": "Unknown",
+    "start": 0.0,
+    "end": 0.0,
+    "text": "Two three , zero nine , three three , six one , zero nine ."
+  },
+  {
+    "speaker": "Unknown",
+    "start": 0.0,
+    "end": 0.0,
+    "text": "Three six , eight five , one zero , three four , five two ."
+  },
+  {
+    "speaker": "Unknown",
+    "start": 0.0,
+    "end": 0.0,
+    "text": "One one , four three , nine three , six seven , zero two ."
+  },
+  {
+    "speaker": "Unknown",
+    "start": 0.0,
+    "end": 0.0,
+    "text": "One five seven one , zero zero seven two , eight eight nine six ."
+  },
+  {
+    "speaker": "Unknown",
+    "start": 0.0,
+    "end": 0.0,
+    "text": "Two two four six , five , nine one three ."
+  },
+  {
+    "speaker": "Unknown",
+    "start": 0.0,
+    "end": 0.0,
+    "text": "Zero seven two one , four , five nine eight ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 0.0,
+    "end": 2594.55,
+    "text": "Six , four five four , one one , six three three , six ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 2594.55,
+    "end": 2595.35,
+    "text": "That 's all folks ."
+  },
+  {
+    "speaker": "Unknown",
+    "start": 0.0,
+    "end": 0.0,
+    "text": "Transcript L dash two eight zero ."
+  },
+  {
+    "speaker": "Unknown",
+    "start": 0.0,
+    "end": 0.0,
+    "text": "Five three zero , four six , four four three eight ."
+  },
+  {
+    "speaker": "Unknown",
+    "start": 0.0,
+    "end": 0.0,
+    "text": "Six three , eight four , nine eight , five zero , nine nine ."
+  },
+  {
+    "speaker": "Unknown",
+    "start": 0.0,
+    "end": 0.0,
+    "text": "Three nine seven zero , nine zero nine three , five nine seven five ."
+  },
+  {
+    "speaker": "Unknown",
+    "start": 0.0,
+    "end": 0.0,
+    "text": "Zero two one five , three one three three , eight one six six ."
+  },
+  {
+    "speaker": "Unknown",
+    "start": 0.0,
+    "end": 0.0,
+    "text": "Nine seven four , eight four seven , nine seven three ."
+  },
+  {
+    "speaker": "Unknown",
+    "start": 0.0,
+    "end": 0.0,
+    "text": "Two seven , four one , five nine , one two , six nine ."
+  },
+  {
+    "speaker": "Unknown",
+    "start": 0.0,
+    "end": 0.0,
+    "text": "Two four , two five , five seven , one nine , zero zero ."
+  },
+  {
+    "speaker": "Unknown",
+    "start": 0.0,
+    "end": 0.0,
+    "text": "Five one seven , three nine seven , zero six one eight ."
+  },
+  {
+    "speaker": "SPEAKER_02",
+    "start": 421.988,
+    "end": 422.238,
+    "text": "Yeah ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 742.695,
+    "end": 742.815,
+    "text": "Yeah ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 742.815,
+    "end": 743.125,
+    "text": "We did ."
+  },
+  {
+    "speaker": "SPEAKER_04",
+    "start": 751.94,
+    "end": 754.313,
+    "text": "I think it 's Is it the same set as the alignments ?"
+  },
+  {
+    "speaker": "SPEAKER_04",
+    "start": 754.313,
+    "end": 756.213,
+    "text": "I think it 's five Meeting Recorder meetings ."
+  },
+  {
+    "speaker": "SPEAKER_05",
+    "start": 1097.92,
+    "end": 1098.44,
+    "text": "Oops ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 1770.21,
+    "end": 1770.41,
+    "text": "Yeah ."
+  },
+  {
+    "speaker": "SPEAKER_04",
+    "start": 1774.59,
+    "end": 1774.78,
+    "text": "Nope ."
+  },
+  {
+    "speaker": "SPEAKER_04",
+    "start": 1775.25,
+    "end": 1776.92,
+    "text": "I was wondering if they were in ."
+  },
+  {
+    "speaker": "SPEAKER_02",
+    "start": 1785.76,
+    "end": 1785.92,
+    "text": "Yeah ."
+  },
+  {
+    "speaker": "SPEAKER_02",
+    "start": 1787.31,
+    "end": 1787.47,
+    "text": "Yeah ."
+  },
+  {
+    "speaker": "SPEAKER_02",
+    "start": 1787.75,
+    "end": 1788.97,
+    "text": "Something w went wrong ."
+  },
+  {
+    "speaker": "SPEAKER_02",
+    "start": 1791.65,
+    "end": 1792.17,
+    "text": "Nothing happened ."
+  },
+  {
+    "speaker": "SPEAKER_02",
+    "start": 1792.34,
+    "end": 1792.45,
+    "text": "No ?"
+  },
+  {
+    "speaker": "SPEAKER_02",
+    "start": 1792.64,
+    "end": 1792.76,
+    "text": "Yeah ."
+  },
+  {
+    "speaker": "SPEAKER_02",
+    "start": 2241.98,
+    "end": 2242.69,
+    "text": "Synthesizers ?"
+  },
+  {
+    "speaker": "SPEAKER_04",
+    "start": 2243.51,
+    "end": 2244.03,
+    "text": "Yeah , yeah ."
+  },
+  {
+    "speaker": "SPEAKER_04",
+    "start": 2244.03,
+    "end": 2246.51,
+    "text": "I was doing something for the SmartKom data collectioners ."
+  },
+  {
+    "speaker": "SPEAKER_04",
+    "start": 2247.31,
+    "end": 2251.52,
+    "text": "Robert has taken his laptop t back to Germany so we needed a new synthesis machine ."
+  },
+  {
+    "speaker": "SPEAKER_04",
+    "start": 2252.46,
+    "end": 2258.2,
+    "text": "And we have now a SUN workstation in the library , which does the synthesis and the Festival speech s s system is running on it ."
+  },
+  {
+    "speaker": "SPEAKER_04",
+    "start": 2259.98,
+    "end": 2264.19,
+    "text": "His laptop where , uh which we used for the SmartKom data collection , for the synthesis ."
+  },
+  {
+    "speaker": "SPEAKER_04",
+    "start": 2264.98,
+    "end": 2269.44,
+    "text": "And so he took it to Germany and so we couldn't do any data collection ."
+  },
+  {
+    "speaker": "SPEAKER_04",
+    "start": 2269.44,
+    "end": 2270.59,
+    "text": "Uh No ."
+  },
+  {
+    "speaker": "SPEAKER_04",
+    "start": 2270.78,
+    "end": 2273.2,
+    "text": "He 's just gone to a SmartKom workshop ."
+  },
+  {
+    "speaker": "SPEAKER_04",
+    "start": 2274.03,
+    "end": 2277.63,
+    "text": "And so , we have now the SUN in the library which can do that ."
+  },
+  {
+    "speaker": "SPEAKER_04",
+    "start": 2278.85,
+    "end": 2291.58,
+    "text": "And I looked into the ts F - zero thing and talked to to Liz , and it seems that it 's quite s what she wants , but we 'll have to think about the the energy thing uh , what we wanna do ."
+  },
+  {
+    "speaker": "SPEAKER_04",
+    "start": 2322.03,
+    "end": 2323.05,
+    "text": "For w for Festival ?"
+  },
+  {
+    "speaker": "SPEAKER_04",
+    "start": 2324.26,
+    "end": 2326.86,
+    "text": "Uh , you can just use it from the Yeah ."
+  },
+  {
+    "speaker": "SPEAKER_04",
+    "start": 2327.19,
+    "end": 2339.62,
+    "text": "Basically from the command line , and the defining the phones , whatever you want to have synthesized , and give the F - zero targets , and then ts get gives out a a waveform , and I I want to manipulate the the waveform , then ."
+  },
+  {
+    "speaker": "Unknown",
+    "start": 0.0,
+    "end": 0.0,
+    "text": "Transcript L dash two O eight ."
+  },
+  {
+    "speaker": "Unknown",
+    "start": 0.0,
+    "end": 0.0,
+    "text": "Two nine two , two six , nine six three four ."
+  },
+  {
+    "speaker": "Unknown",
+    "start": 0.0,
+    "end": 0.0,
+    "text": "Six , nine one seven , two nine , seven seven eight , two ."
+  },
+  {
+    "speaker": "Unknown",
+    "start": 0.0,
+    "end": 0.0,
+    "text": "Two eight three , four nine one , two seven seven ."
+  },
+  {
+    "speaker": "Unknown",
+    "start": 0.0,
+    "end": 0.0,
+    "text": "Four nine zero , eight six nine , six four three two ."
+  },
+  {
+    "speaker": "Unknown",
+    "start": 0.0,
+    "end": 0.0,
+    "text": "Nine six six , seven zero , four nine four O ."
+  },
+  {
+    "speaker": "Unknown",
+    "start": 0.0,
+    "end": 0.0,
+    "text": "Six three eight seven , two eight two six , nine zero five nine ."
+  },
+  {
+    "speaker": "Unknown",
+    "start": 0.0,
+    "end": 0.0,
+    "text": "One seven seven , five eight six , eight one four ."
+  },
+  {
+    "speaker": "Unknown",
+    "start": 0.0,
+    "end": 0.0,
+    "text": "Five six six , six five , six eight O nine ."
+  },
+  {
+    "speaker": "SPEAKER_05",
+    "start": 13.767,
+    "end": 33.532,
+    "text": "Recognition results for Well , we I just started recognition on the on Thilo 's segments , which was but using the far far the close - talking microphone ."
+  },
+  {
+    "speaker": "SPEAKER_05",
+    "start": 35.255,
+    "end": 38.075,
+    "text": "And you wanted I know you wanted the far - field data ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 45.597,
+    "end": 45.927,
+    "text": "Uh - huh ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 59.32,
+    "end": 59.65,
+    "text": "Mm - hmm ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 80.19,
+    "end": 80.87,
+    "text": "To retrain ?"
+  },
+  {
+    "speaker": "SPEAKER_05",
+    "start": 83.22,
+    "end": 87.96,
+    "text": "Uh Yeah ."
+  },
+  {
+    "speaker": "SPEAKER_05",
+    "start": 88.899,
+    "end": 89.529,
+    "text": "Um ."
+  },
+  {
+    "speaker": "SPEAKER_05",
+    "start": 90.526,
+    "end": 91.296,
+    "text": "That 's about right ."
+  },
+  {
+    "speaker": "SPEAKER_05",
+    "start": 92.32,
+    "end": 97.789,
+    "text": "Actually , it should probably be It depends on who else is using machines , but we have more machines now ."
+  },
+  {
+    "speaker": "SPEAKER_05",
+    "start": 97.979,
+    "end": 98.039,
+    "text": "So ."
+  },
+  {
+    "speaker": "SPEAKER_05",
+    "start": 99.044,
+    "end": 100.154,
+    "text": "It 's more like a day , probably ."
+  },
+  {
+    "speaker": "SPEAKER_05",
+    "start": 107.494,
+    "end": 114.788,
+    "text": "Mmm , it 's like Something like three three percent three or four percent absolute ."
+  },
+  {
+    "speaker": "SPEAKER_05",
+    "start": 125.97,
+    "end": 127.64,
+    "text": "Um , not for meetings ."
+  },
+  {
+    "speaker": "SPEAKER_05",
+    "start": 128.515,
+    "end": 137.95,
+    "text": "Because we didn't train we didn't re ever recognize with the with the small models on meeting data ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 139.802,
+    "end": 160.624,
+    "text": "But I I have the models , so I could run reco On I mean , the the mmm The recognition also takes non - negligible amount of time ."
+  },
+  {
+    "speaker": "SPEAKER_05",
+    "start": 160.694,
+    "end": 168.073,
+    "text": "So we might wanna restrict it to , maybe , a few meetings , if you want to do a full comparison ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 169.229,
+    "end": 169.469,
+    "text": "Uh ."
+  },
+  {
+    "speaker": "SPEAKER_03",
+    "start": 185.136,
+    "end": 186.146,
+    "text": "Hmm ."
+  },
+  {
+    "speaker": "SPEAKER_05",
+    "start": 189.353,
+    "end": 191.653,
+    "text": "Well , do we have the do we have the processed data ?"
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 191.653,
+    "end": 194.686,
+    "text": "That that 's also Right ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 200.217,
+    "end": 200.987,
+    "text": "Mmm ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 203.707,
+    "end": 204.117,
+    "text": "I see ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 0.0,
+    "end": 226.196,
+    "text": "Hmm ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 226.196,
+    "end": 226.516,
+    "text": "Right ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 239.956,
+    "end": 240.276,
+    "text": "Mm - hmm ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 242.641,
+    "end": 243.011,
+    "text": "Right ."
+  },
+  {
+    "speaker": "SPEAKER_05",
+    "start": 259.9,
+    "end": 266.93,
+    "text": "Actually , I did retrain I recently retrained , um , for another reason , on the full training set ."
+  },
+  {
+    "speaker": "SPEAKER_05",
+    "start": 268.515,
+    "end": 273.165,
+    "text": "And that took only I think it took only two days ."
+  },
+  {
+    "speaker": "SPEAKER_05",
+    "start": 274.52,
+    "end": 279.227,
+    "text": "So , it 's actually conceivable to do use the full training set ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 285.18,
+    "end": 285.67,
+    "text": "Oh , I see ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 291.96,
+    "end": 292.97,
+    "text": "Hmm ."
+  },
+  {
+    "speaker": "SPEAKER_05",
+    "start": 297.445,
+    "end": 298.265,
+    "text": "Uh ."
+  },
+  {
+    "speaker": "Unknown",
+    "start": 0.0,
+    "end": 0.0,
+    "text": "Whew ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 0.0,
+    "end": 304.222,
+    "text": "Hhh ."
+  },
+  {
+    "speaker": "SPEAKER_05",
+    "start": 304.222,
+    "end": 312.827,
+    "text": "I don't know , something something like something between thirty and fifty hours , maybe ."
+  },
+  {
+    "speaker": "SPEAKER_05",
+    "start": 312.827,
+    "end": 315.429,
+    "text": "I f I forget the exac Right ."
+  },
+  {
+    "speaker": "SPEAKER_05",
+    "start": 320.106,
+    "end": 320.796,
+    "text": "Uh ."
+  },
+  {
+    "speaker": "SPEAKER_05",
+    "start": 320.796,
+    "end": 321.866,
+    "text": "Actually , I don't know ."
+  },
+  {
+    "speaker": "SPEAKER_05",
+    "start": 321.926,
+    "end": 323.81,
+    "text": "I 'd I I can look it up ."
+  },
+  {
+    "speaker": "SPEAKER_05",
+    "start": 323.9,
+    "end": 327.72,
+    "text": "It 's it 's it 's just , uh , I don't know the remember the the number ."
+  },
+  {
+    "speaker": "SPEAKER_05",
+    "start": 331.939,
+    "end": 334.959,
+    "text": "Well , the males account for most of this meeting data anyhow ."
+  },
+  {
+    "speaker": "SPEAKER_05",
+    "start": 335.069,
+    "end": 337.23,
+    "text": "So Yeah ."
+  },
+  {
+    "speaker": "SPEAKER_05",
+    "start": 337.28,
+    "end": 338.71,
+    "text": "I would say we you do only males ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 350.413,
+    "end": 350.813,
+    "text": "Mm - hmm ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 360.921,
+    "end": 374.466,
+    "text": "u Hmm ."
+  },
+  {
+    "speaker": "SPEAKER_05",
+    "start": 374.466,
+    "end": 374.636,
+    "text": "No ."
+  },
+  {
+    "speaker": "SPEAKER_05",
+    "start": 374.636,
+    "end": 377.506,
+    "text": "It 's definitely It 's less than a hundred hours , for sure ."
+  },
+  {
+    "speaker": "SPEAKER_05",
+    "start": 377.506,
+    "end": 387.072,
+    "text": "It 's It 's probably actually , uh It 's uh , I think it 's around thirty hours just for for one gender ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 387.072,
+    "end": 387.352,
+    "text": "Yeah ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 402.591,
+    "end": 403.211,
+    "text": "Mm - hmm ."
+  },
+  {
+    "speaker": "SPEAKER_05",
+    "start": 410.891,
+    "end": 411.171,
+    "text": "No ."
+  },
+  {
+    "speaker": "SPEAKER_05",
+    "start": 411.171,
+    "end": 415.713,
+    "text": "I didn't do that , because we haven't even cut the waveforms for that ."
+  },
+  {
+    "speaker": "SPEAKER_02",
+    "start": 415.833,
+    "end": 417.409,
+    "text": "So Right ."
+  },
+  {
+    "speaker": "SPEAKER_02",
+    "start": 417.629,
+    "end": 417.919,
+    "text": "So ."
+  },
+  {
+    "speaker": "SPEAKER_05",
+    "start": 423.974,
+    "end": 429.864,
+    "text": "And there 's a bit of a question whether you want to use um , what segmentations you want to use ."
+  },
+  {
+    "speaker": "SPEAKER_05",
+    "start": 430.214,
+    "end": 434.576,
+    "text": "Uh Uh , David just Um , I 'm sorry ."
+  },
+  {
+    "speaker": "SPEAKER_05",
+    "start": 435.004,
+    "end": 443.681,
+    "text": "Don just , uh , created a new version of the first meetings that we had previously recognized , but with different segmentation ."
+  },
+  {
+    "speaker": "SPEAKER_05",
+    "start": 443.681,
+    "end": 458.902,
+    "text": "And so Um It would be nice I mean , if the results are comparable to what we had before to use those segmentations , because th then we could claim that everything 's automatic ."
+  },
+  {
+    "speaker": "SPEAKER_02",
+    "start": 461.29,
+    "end": 461.51,
+    "text": "Right ."
+  },
+  {
+    "speaker": "SPEAKER_05",
+    "start": 464.713,
+    "end": 478.689,
+    "text": "Well , I 'm as I said , I just started the recognizer , um It will uh , it will probably be a couple hours before before I have some results ."
+  },
+  {
+    "speaker": "SPEAKER_02",
+    "start": 478.689,
+    "end": 492.316,
+    "text": "So But the segmentations matter for the filtering ."
+  },
+  {
+    "speaker": "SPEAKER_05",
+    "start": 492.316,
+    "end": 492.586,
+    "text": "Right ?"
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 492.586,
+    "end": 494.857,
+    "text": "Because For the test set ."
+  },
+  {
+    "speaker": "SPEAKER_05",
+    "start": 494.857,
+    "end": 495.217,
+    "text": "Yeah ."
+  },
+  {
+    "speaker": "SPEAKER_05",
+    "start": 495.217,
+    "end": 502.108,
+    "text": "So , need to be But , first first , of course , you would wanna process the training data , because we wanna get that started ."
+  },
+  {
+    "speaker": "SPEAKER_05",
+    "start": 502.168,
+    "end": 502.478,
+    "text": "Yeah ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 512.444,
+    "end": 512.934,
+    "text": "Mm - hmm ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 515.632,
+    "end": 516.172,
+    "text": "Mm - hmm ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 518.131,
+    "end": 518.421,
+    "text": "Right ."
+  },
+  {
+    "speaker": "SPEAKER_02",
+    "start": 579.031,
+    "end": 579.361,
+    "text": "Mm - hmm ."
+  },
+  {
+    "speaker": "SPEAKER_05",
+    "start": 581.563,
+    "end": 585.762,
+    "text": "Ma - maybe you should limit ourselves to the Meeting Recorder meetings ?"
+  },
+  {
+    "speaker": "SPEAKER_05",
+    "start": 587.854,
+    "end": 592.004,
+    "text": "Um , if you were gonna cut down on the test set , I would suggest that ."
+  },
+  {
+    "speaker": "SPEAKER_05",
+    "start": 594.372,
+    "end": 598.882,
+    "text": "Actually , the longer the Robustness meetings take longer , because there 's this one speaker who talks a lot ."
+  },
+  {
+    "speaker": "SPEAKER_05",
+    "start": 599.55,
+    "end": 601.769,
+    "text": "And so the Um ."
+  },
+  {
+    "speaker": "SPEAKER_05",
+    "start": 601.859,
+    "end": 601.989,
+    "text": "No ."
+  },
+  {
+    "speaker": "SPEAKER_05",
+    "start": 601.989,
+    "end": 611.762,
+    "text": "It 's because for all the for the adaptation and normalization steps , you cannot you have to d you have to , uh , um , you cannot chop it up into small pieces ."
+  },
+  {
+    "speaker": "SPEAKER_05",
+    "start": 611.942,
+    "end": 618.283,
+    "text": "So , you 're sort of limited by how long the longest speaker , uh , is s speaking ."
+  },
+  {
+    "speaker": "SPEAKER_05",
+    "start": 619.05,
+    "end": 622.05,
+    "text": "So how much data there is from the the speaker who talks the most ."
+  },
+  {
+    "speaker": "SPEAKER_05",
+    "start": 623.64,
+    "end": 637.148,
+    "text": "So , um , you parallelize across different speakers , but you know , if you have a bunch of speakers who speak very little and then one wh who who speaks a lot , then effectively , everybody waits for the longest one to process ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 637.338,
+    "end": 637.608,
+    "text": "So ."
+  },
+  {
+    "speaker": "SPEAKER_05",
+    "start": 642.081,
+    "end": 649.237,
+    "text": "That was both types of meetings , but most but there were only two Robustness meetings , and four or five , uh , Meeting Recorders ."
+  },
+  {
+    "speaker": "SPEAKER_02",
+    "start": 651.25,
+    "end": 651.64,
+    "text": "Right ."
+  },
+  {
+    "speaker": "Unknown",
+    "start": 661.717,
+    "end": 661.837,
+    "text": "Oh ."
+  },
+  {
+    "speaker": "SPEAKER_05",
+    "start": 664.259,
+    "end": 671.27,
+    "text": "Uh , I I I don't have I don't have a good gue For everything ?"
+  },
+  {
+    "speaker": "SPEAKER_05",
+    "start": 671.27,
+    "end": 671.95,
+    "text": "For all the meetings ?"
+  },
+  {
+    "speaker": "SPEAKER_05",
+    "start": 673.35,
+    "end": 673.85,
+    "text": "Uh ."
+  },
+  {
+    "speaker": "SPEAKER_05",
+    "start": 678.584,
+    "end": 679.544,
+    "text": "Um ."
+  },
+  {
+    "speaker": "SPEAKER_05",
+    "start": 682.125,
+    "end": 684.825,
+    "text": "It 's probably more than a day , but probably less than two ."
+  },
+  {
+    "speaker": "SPEAKER_05",
+    "start": 687.52,
+    "end": 688.19,
+    "text": "Well , i No ."
+  },
+  {
+    "speaker": "SPEAKER_05",
+    "start": 688.19,
+    "end": 689.16,
+    "text": "I mean for all the meetings ."
+  },
+  {
+    "speaker": "SPEAKER_05",
+    "start": 690.545,
+    "end": 712.61,
+    "text": "Because it 's Again , it 's , um So each meeting each meetings takes , uh , something like Again , we we I ran when we ran these , we were sort of short on machines , and , um , I don't know , I I would estimate maybe four hours per meeting ."
+  },
+  {
+    "speaker": "SPEAKER_05",
+    "start": 713.69,
+    "end": 714.47,
+    "text": "Something like that ."
+  },
+  {
+    "speaker": "SPEAKER_03",
+    "start": 716.128,
+    "end": 716.438,
+    "text": "Right ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 723.006,
+    "end": 723.206,
+    "text": "Right ."
+  },
+  {
+    "speaker": "SPEAKER_05",
+    "start": 726.045,
+    "end": 726.305,
+    "text": "Right ."
+  },
+  {
+    "speaker": "SPEAKER_05",
+    "start": 726.305,
+    "end": 729.225,
+    "text": "So that 's why I 'm saying I 'm not sure how they would scale with more machines ."
+  },
+  {
+    "speaker": "SPEAKER_00",
+    "start": 735.47,
+    "end": 735.69,
+    "text": "Right ."
+  },
+  {
+    "speaker": "SPEAKER_05",
+    "start": 743.735,
+    "end": 750.636,
+    "text": "We have MR two , th We have two , three , four , fi I think there are four Meeting Recorder meetings that we worked with ."
+  },
+  {
+    "speaker": "SPEAKER_04",
+    "start": 753.67,
+    "end": 754.02,
+    "text": "Yeah ."
+  },
+  {
+    "speaker": "SPEAKER_04",
+    "start": 755.33,
+    "end": 755.64,
+    "text": "Five ?"
+  },
+  {
+    "speaker": "SPEAKER_04",
+    "start": 756.228,
+    "end": 756.628,
+    "text": "OK ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 0.0,
+    "end": 769.887,
+    "text": "@ @ Uh , with the Robust - compared to Robustness ?"
+  },
+  {
+    "speaker": "SPEAKER_05",
+    "start": 770.649,
+    "end": 770.989,
+    "text": "Yeah ."
+  },
+  {
+    "speaker": "SPEAKER_05",
+    "start": 771.769,
+    "end": 776.113,
+    "text": "The big variation is by whether it 's a native speaker or not ."
+  },
+  {
+    "speaker": "SPEAKER_05",
+    "start": 776.444,
+    "end": 788.59,
+    "text": "And whether it 's , um Uh , I think that 's the o actually and and of course what , um , you know , whether it 's lapel or , uh , headset microphone ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 789.547,
+    "end": 789.877,
+    "text": "Yeah ."
+  },
+  {
+    "speaker": "SPEAKER_05",
+    "start": 794.018,
+    "end": 802.275,
+    "text": "And we can exclude we don't need to recognize the non - natives , because we know that I mean , in fact , we excluded them previously from Right ."
+  },
+  {
+    "speaker": "SPEAKER_02",
+    "start": 820.34,
+    "end": 820.74,
+    "text": "Mm - hmm ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 875.106,
+    "end": 875.506,
+    "text": "Mm - hmm ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 882.362,
+    "end": 882.782,
+    "text": "Mm - hmm ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 929.906,
+    "end": 930.256,
+    "text": "Wait , did ?"
+  },
+  {
+    "speaker": "SPEAKER_05",
+    "start": 930.95,
+    "end": 942.548,
+    "text": "So when you used original the original models , and you just process the test set in this way , d do you get any do you get decent performance or not ?"
+  },
+  {
+    "speaker": "SPEAKER_03",
+    "start": 947.113,
+    "end": 947.653,
+    "text": "Mm - hmm ."
+  },
+  {
+    "speaker": "SPEAKER_03",
+    "start": 952.079,
+    "end": 952.429,
+    "text": "Mmm ."
+  },
+  {
+    "speaker": "SPEAKER_03",
+    "start": 953.277,
+    "end": 953.517,
+    "text": "Right ."
+  },
+  {
+    "speaker": "SPEAKER_05",
+    "start": 954.69,
+    "end": 955.02,
+    "text": "Right ."
+  },
+  {
+    "speaker": "SPEAKER_05",
+    "start": 956.527,
+    "end": 956.877,
+    "text": "OK ."
+  },
+  {
+    "speaker": "Unknown",
+    "start": 960.102,
+    "end": 960.932,
+    "text": "Mm - hmm ."
+  },
+  {
+    "speaker": "SPEAKER_05",
+    "start": 970.06,
+    "end": 970.28,
+    "text": "OK ."
+  },
+  {
+    "speaker": "SPEAKER_05",
+    "start": 970.28,
+    "end": 977.468,
+    "text": "Well , I 'll I can get started on the well , the first the one that already has a cross there ."
+  },
+  {
+    "speaker": "SPEAKER_05",
+    "start": 977.638,
+    "end": 979.188,
+    "text": "We need to re - do that with small models ."
+  },
+  {
+    "speaker": "SPEAKER_05",
+    "start": 979.776,
+    "end": 980.186,
+    "text": "Right ."
+  },
+  {
+    "speaker": "SPEAKER_05",
+    "start": 980.966,
+    "end": 993.012,
+    "text": "And then , have to ask , um , I guess , Don to , uh , cut the , um , cut the segments for the sh for the tis distant mike ."
+  },
+  {
+    "speaker": "SPEAKER_05",
+    "start": 993.152,
+    "end": 998.58,
+    "text": "Uh , uh that 's So we would be using the same channel for each fo for everything ?"
+  },
+  {
+    "speaker": "SPEAKER_05",
+    "start": 999.397,
+    "end": 999.707,
+    "text": "OK ."
+  },
+  {
+    "speaker": "SPEAKER_05",
+    "start": 1000.45,
+    "end": 1000.96,
+    "text": "So ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 1003.64,
+    "end": 1003.91,
+    "text": "No , no ."
+  },
+  {
+    "speaker": "SPEAKER_05",
+    "start": 1003.91,
+    "end": 1010.16,
+    "text": "We would use the same segmentations , but he needs to extract extract the wavef form segments from a different channel ."
+  },
+  {
+    "speaker": "SPEAKER_02",
+    "start": 1011.28,
+    "end": 1011.52,
+    "text": "Right ."
+  },
+  {
+    "speaker": "SPEAKER_02",
+    "start": 1014.88,
+    "end": 1015.43,
+    "text": "Mm - hmm ."
+  },
+  {
+    "speaker": "SPEAKER_05",
+    "start": 1018.76,
+    "end": 1021.07,
+    "text": "Um Yeah ."
+  },
+  {
+    "speaker": "SPEAKER_05",
+    "start": 1021.61,
+    "end": 1031.87,
+    "text": "If assuming that the performance turns out to be comparable with with the old experiments and the old segmentations ."
+  },
+  {
+    "speaker": "SPEAKER_05",
+    "start": 1032.32,
+    "end": 1036.82,
+    "text": "Now there 's the issue of Oh , OK ."
+  },
+  {
+    "speaker": "SPEAKER_05",
+    "start": 1036.82,
+    "end": 1038.67,
+    "text": "So there 's the issue of speaker normalization ."
+  },
+  {
+    "speaker": "SPEAKER_05",
+    "start": 1038.67,
+    "end": 1044.12,
+    "text": "So , with the distant microphone you wouldn't know which speaker is talking ."
+  },
+  {
+    "speaker": "SPEAKER_05",
+    "start": 1046.09,
+    "end": 1046.42,
+    "text": "Right ?"
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 1075.23,
+    "end": 1075.78,
+    "text": "Mm - hmm ."
+  },
+  {
+    "speaker": "SPEAKER_05",
+    "start": 1077.25,
+    "end": 1077.54,
+    "text": "I see ."
+  },
+  {
+    "speaker": "SPEAKER_05",
+    "start": 1077.53,
+    "end": 1078.66,
+    "text": "So you want to cheat ?"
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 1093.81,
+    "end": 1094.18,
+    "text": "OK ."
+  },
+  {
+    "speaker": "SPEAKER_05",
+    "start": 1094.18,
+    "end": 1104.94,
+    "text": "So we assume we assume knowledge of the speakers as as , um in a way that 's compatible with the close - talking test set ."
+  },
+  {
+    "speaker": "SPEAKER_05",
+    "start": 1104.94,
+    "end": 1105.42,
+    "text": "OK ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 1108.5,
+    "end": 1108.96,
+    "text": "Oh , OK ."
+  },
+  {
+    "speaker": "SPEAKER_02",
+    "start": 1113.36,
+    "end": 1113.76,
+    "text": "No ."
+  },
+  {
+    "speaker": "SPEAKER_03",
+    "start": 1113.76,
+    "end": 1114.81,
+    "text": "It means No ."
+  },
+  {
+    "speaker": "SPEAKER_05",
+    "start": 1114.81,
+    "end": 1132.78,
+    "text": "It just means you you group together the segments that by magic you know belong to one speaker , and and treat Right ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 1134.75,
+    "end": 1135.06,
+    "text": "Right ."
+  },
+  {
+    "speaker": "SPEAKER_05",
+    "start": 1135.84,
+    "end": 1141.86,
+    "text": "But , um Well , in the new test , actually , that 's not true ."
+  },
+  {
+    "speaker": "SPEAKER_05",
+    "start": 1141.96,
+    "end": 1153.09,
+    "text": "So Again , if this if these new segmentations work OK , then we then it 's a fair it 's a completely fair test ."
+  },
+  {
+    "speaker": "SPEAKER_05",
+    "start": 1156.83,
+    "end": 1166.82,
+    "text": "You group together all the data coming in through one channel and where Thilo 's speech detector has has determined that there is speech ."
+  },
+  {
+    "speaker": "SPEAKER_05",
+    "start": 1167.24,
+    "end": 1170.97,
+    "text": "And that speech is is deemed to come from that speaker , whether that 's true or not ."
+  },
+  {
+    "speaker": "SPEAKER_05",
+    "start": 1172.11,
+    "end": 1178.25,
+    "text": "So if you get some cross - talk from another microphone , then you just process this it as if it were from that speaker ."
+  },
+  {
+    "speaker": "SPEAKER_05",
+    "start": 1182.56,
+    "end": 1183.65,
+    "text": "Well , that 's more of a problem ."
+  },
+  {
+    "speaker": "SPEAKER_05",
+    "start": 1184.37,
+    "end": 1210.66,
+    "text": "I mean , because it 's You can just pretend it 's some kind of gene I mean you can pretend it 's all from one speaker and do all this processing the same , but then you 're gonna get results that are worse on account of not doing proper speaker normalization and you 're gonna have So , you could certainly do better than that by doing , for instance uh , cluster the segments , which is what we do , say , in a Broadcast News system , where you don't have speaker labels ."
+  },
+  {
+    "speaker": "SPEAKER_05",
+    "start": 1211.64,
+    "end": 1218.88,
+    "text": "But that would be another processing step that I 'm I would have to debug first , and so forth , and so we wanna avoid that ."
+  },
+  {
+    "speaker": "SPEAKER_05",
+    "start": 1218.88,
+    "end": 1219.59,
+    "text": "So I agree with you ."
+  },
+  {
+    "speaker": "SPEAKER_05",
+    "start": 1219.59,
+    "end": 1224.42,
+    "text": "We should we should , uh , do the you know , this sort of cheating experiment ."
+  },
+  {
+    "speaker": "SPEAKER_05",
+    "start": 1250.12,
+    "end": 1250.58,
+    "text": "Mm - hmm ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 0.0,
+    "end": 1264.27,
+    "text": "Hmm ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 1264.27,
+    "end": 1284.91,
+    "text": "It 's not just speaker adaptation ."
+  },
+  {
+    "speaker": "SPEAKER_05",
+    "start": 1284.91,
+    "end": 1287.8,
+    "text": "It 's the whole norm feature normalization process ."
+  },
+  {
+    "speaker": "SPEAKER_05",
+    "start": 1288.0,
+    "end": 1290.04,
+    "text": "I it 's spea uh , all that is speaker - based ."
+  },
+  {
+    "speaker": "SPEAKER_05",
+    "start": 1291.41,
+    "end": 1302.16,
+    "text": "You know , so we So , in that I 'm , um Y you know , d d b the most important , of course , is the cepstral mean subtraction ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 1303.02,
+    "end": 1336.96,
+    "text": "And that I don't know if we we never really I don't remember , because it 's so far s so long ago that we didn't do that on a per speaker basis , but Mmm ."
+  },
+  {
+    "speaker": "SPEAKER_05",
+    "start": 1336.96,
+    "end": 1355.25,
+    "text": "A and by the way , it 's actually we 're we 're already If we use the same segmentations that we use for the close - talking microphone , then the segmentations assume that we have access to all channels and cross correlate them , so there 's no point in not using that knowledge for speaker identification ."
+  },
+  {
+    "speaker": "SPEAKER_03",
+    "start": 1365.46,
+    "end": 1365.77,
+    "text": "Yeah ."
+  },
+  {
+    "speaker": "SPEAKER_05",
+    "start": 1368.37,
+    "end": 1368.61,
+    "text": "Right ."
+  },
+  {
+    "speaker": "SPEAKER_05",
+    "start": 1370.43,
+    "end": 1370.81,
+    "text": "OK ."
+  },
+  {
+    "speaker": "SPEAKER_05",
+    "start": 1426.59,
+    "end": 1426.79,
+    "text": "Right ."
+  },
+  {
+    "speaker": "SPEAKER_05",
+    "start": 1426.79,
+    "end": 1428.41,
+    "text": "So what what is the schedule here ?"
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 1435.57,
+    "end": 1435.93,
+    "text": "Mm - hmm ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 1441.08,
+    "end": 1441.74,
+    "text": "Mm - hmm ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 1443.35,
+    "end": 1444.8,
+    "text": "Oh , we 'll call you when you get there ."
+  },
+  {
+    "speaker": "Unknown",
+    "start": 0.0,
+    "end": 0.0,
+    "text": "Mmm ."
+  },
+  {
+    "speaker": "Unknown",
+    "start": 0.0,
+    "end": 0.0,
+    "text": "Mmm ."
+  },
+  {
+    "speaker": "Unknown",
+    "start": 0.0,
+    "end": 0.0,
+    "text": "Mmm ."
+  },
+  {
+    "speaker": "Unknown",
+    "start": 0.0,
+    "end": 0.0,
+    "text": "Mm - hmm ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 0.0,
+    "end": 1454.19,
+    "text": "Mmm ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 1454.19,
+    "end": 1454.67,
+    "text": "OK ."
+  },
+  {
+    "speaker": "SPEAKER_05",
+    "start": 1490.22,
+    "end": 1503.1,
+    "text": "I 'll ask The other thing is , um and I 'll ask Don which is easier to process in terms of creating these the the test data for the far far microphone ."
+  },
+  {
+    "speaker": "SPEAKER_05",
+    "start": 1503.58,
+    "end": 1517.14,
+    "text": "If if it turns out that for some reason it 's easier for him to use the old um , the the the old , uh , segmentations , then we 'll just use that , I figure ."
+  },
+  {
+    "speaker": "SPEAKER_02",
+    "start": 1520.27,
+    "end": 1538.37,
+    "text": "Um Mm - hmm ."
+  },
+  {
+    "speaker": "SPEAKER_02",
+    "start": 1541.34,
+    "end": 1545.93,
+    "text": "Um Right ."
+  },
+  {
+    "speaker": "SPEAKER_05",
+    "start": 1552.31,
+    "end": 1552.83,
+    "text": "Yeah ."
+  },
+  {
+    "speaker": "SPEAKER_05",
+    "start": 1553.99,
+    "end": 1556.83,
+    "text": "Um Right ."
+  },
+  {
+    "speaker": "SPEAKER_05",
+    "start": 1556.83,
+    "end": 1557.63,
+    "text": "Uh , let 's see ."
+  },
+  {
+    "speaker": "SPEAKER_05",
+    "start": 1557.63,
+    "end": 1576.95,
+    "text": "The the You you can I mean you could you could run the , um , you c Basically , once the , um , whe the top the top one 's done , you could easily re - run the whole set of experiments ."
+  },
+  {
+    "speaker": "SPEAKER_02",
+    "start": 1577.73,
+    "end": 1589.9,
+    "text": "Uh , I mean , manage the jobs and so forth , uh Um , that 's all Mm - hmm ."
+  },
+  {
+    "speaker": "SPEAKER_02",
+    "start": 1592.03,
+    "end": 1592.35,
+    "text": "Yeah ."
+  },
+  {
+    "speaker": "SPEAKER_02",
+    "start": 1593.5,
+    "end": 1593.81,
+    "text": "Right ."
+  },
+  {
+    "speaker": "SPEAKER_05",
+    "start": 1597.92,
+    "end": 1598.22,
+    "text": "Right ."
+  },
+  {
+    "speaker": "SPEAKER_05",
+    "start": 1598.63,
+    "end": 1625.55,
+    "text": "So , somehow the Assuming he uses the new naming scheme , then he should call the waveforms the so , the waveform names have the , you know , meeting meeting ID , and the microphone , and the , um I guess , the channel and the microphone and the speaker , um , speaker some something that identifies the speaker ."
+  },
+  {
+    "speaker": "SPEAKER_02",
+    "start": 1627.17,
+    "end": 1631.56,
+    "text": "So Exactly ."
+  },
+  {
+    "speaker": "SPEAKER_05",
+    "start": 1631.56,
+    "end": 1634.64,
+    "text": "So , uh well , you still need to be able to distinguish the different speakers ."
+  },
+  {
+    "speaker": "SPEAKER_05",
+    "start": 1634.73,
+    "end": 1635.62,
+    "text": "That 's the key point ."
+  },
+  {
+    "speaker": "SPEAKER_05",
+    "start": 1635.62,
+    "end": 1652.45,
+    "text": "Because , if we wanna do what we just discussed So Uh , uh , the the best the easiest way to do that would be to just take You know , you make the channel be channel F , but then keep the speaker names the same as they would be in the old in the close - talking , uh , version ."
+  },
+  {
+    "speaker": "SPEAKER_02",
+    "start": 1655.98,
+    "end": 1656.59,
+    "text": "Right ."
+  },
+  {
+    "speaker": "SPEAKER_02",
+    "start": 1656.94,
+    "end": 1657.46,
+    "text": "Exactly ."
+  },
+  {
+    "speaker": "SPEAKER_05",
+    "start": 1661.89,
+    "end": 1663.53,
+    "text": "I , uh , I I can talk to him ."
+  },
+  {
+    "speaker": "Unknown",
+    "start": 0.0,
+    "end": 0.0,
+    "text": "Hmm ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 0.0,
+    "end": 1776.81,
+    "text": "Hmm ."
+  },
+  {
+    "speaker": "SPEAKER_04",
+    "start": 1776.81,
+    "end": 1778.0,
+    "text": "Well , they grow them on trees now ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 1780.98,
+    "end": 1782.66,
+    "text": "Just , you shake them and they fall down ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 1795.58,
+    "end": 1795.95,
+    "text": "OK ."
+  },
+  {
+    "speaker": "SPEAKER_03",
+    "start": 1805.34,
+    "end": 1805.82,
+    "text": "Mm - hmm ?"
+  },
+  {
+    "speaker": "SPEAKER_03",
+    "start": 1808.08,
+    "end": 1808.35,
+    "text": "Mmm ."
+  },
+  {
+    "speaker": "SPEAKER_03",
+    "start": 1808.96,
+    "end": 1809.24,
+    "text": "Mm - hmm ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 0.0,
+    "end": 1812.91,
+    "text": "Mm - hmm ."
+  },
+  {
+    "speaker": "SPEAKER_05",
+    "start": 1812.91,
+    "end": 1813.76,
+    "text": "That 's everything ."
+  },
+  {
+    "speaker": "SPEAKER_05",
+    "start": 1814.0,
+    "end": 1818.17,
+    "text": "Yeah , so So , I can give you a list of the short version ."
+  },
+  {
+    "speaker": "SPEAKER_03",
+    "start": 1818.69,
+    "end": 1820.97,
+    "text": "So you can Oh , OK ."
+  },
+  {
+    "speaker": "SPEAKER_05",
+    "start": 1828.97,
+    "end": 1829.47,
+    "text": "That 's right ."
+  },
+  {
+    "speaker": "SPEAKER_03",
+    "start": 1835.69,
+    "end": 1836.1,
+    "text": "Yeah ."
+  },
+  {
+    "speaker": "SPEAKER_05",
+    "start": 1847.26,
+    "end": 1850.46,
+    "text": "Um Wel - No , it is ."
+  },
+  {
+    "speaker": "SPEAKER_05",
+    "start": 1850.89,
+    "end": 1852.29,
+    "text": "Th - the Sorry ."
+  },
+  {
+    "speaker": "SPEAKER_05",
+    "start": 1852.45,
+    "end": 1852.75,
+    "text": "Um ."
+  },
+  {
+    "speaker": "SPEAKER_05",
+    "start": 1853.2,
+    "end": 1854.18,
+    "text": "Can you repeat the question ?"
+  },
+  {
+    "speaker": "SPEAKER_05",
+    "start": 1854.44,
+    "end": 1856.07,
+    "text": "There wa it is a subse Yeah ."
+  },
+  {
+    "speaker": "SPEAKER_03",
+    "start": 1859.26,
+    "end": 1859.69,
+    "text": "No ."
+  },
+  {
+    "speaker": "SPEAKER_05",
+    "start": 1859.75,
+    "end": 1862.12,
+    "text": "Only the portion that was in the Hub - five training set ."
+  },
+  {
+    "speaker": "SPEAKER_05",
+    "start": 1865.41,
+    "end": 1871.86,
+    "text": "Well , the Hub - five small training set contains as much Macrophone as the large training set , for historical reasons ."
+  },
+  {
+    "speaker": "SPEAKER_05",
+    "start": 1872.04,
+    "end": 1872.26,
+    "text": "Yeah ."
+  },
+  {
+    "speaker": "SPEAKER_05",
+    "start": 1877.78,
+    "end": 1879.6,
+    "text": "So , do you have that processed there , then right ?"
+  },
+  {
+    "speaker": "SPEAKER_05",
+    "start": 1879.84,
+    "end": 1882.32,
+    "text": "Because you already did did y didn't you already do that experiment ?"
+  },
+  {
+    "speaker": "SPEAKER_03",
+    "start": 1883.94,
+    "end": 1884.42,
+    "text": "Mm - hmm ."
+  },
+  {
+    "speaker": "SPEAKER_03",
+    "start": 1886.95,
+    "end": 1887.29,
+    "text": "No ."
+  },
+  {
+    "speaker": "SPEAKER_03",
+    "start": 1897.53,
+    "end": 1898.0,
+    "text": "Mmm ."
+  },
+  {
+    "speaker": "SPEAKER_03",
+    "start": 1898.37,
+    "end": 1898.73,
+    "text": "OK ."
+  },
+  {
+    "speaker": "SPEAKER_05",
+    "start": 1901.29,
+    "end": 1901.59,
+    "text": "Right ."
+  },
+  {
+    "speaker": "SPEAKER_05",
+    "start": 1903.15,
+    "end": 1904.3,
+    "text": "And you need only the males ."
+  },
+  {
+    "speaker": "SPEAKER_05",
+    "start": 1904.62,
+    "end": 1904.85,
+    "text": "So ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 0.0,
+    "end": 1938.01,
+    "text": "Hmm ."
+  },
+  {
+    "speaker": "SPEAKER_05",
+    "start": 1938.01,
+    "end": 1938.89,
+    "text": "Does this th this ?"
+  },
+  {
+    "speaker": "SPEAKER_05",
+    "start": 1941.39,
+    "end": 1953.16,
+    "text": "It - it 's sort of f f not very nice to use the small training set for another reason , which is that the you also are losing on Again , because you don't use all the data you have for one speaker ."
+  },
+  {
+    "speaker": "SPEAKER_05",
+    "start": 1953.79,
+    "end": 1962.03,
+    "text": "So , the normalizations you compute for your training speakers will be , uh , crummier than they would in the large training set ."
+  },
+  {
+    "speaker": "SPEAKER_05",
+    "start": 1962.4,
+    "end": 1980.48,
+    "text": "So , um , I have to So , to make it really a matching experiment , I have to find uh , I have to use short models that were trained on normalizations that were also only estimated on the short set ."
+  },
+  {
+    "speaker": "SPEAKER_05",
+    "start": 1981.62,
+    "end": 1983.98,
+    "text": "Which is , uh I think so ."
+  },
+  {
+    "speaker": "SPEAKER_05",
+    "start": 1983.99,
+    "end": 1985.8,
+    "text": "I 've I I have to check ."
+  },
+  {
+    "speaker": "SPEAKER_05",
+    "start": 1985.8,
+    "end": 1993.11,
+    "text": "In any case , I could retrain short models within a few hours actually at if I use machines at SRI ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 0.0,
+    "end": 2001.52,
+    "text": "Hmm ?"
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 2001.52,
+    "end": 2001.75,
+    "text": "Yeah ."
+  },
+  {
+    "speaker": "SPEAKER_05",
+    "start": 2009.31,
+    "end": 2009.37,
+    "text": "No ."
+  },
+  {
+    "speaker": "SPEAKER_05",
+    "start": 2009.37,
+    "end": 2024.25,
+    "text": "But the thing is , if if we used if we used the whole training set for normalizations , then David would have to process much more data , which That 's a that 's one bottleneck , for us right , in terms of get Yeah ."
+  },
+  {
+    "speaker": "SPEAKER_05",
+    "start": 2025.75,
+    "end": 2026.08,
+    "text": "Right ."
+  },
+  {
+    "speaker": "SPEAKER_05",
+    "start": 2026.37,
+    "end": 2029.9,
+    "text": "So , you wanna do the exact same thing , or else you 'll have apples and oranges ."
+  },
+  {
+    "speaker": "SPEAKER_05",
+    "start": 2033.57,
+    "end": 2033.91,
+    "text": "So ."
+  },
+  {
+    "speaker": "SPEAKER_05",
+    "start": 2037.92,
+    "end": 2040.49,
+    "text": "It doesn't make I don't think it makes that much of a difference ."
+  },
+  {
+    "speaker": "SPEAKER_05",
+    "start": 2040.49,
+    "end": 2046.0,
+    "text": "It 's just this little detail that if you can take care of that , then you should ."
+  },
+  {
+    "speaker": "SPEAKER_05",
+    "start": 2046.0,
+    "end": 2055.37,
+    "text": "I I think I have I have the models , I have I have , um let 's see , um Yeah ."
+  },
+  {
+    "speaker": "SPEAKER_05",
+    "start": 2055.37,
+    "end": 2059.21,
+    "text": "And if not I can retrain those models very quickly ."
+  },
+  {
+    "speaker": "SPEAKER_02",
+    "start": 2085.59,
+    "end": 2104.98,
+    "text": "Uh Yeah ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 2108.55,
+    "end": 2108.71,
+    "text": "Yeah ."
+  },
+  {
+    "speaker": "SPEAKER_05",
+    "start": 2108.71,
+    "end": 2109.94,
+    "text": "I don't think it 'll make a matter ."
+  },
+  {
+    "speaker": "SPEAKER_05",
+    "start": 2113.14,
+    "end": 2127.98,
+    "text": "In fact , I thought about throwing those out too , because when I heard how little speech there was for some of them , I thought they can only hurt your models , because they 're again their normalizations will be all all all over the map , and you won't get very very clean models from them , anyhow ."
+  },
+  {
+    "speaker": "SPEAKER_05",
+    "start": 2128.13,
+    "end": 2128.47,
+    "text": "So ."
+  },
+  {
+    "speaker": "SPEAKER_05",
+    "start": 2131.9,
+    "end": 2132.14,
+    "text": "Yeah ."
+  },
+  {
+    "speaker": "SPEAKER_05",
+    "start": 2132.58,
+    "end": 2141.72,
+    "text": "In fact , if if you wanna do this , uh , to speed things up , um , you we can leave out the Macrophone data altogether ."
+  },
+  {
+    "speaker": "SPEAKER_05",
+    "start": 2143.46,
+    "end": 2145.37,
+    "text": "That hurt Actually ."
+  },
+  {
+    "speaker": "SPEAKER_05",
+    "start": 2145.37,
+    "end": 2145.68,
+    "text": "Oh , no ."
+  },
+  {
+    "speaker": "SPEAKER_05",
+    "start": 2145.68,
+    "end": 2146.05,
+    "text": "Sorry ."
+  },
+  {
+    "speaker": "SPEAKER_05",
+    "start": 2146.37,
+    "end": 2147.13,
+    "text": "Not in the short ."
+  },
+  {
+    "speaker": "SPEAKER_05",
+    "start": 2147.13,
+    "end": 2148.24,
+    "text": "Then you have too little data ."
+  },
+  {
+    "speaker": "SPEAKER_05",
+    "start": 2148.24,
+    "end": 2148.61,
+    "text": "OK ."
+  },
+  {
+    "speaker": "SPEAKER_05",
+    "start": 2148.95,
+    "end": 2149.14,
+    "text": "Sorry ."
+  },
+  {
+    "speaker": "SPEAKER_05",
+    "start": 2149.14,
+    "end": 2149.56,
+    "text": "Forget that ."
+  },
+  {
+    "speaker": "SPEAKER_05",
+    "start": 2150.79,
+    "end": 2165.46,
+    "text": "Um , When you use when you go to the large training set , then leaving out Macrophone actually sometimes helps you , because it 's it it 's just not relevant to the to the meeting and or to conversational speech anyway ."
+  },
+  {
+    "speaker": "SPEAKER_05",
+    "start": 2166.66,
+    "end": 2167.0,
+    "text": "OK ."
+  },
+  {
+    "speaker": "SPEAKER_05",
+    "start": 2167.36,
+    "end": 2167.56,
+    "text": "Yeah ."
+  },
+  {
+    "speaker": "SPEAKER_05",
+    "start": 2167.56,
+    "end": 2176.65,
+    "text": "Leave it out , and Um , in the event that I retrain the short models , um , why don't you give me a list of the files that you throw out , and I I 'll throw them out , too ."
+  },
+  {
+    "speaker": "SPEAKER_05",
+    "start": 2177.8,
+    "end": 2182.29,
+    "text": "And then we have complete completely identical training conditions ."
+  },
+  {
+    "speaker": "SPEAKER_05",
+    "start": 2196.48,
+    "end": 2199.44,
+    "text": "But th the segmentations are only they only affect the test set ."
+  },
+  {
+    "speaker": "SPEAKER_05",
+    "start": 2199.97,
+    "end": 2201.44,
+    "text": "We 're talking about the training speakers ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 2203.4,
+    "end": 2203.71,
+    "text": "Right ."
+  },
+  {
+    "speaker": "SPEAKER_05",
+    "start": 2211.93,
+    "end": 2213.68,
+    "text": "He already has the in you already have the information ."
+  },
+  {
+    "speaker": "SPEAKER_05",
+    "start": 2213.68,
+    "end": 2213.77,
+    "text": "Right ?"
+  },
+  {
+    "speaker": "SPEAKER_03",
+    "start": 2221.91,
+    "end": 2222.28,
+    "text": "Mm - hmm ."
+  },
+  {
+    "speaker": "SPEAKER_03",
+    "start": 2222.84,
+    "end": 2223.21,
+    "text": "OK ."
+  },
+  {
+    "speaker": "SPEAKER_00",
+    "start": 2226.24,
+    "end": 2226.55,
+    "text": "Alright ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 2234.97,
+    "end": 2235.19,
+    "text": "OK ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 2298.34,
+    "end": 2298.93,
+    "text": "Mm - hmm ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 0.0,
+    "end": 2309.67,
+    "text": "Hmm ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 2309.67,
+    "end": 2310.0,
+    "text": "OK ."
+  },
+  {
+    "speaker": "Unknown",
+    "start": 0.0,
+    "end": 0.0,
+    "text": "Hmm ."
+  },
+  {
+    "speaker": "Unknown",
+    "start": 0.0,
+    "end": 0.0,
+    "text": "Transcript L two eight one ."
+  },
+  {
+    "speaker": "Unknown",
+    "start": 0.0,
+    "end": 0.0,
+    "text": "Zero four three one , eight zero seven eight , one four five nine ."
+  },
+  {
+    "speaker": "Unknown",
+    "start": 0.0,
+    "end": 0.0,
+    "text": "Two nine seven , one four six , six two O four ."
+  },
+  {
+    "speaker": "Unknown",
+    "start": 0.0,
+    "end": 0.0,
+    "text": "Zero three , six five , nine seven , six two , four seven ."
+  },
+  {
+    "speaker": "Unknown",
+    "start": 0.0,
+    "end": 0.0,
+    "text": "Five two , one five , eight four , one one , six six ."
+  },
+  {
+    "speaker": "Unknown",
+    "start": 0.0,
+    "end": 0.0,
+    "text": "Four six two one , four , six six four ."
+  },
+  {
+    "speaker": "Unknown",
+    "start": 0.0,
+    "end": 0.0,
+    "text": "Nine four zero two , one two three three , two O seven three ."
+  },
+  {
+    "speaker": "Unknown",
+    "start": 0.0,
+    "end": 0.0,
+    "text": "Nine , seven seven eight , zero four , seven two nine , five ."
+  },
+  {
+    "speaker": "Unknown",
+    "start": 0.0,
+    "end": 0.0,
+    "text": "Three seven , eight seven , nine seven , three four , six six ."
+  }
+]

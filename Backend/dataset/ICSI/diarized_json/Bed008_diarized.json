@@ -1,0 +1,5660 @@
+[
+  {
+    "speaker": "SPEAKER_05",
+    "start": 54.134,
+    "end": 56.394,
+    "text": "Alright , so I 'm - I should read all of these numbers ?"
+  },
+  {
+    "speaker": "Unknown",
+    "start": 0.0,
+    "end": 0.0,
+    "text": "eight five , five one , one four , eight one , nine eight ."
+  },
+  {
+    "speaker": "Unknown",
+    "start": 0.0,
+    "end": 0.0,
+    "text": "eight zero seven nine , six , six eight five ."
+  },
+  {
+    "speaker": "Unknown",
+    "start": 0.0,
+    "end": 0.0,
+    "text": "seven six nine one , nine four nine three , four seven seven one ."
+  },
+  {
+    "speaker": "Unknown",
+    "start": 0.0,
+    "end": 0.0,
+    "text": "two four six , zero zero , seven five three three ."
+  },
+  {
+    "speaker": "Unknown",
+    "start": 0.0,
+    "end": 0.0,
+    "text": "three two two , six three , eight eight one zero ."
+  },
+  {
+    "speaker": "Unknown",
+    "start": 0.0,
+    "end": 0.0,
+    "text": "seven , four nine one , nine five , four eight nine , six ."
+  },
+  {
+    "speaker": "Unknown",
+    "start": 0.0,
+    "end": 0.0,
+    "text": "zero nine seven , three four , seven one six three ."
+  },
+  {
+    "speaker": "SPEAKER_02",
+    "start": 0.0,
+    "end": 267.749,
+    "text": "five six one , six one , nine seven three one ."
+  },
+  {
+    "speaker": "SPEAKER_03",
+    "start": 267.749,
+    "end": 268.039,
+    "text": "Oh yeah ."
+  },
+  {
+    "speaker": "SPEAKER_05",
+    "start": 453.544,
+    "end": 454.044,
+    "text": "\" Go there \" ."
+  },
+  {
+    "speaker": "SPEAKER_05",
+    "start": 499.375,
+    "end": 523.442,
+    "text": "I mean it seems that you could um uh it seems that those things would be logically independent like you would wanna have them separate or binary , Go - there and then the the possibilities of how to go there because because , you know it might be easy to figure out that this person is going to need more film eventually from their utterance but it 's much more complex to query when would be the most appropriate time ."
+  },
+  {
+    "speaker": "SPEAKER_03",
+    "start": 579.764,
+    "end": 580.114,
+    "text": "Hmm ."
+  },
+  {
+    "speaker": "SPEAKER_03",
+    "start": 591.815,
+    "end": 592.235,
+    "text": "Think so ."
+  },
+  {
+    "speaker": "SPEAKER_05",
+    "start": 596.25,
+    "end": 598.04,
+    "text": "Uh , no , but I think I 'm following it ."
+  },
+  {
+    "speaker": "SPEAKER_05",
+    "start": 599.43,
+    "end": 599.77,
+    "text": "So far ."
+  },
+  {
+    "speaker": "Unknown",
+    "start": 634.625,
+    "end": 634.805,
+    "text": "Yeah ."
+  },
+  {
+    "speaker": "SPEAKER_03",
+    "start": 635.832,
+    "end": 636.252,
+    "text": "Hmm ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 637.648,
+    "end": 638.688,
+    "text": "User thrift ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 649.548,
+    "end": 649.828,
+    "text": "Mm - hmm ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 661.227,
+    "end": 661.617,
+    "text": "OK ."
+  },
+  {
+    "speaker": "Unknown",
+    "start": 664.246,
+    "end": 664.496,
+    "text": "OK ."
+  },
+  {
+    "speaker": "SPEAKER_05",
+    "start": 669.91,
+    "end": 670.95,
+    "text": "Wow , that is simple ."
+  },
+  {
+    "speaker": "SPEAKER_05",
+    "start": 934.83,
+    "end": 935.88,
+    "text": "Climb , rob ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 943.31,
+    "end": 944.3,
+    "text": "The Charles Bridge , you know ."
+  },
+  {
+    "speaker": "SPEAKER_05",
+    "start": 950.62,
+    "end": 963.4,
+    "text": "No , I mean , if you go to re you know if you go to Prague or whatever one of your your key points that you have to do is cross the Charles Bridge and doesn't really matter which way you cross which where you end up at the end but the part the good part is walking over it , so ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 1035.45,
+    "end": 1165.67,
+    "text": "mm - hmm mm - hmm So - Can I ask about \" slurred \" and \" angry \" as inputs to this ?"
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 1168.6,
+    "end": 1169.2,
+    "text": "What why ?"
+  },
+  {
+    "speaker": "SPEAKER_06",
+    "start": 1170.67,
+    "end": 1171.0,
+    "text": "OK ."
+  },
+  {
+    "speaker": "SPEAKER_02",
+    "start": 1178.41,
+    "end": 1178.81,
+    "text": "Mm - hmm ."
+  },
+  {
+    "speaker": "SPEAKER_02",
+    "start": 1180.22,
+    "end": 1180.6,
+    "text": "OK ."
+  },
+  {
+    "speaker": "SPEAKER_02",
+    "start": 1180.89,
+    "end": 1181.24,
+    "text": "Drunk ."
+  },
+  {
+    "speaker": "SPEAKER_05",
+    "start": 1185.41,
+    "end": 1186.53,
+    "text": "Less likely to enter ."
+  },
+  {
+    "speaker": "SPEAKER_02",
+    "start": 1187.79,
+    "end": 1188.28,
+    "text": "Hmm ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 1197.72,
+    "end": 1198.05,
+    "text": "OK ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 1253.5,
+    "end": 1254.1,
+    "text": "Mm - hmm ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 1277.05,
+    "end": 1277.4,
+    "text": "Mm - hmm ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 1407.62,
+    "end": 1408.01,
+    "text": "Mm - hmm ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 1432.82,
+    "end": 1433.11,
+    "text": "Yeah ."
+  },
+  {
+    "speaker": "SPEAKER_05",
+    "start": 1574.55,
+    "end": 1587.15,
+    "text": "So we 're deriving um this the this feature of whether the the main action at this place happens inside or outside or what we 're deriving that from what kind of activity is done there ?"
+  },
+  {
+    "speaker": "SPEAKER_05",
+    "start": 1587.66,
+    "end": 1590.88,
+    "text": "Couldn't you have it as just a primitive feature of the entity ?"
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 1592.28,
+    "end": 1592.53,
+    "text": "OK ."
+  },
+  {
+    "speaker": "SPEAKER_05",
+    "start": 1594.1,
+    "end": 1608.0,
+    "text": "I mean it seems like that 's much more reliable cuz you could have outdoor places that sell things and you know indoor places that do something else and Hmm ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 1610.74,
+    "end": 1610.98,
+    "text": "OK ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 1613.23,
+    "end": 1613.58,
+    "text": "OK ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 1619.45,
+    "end": 1619.77,
+    "text": "Mm - hmm ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 1630.78,
+    "end": 1631.04,
+    "text": "OK ."
+  },
+  {
+    "speaker": "SPEAKER_05",
+    "start": 1632.22,
+    "end": 1645.98,
+    "text": "I 'm just thinking about how people , human beings who know about places and places to go and so on would store this and it would probably you wouldn't just sort of remember that they sell stuff and then deduce from that that it must be going on inside or something ."
+  },
+  {
+    "speaker": "SPEAKER_03",
+    "start": 1658.95,
+    "end": 1659.19,
+    "text": "Mm - hmm ."
+  },
+  {
+    "speaker": "SPEAKER_04",
+    "start": 1663.66,
+    "end": 1663.96,
+    "text": "Mm - hmm ."
+  },
+  {
+    "speaker": "SPEAKER_03",
+    "start": 1676.96,
+    "end": 1677.25,
+    "text": "Mm - hmm ."
+  },
+  {
+    "speaker": "Unknown",
+    "start": 1859.34,
+    "end": 1859.86,
+    "text": "Huh ."
+  },
+  {
+    "speaker": "SPEAKER_06",
+    "start": 1918.79,
+    "end": 1937.69,
+    "text": "Well Hmm ."
+  },
+  {
+    "speaker": "SPEAKER_05",
+    "start": 2004.08,
+    "end": 2005.0,
+    "text": "User schedule ."
+  },
+  {
+    "speaker": "SPEAKER_05",
+    "start": 2007.29,
+    "end": 2013.47,
+    "text": "\" Do I have time to go in and climb all the way to the top of the Koelner Dome or do I just have to \" \" time to take a picture of the outside ?"
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 0.0,
+    "end": 2020.87,
+    "text": "\" Mm - hmm ."
+  },
+  {
+    "speaker": "SPEAKER_02",
+    "start": 2076.55,
+    "end": 2076.9,
+    "text": "Mm - hmm ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 2100.9,
+    "end": 2101.05,
+    "text": "Yeah ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 2111.16,
+    "end": 2111.56,
+    "text": "Mm - hmm ."
+  },
+  {
+    "speaker": "SPEAKER_03",
+    "start": 2157.61,
+    "end": 2158.03,
+    "text": "Hmm ."
+  },
+  {
+    "speaker": "SPEAKER_04",
+    "start": 2162.58,
+    "end": 2163.03,
+    "text": "Mm - hmm ."
+  },
+  {
+    "speaker": "SPEAKER_03",
+    "start": 2284.76,
+    "end": 2285.49,
+    "text": "Mm - hmm ."
+  },
+  {
+    "speaker": "SPEAKER_05",
+    "start": 2301.09,
+    "end": 2302.35,
+    "text": "Well what about the Grand Canyon , right ?"
+  },
+  {
+    "speaker": "SPEAKER_05",
+    "start": 2302.35,
+    "end": 2303.05,
+    "text": "No , never mind ."
+  },
+  {
+    "speaker": "SPEAKER_05",
+    "start": 2303.05,
+    "end": 2310.9,
+    "text": "I mean are there are there large things that you would have to pay to get up close to like , I mean never mind , not in the current OK ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 2312.59,
+    "end": 2312.8,
+    "text": "Yeah ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 2316.79,
+    "end": 2317.09,
+    "text": "OK ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 2317.27,
+    "end": 2317.87,
+    "text": "Right , sure ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 2398.51,
+    "end": 2398.91,
+    "text": "Mm - hmm ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 2407.41,
+    "end": 2407.91,
+    "text": "Mm - hmm ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 2422.29,
+    "end": 2422.87,
+    "text": "Mm - hmm ."
+  },
+  {
+    "speaker": "SPEAKER_03",
+    "start": 2532.1,
+    "end": 2532.98,
+    "text": "Mm - hmm ."
+  },
+  {
+    "speaker": "SPEAKER_03",
+    "start": 2546.94,
+    "end": 2547.42,
+    "text": "Mm - hmm ."
+  },
+  {
+    "speaker": "SPEAKER_06",
+    "start": 2597.04,
+    "end": 2597.6,
+    "text": "Hmm ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 2622.48,
+    "end": 2622.99,
+    "text": "Mm - hmm ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 2626.99,
+    "end": 2627.48,
+    "text": "Mm - hmm ."
+  },
+  {
+    "speaker": "SPEAKER_06",
+    "start": 2658.32,
+    "end": 2661.07,
+    "text": "Well , what Whoops ."
+  },
+  {
+    "speaker": "SPEAKER_06",
+    "start": 2663.08,
+    "end": 2663.33,
+    "text": "Right ."
+  },
+  {
+    "speaker": "SPEAKER_05",
+    "start": 2665.6,
+    "end": 2676.54,
+    "text": "Also , that node , I mean the Go - there s S node would just be fed by separate ones for you know , there 's different things , the strikes and the Yeah , the time of day ."
+  },
+  {
+    "speaker": "SPEAKER_05",
+    "start": 2838.11,
+    "end": 2862.19,
+    "text": "Um actually Um actually is this the the right way to have it where um go there from the user and go there from the situation just sort of don't know about each other but they both feed the go there decision because isn't the , I mean uh , hmm OK ."
+  },
+  {
+    "speaker": "SPEAKER_05",
+    "start": 2863.01,
+    "end": 2875.56,
+    "text": "But that still allows for the possibility of the of the user model affecting our decision about whether a strike is the sort of thing which is going to keep this user away from That all that that kind of decision making happens at the Go - there node ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 2877.3,
+    "end": 2877.56,
+    "text": "Uh ."
+  },
+  {
+    "speaker": "SPEAKER_05",
+    "start": 2878.84,
+    "end": 2879.73,
+    "text": "If you needed it to do that ."
+  },
+  {
+    "speaker": "SPEAKER_05",
+    "start": 2881.05,
+    "end": 2900.94,
+    "text": "But uh OK I was just thinking I guess maybe I 'm conflating that user node with possible possible asking of the user you know hey there 's a strike on , uh does that affect whether or not you wanna go or something or Yeah , so that might not come out of a user model but , you know , directly out of interaction ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 2920.64,
+    "end": 2921.05,
+    "text": "Mm - hmm ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 2924.62,
+    "end": 2925.14,
+    "text": "OK ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 2927.24,
+    "end": 2927.52,
+    "text": "Yeah ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 2930.31,
+    "end": 2930.66,
+    "text": "Mm - hmm ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 2932.47,
+    "end": 2932.72,
+    "text": "OK ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 2933.48,
+    "end": 2933.89,
+    "text": "Right , right ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 2935.14,
+    "end": 2935.67,
+    "text": "Yeah ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 2937.53,
+    "end": 2938.26,
+    "text": "Right , sure , OK ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 2962.5,
+    "end": 2962.91,
+    "text": "Mm - hmm ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 2967.77,
+    "end": 2968.27,
+    "text": "Alright ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 2992.66,
+    "end": 2992.97,
+    "text": "Mm - hmm ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 3035.92,
+    "end": 3036.79,
+    "text": "Mm - hmm ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 3041.38,
+    "end": 3041.8,
+    "text": "Mm - hmm ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 3059.88,
+    "end": 3060.3,
+    "text": "Mm - hmm ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 3062.15,
+    "end": 3062.42,
+    "text": "Now ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 3064.18,
+    "end": 3064.85,
+    "text": "Mm - hmm ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 3196.87,
+    "end": 3197.14,
+    "text": "Mm - hmm ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 3201.57,
+    "end": 3202.49,
+    "text": "Mm - hmm ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 3270.76,
+    "end": 3271.04,
+    "text": "Mm - hmm ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 3271.24,
+    "end": 3271.49,
+    "text": "Right ."
+  },
+  {
+    "speaker": "SPEAKER_04",
+    "start": 3441.97,
+    "end": 3442.26,
+    "text": "Darn ."
+  },
+  {
+    "speaker": "SPEAKER_06",
+    "start": 3545.74,
+    "end": 3546.13,
+    "text": "Hmm ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 3604.41,
+    "end": 3605.03,
+    "text": "I think so , yeah ."
+  },
+  {
+    "speaker": "SPEAKER_06",
+    "start": 3610.18,
+    "end": 3610.63,
+    "text": "Mm - hmm ."
+  },
+  {
+    "speaker": "SPEAKER_06",
+    "start": 3621.37,
+    "end": 3621.69,
+    "text": "Mm - hmm ."
+  },
+  {
+    "speaker": "SPEAKER_06",
+    "start": 3637.18,
+    "end": 3637.61,
+    "text": "Hmm ."
+  },
+  {
+    "speaker": "SPEAKER_03",
+    "start": 3702.22,
+    "end": 3702.46,
+    "text": "Mm - hmm ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 3708.38,
+    "end": 3709.52,
+    "text": "Mm - hmm ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 3710.74,
+    "end": 3710.96,
+    "text": "Right ."
+  },
+  {
+    "speaker": "SPEAKER_06",
+    "start": 3744.46,
+    "end": 3744.84,
+    "text": "Hmm ."
+  },
+  {
+    "speaker": "SPEAKER_02",
+    "start": 3788.01,
+    "end": 3788.77,
+    "text": "Point three ."
+  },
+  {
+    "speaker": "SPEAKER_06",
+    "start": 3793.45,
+    "end": 3793.66,
+    "text": "No ."
+  },
+  {
+    "speaker": "SPEAKER_05",
+    "start": 3955.08,
+    "end": 3959.97,
+    "text": "So so the function of the thing that comes out of H is very different from the function of the other inputs ."
+  },
+  {
+    "speaker": "SPEAKER_05",
+    "start": 3961.25,
+    "end": 3963.01,
+    "text": "It 's driving how the other four are interpreted ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 3963.53,
+    "end": 3963.68,
+    "text": "OK ."
+  },
+  {
+    "speaker": "SPEAKER_05",
+    "start": 3991.57,
+    "end": 3994.12,
+    "text": "Well a vector with three zero 's and one one , right ?"
+  },
+  {
+    "speaker": "SPEAKER_05",
+    "start": 4026.4,
+    "end": 4035.63,
+    "text": "Um Does H have to have another input to tell it alpha , beta , whatever , or is the that 's determined by what the experts are saying , like the type of situ OK ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 4036.12,
+    "end": 4036.23,
+    "text": "Hmm ."
+  },
+  {
+    "speaker": "Unknown",
+    "start": 4038.74,
+    "end": 4038.99,
+    "text": "OK ."
+  },
+  {
+    "speaker": "Unknown",
+    "start": 4039.61,
+    "end": 4039.97,
+    "text": "OK ."
+  },
+  {
+    "speaker": "SPEAKER_05",
+    "start": 4047.12,
+    "end": 4063.47,
+    "text": "I mean It it just seems that like without that that outside input that you 've got a situation where , you know , like if if uh X - one says no , you know , a low value coming out of X - on or i if X - one says no then ignore X - one , you know , I mean that seems like that 'd be weird , right ?"
+  },
+  {
+    "speaker": "SPEAKER_05",
+    "start": 4065.99,
+    "end": 4066.42,
+    "text": "Oh , OK ."
+  },
+  {
+    "speaker": "SPEAKER_05",
+    "start": 4066.86,
+    "end": 4067.14,
+    "text": "OK ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 4069.72,
+    "end": 4070.39,
+    "text": "Alright , right ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 4243.79,
+    "end": 4245.0,
+    "text": "Right , right ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 4256.88,
+    "end": 4257.33,
+    "text": "Uh - huh ."
+  },
+  {
+    "speaker": "SPEAKER_05",
+    "start": 4272.99,
+    "end": 4275.45,
+    "text": "Like how thrifty the user is , or do we have access to that ?"
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 4285.51,
+    "end": 4286.15,
+    "text": "Mm - hmm ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 4288.95,
+    "end": 4289.49,
+    "text": "Oh right ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 4291.91,
+    "end": 4292.35,
+    "text": "Oh good ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 4294.97,
+    "end": 4295.24,
+    "text": "OK ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 4305.13,
+    "end": 4305.83,
+    "text": "Mm - hmm ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 4306.28,
+    "end": 4306.66,
+    "text": "Mm - hmm ."
+  },
+  {
+    "speaker": "Unknown",
+    "start": 4322.48,
+    "end": 4322.74,
+    "text": "OK ."
+  },
+  {
+    "speaker": "SPEAKER_06",
+    "start": 4603.06,
+    "end": 4603.27,
+    "text": "No ."
+  },
+  {
+    "speaker": "SPEAKER_03",
+    "start": 4839.55,
+    "end": 4929.34,
+    "text": "So Yeah ."
+  },
+  {
+    "speaker": "SPEAKER_04",
+    "start": 4933.09,
+    "end": 4933.46,
+    "text": "Yeah ."
+  },
+  {
+    "speaker": "SPEAKER_05",
+    "start": 4942.76,
+    "end": 4952.67,
+    "text": "By the way um uh just talking about uh about that general end of things uh is there gonna be data soon from what people say when they 're interacting with the system and so on ?"
+  },
+  {
+    "speaker": "SPEAKER_05",
+    "start": 4952.67,
+    "end": 4954.6,
+    "text": "Like , I mean , what kind of questions are being given being asked ?"
+  },
+  {
+    "speaker": "SPEAKER_05",
+    "start": 4954.6,
+    "end": 4956.44,
+    "text": "Cuz OK ."
+  },
+  {
+    "speaker": "SPEAKER_05",
+    "start": 4957.62,
+    "end": 4957.93,
+    "text": "Yeah yeah ."
+  },
+  {
+    "speaker": "Unknown",
+    "start": 4961.99,
+    "end": 4962.19,
+    "text": "OK ."
+  },
+  {
+    "speaker": "Unknown",
+    "start": 4972.87,
+    "end": 4973.28,
+    "text": "OK ."
+  },
+  {
+    "speaker": "Unknown",
+    "start": 4974.36,
+    "end": 4974.87,
+    "text": "Fey , you mean ."
+  },
+  {
+    "speaker": "Unknown",
+    "start": 4975.54,
+    "end": 4975.82,
+    "text": "OK ."
+  },
+  {
+    "speaker": "Unknown",
+    "start": 4979.04,
+    "end": 4979.32,
+    "text": "OK ."
+  },
+  {
+    "speaker": "SPEAKER_05",
+    "start": 4985.03,
+    "end": 4985.69,
+    "text": "O OK ."
+  },
+  {
+    "speaker": "SPEAKER_05",
+    "start": 4989.68,
+    "end": 4989.94,
+    "text": "OK ."
+  },
+  {
+    "speaker": "SPEAKER_05",
+    "start": 4991.04,
+    "end": 5012.08,
+    "text": "I 'm just wondering , because in terms of , you know , I mean uh w the figure I was thinking about this figure that we talked about , fifty constructions or whatever that 's uh that 's a whole lot of constructions and um you know , I mean one might be f fairly pleased with getting a really good analysis of five maybe ten in a summer so , I mean I know we 're going for sort of a rough and ready ."
+  },
+  {
+    "speaker": "Unknown",
+    "start": 5023.28,
+    "end": 5023.68,
+    "text": "Mm - hmm ."
+  },
+  {
+    "speaker": "Unknown",
+    "start": 5029.4,
+    "end": 5029.68,
+    "text": "Mm - hmm ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 5031.77,
+    "end": 5032.01,
+    "text": "OK ."
+  },
+  {
+    "speaker": "SPEAKER_05",
+    "start": 5033.07,
+    "end": 5033.36,
+    "text": "OK ."
+  },
+  {
+    "speaker": "SPEAKER_05",
+    "start": 5033.68,
+    "end": 5052.78,
+    "text": "I mean , I I I I was uh I was talking about the , you know , if you wanted to do it really in detail and we don't really need all the detail for what we 're doing right now but anyway in terms of just narrowing that task you know which fifty do I do , I wanna see what people are using , so Well , it will inspire me ."
+  },
+  {
+    "speaker": "SPEAKER_04",
+    "start": 5059.3,
+    "end": 5060.31,
+    "text": "Right , sure sure ."
+  },
+  {
+    "speaker": "SPEAKER_03",
+    "start": 5066.51,
+    "end": 5066.73,
+    "text": "Right ."
+  },
+  {
+    "speaker": "SPEAKER_03",
+    "start": 5067.58,
+    "end": 5068.24,
+    "text": "Yeah , sure ."
+  },
+  {
+    "speaker": "SPEAKER_03",
+    "start": 5068.76,
+    "end": 5069.07,
+    "text": "Sure ."
+  },
+  {
+    "speaker": "SPEAKER_05",
+    "start": 5072.21,
+    "end": 5072.43,
+    "text": "Yeah ."
+  },
+  {
+    "speaker": "SPEAKER_05",
+    "start": 5074.04,
+    "end": 5074.3,
+    "text": "OK ."
+  },
+  {
+    "speaker": "SPEAKER_05",
+    "start": 5075.39,
+    "end": 5075.59,
+    "text": "Touche ."
+  },
+  {
+    "speaker": "Unknown",
+    "start": 5078.32,
+    "end": 5079.21,
+    "text": "Good enough ."
+  },
+  {
+    "speaker": "SPEAKER_03",
+    "start": 108.995,
+    "end": 109.205,
+    "text": "OK ."
+  },
+  {
+    "speaker": "Unknown",
+    "start": 0.0,
+    "end": 0.0,
+    "text": "Transcript L eighty - five ."
+  },
+  {
+    "speaker": "Unknown",
+    "start": 0.0,
+    "end": 0.0,
+    "text": "five seven three , six seven one , three four eight four five four five eight , five , nine nine six five four seven , three two O , one eight three seven eight two , two one , nine O , nine two , O six ."
+  },
+  {
+    "speaker": "Unknown",
+    "start": 0.0,
+    "end": 0.0,
+    "text": "six seven seven , two six , four six one six ."
+  },
+  {
+    "speaker": "Unknown",
+    "start": 0.0,
+    "end": 0.0,
+    "text": "four four four , three nine seven , five four one one ."
+  },
+  {
+    "speaker": "SPEAKER_02",
+    "start": 0.0,
+    "end": 269.658,
+    "text": "O five three , three two six , four three eight four eight five , one six , seven five five seven ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 269.658,
+    "end": 277.869,
+    "text": "OK , so uh i um I don't know whether Ami 's coming or not um but I think we oughta just get started ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 282.796,
+    "end": 283.056,
+    "text": "Don't know ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 283.826,
+    "end": 286.878,
+    "text": "Anyway Oh , so there you go ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 293.319,
+    "end": 326.33,
+    "text": "Anyway , so my idea f for today and we can uh decide that that isn't the right thing to do was to at spend at least part of the time trying to eh build the influence links , you know which sets of things are uh relevant to which decisions and actually I had uh specific s suggestion to start first with the path ones ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 327.11,
+    "end": 344.096,
+    "text": "The database ones being in some sense less interesting to us although probably have to be done and so to do that so there 's and the idea was we were gonna do two things Ah ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 344.616,
+    "end": 345.326,
+    "text": "Oh right , well ."
+  },
+  {
+    "speaker": "Unknown",
+    "start": 349.039,
+    "end": 349.099,
+    "text": "Yeah ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 349.409,
+    "end": 374.314,
+    "text": "We were gonna do two things one of which is just lay out the influence structure of what we think influences what and then as a uh separate but related task uh particularly Bhaskara and I were going to try to decide what kinds of belief nodes are needed in order to um do what we what we need to do ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 374.314,
+    "end": 387.203,
+    "text": "Once so but du we should sort of have all of the uh basic design of what influences what done before we decide exactly how to compute it ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 388.403,
+    "end": 390.823,
+    "text": "So I didn't did you get a chance to look at all yet ?"
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 391.708,
+    "end": 391.978,
+    "text": "Great ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 392.138,
+    "end": 404.226,
+    "text": "OK so let 's start with the uh belief - nets , the general influence stuff and then we 'll then we 'll also at some point break and talk about the techy stuff ."
+  },
+  {
+    "speaker": "SPEAKER_03",
+    "start": 419.02,
+    "end": 420.32,
+    "text": "Oh are you gonna go there or not ?"
+  },
+  {
+    "speaker": "SPEAKER_03",
+    "start": 420.32,
+    "end": 426.988,
+    "text": "Yeah , so one i Right , true ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 427.378,
+    "end": 428.108,
+    "text": "Does have to be there ."
+  },
+  {
+    "speaker": "SPEAKER_03",
+    "start": 429.321,
+    "end": 458.832,
+    "text": "And I 'm sure we 'll find more as we go that Well so there is this question about Yeah ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 461.697,
+    "end": 462.657,
+    "text": "When we 're yeah when we 're done ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 462.987,
+    "end": 476.197,
+    "text": "So so @ @ the the reason it might not be true or false is that we did have this idea of when so it 's , you know uh current @ @ and so forth and so on or not at all , right ?"
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 476.817,
+    "end": 494.746,
+    "text": "And so that a decision would be do we want that so you could two different things you could do , you could have all those values for Go - there or you could have Go - there be binary and given that you 're going there when ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 495.516,
+    "end": 496.356,
+    "text": "Yeah and so forth ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 496.816,
+    "end": 498.326,
+    "text": "So I 'll let we 'll see ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 511.37,
+    "end": 513.09,
+    "text": "OK , that 's let 's start that way ."
+  },
+  {
+    "speaker": "SPEAKER_03",
+    "start": 553.416,
+    "end": 553.716,
+    "text": "Right ."
+  },
+  {
+    "speaker": "SPEAKER_03",
+    "start": 580.203,
+    "end": 596.161,
+    "text": "No uh You 've s have you seen this before at all Keith , these belief - net things ?"
+  },
+  {
+    "speaker": "SPEAKER_03",
+    "start": 603.524,
+    "end": 603.854,
+    "text": "Yeah ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 636.32,
+    "end": 636.94,
+    "text": "Or cheapness ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 639.12,
+    "end": 639.74,
+    "text": "Thrift , that 's good ."
+  },
+  {
+    "speaker": "SPEAKER_03",
+    "start": 641.93,
+    "end": 642.11,
+    "text": "Great ."
+  },
+  {
+    "speaker": "SPEAKER_03",
+    "start": 643.796,
+    "end": 643.926,
+    "text": "Yeah ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 644.196,
+    "end": 652.296,
+    "text": "So Keith w what 's behind this is actually a program that will once you fill all this in actually s solve your belief - nets for you and stuff ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 652.296,
+    "end": 663.99,
+    "text": "So this is not just a display , this is actually a GUI to a simulator that will if we tell it all the right things we 'll wind up with a functioning belief - net at the other end ."
+  },
+  {
+    "speaker": "SPEAKER_03",
+    "start": 679.52,
+    "end": 679.97,
+    "text": "Doesn't matter ."
+  },
+  {
+    "speaker": "SPEAKER_06",
+    "start": 687.14,
+    "end": 688.35,
+    "text": "Let 's go ahead ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 697.1,
+    "end": 697.41,
+    "text": "Well yeah ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 697.41,
+    "end": 712.78,
+    "text": "So here 's here 's what 's permissible is that you can arrange so that the um the value of that is gonna have to be updated and n it 's not a belief update , right ?"
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 712.78,
+    "end": 718.64,
+    "text": "It 's you took some actions , you spent money and stuff , so the update of that is gonna have to be essentially external to the belief - net ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 719.83,
+    "end": 720.02,
+    "text": "Right ?"
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 720.82,
+    "end": 727.63,
+    "text": "And then what you 're going to need is uh for the things that it influences ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 727.83,
+    "end": 729.91,
+    "text": "Well let 's first of all let 's see if it does influence anything ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 730.63,
+    "end": 739.39,
+    "text": "And if it does influence anything then you 're gonna need something that converts from the the number here to something that 's relevant to the decision there ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 739.86,
+    "end": 754.44,
+    "text": "So it could be ra they create different ranges that are relevant for different decisions or whatever but for the moment this is just a node that is conditioned externally and might influence various things ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 762.26,
+    "end": 762.73,
+    "text": "Well that 's fine ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 763.19,
+    "end": 764.15,
+    "text": "Well anyway , go ahead ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 775.41,
+    "end": 776.74,
+    "text": "Yeah , that 's a good question ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 777.42,
+    "end": 780.67,
+    "text": "And uh does it have a lazy mode ?"
+  },
+  {
+    "speaker": "SPEAKER_04",
+    "start": 783.15,
+    "end": 783.79,
+    "text": "I don't remember ."
+  },
+  {
+    "speaker": "SPEAKER_06",
+    "start": 787.87,
+    "end": 788.14,
+    "text": "Oh right ."
+  },
+  {
+    "speaker": "SPEAKER_06",
+    "start": 790.081,
+    "end": 790.261,
+    "text": "Yeah ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 790.511,
+    "end": 791.551,
+    "text": "S probably does ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 791.941,
+    "end": 819.8,
+    "text": "Yeah someone has to track that down , but I but uh And and and I think actually uh one of the we w items for the uh user home base uh should be uh essentially non - local ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 820.55,
+    "end": 823.02,
+    "text": "I they 're only there for the day and they don't have a place that they 're staying ."
+  },
+  {
+    "speaker": "SPEAKER_03",
+    "start": 841.375,
+    "end": 841.605,
+    "text": "Yeah ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 851.94,
+    "end": 856.37,
+    "text": "So it 's clear where w w w where we are right now ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 857.25,
+    "end": 872.03,
+    "text": "So my suggestion is we just pick uh one , you know one uh particular one of the uh well let 's do the first first one let 's do the one that we sort of already think we did so w that was the of the endpoint ?"
+  },
+  {
+    "speaker": "SPEAKER_06",
+    "start": 888.25,
+    "end": 904.64,
+    "text": "No , that 's that 's a @ @ although that Well , that 's @ @ No , he has he hasn't filled them in yet , is what 's true ."
+  },
+  {
+    "speaker": "SPEAKER_05",
+    "start": 934.68,
+    "end": 934.93,
+    "text": "OK ."
+  },
+  {
+    "speaker": "SPEAKER_02",
+    "start": 937.64,
+    "end": 945.57,
+    "text": "No no no , these are ju that 's just a point , this is ju Yeah , would be a f for a given segment ."
+  },
+  {
+    "speaker": "SPEAKER_05",
+    "start": 946.32,
+    "end": 966.31,
+    "text": "You know , you y you go first go the town square That 's subtle , but true ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 966.69,
+    "end": 978.62,
+    "text": "Anyway so let 's just leave it three with three for now and let 's see if we can get it linked up just to get ourselves started ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 982.63,
+    "end": 985.51,
+    "text": "You 'll see it you 'll see something comes up immediately , that the reason I wanna do this ."
+  },
+  {
+    "speaker": "SPEAKER_03",
+    "start": 987.57,
+    "end": 987.93,
+    "text": "Right ."
+  },
+  {
+    "speaker": "SPEAKER_03",
+    "start": 990.568,
+    "end": 990.788,
+    "text": "Right ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 1006.7,
+    "end": 1012.31,
+    "text": "We did , but the three things w that that it contributed to this in fact , the other two aren't up there ."
+  },
+  {
+    "speaker": "SPEAKER_03",
+    "start": 1013.28,
+    "end": 1017.73,
+    "text": "so one was the ontology Yeah ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 1018.75,
+    "end": 1022.5,
+    "text": "And the and the third thing we talked about was something from the discourse ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 1027.6,
+    "end": 1050.94,
+    "text": "OK , so this is w Right , so what w I what we seem to need here , this is why it starts getting into the technical stuff the way we had been designing this , there were three intermediate nodes uh which were the endpoint decision as seen from the uh user model as seen from the ontology and as seen from the discourse ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 1051.74,
+    "end": 1089.07,
+    "text": "So each of those the way we had it designed , now we can change the design , but the design we had was there was a decision with the same three outcomes uh based on the th those three separate considerations so if we wanted to do that would have to put in uh three intermediate nodes and then what you and I have to talk about is , OK if we 're doing that and they get combined somehow uh how do they get combined ?"
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 1089.4,
+    "end": 1091.88,
+    "text": "But the they 're they 're undoubtedly gonna be more things to worry about ."
+  },
+  {
+    "speaker": "Unknown",
+    "start": 1096.08,
+    "end": 1096.15,
+    "text": "Yeah ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 1113.57,
+    "end": 1122.23,
+    "text": "Oh , it was called mode , so this this is m mode here means the same as endpoint ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 1123.07,
+    "end": 1124.51,
+    "text": "OK , why don't we ch can we change that ?"
+  },
+  {
+    "speaker": "SPEAKER_00",
+    "start": 1142.62,
+    "end": 1142.89,
+    "text": "Alright ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 1147.07,
+    "end": 1162.09,
+    "text": "You know , but that was actually , yeah unfortunately that was a um kind of an intermediate versio that 's I don't think what we would currently do ."
+  },
+  {
+    "speaker": "SPEAKER_02",
+    "start": 1167.93,
+    "end": 1188.39,
+    "text": "That 's a Yeah ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 1188.63,
+    "end": 1189.86,
+    "text": "But that 's - that seems to , yeah ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 1189.86,
+    "end": 1197.82,
+    "text": "So so my advice to do is is get this down to what we think is actually likely to to be a a strong influence ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 1198.75,
+    "end": 1200.04,
+    "text": "But yeah , that was what he had in mind ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 1205.22,
+    "end": 1211.91,
+    "text": "So let 's think about this this question of how do we wanna handle so there 're two separate things ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 1211.91,
+    "end": 1214.21,
+    "text": "One is uh at least two ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 1214.44,
+    "end": 1236.18,
+    "text": "One is how do we want to handle the notion of the ontology now what we talked about , and this is another technical thing Bhaskara , is uh can we arrange so that I think we can so that the belief - net itself has properties and the properties are filled in uh from on ontology items ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 1236.42,
+    "end": 1254.72,
+    "text": "So the let 's take the case of the uh this endpoint thing , the notion was that if you had a few key properties like is this a tourist site , you know some kind of landmark is it a place of business uh is it something you physically could enter OK , et cetera ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 1254.72,
+    "end": 1276.94,
+    "text": "So that there 'd be certain properties that would fit into the decision node and then again as part of the ou outer controlling conditioning of this thing those would be set , so that some somehow someone would find this word , look it up in the ontology , pull out these properties , put it into the belief - net , and then the decision would flow ."
+  },
+  {
+    "speaker": "SPEAKER_03",
+    "start": 1278.18,
+    "end": 1292.67,
+    "text": "Now Right ."
+  },
+  {
+    "speaker": "SPEAKER_03",
+    "start": 1294.4,
+    "end": 1294.59,
+    "text": "Right ."
+  },
+  {
+    "speaker": "SPEAKER_03",
+    "start": 1299.28,
+    "end": 1299.47,
+    "text": "Yeah ."
+  },
+  {
+    "speaker": "SPEAKER_03",
+    "start": 1301.1,
+    "end": 1301.3,
+    "text": "Yep ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 1308.46,
+    "end": 1314.84,
+    "text": "I uh that 's I think that 's completely right and um I think that 's good , right ?"
+  },
+  {
+    "speaker": "SPEAKER_03",
+    "start": 1315.2,
+    "end": 1343.35,
+    "text": "So what what that says is that we might be able to uh take and in particular so so the ones we talked about were uh exhibiting and selling no , accessibility meant OK ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 1347.38,
+    "end": 1347.67,
+    "text": "Alright ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 1347.83,
+    "end": 1348.9,
+    "text": "So let me suggest this ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 1349.35,
+    "end": 1354.85,
+    "text": "Uh w could you move those up about halfway ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 1357.86,
+    "end": 1361.75,
+    "text": "Uh The ones that you th And selling I guess ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 1369.93,
+    "end": 1370.21,
+    "text": "Right ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 1370.68,
+    "end": 1373.59,
+    "text": "So here here 's what it looks like to me ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 1374.14,
+    "end": 1387.07,
+    "text": "is that you want an intermediate structure which i uh is essentially the or of uh for this purpose of of uh selling , f fixing , or servicing ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 1388.03,
+    "end": 1398.79,
+    "text": "So that it uh that is , for certain purposes , it becomes important but for this kind of purpose uh one of these places is quite like the other ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 1401.39,
+    "end": 1401.94,
+    "text": "Does that seem right ?"
+  },
+  {
+    "speaker": "SPEAKER_02",
+    "start": 1403.0,
+    "end": 1407.39,
+    "text": "So we di if we Yes ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 1407.57,
+    "end": 1414.62,
+    "text": "So if well it may be more than endpoint decisions , so the idea would be that you might wanna merge those three Yeah ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 1414.62,
+    "end": 1417.14,
+    "text": "Eh ser s uh selling , fixing , and servicing ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 1420.79,
+    "end": 1425.22,
+    "text": "Uh Uh well it it i here 's where it gets a little tricky ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 1425.92,
+    "end": 1434.58,
+    "text": "Uh from the belief - net point of view it is from another point of view of course it 's interest it 's it 's important to know what it 's selling or servicing and so forth ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 1434.9,
+    "end": 1444.83,
+    "text": "So for this decision it 's just uh true or false and in th this is a case where the or seems just what you want ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 1447.53,
+    "end": 1458.18,
+    "text": "That that if any of those things is true then it 's the kind of place that you uh are more likely to enter ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 1460.0,
+    "end": 1460.55,
+    "text": "You could , yeah ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 1461.43,
+    "end": 1462.28,
+    "text": "Yeah , so let 's do that ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 1467.81,
+    "end": 1470.23,
+    "text": "No no , no eh to to an inter no , an intermediate node ."
+  },
+  {
+    "speaker": "SPEAKER_03",
+    "start": 1470.92,
+    "end": 1481.92,
+    "text": "That 's the p part of the idea , is I d Well , o open up object type and let 's see what its values are ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 1484.92,
+    "end": 1487.88,
+    "text": "Oh , well OK first of all it 's not objects , we called them entities , right ?"
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 1509.2,
+    "end": 1510.19,
+    "text": "Let 's say I put commercial ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 1515.01,
+    "end": 1543.63,
+    "text": "Well couldn't I do let 's do commercial uh landmark and Well accessible I think is different cuz that 's tempor that that varies temporally , whereas this is a I would call that a service , but but I don't know ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 1546.96,
+    "end": 1551.3,
+    "text": "Say w w well it 's co I would s a a again for this purpose I think it 's commercial ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 1552.02,
+    "end": 1553.88,
+    "text": "Someplace you want to go in to do some kind of business ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 1589.97,
+    "end": 1591.55,
+    "text": "Well you could , that 's a that 's a choice ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 1592.34,
+    "end": 1613.26,
+    "text": "So uh Yeah , the problem with it is that it sort of putting in a feature just for one decision , now w we may wind up having to do that this i anyway , this i at a mental level that 's what we we 're gonna have to sort out ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 1613.64,
+    "end": 1632.29,
+    "text": "So , you know what does this look like , what are what are uh intermediate things that are worth computing , what are the features we need in order to make all these decisions and what 's the best way to organize this so that um it 's clean and and consistent and all that sort of stuff ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 1678.93,
+    "end": 1679.17,
+    "text": "OK ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 1679.49,
+    "end": 1681.85,
+    "text": "Anyway so let me suggest you do something else ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 1683.17,
+    "end": 1693.33,
+    "text": "Uh which is to get rid get rid of that l long link between who the user and the endpoint ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 1695.1,
+    "end": 1696.22,
+    "text": "No no , I don't want the link there at all ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 1699.29,
+    "end": 1767.52,
+    "text": "Because what we 're gonna want is an intermediate thing which is uh the endpoint decisi the endpoint decision based o on the user models , so what we we what we talked about is three separate endpoint decisions , so let 's make a new node Well this was uh let 's p put it this let 's do endpoint underbar - U ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 1769.54,
+    "end": 1783.74,
+    "text": "i endpoint , e end poi this is sa it 's the endpoint let 's say underbar - U , so that 's the endpoint decision uh as seen through the Right ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 1784.61,
+    "end": 1800.35,
+    "text": "So let 's let 's actually yeah so lin you can link that up to the uh yeah , so that , I guess that 's endpoint uh underscore - E for entity , and we may change all this , but ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 1802.97,
+    "end": 1803.15,
+    "text": "Right ."
+  },
+  {
+    "speaker": "SPEAKER_03",
+    "start": 1805.35,
+    "end": 1820.23,
+    "text": "And Oh I d eh I don't know ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 1821.08,
+    "end": 1825.06,
+    "text": "Actually , I guess the easiest thing would move mo move the endpoint , well , go ahead ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 1825.91,
+    "end": 1826.44,
+    "text": "Just do whatever ."
+  },
+  {
+    "speaker": "SPEAKER_04",
+    "start": 1829.93,
+    "end": 1830.18,
+    "text": "Well ."
+  },
+  {
+    "speaker": "SPEAKER_04",
+    "start": 1835.81,
+    "end": 1836.02,
+    "text": "Good ."
+  },
+  {
+    "speaker": "SPEAKER_00",
+    "start": 1842.56,
+    "end": 1842.74,
+    "text": "Right ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 1850.38,
+    "end": 1850.53,
+    "text": "Yeah ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 1850.94,
+    "end": 1854.66,
+    "text": "And uh maybe th maybe it 's just one who is the user , I don't know , maybe maybe there 's more ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 1872.0,
+    "end": 1872.37,
+    "text": "Never mind ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 1873.88,
+    "end": 1876.86,
+    "text": "Uh anyway , this is crude ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 1877.07,
+    "end": 1892.36,
+    "text": "Now but the now so so but then the question is uh so and and we assume that some of these properties would come indirectly through an ontology , but then we had this third idea of input from the discourse ."
+  },
+  {
+    "speaker": "SPEAKER_03",
+    "start": 1895.05,
+    "end": 1895.53,
+    "text": "Sure , OK ."
+  },
+  {
+    "speaker": "SPEAKER_03",
+    "start": 1899.74,
+    "end": 1921.02,
+    "text": "Well , maybe , I again , I d well , OK , put em in but what we 're gonna wanna do is actually uh somebody else has built this user model ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 1937.83,
+    "end": 1937.99,
+    "text": "OK ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 1938.3,
+    "end": 1942.06,
+    "text": "So uh you cou and so here let me give you two ways to handle that ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 1942.88,
+    "end": 1943.24,
+    "text": "Alright ?"
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 1943.52,
+    "end": 1946.63,
+    "text": "One is um you could ignore it ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 1947.18,
+    "end": 1962.67,
+    "text": "But the other thing you could do is have an and this will give you the flavor of the of what @ @ you could have a node that 's that was a measure of the match between the object 's feature , you know , the match between the object the entity , I 'm sorry and the user ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 1963.01,
+    "end": 1983.9,
+    "text": "So you could have a k a \" fit \" node and again that would have to be computed by someone else but uh so that uh Yeah , that 's all ."
+  },
+  {
+    "speaker": "Unknown",
+    "start": 1994.48,
+    "end": 1994.74,
+    "text": "Yeah ."
+  },
+  {
+    "speaker": "SPEAKER_04",
+    "start": 1994.74,
+    "end": 1995.69,
+    "text": "I mean , we could ."
+  },
+  {
+    "speaker": "SPEAKER_03",
+    "start": 2002.75,
+    "end": 2003.0,
+    "text": "OK ."
+  },
+  {
+    "speaker": "SPEAKER_05",
+    "start": 2012.09,
+    "end": 2012.33,
+    "text": "Right ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 2015.83,
+    "end": 2076.45,
+    "text": "Well that 's what we don't wanna do , see that se cuz then we get into huge combinatorics and stuff like that an Well , but Well , that that 's we can't do that , so we we 're gonna have to but this is a good discussion , we 're gonna have to somehow figure out uh some way to encapsulate that uh so if there 's some general notion of for example the uh relation to the time to do this to the amount of time the guy has or something like that is is the uh compatibility with his current state , so that 's what you 'd have to do , you 'd have to get it down to something which uh was itself relatively compact , so it could be compatibility with his current state which would include his money and his time and and his energy It does ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 2087.61,
+    "end": 2088.58,
+    "text": "So it yeah , there are two advantages ."
+  },
+  {
+    "speaker": "SPEAKER_02",
+    "start": 2088.58,
+    "end": 2101.12,
+    "text": "That 's tha there 's one technical one and the other is it it gets used Right ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 2101.89,
+    "end": 2110.97,
+    "text": "But it there 's two advantages , one is the technical one that you don't wind up with such big exponential uh CBT 's , the other is it can be it presumably can be used for multiple decisions ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 2111.74,
+    "end": 2126.93,
+    "text": "So that if you have this idea of the compatibility with the requirements of an action to the state of the user one could well imagine that that was u not only is it sim is it cleaner to compute it separately but it could be that it 's used in multiple places ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 2127.42,
+    "end": 2130.74,
+    "text": "Anyway th so in general this is the design , this is really design problem ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 2131.68,
+    "end": 2136.36,
+    "text": "OK , you 've got a signal , a d set of decisions um how do we do this ?"
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 2155.7,
+    "end": 2157.28,
+    "text": "Or fat user fatigue even ."
+  },
+  {
+    "speaker": "SPEAKER_03",
+    "start": 2166.17,
+    "end": 2166.56,
+    "text": "Whatever ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 2170.39,
+    "end": 2172.63,
+    "text": "What 's th what we 're talking about is compatibility ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 2174.78,
+    "end": 2176.18,
+    "text": "Uh or something , I don't know , but ."
+  },
+  {
+    "speaker": "SPEAKER_02",
+    "start": 2193.58,
+    "end": 2227.56,
+    "text": "Oh but the thing is that we uh uh we had some things that uh that don't the right Uh maybe not ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 2227.56,
+    "end": 2240.25,
+    "text": "I mean the that 's the the issue is um would Even if it was true in some abstract general sense it might not be true in terms of the information we actually had and can make use of ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 2241.6,
+    "end": 2248.1,
+    "text": "And anyway we 're gonna have to find some way to cl uh get this sufficiently simple to make it feasible ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 2288.28,
+    "end": 2300.11,
+    "text": "W w but that eh viewing it without ent yeah view w with our definition of view it 's free cuz you Yeah ."
+  },
+  {
+    "speaker": "SPEAKER_05",
+    "start": 2309.19,
+    "end": 2310.25,
+    "text": "No we have to enter the park ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 2311.11,
+    "end": 2319.17,
+    "text": "Eh almost by definition um paying involves entering , ge going through some Right ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 2319.8,
+    "end": 2330.9,
+    "text": "Uh So let me suggest we switch to another one , I mean clearly there 's more work to be done on this but I think it 's gonna be more instructive to to think about uh other decisions that we need to make in path land ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 2331.91,
+    "end": 2333.23,
+    "text": "And what they 're gonna look like ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 2344.28,
+    "end": 2349.17,
+    "text": "Why , I think it 's worth saving this one but I think I 'd I 'd like to keep this one cuz I wanna see if if we 're gonna reuse any of this stuff ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 2367.63,
+    "end": 2373.37,
+    "text": "Well you tell me , so in terms of the uh planner what 's what 's a good one to do ?"
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 2376.31,
+    "end": 2394.85,
+    "text": "Uh Well the fir see the first thing is , getting back to thing we left out of the other is the actual discourse ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 2395.92,
+    "end": 2422.2,
+    "text": "So Keith this is gonna get into your world because uh we 're gonna want to know you know , which constructions indicate various of these properties s and so I I don't yet know how to do this , I guess we 're gonna wind up pulling out uh discourse properties like we have object properties and we don't know what they are yet ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 2422.77,
+    "end": 2437.65,
+    "text": "So that that the Go - there decision will have a node from uh discourse , and I guess why don't we just stick a discourse thing up there to be as a placeholder for Of of course ."
+  },
+  {
+    "speaker": "SPEAKER_03",
+    "start": 2439.04,
+    "end": 2439.26,
+    "text": "Yeah ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 2450.0,
+    "end": 2457.69,
+    "text": "Well the ontology we sort of said we would pull these various kinds of properties from the ontology like exhibiting , selling , and so forth ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 2457.94,
+    "end": 2459.63,
+    "text": "So in some sense it 's it 's there ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 2460.58,
+    "end": 2462.58,
+    "text": "But the discourse we don't have it represented at all yet ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 2504.03,
+    "end": 2505.92,
+    "text": "But if we do it 'll have the three values ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 2507.1,
+    "end": 2509.23,
+    "text": "It 'll have the EVA values if if we have it ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 2516.29,
+    "end": 2517.95,
+    "text": "For Go - there , probably is true and false , let 's say ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 2518.19,
+    "end": 2519.01,
+    "text": "That 's what we talked about ."
+  },
+  {
+    "speaker": "SPEAKER_03",
+    "start": 2534.29,
+    "end": 2534.53,
+    "text": "Right ."
+  },
+  {
+    "speaker": "SPEAKER_03",
+    "start": 2542.51,
+    "end": 2543.2,
+    "text": "Mm - hmm ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 2550.41,
+    "end": 2553.1,
+    "text": "Yeah , but that doesn't change the fact that you 're you want these two values ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 2575.29,
+    "end": 2584.6,
+    "text": "And they 'll be a y uh , a user Go - there and maybe that 's all , I don't know ."
+  },
+  {
+    "speaker": "SPEAKER_06",
+    "start": 2589.72,
+    "end": 2590.2,
+    "text": "OK , good ."
+  },
+  {
+    "speaker": "SPEAKER_06",
+    "start": 2591.18,
+    "end": 2591.38,
+    "text": "Yep ."
+  },
+  {
+    "speaker": "SPEAKER_06",
+    "start": 2607.98,
+    "end": 2608.19,
+    "text": "Right ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 2610.94,
+    "end": 2628.3,
+    "text": "Right , so that 's that 's where it starts getting to be uh uh essentially more interesting , so what uh Bhaskara says which is completely right is if you know that they 're only going to view it then it doesn't matter whether it 's closed or not in terms of uh uh you know , whether whether you wanna go there ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 2635.75,
+    "end": 2637.78,
+    "text": "Absolutely there are other situational things that do matter ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 2649.34,
+    "end": 2651.6,
+    "text": "Well i i it can have di various values ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 2653.07,
+    "end": 2654.81,
+    "text": "Yeah , but we eh you you 're right it might not be enough ."
+  },
+  {
+    "speaker": "SPEAKER_06",
+    "start": 2661.41,
+    "end": 2661.74,
+    "text": "Yeah ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 2663.49,
+    "end": 2663.82,
+    "text": "Ah ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 2664.16,
+    "end": 2665.33,
+    "text": "I see that could be ."
+  },
+  {
+    "speaker": "SPEAKER_05",
+    "start": 2673.07,
+    "end": 2673.32,
+    "text": "Could be ."
+  },
+  {
+    "speaker": "SPEAKER_05",
+    "start": 2674.05,
+    "end": 2674.2,
+    "text": "Yeah ."
+  },
+  {
+    "speaker": "SPEAKER_06",
+    "start": 2674.56,
+    "end": 2675.7,
+    "text": "N Yeah ."
+  },
+  {
+    "speaker": "SPEAKER_06",
+    "start": 2675.95,
+    "end": 2676.15,
+    "text": "Yeah ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 2676.46,
+    "end": 2700.54,
+    "text": "So so now the other thing that Bhaskara eh pointed out is what this says is that uh there sh should be a link , and this is where things are gonna get very messy from the endpoint uh decision maybe the t they 're final re and , I guess the very bottom endpoint decision uh to the Go - there node ."
+  },
+  {
+    "speaker": "SPEAKER_06",
+    "start": 2701.5,
+    "end": 2713.38,
+    "text": "And I don't worry about layout , I mean then we 'll go we 'll go nuts but Could be , yeah ."
+  },
+  {
+    "speaker": "SPEAKER_06",
+    "start": 2715.83,
+    "end": 2716.01,
+    "text": "Yeah ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 2716.32,
+    "end": 2728.91,
+    "text": "Well the Go - there , actually the Endpoint node could feed feed into the Go - there S That 's right , so the Endpoint node , make that up t t to the Go - there then and again we 'll have to do layout at some point , but something like that ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 2730.24,
+    "end": 2732.3,
+    "text": "Now it 's gonna be important not to have loops by the way ."
+  },
+  {
+    "speaker": "SPEAKER_03",
+    "start": 2733.14,
+    "end": 2741.74,
+    "text": "Uh really important in in the belief worl net world not to have loops uh No it 's much worse than that ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 2742.34,
+    "end": 2755.03,
+    "text": "It if i loo it it it it it 's not def i it 's not well defined if you 're there are loops , you just you have to there are all sorts of ways of breaking it up so that there isn't uh OK ."
+  },
+  {
+    "speaker": "SPEAKER_06",
+    "start": 2757.95,
+    "end": 2766.04,
+    "text": "Yeah , no it 's not a loop yet , I 'm just saying we we , in no , in Right ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 2766.76,
+    "end": 2768.87,
+    "text": "OK , so anyway , so that 's another decision ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 2770.06,
+    "end": 2772.12,
+    "text": "Uh what 's what 's another decision you like ?"
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 2781.13,
+    "end": 2791.89,
+    "text": "Well , the idea is that you go there , you go comes from something about the user from something about the situation and the uh the discourse is is a mystery ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 2793.27,
+    "end": 2793.76,
+    "text": "Sure , if you want ."
+  },
+  {
+    "speaker": "SPEAKER_03",
+    "start": 2805.86,
+    "end": 2806.05,
+    "text": "Right ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 2815.86,
+    "end": 2816.07,
+    "text": "Sure ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 2816.81,
+    "end": 2817.51,
+    "text": "Mm - hmm ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 2838.19,
+    "end": 2843.47,
+    "text": "And then also the discourse endpoint , I I guess endpoint sub - D is if you wanna make it consistent ."
+  },
+  {
+    "speaker": "SPEAKER_05",
+    "start": 2855.67,
+    "end": 2856.22,
+    "text": "I think so ."
+  },
+  {
+    "speaker": "SPEAKER_05",
+    "start": 2856.89,
+    "end": 2871.74,
+    "text": "S Maybe not , a Right ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 2875.99,
+    "end": 2878.9,
+    "text": "Uh y you yeah you i you if you needed to do that ."
+  },
+  {
+    "speaker": "SPEAKER_05",
+    "start": 2879.8,
+    "end": 2879.93,
+    "text": "Yeah ."
+  },
+  {
+    "speaker": "SPEAKER_05",
+    "start": 2882.43,
+    "end": 2882.68,
+    "text": "Yeah ."
+  },
+  {
+    "speaker": "SPEAKER_05",
+    "start": 2890.41,
+    "end": 2890.82,
+    "text": "Ah ."
+  },
+  {
+    "speaker": "SPEAKER_05",
+    "start": 2892.85,
+    "end": 2900.58,
+    "text": "Good point , I don't I don't know how we 're going to t uh Right ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 2902.52,
+    "end": 2907.22,
+    "text": "Uh I gu yes my curr you know , don't yeah yeah yeah that 's enough ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 2909.86,
+    "end": 2920.41,
+    "text": "Uh My current idea on that would be that each of these decision nodes has questions associated with it ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 2921.15,
+    "end": 2927.19,
+    "text": "And the question wouldn't itself be one of these conditional things you know , given that you know there 's a strike do you still wanna go ?"
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 2927.42,
+    "end": 2932.0,
+    "text": "But uh if you told him a bunch of stuff , then you would ask him do you wanna go ?"
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 2932.0,
+    "end": 2937.34,
+    "text": "But I think trying to formulate the conditional question , that sounds too much ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 2938.4,
+    "end": 2938.67,
+    "text": "To me ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 2939.73,
+    "end": 2943.39,
+    "text": "Alright , but let me let let 's stay with this a minute because I want to do a little bit of organization ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 2944.18,
+    "end": 2945.58,
+    "text": "Before we get more into details ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 2946.1,
+    "end": 2989.54,
+    "text": "The organization is going to be that uh the flavor of what 's going on is going to be that uh as we s e sort of going to this detail indeed Keith is going to to worry about the various constructions that people might use and Johno has committed himself to being the parser wizard , so what 's going to happen is that eventually like by the time he graduates , OK uh they 'll be some sort of system which is able to take the discourse in context and have outputs that can feed the rest of belief - net ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 2990.07,
+    "end": 3007.0,
+    "text": "I j wa I I assume everybody knows that , I just wanna you know , get closure that that 'll be the game then , so the semantics that you 'll get out of the discourse will be of values that go into the various discourse - based decision nodes ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 3008.04,
+    "end": 3017.8,
+    "text": "And now some of those will get fancier like mode of transportation and stuff so it isn't by any means uh necessarily a simple thing that you want out ."
+  },
+  {
+    "speaker": "SPEAKER_03",
+    "start": 3018.84,
+    "end": 3031.77,
+    "text": "So uh if there is an and there is mode of transportation Yeah ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 3034.81,
+    "end": 3041.22,
+    "text": "Yeah , well that , well , we 'll have to decide uh how much of th where that goes ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 3041.84,
+    "end": 3042.92,
+    "text": "an and it 's not clear yet ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 3042.92,
+    "end": 3067.21,
+    "text": "I mean it could be those are two separate things , it could be that the discourse gadget itself integrates em as which would be my guess that you 'd have to do see in order to do reference and stuff like that um you 've gotta have both the current discourse and the context to say I wanna go back there , wow , what does that mean and uh Alright ."
+  },
+  {
+    "speaker": "SPEAKER_03",
+    "start": 3067.64,
+    "end": 3091.88,
+    "text": "So I don't know ."
+  },
+  {
+    "speaker": "SPEAKER_03",
+    "start": 3094.55,
+    "end": 3094.94,
+    "text": "It could be ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 3096.02,
+    "end": 3103.19,
+    "text": "This is this is getting into the thing I wanna talk about next , which is s if that 's true uh how do we wanna combine those ?"
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 3104.56,
+    "end": 3105.44,
+    "text": "O or when it 's true ?"
+  },
+  {
+    "speaker": "SPEAKER_03",
+    "start": 3113.61,
+    "end": 3113.85,
+    "text": "Yeah ."
+  },
+  {
+    "speaker": "SPEAKER_03",
+    "start": 3122.52,
+    "end": 3123.03,
+    "text": "No ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 3124.86,
+    "end": 3143.94,
+    "text": "Well i i it see i if it 's fou if it 's four things and each of them has four values it turns out to be a big CPT , it 's not s completely impossi I mean it 's it 's not beyond what the system could solve but it 's probably beyond what we could actually uh write down ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 3144.41,
+    "end": 3145.04,
+    "text": "or learn ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 3146.68,
+    "end": 3149.55,
+    "text": "Uh but , you know it 's four to the fourth ."
+  },
+  {
+    "speaker": "SPEAKER_00",
+    "start": 3152.88,
+    "end": 3153.33,
+    "text": "It 's pretty big ."
+  },
+  {
+    "speaker": "SPEAKER_02",
+    "start": 3155.24,
+    "end": 3155.88,
+    "text": "Uh ."
+  },
+  {
+    "speaker": "SPEAKER_02",
+    "start": 3156.46,
+    "end": 3156.58,
+    "text": "Yeah ."
+  },
+  {
+    "speaker": "SPEAKER_03",
+    "start": 3159.25,
+    "end": 3173.57,
+    "text": "Yeah , I mean it 's and I don't think it 's gonna g e I don't think it 'll get worse than that by the way , so le that 's a that 's a good Uh for go there , but not f but not for the other one 's three values for endpoint already ."
+  },
+  {
+    "speaker": "SPEAKER_03",
+    "start": 3186.83,
+    "end": 3187.97,
+    "text": "EV - it 's the EVA ."
+  },
+  {
+    "speaker": "SPEAKER_06",
+    "start": 3192.39,
+    "end": 3192.59,
+    "text": "No ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 3193.04,
+    "end": 3194.3,
+    "text": "Since ta they will still have three ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 3195.11,
+    "end": 3198.97,
+    "text": "Each so you 're uh uh from each point of view you 're making the same decision ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 3201.1,
+    "end": 3205.24,
+    "text": "So from the point of view of the ob of the entity Yeah ."
+  },
+  {
+    "speaker": "SPEAKER_06",
+    "start": 3213.89,
+    "end": 3214.03,
+    "text": "Right ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 3216.26,
+    "end": 3217.44,
+    "text": "Those are not necessarily binary ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 3217.82,
+    "end": 3223.77,
+    "text": "S so we 're we 're gonna have to use some t care in the knowledge engineering to not have this explode ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 3224.34,
+    "end": 3241.06,
+    "text": "And in fact I think it doesn't in the sense that um Read it , you know actually with the underlying semantics and stuff I think it isn't like you have two hundred and fifty - six different uh ways of of thinking about whether this user wants to go to some place ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 3242.53,
+    "end": 3242.86,
+    "text": "Alright ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 3243.2,
+    "end": 3248.03,
+    "text": "So we we just have to figure out what the regularities are and and code them ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 3249.5,
+    "end": 3268.85,
+    "text": "But um What I was gonna suggest next is maybe we wanna work on this a little longer but I do want to also talk about the thing that we started into now of uh well it 's all fine to say all these arrows come into the si same place what rule of combination is used there ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 3270.34,
+    "end": 3273.17,
+    "text": "So th yes they so these things all affect it , how do they affect it ?"
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 3274.17,
+    "end": 3279.52,
+    "text": "And belief - nets have their own beliefs about uh what are good ways to do that ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 3281.89,
+    "end": 3284.18,
+    "text": "So is it it 's it 's clearer n clear enough what the issue is , right ?"
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 3284.94,
+    "end": 3287.17,
+    "text": "So do we wanna switch that now or we wanna do some more of this ?"
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 3300.52,
+    "end": 3325.28,
+    "text": "Well , here he here 's one of the things that that I th you sh you no , I don't know how easy it is to do this in the interface but you it would be great if you could actually just display at a given time uh all the things that you pick up , you click on \" endpoint \" , OK and everything else fades and you just see the links that are relevant to that ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 3326.79,
+    "end": 3329.26,
+    "text": "And I does anybody remember the GUI on this ?"
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 3353.64,
+    "end": 3362.97,
+    "text": "Yeah the well the b anyway so uh it clear that even with this if we put in all the arrows nobody is gonna be able to read the diagram ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 3364.99,
+    "end": 3402.84,
+    "text": "Alright , so e we have to figure out some eh eh uh basically display hack or something to do this because anyway I I let me consi suggest that 's a s not a first - order consideration , we have two first - order considerations which is what are the uh influences A , and B how do they get combined mathematically , how do we display them is an issue , but um Right ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 3404.76,
+    "end": 3415.18,
+    "text": "Yeah , and Um I that seems like a perfectly feasible thing to get into , but um we have to know what we want first ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 3428.64,
+    "end": 3433.52,
+    "text": "OK , so why don't you tell us a little bit about decision nodes and what what the choices might be for these ?"
+  },
+  {
+    "speaker": "SPEAKER_04",
+    "start": 3442.96,
+    "end": 3443.59,
+    "text": "Put it in your , yeah ."
+  },
+  {
+    "speaker": "SPEAKER_06",
+    "start": 3591.39,
+    "end": 3591.55,
+    "text": "Yep ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 3594.46,
+    "end": 3605.07,
+    "text": "Alright , so um Is that uh I yeah , I just wanna make sure everybody is with us before he goes on ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 3605.81,
+    "end": 3609.23,
+    "text": "It 's it 's cl e is is it clear what he wants to compute ?"
+  },
+  {
+    "speaker": "Unknown",
+    "start": 3696.35,
+    "end": 3696.64,
+    "text": "What ?"
+  },
+  {
+    "speaker": "SPEAKER_03",
+    "start": 3703.46,
+    "end": 3703.64,
+    "text": "Y right ."
+  },
+  {
+    "speaker": "SPEAKER_03",
+    "start": 3704.33,
+    "end": 3704.53,
+    "text": "Yep ."
+  },
+  {
+    "speaker": "Unknown",
+    "start": 3705.14,
+    "end": 0.0,
+    "text": "S so this assumes symmetry and equal weights and all this sort of things , which may or may not be a good assumption , so that @ @ three ."
+  },
+  {
+    "speaker": "Unknown",
+    "start": 0.0,
+    "end": 0.0,
+    "text": "So it would be , in this case you just add up the Yeah ."
+  },
+  {
+    "speaker": "Unknown",
+    "start": 0.0,
+    "end": 0.0,
+    "text": "So it would it would in this case , it would be probability of A would be point three ."
+  },
+  {
+    "speaker": "Unknown",
+    "start": 0.0,
+    "end": 0.0,
+    "text": "B yeah , B would be point three and the probability of E would be point four ."
+  },
+  {
+    "speaker": "Unknown",
+    "start": 0.0,
+    "end": 0.0,
+    "text": "If that if that was the voting plan ."
+  },
+  {
+    "speaker": "Unknown",
+    "start": 0.0,
+    "end": 0.0,
+    "text": "@ @ Yeah , so that 's one thing you can do , but the other So , are you going to go on and say @ @ No it isn't ."
+  },
+  {
+    "speaker": "Unknown",
+    "start": 0.0,
+    "end": 0.0,
+    "text": "Because the other thing you can do is you So this in this case , a mixture of experts just picks one ."
+  },
+  {
+    "speaker": "Unknown",
+    "start": 0.0,
+    "end": 0.0,
+    "text": "But A weighted one ."
+  },
+  {
+    "speaker": "Unknown",
+    "start": 0.0,
+    "end": 0.0,
+    "text": "So what you can do , if you if you need it is to say that I mean here there 's a fourth parameter ."
+  },
+  {
+    "speaker": "Unknown",
+    "start": 0.0,
+    "end": 0.0,
+    "text": "There 's a fifth parameter ."
+  },
+  {
+    "speaker": "Unknown",
+    "start": 0.0,
+    "end": 0.0,
+    "text": "OK ?"
+  },
+  {
+    "speaker": "Unknown",
+    "start": 0.0,
+    "end": 0.0,
+    "text": "which is the H parameter ."
+  },
+  {
+    "speaker": "Unknown",
+    "start": 0.0,
+    "end": 0.0,
+    "text": "So let 's suppose the H says in situ @ @ different uh , alpha ."
+  },
+  {
+    "speaker": "Unknown",
+    "start": 0.0,
+    "end": 0.0,
+    "text": "OK , in situation - alpha , that 's the weighting factor , but in situation - beta , it 's some other weighting factor ."
+  },
+  {
+    "speaker": "Unknown",
+    "start": 0.0,
+    "end": 0.0,
+    "text": "So you still combine these with weight , but the weights aren't always the same ."
+  },
+  {
+    "speaker": "Unknown",
+    "start": 0.0,
+    "end": 0.0,
+    "text": "That this guy uh detects for you that this is a situation in which you should weight this more or less ."
+  },
+  {
+    "speaker": "Unknown",
+    "start": 0.0,
+    "end": 0.0,
+    "text": "Correct ."
+  },
+  {
+    "speaker": "Unknown",
+    "start": 0.0,
+    "end": 0.0,
+    "text": "It 's actually s it it In - indeed ."
+  },
+  {
+    "speaker": "Unknown",
+    "start": 0.0,
+    "end": 0.0,
+    "text": "It 's it 's it 's conditioning how the other four are @ @ ."
+  },
+  {
+    "speaker": "Unknown",
+    "start": 0.0,
+    "end": 0.0,
+    "text": "And what people do , in another literature , is learn all this stuff ."
+  },
+  {
+    "speaker": "Unknown",
+    "start": 0.0,
+    "end": 0.0,
+    "text": "So you learn the weights , you can learn the expert , et cetera ."
+  },
+  {
+    "speaker": "Unknown",
+    "start": 0.0,
+    "end": 0.0,
+    "text": "And if you have enough data , then it makes perfectly good sense to do this ."
+  },
+  {
+    "speaker": "Unknown",
+    "start": 0.0,
+    "end": 0.0,
+    "text": "Well now , y it it Well it could , or you co could just pass other No , no ."
+  },
+  {
+    "speaker": "Unknown",
+    "start": 0.0,
+    "end": 0.0,
+    "text": "No ."
+  },
+  {
+    "speaker": "Unknown",
+    "start": 0.0,
+    "end": 0.0,
+    "text": "Not normally ."
+  },
+  {
+    "speaker": "Unknown",
+    "start": 0.0,
+    "end": 0.0,
+    "text": "It would just pass a a selection ."
+  },
+  {
+    "speaker": "Unknown",
+    "start": 0.0,
+    "end": 0.0,
+    "text": "So so it could pass either Well , it could ."
+  },
+  {
+    "speaker": "Unknown",
+    "start": 0.0,
+    "end": 0.0,
+    "text": "Yeah ."
+  },
+  {
+    "speaker": "Unknown",
+    "start": 0.0,
+    "end": 0.0,
+    "text": "If if @ @ Yeah , it could do that ."
+  },
+  {
+    "speaker": "Unknown",
+    "start": 0.0,
+    "end": 0.0,
+    "text": "OK ."
+  },
+  {
+    "speaker": "Unknown",
+    "start": 0.0,
+    "end": 0.0,
+    "text": "Uh , you know , uh , uh , a ma a binary mask ."
+  },
+  {
+    "speaker": "Unknown",
+    "start": 0.0,
+    "end": 0.0,
+    "text": "We - yeah ."
+  },
+  {
+    "speaker": "Unknown",
+    "start": 0.0,
+    "end": 0.0,
+    "text": "Or w in this case , wh which one of these guys to pay attention to ."
+  },
+  {
+    "speaker": "Unknown",
+    "start": 0.0,
+    "end": 0.0,
+    "text": "I mean , the way you Well , that yo You could but I think what that 's not that 's harder than to just say they 're a discrete number of situations and this says , you know , hey , you 're in situation - alpha ."
+  },
+  {
+    "speaker": "Unknown",
+    "start": 0.0,
+    "end": 0.0,
+    "text": "No ."
+  },
+  {
+    "speaker": "Unknown",
+    "start": 0.0,
+    "end": 0.0,
+    "text": "Yeah ."
+  },
+  {
+    "speaker": "Unknown",
+    "start": 0.0,
+    "end": 0.0,
+    "text": "Yeah ."
+  },
+  {
+    "speaker": "Unknown",
+    "start": 0.0,
+    "end": 0.0,
+    "text": "Or in @ @ definitely could have have other it absolutely could have other inputs from something that has n doesn't have anything directly to do with these experts ."
+  },
+  {
+    "speaker": "Unknown",
+    "start": 0.0,
+    "end": 0.0,
+    "text": "And it 's s it actually often does ."
+  },
+  {
+    "speaker": "Unknown",
+    "start": 0.0,
+    "end": 0.0,
+    "text": "So it is Yeah ."
+  },
+  {
+    "speaker": "Unknown",
+    "start": 0.0,
+    "end": 0.0,
+    "text": "Yeah ."
+  },
+  {
+    "speaker": "Unknown",
+    "start": 0.0,
+    "end": 0.0,
+    "text": "Yeah ."
+  },
+  {
+    "speaker": "Unknown",
+    "start": 0.0,
+    "end": 0.0,
+    "text": "Or if X - two is greater than X - I could imagine i all sorts of garbage ."
+  },
+  {
+    "speaker": "Unknown",
+    "start": 0.0,
+    "end": 0.0,
+    "text": "And so these so this is this is one collection of technology that we could bring to bear ."
+  },
+  {
+    "speaker": "Unknown",
+    "start": 0.0,
+    "end": 0.0,
+    "text": "Yeah ."
+  },
+  {
+    "speaker": "Unknown",
+    "start": 0.0,
+    "end": 0.0,
+    "text": "Depends ."
+  },
+  {
+    "speaker": "Unknown",
+    "start": 0.0,
+    "end": 0.0,
+    "text": "So @ @ you Yeah ."
+  },
+  {
+    "speaker": "Unknown",
+    "start": 0.0,
+    "end": 0.0,
+    "text": "It depends on on on , you know , what situations you 're in ."
+  },
+  {
+    "speaker": "Unknown",
+    "start": 0.0,
+    "end": 0.0,
+    "text": "Mm - hmm ."
+  },
+  {
+    "speaker": "Unknown",
+    "start": 0.0,
+    "end": 0.0,
+    "text": "And there 're bits @ @ actually Michael Jordan did a lot of nice work , uh , earlier on sit situations which you could actually train these up and stuff ."
+  },
+  {
+    "speaker": "Unknown",
+    "start": 0.0,
+    "end": 0.0,
+    "text": "Um , I don't think we 're gonna be in a situation where realistically we 're gonna have enough data to actually train these things , uh , anytime soon ."
+  },
+  {
+    "speaker": "Unknown",
+    "start": 0.0,
+    "end": 0.0,
+    "text": "But , I still think it 's a nice idea if the architecture supports it ."
+  },
+  {
+    "speaker": "Unknown",
+    "start": 0.0,
+    "end": 0.0,
+    "text": "So that , you know , you say , \" here 's the design and if enough data comes along uh , you co you could use it use the technology to to do that ."
+  },
+  {
+    "speaker": "Unknown",
+    "start": 0.0,
+    "end": 0.0,
+    "text": "\" Yes ."
+  },
+  {
+    "speaker": "Unknown",
+    "start": 0.0,
+    "end": 0.0,
+    "text": "That wo that would be another sort of i Absolutely ."
+  },
+  {
+    "speaker": "Unknown",
+    "start": 0.0,
+    "end": 0.0,
+    "text": "Transcript L eighty - three ."
+  },
+  {
+    "speaker": "Unknown",
+    "start": 0.0,
+    "end": 0.0,
+    "text": "nine two four seven , six nine four five , five seven eight seven zero nine nine , eight eight two , nine four five three zero , nine seven one , five four , one four two , seven six six eight , six one eight , seven six eight zero seven two , seven four two , four nine nine four six , nine six seven , zero seven , four two nine , four two one four two , two , five five zero zero six , four six , eighty - two Oh , excuse me ."
+  },
+  {
+    "speaker": "SPEAKER_02",
+    "start": 0.0,
+    "end": 279.257,
+    "text": "eight two , four five , four six ."
+  },
+  {
+    "speaker": "SPEAKER_03",
+    "start": 279.257,
+    "end": 280.157,
+    "text": "Nancy 's still stick ?"
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 337.807,
+    "end": 338.877,
+    "text": "Is your mike on ?"
+  },
+  {
+    "speaker": "SPEAKER_03",
+    "start": 591.36,
+    "end": 591.62,
+    "text": "Yes ."
+  },
+  {
+    "speaker": "SPEAKER_02",
+    "start": 892.02,
+    "end": 894.58,
+    "text": "What 's the difference between mode and endpoint ?"
+  },
+  {
+    "speaker": "SPEAKER_02",
+    "start": 937.79,
+    "end": 941.62,
+    "text": "Uh Would it be an endpoint if you were crossing over it ?"
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 949.66,
+    "end": 1122.55,
+    "text": "Well I eh Right ."
+  },
+  {
+    "speaker": "SPEAKER_02",
+    "start": 1174.32,
+    "end": 1188.05,
+    "text": "If the if the person talking is angry or slurs their speech they might be tired or , you know And , you know , possibly uh some , yeah ."
+  },
+  {
+    "speaker": "SPEAKER_02",
+    "start": 1403.08,
+    "end": 1407.09,
+    "text": "Basic - you 're basically just merging those for just the sake of endpoint decision ?"
+  },
+  {
+    "speaker": "SPEAKER_02",
+    "start": 1407.09,
+    "end": 1407.22,
+    "text": "Yeah ."
+  },
+  {
+    "speaker": "SPEAKER_02",
+    "start": 1538.25,
+    "end": 1539.37,
+    "text": "What would a hotel fall under ?"
+  },
+  {
+    "speaker": "SPEAKER_02",
+    "start": 1544.15,
+    "end": 1545.37,
+    "text": "Well I mean in terms of entity type ?"
+  },
+  {
+    "speaker": "SPEAKER_02",
+    "start": 1554.69,
+    "end": 1554.91,
+    "text": "OK ."
+  },
+  {
+    "speaker": "SPEAKER_02",
+    "start": 1721.93,
+    "end": 1728.83,
+    "text": "Just as a suggestion maybe you could \" save as \" to keep your old one nice and clean and so you can mess with this one ."
+  },
+  {
+    "speaker": "SPEAKER_02",
+    "start": 1734.76,
+    "end": 1736.68,
+    "text": "OK , well , not a big deal then ."
+  },
+  {
+    "speaker": "SPEAKER_02",
+    "start": 1740.8,
+    "end": 1743.91,
+    "text": "Well the Isn't there a \" save as \" inside of java base ?"
+  },
+  {
+    "speaker": "SPEAKER_02",
+    "start": 1747.37,
+    "end": 1747.75,
+    "text": "OK ."
+  },
+  {
+    "speaker": "SPEAKER_02",
+    "start": 1782.14,
+    "end": 1783.57,
+    "text": "As related from the user model ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 1831.49,
+    "end": 1898.67,
+    "text": "I think you have to be in move mode before The user thrift , the user budget ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 1903.42,
+    "end": 2017.61,
+    "text": "Well is It seems like everything in a user model a affects Yeah ."
+  },
+  {
+    "speaker": "SPEAKER_02",
+    "start": 2022.09,
+    "end": 2033.42,
+    "text": "Cuz if the , I mean , and if the user is tired , the user state , right , it would affect stuff , but I can't see why e anything w everything in the model wouldn't be Yeah ."
+  },
+  {
+    "speaker": "SPEAKER_02",
+    "start": 2073.79,
+    "end": 2076.01,
+    "text": "Yeah , just seems like it 'd push the problem back a level ."
+  },
+  {
+    "speaker": "SPEAKER_06",
+    "start": 2076.22,
+    "end": 2093.1,
+    "text": "Yeah , but Sh - sh yeah , S so we 'd basically be doing subgrouping ?"
+  },
+  {
+    "speaker": "SPEAKER_02",
+    "start": 2095.29,
+    "end": 2100.13,
+    "text": "Subgrouping , basically into mo so basically make it more tree like going backwards ?"
+  },
+  {
+    "speaker": "SPEAKER_02",
+    "start": 2184.05,
+    "end": 2190.53,
+    "text": "I guess the the question uh is It 's hard for me to imagine how everything wouldn't just contribute to user state again ."
+  },
+  {
+    "speaker": "SPEAKER_02",
+    "start": 2191.77,
+    "end": 2192.81,
+    "text": "Or user compatibility ."
+  },
+  {
+    "speaker": "SPEAKER_02",
+    "start": 2213.85,
+    "end": 2218.85,
+    "text": "Sure , but other I thought though the node we 're creating right now is user compatibility to the current action , right ?"
+  },
+  {
+    "speaker": "SPEAKER_02",
+    "start": 2220.39,
+    "end": 2224.9,
+    "text": "Seems like everything in the user model would contribute to whether or not the user was compatible with something ."
+  },
+  {
+    "speaker": "SPEAKER_02",
+    "start": 2287.48,
+    "end": 2289.17,
+    "text": "Well , with the way we 're defining it I think yeah ."
+  },
+  {
+    "speaker": "SPEAKER_02",
+    "start": 2335.71,
+    "end": 2342.1,
+    "text": "So you can save this one as and open up the old one , right and and then everything would be clean ."
+  },
+  {
+    "speaker": "SPEAKER_02",
+    "start": 2342.46,
+    "end": 2343.41,
+    "text": "You could do it again ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 2349.19,
+    "end": 2349.71,
+    "text": "Mm - hmm ."
+  },
+  {
+    "speaker": "SPEAKER_02",
+    "start": 2632.9,
+    "end": 2635.79,
+    "text": "It does matter though if there 's like a strike or riot or something ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 2840.68,
+    "end": 2841.21,
+    "text": "Wh - ah ."
+  },
+  {
+    "speaker": "SPEAKER_03",
+    "start": 3155.58,
+    "end": 3171.32,
+    "text": "Two fifty - six , is that what that Yeah ."
+  },
+  {
+    "speaker": "SPEAKER_06",
+    "start": 3182.89,
+    "end": 3183.18,
+    "text": "Right ."
+  },
+  {
+    "speaker": "SPEAKER_02",
+    "start": 3329.87,
+    "end": 3364.68,
+    "text": "Uh d I would almost say the other way to do that would be to open u or make you know N - many belief - nets and then open them every time you wanted to look at a different one vers cuz uh Yeah , but Yeah ."
+  },
+  {
+    "speaker": "SPEAKER_02",
+    "start": 3389.46,
+    "end": 3393.64,
+    "text": "I don't , yeah I just don't think this has been designed to support something like that ."
+  },
+  {
+    "speaker": "SPEAKER_02",
+    "start": 3439.12,
+    "end": 3440.72,
+    "text": "You can technically wear that as you 're talking ."
+  },
+  {
+    "speaker": "SPEAKER_06",
+    "start": 3730.27,
+    "end": 3776.55,
+    "text": "X - one matters more i than X - two or So I jus just to make sure I understand this , so in this case um we would still compute the average ?"
+  },
+  {
+    "speaker": "SPEAKER_02",
+    "start": 3778.72,
+    "end": 3792.92,
+    "text": "OK , so so it 'd be so in this case the probability that Y equals A would be uh W one times or A or let 's see , one full quarter times point one e OK ."
+  },
+  {
+    "speaker": "SPEAKER_04",
+    "start": 3808.82,
+    "end": 3809.03,
+    "text": "OK ."
+  },
+  {
+    "speaker": "SPEAKER_02",
+    "start": 3978.71,
+    "end": 3981.64,
+    "text": "So H passes a vector on to the next node ?"
+  },
+  {
+    "speaker": "SPEAKER_02",
+    "start": 3981.86,
+    "end": 3982.78,
+    "text": "It could ?"
+  },
+  {
+    "speaker": "SPEAKER_02",
+    "start": 3984.17,
+    "end": 3986.5,
+    "text": "A vector of the weights as the se oh ."
+  },
+  {
+    "speaker": "SPEAKER_02",
+    "start": 4001.96,
+    "end": 4014.32,
+    "text": "Oh it 's basically to tell the bottom node which one of the situations that it 's in or which one of the weighting systems W I was just , if you wanted to pay attention to more than one you could pass a w a weighting s system though too , couldn't you ?"
+  },
+  {
+    "speaker": "Unknown",
+    "start": 4024.07,
+    "end": 4024.39,
+    "text": "OK ."
+  },
+  {
+    "speaker": "SPEAKER_02",
+    "start": 4079.35,
+    "end": 4090.22,
+    "text": "Oh The situations that H has , are they built into the net or OK , so they they could either be hand coded or learned or OK ."
+  },
+  {
+    "speaker": "SPEAKER_02",
+    "start": 4095.08,
+    "end": 4096.21,
+    "text": "Based on training data , OK ."
+  },
+  {
+    "speaker": "SPEAKER_02",
+    "start": 4160.18,
+    "end": 4163.62,
+    "text": "So you specify one of these things for every one of those possi possible situations ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 4169.23,
+    "end": 4169.57,
+    "text": "Oh yeah ."
+  },
+  {
+    "speaker": "SPEAKER_02",
+    "start": 4332.84,
+    "end": 4342.62,
+    "text": "Well , basically you would say , based on in this dialogue that we have which one of the things that they said eh whether it was the entity relations or whatever was the thing that determined what mode it was , right ?"
+  },
+  {
+    "speaker": "SPEAKER_02",
+    "start": 4585.09,
+    "end": 4587.5,
+    "text": "That 's on the added variable , isn't it ?"
+  },
+  {
+    "speaker": "SPEAKER_02",
+    "start": 4734.07,
+    "end": 4734.39,
+    "text": "Ah ."
+  },
+  {
+    "speaker": "SPEAKER_02",
+    "start": 4735.61,
+    "end": 4746.33,
+    "text": "Well in terms of java base I think it 's basically what you see is what you get in I don't yeah , I would be surprised if it supports anything more than what we have right here ."
+  },
+  {
+    "speaker": "Unknown",
+    "start": 0.0,
+    "end": 0.0,
+    "text": "Transcript number L eighty - four ."
+  },
+  {
+    "speaker": "Unknown",
+    "start": 0.0,
+    "end": 0.0,
+    "text": "four O one , four five , two three two four ."
+  },
+  {
+    "speaker": "SPEAKER_02",
+    "start": 0.0,
+    "end": 351.034,
+    "text": "one six , one eight , one eight , nine seven , three five three three four , zero four four , four six two two zero , nine zero , four six , seven zero , four five nine eight four , one six , eight zero one one one four one , three one four , four seven three six four six seven , one two nine seven , eight three three three four zero , nine three , zero three , nine nine , nine seven Oops ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 351.034,
+    "end": 351.284,
+    "text": "That 's funny ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 390.446,
+    "end": 391.636,
+    "text": "Yeah , I looked at some of that stuff ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 451.921,
+    "end": 452.221,
+    "text": "Which one ?"
+  },
+  {
+    "speaker": "SPEAKER_03",
+    "start": 604.945,
+    "end": 606.005,
+    "text": "Hmm ."
+  },
+  {
+    "speaker": "SPEAKER_06",
+    "start": 609.094,
+    "end": 612.374,
+    "text": "Is this like a number that represents how much money they have left to spend ?"
+  },
+  {
+    "speaker": "SPEAKER_06",
+    "start": 613.437,
+    "end": 615.607,
+    "text": "OK , h well I mean how is it different from user finance ?"
+  },
+  {
+    "speaker": "SPEAKER_03",
+    "start": 626.53,
+    "end": 626.8,
+    "text": "Alright ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 639.0,
+    "end": 639.29,
+    "text": "Yeah ."
+  },
+  {
+    "speaker": "SPEAKER_06",
+    "start": 688.86,
+    "end": 694.17,
+    "text": "Well , I mean you 've written in you 've written in what uh seems to be required like what else is is do you want ?"
+  },
+  {
+    "speaker": "SPEAKER_06",
+    "start": 766.95,
+    "end": 774.65,
+    "text": "The other thing is that um every time that 's updated beliefs will have to be propagated but then the question is do you do we wanna propagate beliefs every single time it 's updated or only when we need to ?"
+  },
+  {
+    "speaker": "SPEAKER_06",
+    "start": 783.18,
+    "end": 792.325,
+    "text": "Uh Well , I mean , in Srini 's thing there was this thing there was this um option like proper inferences which suggests that uh doesn't happen , automatically ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 830.118,
+    "end": 887.95,
+    "text": "Well Is hmm So it 's true or false ?"
+  },
+  {
+    "speaker": "SPEAKER_02",
+    "start": 890.452,
+    "end": 893.336,
+    "text": "So I thought mode , yeah ."
+  },
+  {
+    "speaker": "SPEAKER_06",
+    "start": 898.54,
+    "end": 899.28,
+    "text": "Mode of transportation ?"
+  },
+  {
+    "speaker": "SPEAKER_06",
+    "start": 900.05,
+    "end": 900.29,
+    "text": "OK ."
+  },
+  {
+    "speaker": "SPEAKER_06",
+    "start": 901.23,
+    "end": 902.08,
+    "text": "Also true or false ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 904.27,
+    "end": 904.83,
+    "text": "Yeah , OK ."
+  },
+  {
+    "speaker": "SPEAKER_05",
+    "start": 934.12,
+    "end": 934.28,
+    "text": "Yeah ."
+  },
+  {
+    "speaker": "SPEAKER_02",
+    "start": 938.03,
+    "end": 940.67,
+    "text": "Well some of those are subsumed by approach ."
+  },
+  {
+    "speaker": "SPEAKER_03",
+    "start": 1094.39,
+    "end": 1094.88,
+    "text": "Oh yes ."
+  },
+  {
+    "speaker": "SPEAKER_06",
+    "start": 1168.66,
+    "end": 1173.83,
+    "text": "Like they 're either true or false and they uh oh I see ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 1181.9,
+    "end": 1199.22,
+    "text": "Therefore uh I was thinking less likely to view Right ."
+  },
+  {
+    "speaker": "SPEAKER_06",
+    "start": 1417.26,
+    "end": 1420.13,
+    "text": "What ex um and so either those is true f or false ?"
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 1420.69,
+    "end": 1434.85,
+    "text": "So OK ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 1436.61,
+    "end": 1436.81,
+    "text": "Yeah ."
+  },
+  {
+    "speaker": "SPEAKER_06",
+    "start": 1446.6,
+    "end": 1446.84,
+    "text": "OK ."
+  },
+  {
+    "speaker": "SPEAKER_06",
+    "start": 1458.33,
+    "end": 1461.56,
+    "text": "So you just wanna have them all pointing to a summary thing ?"
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 1469.07,
+    "end": 1560.32,
+    "text": "T Um what does the underscore - T at the end of each of those things signify ?"
+  },
+  {
+    "speaker": "SPEAKER_03",
+    "start": 1563.8,
+    "end": 1564.18,
+    "text": "Uh - huh ."
+  },
+  {
+    "speaker": "SPEAKER_03",
+    "start": 1565.82,
+    "end": 1566.12,
+    "text": "OK ."
+  },
+  {
+    "speaker": "SPEAKER_03",
+    "start": 1569.51,
+    "end": 1569.74,
+    "text": "OK ."
+  },
+  {
+    "speaker": "SPEAKER_06",
+    "start": 1571.73,
+    "end": 1573.16,
+    "text": "That also points to entity type I guess ."
+  },
+  {
+    "speaker": "SPEAKER_03",
+    "start": 1913.79,
+    "end": 1915.01,
+    "text": "Oh you mean level of interest ?"
+  },
+  {
+    "speaker": "SPEAKER_03",
+    "start": 1920.68,
+    "end": 1921.57,
+    "text": "Oh I see , right ."
+  },
+  {
+    "speaker": "SPEAKER_06",
+    "start": 1926.81,
+    "end": 1930.1,
+    "text": "So why is it oh it , so it 's like a vector of five hundred one 's or zero 's ?"
+  },
+  {
+    "speaker": "SPEAKER_06",
+    "start": 1932.35,
+    "end": 1934.48,
+    "text": "Like for each thing are we are you interested in it or not ?"
+  },
+  {
+    "speaker": "SPEAKER_06",
+    "start": 1935.22,
+    "end": 1935.72,
+    "text": "I see ."
+  },
+  {
+    "speaker": "SPEAKER_03",
+    "start": 2003.3,
+    "end": 2003.6,
+    "text": "Budget ."
+  },
+  {
+    "speaker": "SPEAKER_02",
+    "start": 2022.35,
+    "end": 2029.48,
+    "text": "Well Right ."
+  },
+  {
+    "speaker": "SPEAKER_02",
+    "start": 2074.09,
+    "end": 2074.5,
+    "text": "Right ."
+  },
+  {
+    "speaker": "SPEAKER_06",
+    "start": 2076.72,
+    "end": 2087.43,
+    "text": "No but , it 's more than that , like the the more sort of you break it up @ @ like because if you have everything pointing to one node it 's like exponential whereas if you like keep breaking it up more and more it 's not exponential anymore ."
+  },
+  {
+    "speaker": "SPEAKER_02",
+    "start": 2096.52,
+    "end": 2097.05,
+    "text": "Yeah ."
+  },
+  {
+    "speaker": "SPEAKER_02",
+    "start": 2100.25,
+    "end": 2100.54,
+    "text": "Right ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 2112.84,
+    "end": 2113.1,
+    "text": "Right ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 2345.64,
+    "end": 2346.24,
+    "text": "Yeah ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 0.0,
+    "end": 2584.81,
+    "text": "Yeah ."
+  },
+  {
+    "speaker": "SPEAKER_06",
+    "start": 2584.81,
+    "end": 2587.7,
+    "text": "Situation Go - there , I mean , because it 's whether it 's open or not ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 2590.35,
+    "end": 2627.96,
+    "text": "That definitely interes @ @ But that now that kind of um what 's the word um the that interacts with the uh EVA thing if they just wanna view it then it 's fine to go there when it 's closed whereas if they want to um so The time of day , right I well , right ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 2637.85,
+    "end": 2638.15,
+    "text": "Right ."
+  },
+  {
+    "speaker": "SPEAKER_06",
+    "start": 2639.74,
+    "end": 2662.74,
+    "text": "So yeah , that 's what I said just having one situational node may not be enough because this that node by itself wouldn't distinguish Yeah , I mean , see I 'm I 'm thinking that any node that begins with \" Go - there \" is either gonna be true or false ."
+  },
+  {
+    "speaker": "SPEAKER_06",
+    "start": 2674.4,
+    "end": 2675.87,
+    "text": "Like situation traffic and so on ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 2692.71,
+    "end": 2702.35,
+    "text": "I guess the final Yeah ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 2704.63,
+    "end": 2705.07,
+    "text": "Mmm ."
+  },
+  {
+    "speaker": "SPEAKER_06",
+    "start": 2706.0,
+    "end": 2712.43,
+    "text": "Maybe we could um have intermediate node that just the Endpoint and the Go - there S node sort of fed into ?"
+  },
+  {
+    "speaker": "SPEAKER_06",
+    "start": 2713.63,
+    "end": 2713.97,
+    "text": "Right ."
+  },
+  {
+    "speaker": "SPEAKER_06",
+    "start": 2714.23,
+    "end": 2717.08,
+    "text": "Because that 's what we , I mean that 's why this situation comes up ."
+  },
+  {
+    "speaker": "SPEAKER_06",
+    "start": 2721.85,
+    "end": 2722.5,
+    "text": "Yeah , right ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 2736.85,
+    "end": 2737.27,
+    "text": "Yes ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 2742.35,
+    "end": 2744.09,
+    "text": "It things don't converge , yeah ."
+  },
+  {
+    "speaker": "SPEAKER_03",
+    "start": 2755.83,
+    "end": 2756.48,
+    "text": "Yeah ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 2757.76,
+    "end": 2758.37,
+    "text": "Yeah ."
+  },
+  {
+    "speaker": "SPEAKER_06",
+    "start": 2759.97,
+    "end": 2765.13,
+    "text": "Well , but the good thing is we we could have loopy belief propagation which we all love ."
+  },
+  {
+    "speaker": "SPEAKER_03",
+    "start": 3120.62,
+    "end": 3120.76,
+    "text": "Yeah ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 3124.21,
+    "end": 3124.45,
+    "text": "Yeah ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 3164.18,
+    "end": 3164.48,
+    "text": "Mmm yeah ."
+  },
+  {
+    "speaker": "SPEAKER_06",
+    "start": 3176.87,
+    "end": 3185.13,
+    "text": "Yeah , I mean you need actually three to the five because uh well I mean if if it has four inputs and then it itself has three values so I mean it can get big fast ."
+  },
+  {
+    "speaker": "SPEAKER_06",
+    "start": 3191.94,
+    "end": 3193.59,
+    "text": "No it still has three , EVA ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 3207.5,
+    "end": 3282.82,
+    "text": "This and also , I mean , the other places where , like for example consider endpoint view , it has inputs coming from user budget , user thrift so even Right ."
+  },
+  {
+    "speaker": "SPEAKER_06",
+    "start": 3345.61,
+    "end": 3346.11,
+    "text": "HTML ?"
+  },
+  {
+    "speaker": "SPEAKER_03",
+    "start": 3353.2,
+    "end": 3354.08,
+    "text": "OK ."
+  },
+  {
+    "speaker": "SPEAKER_02",
+    "start": 3394.05,
+    "end": 3394.2,
+    "text": "Yeah ."
+  },
+  {
+    "speaker": "SPEAKER_06",
+    "start": 3395.0,
+    "end": 3404.19,
+    "text": "Yeah , I I mean , it might soon , if this is gonna be used in a serious way like java base then it might soon be necessary to uh start modifying it for our purposes ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 3429.04,
+    "end": 3437.57,
+    "text": "So Ah , sorry ."
+  },
+  {
+    "speaker": "SPEAKER_02",
+    "start": 3437.71,
+    "end": 3441.95,
+    "text": "I guess that 's Yeah , it 's right , I guess I can do that ."
+  },
+  {
+    "speaker": "SPEAKER_06",
+    "start": 3456.02,
+    "end": 3457.65,
+    "text": "I guess this board works fine ."
+  },
+  {
+    "speaker": "SPEAKER_06",
+    "start": 3472.55,
+    "end": 3483.01,
+    "text": "So um recall the basic problem which is that um you have a belief - net and you have like a lot of different nodes all contributing to one node ."
+  },
+  {
+    "speaker": "SPEAKER_06",
+    "start": 3484.88,
+    "end": 3485.22,
+    "text": "Right ?"
+  },
+  {
+    "speaker": "SPEAKER_06",
+    "start": 3485.92,
+    "end": 3502.94,
+    "text": "So as we discussed specifying this kind of thing is a big pain and it 's so will take a long time to write down because for example if these S have three possibilities each and this has three possibilities then you know you have two hundred and forty - three possibilities which is already a lot of numbers to write down ."
+  },
+  {
+    "speaker": "SPEAKER_06",
+    "start": 3504.2,
+    "end": 3513.63,
+    "text": "So what um helps us in our situation is that these all have values in the same set , right ?"
+  },
+  {
+    "speaker": "SPEAKER_06",
+    "start": 3513.63,
+    "end": 3516.31,
+    "text": "These are all like saying EV or A , right ?"
+  },
+  {
+    "speaker": "SPEAKER_06",
+    "start": 3516.31,
+    "end": 3538.35,
+    "text": "So it 's not just a generalized situation like I mean basically we wanna just take a combination of we wanna view each of these as experts ea who are each of them is making a decision based on some factors and we wanna sort of combine their decisions and create you know , um sorta weighted combination ."
+  },
+  {
+    "speaker": "SPEAKER_06",
+    "start": 3540.11,
+    "end": 3540.73,
+    "text": "The what decision ?"
+  },
+  {
+    "speaker": "SPEAKER_06",
+    "start": 3546.22,
+    "end": 3546.42,
+    "text": "Yeah ."
+  },
+  {
+    "speaker": "SPEAKER_06",
+    "start": 3547.33,
+    "end": 3547.43,
+    "text": "Yeah ."
+  },
+  {
+    "speaker": "SPEAKER_06",
+    "start": 3548.01,
+    "end": 3555.79,
+    "text": "So the problem is to specify the uh so the conditional property of this given all those , right ?"
+  },
+  {
+    "speaker": "SPEAKER_06",
+    "start": 3555.89,
+    "end": 3559.74,
+    "text": "That 's the way belief - nets are defined , like each node given its parents , right ?"
+  },
+  {
+    "speaker": "SPEAKER_06",
+    "start": 3560.16,
+    "end": 3570.26,
+    "text": "So um that 's what we want , we want for example P of um let 's call this guy Y and let 's call these X - one , X - two XN , right ."
+  },
+  {
+    "speaker": "SPEAKER_06",
+    "start": 3570.6,
+    "end": 3584.83,
+    "text": "So we want probability that Y equals , you know , for example um E given that these guys are I 'll just refer to this as like X um hat or something , uh the co like all of them ?"
+  },
+  {
+    "speaker": "SPEAKER_06",
+    "start": 3585.38,
+    "end": 3591.1,
+    "text": "Given that for example the data says you know , A , V , A , E , or something right ?"
+  },
+  {
+    "speaker": "SPEAKER_06",
+    "start": 3591.85,
+    "end": 3593.87,
+    "text": "So we would like to do this kind of combination ."
+  },
+  {
+    "speaker": "SPEAKER_06",
+    "start": 3609.94,
+    "end": 3610.04,
+    "text": "Right ."
+  },
+  {
+    "speaker": "SPEAKER_06",
+    "start": 3610.75,
+    "end": 3611.36,
+    "text": "So , right ."
+  },
+  {
+    "speaker": "SPEAKER_06",
+    "start": 3611.7,
+    "end": 3624.59,
+    "text": "So Basically um what we don't wanna do is to for every single combination of E and V and A and every single letter E , s give a number because that 's obviously not desirable ."
+  },
+  {
+    "speaker": "SPEAKER_06",
+    "start": 3625.27,
+    "end": 3636.04,
+    "text": "What we wanna do is find some principled way of um saying what each of these is and we want it to be a valid probability distribution , so we want it to um add up to one , right ?"
+  },
+  {
+    "speaker": "SPEAKER_06",
+    "start": 3637.16,
+    "end": 3639.01,
+    "text": "So those are the two things that we uh need ."
+  },
+  {
+    "speaker": "SPEAKER_06",
+    "start": 3640.17,
+    "end": 3656.45,
+    "text": "So what uh I guess , what Jerry suggested earlier was basically that we , you know view these guys as voting and we just take the uh we essentially take um averages , right ?"
+  },
+  {
+    "speaker": "SPEAKER_06",
+    "start": 3656.45,
+    "end": 3682.9,
+    "text": "So for example here two people have voted for A , one has voted for V , and one has voted for E , so we could say that the probabilities are , you know , probability of being E is one over four , because one person voted for E out of four and similarly , probability of so this is probability of E s and then probability of A given all that is um two out of four and probability of V is one out of four ."
+  },
+  {
+    "speaker": "SPEAKER_06",
+    "start": 3684.06,
+    "end": 3684.37,
+    "text": "Right ?"
+  },
+  {
+    "speaker": "SPEAKER_06",
+    "start": 3685.3,
+    "end": 3689.46,
+    "text": "So that 's step that 's the uh yeah that 's the that 's the basic uh thing ."
+  },
+  {
+    "speaker": "SPEAKER_03",
+    "start": 3690.24,
+    "end": 3694.5,
+    "text": "Now Is that all OK ?"
+  },
+  {
+    "speaker": "SPEAKER_03",
+    "start": 3704.33,
+    "end": 3704.49,
+    "text": "Yeah ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 3710.76,
+    "end": 3711.02,
+    "text": "Yeah ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 3711.86,
+    "end": 3711.98,
+    "text": "Yeah ."
+  },
+  {
+    "speaker": "SPEAKER_06",
+    "start": 3712.65,
+    "end": 3714.51,
+    "text": "So step two is um right ."
+  },
+  {
+    "speaker": "SPEAKER_06",
+    "start": 3714.68,
+    "end": 3732.01,
+    "text": "So we 've assumed equal weights whereas it might turn out that you know , some w be that for example , what the um the actual the uh verbal content of what the person said , like what uh what might be uh somehow more uh important than the uh Right ."
+  },
+  {
+    "speaker": "SPEAKER_06",
+    "start": 3732.47,
+    "end": 3744.6,
+    "text": "Sure , so we don't wanna like give them all equal weight so currently we 've been giving them all weight one fourth so we could replace this by uh W - one , W - two , W - three , and W - four right ?"
+  },
+  {
+    "speaker": "SPEAKER_06",
+    "start": 3744.95,
+    "end": 3751.14,
+    "text": "And in order for this to be a valid probability distribution for each um X - hat , we just need that the W 's sum to one ."
+  },
+  {
+    "speaker": "SPEAKER_06",
+    "start": 3751.98,
+    "end": 3760.03,
+    "text": "So they can be for example , you know you you could have point one , point three , point two , and point four , say ."
+  },
+  {
+    "speaker": "SPEAKER_06",
+    "start": 3762.39,
+    "end": 3763.08,
+    "text": "And that 'd be one ."
+  },
+  {
+    "speaker": "SPEAKER_06",
+    "start": 3764.06,
+    "end": 3766.36,
+    "text": "So that um also seems to work fine ."
+  },
+  {
+    "speaker": "SPEAKER_02",
+    "start": 3767.88,
+    "end": 3796.72,
+    "text": "And uh You 'd compute the weighted average , so the probability of E would be uh Not one quarter , so these numbers have been replaced with point one , point three , point two , and point four ."
+  },
+  {
+    "speaker": "SPEAKER_06",
+    "start": 3797.81,
+    "end": 3799.39,
+    "text": "So you can view these as gone ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 3804.48,
+    "end": 3809.85,
+    "text": "Probability of Yeah ."
+  },
+  {
+    "speaker": "SPEAKER_00",
+    "start": 3811.93,
+    "end": 3812.2,
+    "text": "Yeah ."
+  },
+  {
+    "speaker": "SPEAKER_06",
+    "start": 3813.42,
+    "end": 3813.76,
+    "text": "OK ."
+  },
+  {
+    "speaker": "SPEAKER_06",
+    "start": 3814.96,
+    "end": 3816.19,
+    "text": "So , alright ."
+  },
+  {
+    "speaker": "SPEAKER_06",
+    "start": 3816.73,
+    "end": 3818.18,
+    "text": "So this is uh step two ."
+  },
+  {
+    "speaker": "SPEAKER_06",
+    "start": 3818.92,
+    "end": 3832.32,
+    "text": "So the next possibility is that um we 've given just a single weight to each expert , right , whereas it might be the case that um in certain situations one of the experts is more uh reliable and in certain situations the other expert is more reliable ."
+  },
+  {
+    "speaker": "SPEAKER_06",
+    "start": 3833.63,
+    "end": 3854.29,
+    "text": "So the way this is handled is by what 's called a mixture of experts , so what you can have is you augment these diagrams like this so you have a new thing called \" H \" , OK ?"
+  },
+  {
+    "speaker": "SPEAKER_06",
+    "start": 3854.29,
+    "end": 3855.16,
+    "text": "This is a hidden variable ."
+  },
+  {
+    "speaker": "SPEAKER_06",
+    "start": 3858.75,
+    "end": 3867.99,
+    "text": "And what this is is it gets its input from X - one , X - two , X - three , and X - four , and what it does is it decides which of the experts is to be trusted in this particular situation ."
+  },
+  {
+    "speaker": "SPEAKER_06",
+    "start": 3868.81,
+    "end": 3869.06,
+    "text": "Right ?"
+  },
+  {
+    "speaker": "SPEAKER_06",
+    "start": 3869.48,
+    "end": 3876.85,
+    "text": "And then these guys all come here ."
+  },
+  {
+    "speaker": "SPEAKER_06",
+    "start": 3877.53,
+    "end": 3877.76,
+    "text": "OK ."
+  },
+  {
+    "speaker": "SPEAKER_06",
+    "start": 3878.65,
+    "end": 3880.46,
+    "text": "So this is sightly uh more complicated ."
+  },
+  {
+    "speaker": "SPEAKER_06",
+    "start": 3880.94,
+    "end": 3893.34,
+    "text": "So what 's going on is that um this H node looks at these four values of those guys and it decides in given these values which of these isn't likely to be more reliable or most reliable ."
+  },
+  {
+    "speaker": "SPEAKER_06",
+    "start": 3894.36,
+    "end": 3899.95,
+    "text": "So H produces some you know , it produces a number , either one , two , three , or four , in our situation , right ?"
+  },
+  {
+    "speaker": "SPEAKER_06",
+    "start": 3900.4,
+    "end": 3907.21,
+    "text": "Now this guy he looks at the value of H say it 's two , and then he just selects the uh thing ."
+  },
+  {
+    "speaker": "SPEAKER_06",
+    "start": 3911.36,
+    "end": 3912.83,
+    "text": "That 's all there is to say , I guess about it ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 3919.07,
+    "end": 3941.89,
+    "text": "Right , so you can have a mixture that Right ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 3963.75,
+    "end": 3963.91,
+    "text": "Yeah ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 3966.16,
+    "end": 3966.69,
+    "text": "Yeah ."
+  },
+  {
+    "speaker": "SPEAKER_02",
+    "start": 3981.32,
+    "end": 3982.02,
+    "text": "It could ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 3985.47,
+    "end": 3988.2,
+    "text": "Yeah , it could Sorry ?"
+  },
+  {
+    "speaker": "SPEAKER_05",
+    "start": 4008.51,
+    "end": 4065.89,
+    "text": "Right , so I mean the way you desc Yeah , well could be things like if X - two and X - three say yes then i ignore X - one also ."
+  },
+  {
+    "speaker": "SPEAKER_02",
+    "start": 4091.24,
+    "end": 4091.4,
+    "text": "Yeah ."
+  },
+  {
+    "speaker": "Unknown",
+    "start": 4116.19,
+    "end": 4116.79,
+    "text": "Yeah ."
+  },
+  {
+    "speaker": "Unknown",
+    "start": 4119.07,
+    "end": 4119.6,
+    "text": "Yes ."
+  },
+  {
+    "speaker": "SPEAKER_04",
+    "start": 4201.92,
+    "end": 4202.03,
+    "text": "Yeah ."
+  },
+  {
+    "speaker": "SPEAKER_06",
+    "start": 4229.66,
+    "end": 4235.17,
+    "text": "Um Well , I mean to learn them we need data , where are we gonna get data ?"
+  },
+  {
+    "speaker": "SPEAKER_06",
+    "start": 4240.75,
+    "end": 4243.15,
+    "text": "Well I mean we need data with people intentions , right ?"
+  },
+  {
+    "speaker": "SPEAKER_06",
+    "start": 4243.82,
+    "end": 4244.84,
+    "text": "Which is slightly tricky ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 4248.83,
+    "end": 4249.59,
+    "text": "Right ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 4260.8,
+    "end": 4261.36,
+    "text": "Mm - hmm ."
+  },
+  {
+    "speaker": "SPEAKER_06",
+    "start": 4266.77,
+    "end": 4270.24,
+    "text": "But what 's the data about like , are we able to get these nodes from the data ?"
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 4294.91,
+    "end": 4295.21,
+    "text": "Yeah ."
+  },
+  {
+    "speaker": "SPEAKER_06",
+    "start": 4322.87,
+    "end": 4333.66,
+    "text": "Yeah , but that 's my question , like how do we I mean , how do we have data about something like um um endpoint sub - E , or endpoint sub uh you know s S ?"
+  },
+  {
+    "speaker": "SPEAKER_02",
+    "start": 4335.78,
+    "end": 4336.38,
+    "text": "Mmm ."
+  },
+  {
+    "speaker": "SPEAKER_02",
+    "start": 4339.75,
+    "end": 4340.03,
+    "text": "Mmm ."
+  },
+  {
+    "speaker": "SPEAKER_06",
+    "start": 4423.2,
+    "end": 4424.25,
+    "text": "So this is what we wanna learn ."
+  },
+  {
+    "speaker": "Unknown",
+    "start": 4517.07,
+    "end": 4517.25,
+    "text": "Yep ."
+  },
+  {
+    "speaker": "Unknown",
+    "start": 4520.86,
+    "end": 4521.12,
+    "text": "Right ."
+  },
+  {
+    "speaker": "Unknown",
+    "start": 4556.72,
+    "end": 4557.39,
+    "text": "Hmm ."
+  },
+  {
+    "speaker": "SPEAKER_04",
+    "start": 4560.39,
+    "end": 4560.64,
+    "text": "Yeah ."
+  },
+  {
+    "speaker": "SPEAKER_06",
+    "start": 4569.6,
+    "end": 4573.17,
+    "text": "I don't think , well you have a can you bring up the function thing ?"
+  },
+  {
+    "speaker": "SPEAKER_06",
+    "start": 4581.39,
+    "end": 4592.32,
+    "text": "Um w where is the thing that allows you to sort of Oh function properties , is that it ?"
+  },
+  {
+    "speaker": "SPEAKER_06",
+    "start": 4597.48,
+    "end": 4598.37,
+    "text": "Hmm , I guess not ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 4601.61,
+    "end": 4613.46,
+    "text": "Yeah , that 's Right ."
+  },
+  {
+    "speaker": "SPEAKER_06",
+    "start": 4614.69,
+    "end": 4614.93,
+    "text": "OK ."
+  },
+  {
+    "speaker": "SPEAKER_06",
+    "start": 4617.1,
+    "end": 4631.81,
+    "text": "And um it so e either it 'll allow us to do everything which I think is unlikely , I think more likely it 'll allow us to do very few of these things and in that case we 'll have to um just write up little things that allow you to um create such CPU 's on your own in the java base format ."
+  },
+  {
+    "speaker": "Unknown",
+    "start": 4678.2,
+    "end": 4678.79,
+    "text": "Yeah ."
+  },
+  {
+    "speaker": "Unknown",
+    "start": 4689.08,
+    "end": 4689.25,
+    "text": "Yeah ."
+  },
+  {
+    "speaker": "SPEAKER_06",
+    "start": 4690.36,
+    "end": 4697.04,
+    "text": "Yeah , I was assuming that 's what we 'd always do because yeah I was assuming that 's what we 'd always do , it 's Right ."
+  },
+  {
+    "speaker": "SPEAKER_04",
+    "start": 4706.35,
+    "end": 4706.48,
+    "text": "Yeah ."
+  },
+  {
+    "speaker": "Unknown",
+    "start": 0.0,
+    "end": 0.0,
+    "text": "OK ."
+  },
+  {
+    "speaker": "Unknown",
+    "start": 0.0,
+    "end": 0.0,
+    "text": "Transcript L eighty - seven ."
+  },
+  {
+    "speaker": "SPEAKER_02",
+    "start": 0.0,
+    "end": 266.309,
+    "text": "eight six four , six six four , one seven one eight O three , two two five , two O two three one one , six one one , seven four two four O five eight , eight four two , one eight three seven six nine one seven , five , two one four three five , nine zero , nine seven , six one , six nine six six zero , two eight , one two O nine eight one three , O four , five O seven eight ."
+  },
+  {
+    "speaker": "SPEAKER_03",
+    "start": 266.309,
+    "end": 266.979,
+    "text": "Piece of paper ?"
+  },
+  {
+    "speaker": "SPEAKER_03",
+    "start": 267.119,
+    "end": 267.719,
+    "text": "I could borrow ?"
+  },
+  {
+    "speaker": "SPEAKER_03",
+    "start": 276.766,
+    "end": 281.556,
+    "text": "Nancy is uh currently in Berkeley but not here ?"
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 283.681,
+    "end": 283.871,
+    "text": "OK ."
+  },
+  {
+    "speaker": "SPEAKER_03",
+    "start": 405.839,
+    "end": 411.461,
+    "text": "Well I think one could go there 's I think we can di discuss everything ."
+  },
+  {
+    "speaker": "SPEAKER_03",
+    "start": 412.001,
+    "end": 417.491,
+    "text": "First of all this I added , I knew from sort of basically this has to be there right ?"
+  },
+  {
+    "speaker": "SPEAKER_03",
+    "start": 417.801,
+    "end": 431.715,
+    "text": "Um Given given uh uh not transverse the castle , the decision is does the person want to go there or is it just And Hmm ?"
+  },
+  {
+    "speaker": "SPEAKER_03",
+    "start": 433.019,
+    "end": 436.929,
+    "text": "So Go - there in the first place or not is definitely uh one of the basic ones ."
+  },
+  {
+    "speaker": "SPEAKER_03",
+    "start": 436.929,
+    "end": 439.734,
+    "text": "We can start with that ."
+  },
+  {
+    "speaker": "SPEAKER_03",
+    "start": 440.144,
+    "end": 440.934,
+    "text": "Interesting effect ."
+  },
+  {
+    "speaker": "SPEAKER_03",
+    "start": 442.32,
+    "end": 453.29,
+    "text": "Um Is this basically true or false or maybe we 'll get what ?"
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 453.68,
+    "end": 454.89,
+    "text": "m right ."
+  },
+  {
+    "speaker": "SPEAKER_03",
+    "start": 455.11,
+    "end": 460.708,
+    "text": "Here we we actually get just probabilities , right for each down here ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 462.717,
+    "end": 463.047,
+    "text": "Hmm ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 475.035,
+    "end": 476.415,
+    "text": "Mm - hmm ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 493.834,
+    "end": 494.684,
+    "text": "When ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 494.684,
+    "end": 495.014,
+    "text": "How ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 495.822,
+    "end": 496.672,
+    "text": "Why , yeah ."
+  },
+  {
+    "speaker": "SPEAKER_05",
+    "start": 498.377,
+    "end": 498.947,
+    "text": "Hmm ?"
+  },
+  {
+    "speaker": "SPEAKER_05",
+    "start": 519.856,
+    "end": 520.616,
+    "text": "Hmm ."
+  },
+  {
+    "speaker": "SPEAKER_05",
+    "start": 523.116,
+    "end": 523.986,
+    "text": "Hmm ."
+  },
+  {
+    "speaker": "SPEAKER_04",
+    "start": 524.827,
+    "end": 525.167,
+    "text": "OK ."
+  },
+  {
+    "speaker": "SPEAKER_03",
+    "start": 526.461,
+    "end": 532.784,
+    "text": "And so I 've tried to come up with some initial things one could observe so who is the user ?"
+  },
+  {
+    "speaker": "SPEAKER_03",
+    "start": 533.545,
+    "end": 538.275,
+    "text": "Everything that has user comes from the user model everything that has situation comes from the situation model - A ."
+  },
+  {
+    "speaker": "SPEAKER_03",
+    "start": 539.065,
+    "end": 541.021,
+    "text": "We should be be clear ."
+  },
+  {
+    "speaker": "SPEAKER_03",
+    "start": 541.671,
+    "end": 546.981,
+    "text": "But when it comes to sort of writing down when you when you do these things is it here ?"
+  },
+  {
+    "speaker": "SPEAKER_03",
+    "start": 548.284,
+    "end": 552.95,
+    "text": "You sort of have to a write the values this can take ."
+  },
+  {
+    "speaker": "SPEAKER_03",
+    "start": 554.376,
+    "end": 574.103,
+    "text": "And here I was really uh in some s sometimes I was really sort of standing in front of a wall feeling very stupid because um this case it 's pretty simple , but as we will see the other ones um for example if it 's a running budget so what are the discrete values of a running budget ?"
+  },
+  {
+    "speaker": "SPEAKER_03",
+    "start": 576.823,
+    "end": 579.263,
+    "text": "So maybe my understanding there is too impoverished ."
+  },
+  {
+    "speaker": "SPEAKER_03",
+    "start": 580.196,
+    "end": 584.656,
+    "text": "How can I write here that this is something , a number that cr keeps on changing ?"
+  },
+  {
+    "speaker": "SPEAKER_03",
+    "start": 585.464,
+    "end": 585.854,
+    "text": "But OK ."
+  },
+  {
+    "speaker": "SPEAKER_03",
+    "start": 589.314,
+    "end": 590.314,
+    "text": "Thus is understandable ?"
+  },
+  {
+    "speaker": "SPEAKER_03",
+    "start": 592.741,
+    "end": 594.011,
+    "text": "So here for example ."
+  },
+  {
+    "speaker": "SPEAKER_03",
+    "start": 599.483,
+    "end": 604.753,
+    "text": "So here is the the we had that the user 's budget may influence the outcome of decisions ."
+  },
+  {
+    "speaker": "SPEAKER_03",
+    "start": 605.333,
+    "end": 608.823,
+    "text": "There we wanted to keep sort of a running total of things ."
+  },
+  {
+    "speaker": "SPEAKER_03",
+    "start": 616.39,
+    "end": 626.248,
+    "text": "Um the finance is sort of here thought of as as the financial policy a person carries out in his life , he is he cheap , average , or spendy ?"
+  },
+  {
+    "speaker": "SPEAKER_03",
+    "start": 627.48,
+    "end": 636.56,
+    "text": "And um I didn't come uh maybe a user I don't know , I didn't want to write greediness , but Welcome ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 637.45,
+    "end": 637.81,
+    "text": "Welcome ."
+  },
+  {
+    "speaker": "SPEAKER_03",
+    "start": 642.75,
+    "end": 643.16,
+    "text": "There it is ."
+  },
+  {
+    "speaker": "SPEAKER_03",
+    "start": 667.54,
+    "end": 669.23,
+    "text": "And it 's so simple even I can use it ."
+  },
+  {
+    "speaker": "SPEAKER_03",
+    "start": 672.431,
+    "end": 680.961,
+    "text": "OK , so here was OK , I can think of uh people being cheap , average , or spendy or we can even have a a finer scale moderately cheap , doesn't matter ."
+  },
+  {
+    "speaker": "SPEAKER_03",
+    "start": 681.461,
+    "end": 686.33,
+    "text": "Agree there but here um I wasn't sure what to write in ."
+  },
+  {
+    "speaker": "SPEAKER_03",
+    "start": 695.88,
+    "end": 697.55,
+    "text": "If that 's permissible then I 'm happy ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 719.608,
+    "end": 719.818,
+    "text": "Yeah ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 754.31,
+    "end": 755.02,
+    "text": "Hmm ."
+  },
+  {
+    "speaker": "SPEAKER_03",
+    "start": 756.48,
+    "end": 761.33,
+    "text": "Yeah this is where um OK anyways let 's forget it ."
+  },
+  {
+    "speaker": "SPEAKER_06",
+    "start": 763.89,
+    "end": 806.48,
+    "text": "OK , and so this , oh that I just accidentally Oops ."
+  },
+  {
+    "speaker": "SPEAKER_03",
+    "start": 830.77,
+    "end": 839.53,
+    "text": "Oh just uh accidentally erased this , I I just had values here such as uh um is he s we had in our list we had \" Is he staying in our hotel ?"
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 0.0,
+    "end": 840.8,
+    "text": "\" , \" Is he staying with friends ?"
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 0.0,
+    "end": 848.552,
+    "text": "\" , and so forth uh so we 're OK ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 859.45,
+    "end": 860.14,
+    "text": "Something down here ?"
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 872.3,
+    "end": 872.86,
+    "text": "Mm - hmm ."
+  },
+  {
+    "speaker": "SPEAKER_03",
+    "start": 877.61,
+    "end": 881.442,
+    "text": "And um Oops ."
+  },
+  {
+    "speaker": "SPEAKER_06",
+    "start": 886.47,
+    "end": 887.34,
+    "text": "Ah , OK ."
+  },
+  {
+    "speaker": "SPEAKER_06",
+    "start": 888.14,
+    "end": 889.44,
+    "text": "No no no , EVA ."
+  },
+  {
+    "speaker": "SPEAKER_06",
+    "start": 890.32,
+    "end": 890.88,
+    "text": "Missed that one ."
+  },
+  {
+    "speaker": "SPEAKER_03",
+    "start": 895.05,
+    "end": 899.54,
+    "text": "Um mode was um Yeah ."
+  },
+  {
+    "speaker": "SPEAKER_06",
+    "start": 902.428,
+    "end": 903.118,
+    "text": "Mm - hmm ."
+  },
+  {
+    "speaker": "SPEAKER_03",
+    "start": 909.61,
+    "end": 910.43,
+    "text": "Did I or didn't I ?"
+  },
+  {
+    "speaker": "SPEAKER_03",
+    "start": 911.619,
+    "end": 911.769,
+    "text": "Ah ."
+  },
+  {
+    "speaker": "SPEAKER_03",
+    "start": 912.039,
+    "end": 914.839,
+    "text": "Probably nothing done yet , oh I just did it on the upper ones , OK ."
+  },
+  {
+    "speaker": "SPEAKER_03",
+    "start": 915.639,
+    "end": 916.219,
+    "text": "Makes sense ."
+  },
+  {
+    "speaker": "SPEAKER_03",
+    "start": 918.84,
+    "end": 920.21,
+    "text": "OK , so this was EVA ."
+  },
+  {
+    "speaker": "SPEAKER_05",
+    "start": 928.74,
+    "end": 971.39,
+    "text": "Maybe we can think of more things , cross climb , emerge Mm - hmm , mmm ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 971.73,
+    "end": 971.92,
+    "text": "Yeah ."
+  },
+  {
+    "speaker": "SPEAKER_03",
+    "start": 982.09,
+    "end": 1017.52,
+    "text": "OK , we w well the uh user was uh definitely more likely to enter if he 's a local more likely to view if he 's a tourist um and then of course we had the fact that given the fact that he 's thrifty and there will be admission then we get all these cross um We 'll d what type of building is it ?"
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 1017.52,
+    "end": 1017.7,
+    "text": "Yeah ."
+  },
+  {
+    "speaker": "SPEAKER_03",
+    "start": 1024.46,
+    "end": 1025.64,
+    "text": "What he has mentioned before ."
+  },
+  {
+    "speaker": "SPEAKER_03",
+    "start": 1068.44,
+    "end": 1070.63,
+    "text": "Uh we can load it up it you know very simple ."
+  },
+  {
+    "speaker": "SPEAKER_03",
+    "start": 1092.7,
+    "end": 1095.06,
+    "text": "So this was adjusted for this one mode thing ."
+  },
+  {
+    "speaker": "SPEAKER_03",
+    "start": 1103.3,
+    "end": 1113.7,
+    "text": "So that 's w w in our uh in in Johno 's sort of pictogram everything that could contribute to whether a person wants to enter , view , or approach something ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 1119.49,
+    "end": 1121.41,
+    "text": "Is now this endpoint ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 1123.09,
+    "end": 1124.83,
+    "text": "We can just rename that , yeah ."
+  },
+  {
+    "speaker": "SPEAKER_06",
+    "start": 1168.79,
+    "end": 1169.73,
+    "text": "The prosody ?"
+  },
+  {
+    "speaker": "SPEAKER_03",
+    "start": 1279.29,
+    "end": 1307.09,
+    "text": "Seems to me that we 've sort of e em embedded a lot , em embedded a lot of these uh things we had in there previously in in in some of the other final decisions done here , for example if we would know that this thing is exhibiting something um if it 's exhibiting itself it is a landmark , meaning more likely to be viewed if it is exhibiting pictures or sculptures and stuff like this , then it 's more likely to be entered ."
+  },
+  {
+    "speaker": "SPEAKER_03",
+    "start": 1333.72,
+    "end": 1334.69,
+    "text": "Accessibility ."
+  },
+  {
+    "speaker": "SPEAKER_03",
+    "start": 1336.63,
+    "end": 1339.25,
+    "text": "If it 's closed one probably won't enter ."
+  },
+  {
+    "speaker": "SPEAKER_03",
+    "start": 1339.76,
+    "end": 1347.07,
+    "text": "Or if it 's not accessible to a tourist ever the likelihood of that person actually wanting to enter it , given that he knows it , of course ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 1363.26,
+    "end": 1414.28,
+    "text": "Yeah , all all of these if it 's fixing things selling things , or servicing things These three ?"
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 1414.85,
+    "end": 1415.08,
+    "text": "Yeah ."
+  },
+  {
+    "speaker": "SPEAKER_06",
+    "start": 1455.78,
+    "end": 1456.94,
+    "text": "Um more likely to enter ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 1469.94,
+    "end": 1470.68,
+    "text": "Oh , OK ."
+  },
+  {
+    "speaker": "SPEAKER_03",
+    "start": 1472.07,
+    "end": 1473.86,
+    "text": "Um is is that the object type node ?"
+  },
+  {
+    "speaker": "SPEAKER_03",
+    "start": 1475.34,
+    "end": 1479.7,
+    "text": "So are they the is it the kind of object that sells , fixes , or services things ?"
+  },
+  {
+    "speaker": "SPEAKER_03",
+    "start": 1482.02,
+    "end": 1483.88,
+    "text": "Oh I just created it , it has none so far ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 1487.62,
+    "end": 1487.81,
+    "text": "Yeah ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 1505.76,
+    "end": 1530.11,
+    "text": "And then we have sort of the um Yeah , I w I was just gonna commercial action inside where people p And where was the accessible , yeah ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 1531.95,
+    "end": 1532.07,
+    "text": "Yeah ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 1534.44,
+    "end": 1535.19,
+    "text": "Mm - hmm ."
+  },
+  {
+    "speaker": "SPEAKER_03",
+    "start": 1560.01,
+    "end": 1561.34,
+    "text": "Um things ."
+  },
+  {
+    "speaker": "SPEAKER_03",
+    "start": 1561.88,
+    "end": 1569.4,
+    "text": "So places that service things sell things or fix things and pe places that e exhibit things ."
+  },
+  {
+    "speaker": "SPEAKER_03",
+    "start": 1644.47,
+    "end": 1663.44,
+    "text": "Well I think an entity maybe should be regard as a vector of several possible things , it can either em do s do sell things , fix things , service things , exhibit things , it can be a landmark at the same time as doing these things , it 's not either or mmm certainly a place can be a hotel and a famous site ."
+  },
+  {
+    "speaker": "SPEAKER_03",
+    "start": 1665.27,
+    "end": 1666.14,
+    "text": "Many come to mind ."
+  },
+  {
+    "speaker": "SPEAKER_03",
+    "start": 1666.74,
+    "end": 1670.73,
+    "text": "Things can be generally um a landmark and be accessible ."
+  },
+  {
+    "speaker": "SPEAKER_03",
+    "start": 1672.06,
+    "end": 1679.03,
+    "text": "IE a a castle or can be a landmark a or not accessible , some statue you know can go inside ."
+  },
+  {
+    "speaker": "SPEAKER_03",
+    "start": 1693.66,
+    "end": 1695.07,
+    "text": "Could we just move it like this ?"
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 1696.49,
+    "end": 1696.91,
+    "text": "Oh , OK ."
+  },
+  {
+    "speaker": "Unknown",
+    "start": 1719.2,
+    "end": 1719.3,
+    "text": "Yeah ."
+  },
+  {
+    "speaker": "SPEAKER_04",
+    "start": 1720.66,
+    "end": 1720.83,
+    "text": "Yeah ."
+  },
+  {
+    "speaker": "SPEAKER_02",
+    "start": 1729.44,
+    "end": 1729.78,
+    "text": "Mmm ."
+  },
+  {
+    "speaker": "SPEAKER_02",
+    "start": 1730.38,
+    "end": 1738.5,
+    "text": "The old one was not that not that important , I think but Let 's do it then ."
+  },
+  {
+    "speaker": "SPEAKER_03",
+    "start": 1744.32,
+    "end": 1749.01,
+    "text": "But I can just take this copy it somewhere else ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 1758.55,
+    "end": 1769.79,
+    "text": "This was user something or end point ?"
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 1771.16,
+    "end": 1771.49,
+    "text": "Ah ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 1772.39,
+    "end": 1772.86,
+    "text": "Gotcha , yeah ."
+  },
+  {
+    "speaker": "SPEAKER_03",
+    "start": 1790.13,
+    "end": 1792.12,
+    "text": "Should I rename this too ?"
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 0.0,
+    "end": 1792.27,
+    "text": "No ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 1792.27,
+    "end": 1797.12,
+    "text": "It 's underscore - E ."
+  },
+  {
+    "speaker": "SPEAKER_03",
+    "start": 1807.96,
+    "end": 1809.55,
+    "text": "OK , shouldn't I be able to move them all ?"
+  },
+  {
+    "speaker": "SPEAKER_03",
+    "start": 1809.56,
+    "end": 1809.83,
+    "text": "No ."
+  },
+  {
+    "speaker": "SPEAKER_03",
+    "start": 1810.62,
+    "end": 1810.83,
+    "text": "Or ?"
+  },
+  {
+    "speaker": "SPEAKER_03",
+    "start": 1811.43,
+    "end": 1811.7,
+    "text": "Can I ?"
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 0.0,
+    "end": 1818.03,
+    "text": "Mmm - mm ."
+  },
+  {
+    "speaker": "SPEAKER_03",
+    "start": 1818.03,
+    "end": 1818.28,
+    "text": "Where ?"
+  },
+  {
+    "speaker": "SPEAKER_03",
+    "start": 1818.46,
+    "end": 1818.61,
+    "text": "What ?"
+  },
+  {
+    "speaker": "SPEAKER_03",
+    "start": 1828.04,
+    "end": 1828.72,
+    "text": "Wasn't this possible ?"
+  },
+  {
+    "speaker": "SPEAKER_04",
+    "start": 1830.71,
+    "end": 1830.9,
+    "text": "Yeah ."
+  },
+  {
+    "speaker": "SPEAKER_04",
+    "start": 1833.62,
+    "end": 1833.86,
+    "text": "Uh - huh ."
+  },
+  {
+    "speaker": "Unknown",
+    "start": 1834.55,
+    "end": 1834.78,
+    "text": "OK ."
+  },
+  {
+    "speaker": "SPEAKER_03",
+    "start": 1847.56,
+    "end": 1918.34,
+    "text": "So now we 're looking for user related things that um Well if he 's usi if he 's in a car right now what was that people with Harry drove the car into the cafe Well let 's should we finish this , I mean but surely the user interests yeah , yeah Here this was one of my problems we have the user interest is a is a vector of five hundred values , so um That 's from the user model , mm - hmm , no not levels of interest but things you can be interested in ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 1920.38,
+    "end": 1956.37,
+    "text": "Gothic churches versus Baroque townhouses versus Yea - n is that yeah uh I I think Mm - hmm ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 1960.95,
+    "end": 1961.14,
+    "text": "Uh ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 1968.4,
+    "end": 1968.65,
+    "text": "Mm - hmm ."
+  },
+  {
+    "speaker": "SPEAKER_03",
+    "start": 1976.18,
+    "end": 1984.92,
+    "text": "Just as a mental note uh Mm - hmm ."
+  },
+  {
+    "speaker": "SPEAKER_03",
+    "start": 1988.81,
+    "end": 1994.22,
+    "text": "And and should we say that this interests eh affects the likelihood of of entering ?"
+  },
+  {
+    "speaker": "SPEAKER_04",
+    "start": 1995.14,
+    "end": 1995.25,
+    "text": "Yeah ."
+  },
+  {
+    "speaker": "SPEAKER_03",
+    "start": 1998.27,
+    "end": 2007.7,
+    "text": "And also if it 's an expensive place to enter , this may also Schedule ?"
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 0.0,
+    "end": 2104.65,
+    "text": "@ @ Bhaskara ?"
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 2127.83,
+    "end": 2127.99,
+    "text": "Yeah ."
+  },
+  {
+    "speaker": "SPEAKER_03",
+    "start": 2140.05,
+    "end": 2144.15,
+    "text": "What do I have under user state anyhow cuz I named that already something ."
+  },
+  {
+    "speaker": "SPEAKER_03",
+    "start": 2144.58,
+    "end": 2146.05,
+    "text": "Oh that 's tired , fresh , yeah ."
+  },
+  {
+    "speaker": "SPEAKER_03",
+    "start": 2151.4,
+    "end": 2153.99,
+    "text": "Maybe should be renamed into physical state ."
+  },
+  {
+    "speaker": "SPEAKER_03",
+    "start": 2161.45,
+    "end": 2162.13,
+    "text": "That 's with a \" G \" ?"
+  },
+  {
+    "speaker": "SPEAKER_03",
+    "start": 2166.97,
+    "end": 2169.14,
+    "text": "Then we can make a user state ."
+  },
+  {
+    "speaker": "SPEAKER_03",
+    "start": 2201.67,
+    "end": 2202.28,
+    "text": "That don't ."
+  },
+  {
+    "speaker": "SPEAKER_03",
+    "start": 2203.13,
+    "end": 2278.4,
+    "text": "The user interests and the user who who who the user is are completely apart from the fact whether he is tired broke Maybe um if we look at the if we split it up again into sort of um if we look at the uh the endpoint again we we said that for each of these things there are certain preconditions so you can only enter a place if you are not too tired to do so and also eh have the money to do so if it costs something so if you can afford it and perform it is preconditions ."
+  },
+  {
+    "speaker": "SPEAKER_03",
+    "start": 2280.55,
+    "end": 2282.93,
+    "text": "Viewing usually is cheap or free ."
+  },
+  {
+    "speaker": "SPEAKER_03",
+    "start": 2284.39,
+    "end": 2285.0,
+    "text": "Is that always true ?"
+  },
+  {
+    "speaker": "Unknown",
+    "start": 2285.43,
+    "end": 2285.77,
+    "text": "I don't know ."
+  },
+  {
+    "speaker": "SPEAKER_03",
+    "start": 2297.67,
+    "end": 2298.59,
+    "text": "And so is approaching ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 2324.03,
+    "end": 2324.69,
+    "text": "Mm - hmm ."
+  },
+  {
+    "speaker": "SPEAKER_03",
+    "start": 2356.06,
+    "end": 2366.64,
+    "text": "Um so this might be What next ?"
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 2371.35,
+    "end": 2375.54,
+    "text": "Well let 's th this go there or not I think is a good one ."
+  },
+  {
+    "speaker": "SPEAKER_03",
+    "start": 2377.19,
+    "end": 2378.3,
+    "text": "Is a very basic one ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 2381.1,
+    "end": 2436.93,
+    "text": "So what makes things more likely that So We we also had discourse features of course for the endpoint ."
+  },
+  {
+    "speaker": "SPEAKER_03",
+    "start": 2438.17,
+    "end": 2446.17,
+    "text": "Identified that and so again re that 's completely correct , we have the user model , the situation model here , we don't have the discourse model here yet ."
+  },
+  {
+    "speaker": "SPEAKER_03",
+    "start": 2446.57,
+    "end": 2449.33,
+    "text": "Much the same way as we didn't we don't have the ontology here ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 2450.39,
+    "end": 2450.73,
+    "text": "Really ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 2459.73,
+    "end": 2460.51,
+    "text": "Mm - hmm ."
+  },
+  {
+    "speaker": "Unknown",
+    "start": 2462.98,
+    "end": 2463.16,
+    "text": "Yeah ."
+  },
+  {
+    "speaker": "SPEAKER_03",
+    "start": 2476.79,
+    "end": 2482.13,
+    "text": "Um This be specific for second year ?"
+  },
+  {
+    "speaker": "SPEAKER_03",
+    "start": 2483.2,
+    "end": 2492.93,
+    "text": "Um And and we probably will have uh something like a discourse for endpoint ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 2506.52,
+    "end": 2506.74,
+    "text": "Hmm ?"
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 2508.48,
+    "end": 2508.65,
+    "text": "Yeah ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 2509.4,
+    "end": 2509.53,
+    "text": "Yeah ."
+  },
+  {
+    "speaker": "SPEAKER_03",
+    "start": 2511.2,
+    "end": 2531.74,
+    "text": "OK just for starters and here discourse um um well , I think um we 're looking at the the little data that we have , so people say how do I get to the castle and this usually means they wanna go there ."
+  },
+  {
+    "speaker": "SPEAKER_03",
+    "start": 2532.18,
+    "end": 2542.26,
+    "text": "So this should sort of push it in one direction however people also sometimes say how do I get there in order to find out how to get there without wanting to go there ."
+  },
+  {
+    "speaker": "SPEAKER_03",
+    "start": 2543.42,
+    "end": 2555.9,
+    "text": "And sometimes um people say where is it because they wanna know where it is but in most cases they probably Oh yeah , true ."
+  },
+  {
+    "speaker": "SPEAKER_03",
+    "start": 2557.8,
+    "end": 2565.29,
+    "text": "So this is sort of some external thing that takes all the discourse stuff and then says here it 's either yep , yay , A , or nay ."
+  },
+  {
+    "speaker": "Unknown",
+    "start": 2565.85,
+    "end": 2565.98,
+    "text": "Yeah ."
+  },
+  {
+    "speaker": "SPEAKER_04",
+    "start": 2566.61,
+    "end": 2566.89,
+    "text": "OK ?"
+  },
+  {
+    "speaker": "SPEAKER_06",
+    "start": 2587.05,
+    "end": 2587.31,
+    "text": "Mm - hmm ."
+  },
+  {
+    "speaker": "SPEAKER_05",
+    "start": 2671.05,
+    "end": 2671.26,
+    "text": "Mm - hmm ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 2704.42,
+    "end": 2705.68,
+    "text": "Mm - hmm ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 2723.18,
+    "end": 2723.41,
+    "text": "Mm - hmm ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 2724.93,
+    "end": 2725.07,
+    "text": "Yeah ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 2732.98,
+    "end": 2745.72,
+    "text": "I was just gonna How long does it take you to to compute uh uh R recursive action ?"
+  },
+  {
+    "speaker": "SPEAKER_03",
+    "start": 2754.59,
+    "end": 2757.51,
+    "text": "Uh but this isn't , this is this line is just coming from over here ."
+  },
+  {
+    "speaker": "SPEAKER_06",
+    "start": 2759.77,
+    "end": 2760.3,
+    "text": "Mmm ."
+  },
+  {
+    "speaker": "SPEAKER_03",
+    "start": 2774.74,
+    "end": 2778.6,
+    "text": "OK , these have no parents yet , but I guess that sort of doesn't matter ."
+  },
+  {
+    "speaker": "SPEAKER_03",
+    "start": 2780.55,
+    "end": 2780.78,
+    "text": "Right ?"
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 2781.23,
+    "end": 2786.65,
+    "text": "I mean this is sort of This comes from traffic and so forth , yeah ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 2790.56,
+    "end": 2800.48,
+    "text": "Sh - Should we just make some um if there 's parking maybe Mmm Oh who cares ."
+  },
+  {
+    "speaker": "SPEAKER_03",
+    "start": 2802.06,
+    "end": 2802.52,
+    "text": "OK ."
+  },
+  {
+    "speaker": "SPEAKER_03",
+    "start": 2803.23,
+    "end": 2807.28,
+    "text": "And if he has seen it already or not and so forth , OK ."
+  },
+  {
+    "speaker": "SPEAKER_03",
+    "start": 2808.62,
+    "end": 2815.25,
+    "text": "Um and discourse is something that sort of should we make a Keith note here ?"
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 2815.38,
+    "end": 2816.5,
+    "text": "That sort of comes from Keith ."
+  },
+  {
+    "speaker": "SPEAKER_03",
+    "start": 2824.91,
+    "end": 2827.01,
+    "text": "Just sort of so we don't forget ."
+  },
+  {
+    "speaker": "Unknown",
+    "start": 2828.99,
+    "end": 2829.12,
+    "text": "Oops ."
+  },
+  {
+    "speaker": "SPEAKER_03",
+    "start": 2833.39,
+    "end": 2834.37,
+    "text": "Have to get used to this ."
+  },
+  {
+    "speaker": "SPEAKER_03",
+    "start": 2834.84,
+    "end": 2835.83,
+    "text": "OK , whoops ."
+  },
+  {
+    "speaker": "SPEAKER_04",
+    "start": 2843.66,
+    "end": 2844.25,
+    "text": "Mm - hmm ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 2907.82,
+    "end": 2907.99,
+    "text": "Yeah ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 2938.47,
+    "end": 2939.07,
+    "text": "Mm - hmm ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 2940.38,
+    "end": 3035.31,
+    "text": "But And it there 's a sort of also a split if you loo if you blow this up and look at it in more detail there 's something that comes from the discourse in terms of what was actually just said what 's the utterance go giving us and then what 's the discourse history give us ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 3036.5,
+    "end": 3037.65,
+    "text": "That 's uh two things then ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 3041.23,
+    "end": 3041.89,
+    "text": "Mmm ."
+  },
+  {
+    "speaker": "SPEAKER_03",
+    "start": 3060.94,
+    "end": 3119.65,
+    "text": "Mm - hmm But is th is this picture that 's emerging here just my wish that you have noticed already for symmetry or is it that we get for each each decision on the very bottom we sort of get the sub - E , sub - D , sub - U and maybe a sub - O \" O \" for \" ontology \" um meta node but it might just could be so this but this eh w wou wou would be nice though that , you know , we only have at most four at the moment um arrows going f to each of the uh bottom decisions ."
+  },
+  {
+    "speaker": "SPEAKER_03",
+    "start": 3121.12,
+    "end": 3122.4,
+    "text": "And four you we can handle ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 3124.05,
+    "end": 3124.63,
+    "text": "It 's too much ?"
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 3142.8,
+    "end": 3143.58,
+    "text": "Right , true ."
+  },
+  {
+    "speaker": "SPEAKER_03",
+    "start": 3164.37,
+    "end": 3168.67,
+    "text": "But but four didn't we decide that all of these had true or false ?"
+  },
+  {
+    "speaker": "SPEAKER_06",
+    "start": 3168.82,
+    "end": 3186.15,
+    "text": "So is it 's four Um for endpoint ?"
+  },
+  {
+    "speaker": "SPEAKER_03",
+    "start": 3186.15,
+    "end": 3191.33,
+    "text": "No it 's it 's sh yeah , down here , but this one only has two ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 3202.17,
+    "end": 3203.5,
+    "text": "Want to view that , yeah yeah ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 3203.7,
+    "end": 3299.24,
+    "text": "C sl yeah R basically w we just need to sort of in order to get some closure on this figure out how we 're gonna get this picture sort of uh completely messy ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 3318.54,
+    "end": 3318.96,
+    "text": "Mm - hmm ."
+  },
+  {
+    "speaker": "SPEAKER_02",
+    "start": 3335.78,
+    "end": 3336.23,
+    "text": "Mm - hmm ."
+  },
+  {
+    "speaker": "SPEAKER_06",
+    "start": 3339.56,
+    "end": 3536.99,
+    "text": "It 's probably pretty easy do it to do it in HTML , just Uh Yeah I have each of these thing each of the end belief - nets be be a page and then you click on the thing and then li consider that it 's respective , but Hmm ."
+  },
+  {
+    "speaker": "SPEAKER_03",
+    "start": 3537.42,
+    "end": 3539.33,
+    "text": "ROVER , the ROVER decision ."
+  },
+  {
+    "speaker": "SPEAKER_03",
+    "start": 3541.24,
+    "end": 3541.69,
+    "text": "ROVER ."
+  },
+  {
+    "speaker": "SPEAKER_03",
+    "start": 3543.52,
+    "end": 3545.73,
+    "text": "All of their outputs combined to make a decision ."
+  },
+  {
+    "speaker": "SPEAKER_03",
+    "start": 3692.29,
+    "end": 3693.11,
+    "text": "Um Yeah ."
+  },
+  {
+    "speaker": "SPEAKER_03",
+    "start": 3694.23,
+    "end": 3703.4,
+    "text": "And that one outcome , that 's it 's X X - one voted for A X - two voted for V and so forth ?"
+  },
+  {
+    "speaker": "SPEAKER_03",
+    "start": 3703.86,
+    "end": 3704.0,
+    "text": "Yeah ."
+  },
+  {
+    "speaker": "SPEAKER_01",
+    "start": 3705.12,
+    "end": 3705.75,
+    "text": "That 's the outcome ."
+  },
+  {
+    "speaker": "SPEAKER_06",
+    "start": 3761.45,
+    "end": 3761.78,
+    "text": "That 's one ."
+  },
+  {
+    "speaker": "SPEAKER_06",
+    "start": 3918.8,
+    "end": 3919.04,
+    "text": "Mm - hmm ."
+  },
+  {
+    "speaker": "Unknown",
+    "start": 0.0,
+    "end": 0.0,
+    "text": "I still have trouble understanding the very first step , maybe just because I 'm approaching it from the very wrong end ."
+  },
+  {
+    "speaker": "Unknown",
+    "start": 0.0,
+    "end": 0.0,
+    "text": "I don't know ."
+  },
+  {
+    "speaker": "Unknown",
+    "start": 0.0,
+    "end": 0.0,
+    "text": "So , this is true for the case that X - one voted for A , X - two voted for B , and so forth ."
+  },
+  {
+    "speaker": "Unknown",
+    "start": 0.0,
+    "end": 0.0,
+    "text": "Now , X - one could potentially also vote E ."
+  }
+]
