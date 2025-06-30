@@ -103,16 +103,13 @@ def build_agenda_by_speaker(summaries, time_info):
             "items":       []
         }
         for idx, x in enumerate(recs, start=1):
-            action_summary, decision_summary, concern_summary = split_summary(x["summary"])
             sec["items"].append({
-                "id":               idx,
-                "action_summary":   action_summary,
-                "decision_summary": decision_summary,
-                "concern_summary":  concern_summary,
-                "actions":          x.get("actions", []),
-                "decisions":        x.get("decisions", []),
-                "conflicts":        x.get("conflicts", [])
+                "id": idx,
+                "actions": x.get("actions", []),
+                "decisions": x.get("decisions", []),
+                "conflicts": x.get("conflicts", [])
             })
+
         sections.append(sec)
     return sections
 
@@ -138,13 +135,14 @@ def save_agenda_json(sections, out_path: Path):
 def save_agenda_docx(sections, out_path: Path):
     """
     将按说话人分段的议程写入 DOCX，
-    并且每一组前加 “Section N.” 的编号
+    只展示 actions / decisions / conflicts，不再引用已删除的 summary 字段
     """
+    from docx import Document
+
     out_path.parent.mkdir(parents=True, exist_ok=True)
     doc = Document()
     doc.add_heading("会议议程（按说话人分段）", level=1)
 
-    # 按 sections 的顺序，从 1 开始编号
     for sec_idx, sec in enumerate(sections, start=1):
         # 二级标题：Section N. Speaker + 时间信息
         h = doc.add_heading(level=2)
@@ -152,24 +150,28 @@ def save_agenda_docx(sections, out_path: Path):
         h.add_run(f"{sec['speaker']} ").bold = True
         h.add_run(f"[起始：{sec['start_time']}，总时长：{sec['duration']}]")
 
-        # 列出该说话人所有议题
+        # 列出该说话人所有议题，输出编号 + 说话人
         for it in sec["items"]:
             p = doc.add_paragraph(style="List Number")
-            p.add_run(f"{it['id']}. ").bold = True
-            p.add_run(it["action_summary"])
+            p.add_run(f"{it['id']}. {sec['speaker']}").bold = True
 
-            # Decision／Concern／Actions 列表保持不变
-            if it["decision_summary"]:
-                p2 = doc.add_paragraph(style="List Bullet")
-                p2.add_run("Decision: " + it["decision_summary"])
-            if it["concern_summary"]:
-                p3 = doc.add_paragraph(style="List Bullet")
-                p3.add_run("Concern: " + it["concern_summary"])
+            # 列出所有 actions
             for act in it.get("actions", []):
-                pa = doc.add_paragraph(style="List Bullet 2")
-                pa.add_run(act)
+                pa = doc.add_paragraph(style="List Bullet")
+                pa.add_run("Action: " + act)
+
+            # 列出所有 decisions
+            for dec in it.get("decisions", []):
+                pd = doc.add_paragraph(style="List Bullet")
+                pd.add_run("Decision: " + dec)
+
+            # 列出所有 conflicts
+            for cf in it.get("conflicts", []):
+                pc = doc.add_paragraph(style="List Bullet")
+                pc.add_run("Conflict: " + cf)
 
     doc.save(str(out_path))
+
 
 
 if __name__ == "__main__":
