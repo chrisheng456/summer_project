@@ -1,34 +1,15 @@
+#!/usr/bin/env python3
 # diarize_and_align.py
 
 import os
-# 禁用 symlink，以免 Windows 权限不足报错
-os.environ["HF_HUB_DISABLE_SYMLINKS"]        = "1"
+# 禁用 symlink，以避免 Windows 下权限问题
+os.environ["HF_HUB_DISABLE_SYMLINKS"] = "1"
 os.environ["HF_HUB_DISABLE_SYMLINKS_WARNING"] = "1"
 
 import sys
 import json
 import time
 import torch
-
-def ensure_ctranslate2():
-    try:
-        import ctranslate2
-    except ImportError:
-        print("➡️ ctranslate2 未安装，正在自动安装最新版本…")
-        subprocess.check_call([sys.executable, "-m", "pip", "install", "ctranslate2"])
-        # 再次尝试导入
-        import ctranslate2
-
-# 在其他库导入前先保证 ctranslate2 在环境中
-ensure_ctranslate2()
-
-
-# 然后正常导入你脚本里其他的东西
-import os
-os.environ["HF_HUB_DISABLE_SYMLINKS"]        = "1"
-os.environ["HF_HUB_DISABLE_SYMLINKS_WARNING"] = "1"
-import json, time, torch
-from pyannote.audio import Pipeline
 from pyannote.audio import Pipeline
 
 def load_transcript(json_path):
@@ -44,40 +25,48 @@ def align_speakers(wav_path, transcript_json_in, transcript_json_out):
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
     print(f"→ Using device: {device}")
 
-    # 2) 加载 pipeline（不含 device），再 to(device)
+    # 2) 从环境变量读取 HF 访问令牌
+    token = (
+        os.environ.get("HF_HUB_TOKEN")
+        or os.environ.get("HUGGINGFACE_TOKEN")
+        or os.environ.get("HUGGINGFACE_HUB_TOKEN")
+    )
+    if not token:
+        raise RuntimeError(
+            "请先在环境变量中设置 HF_HUB_TOKEN（或 HUGGINGFACE_TOKEN / HUGGINGFACE_HUB_TOKEN）"
+        )
+
+    # 3) 加载说话人分离 pipeline，并移动到 device
     pipeline = Pipeline.from_pretrained(
         "pyannote/speaker-diarization",
-        use_auth_token=True
+        use_auth_token=token
     )
     pipeline.to(device)
 
-    # 3) 运行说话人分离
+    # 4) 运行 diarization
     start = time.perf_counter()
     diarization = pipeline(wav_path)
     elapsed = time.perf_counter() - start
     print(f"→ Diarization done in {elapsed/60:.2f} minutes")
 
-    # 4) 转成列表 (start_sec, end_sec, speaker_label)
+    # 5) 提取 (start, end, label) 列表
     diar_segments = [
         (segment.start, segment.end, label)
         for segment, _, label in diarization.itertracks(yield_label=True)
     ]
 
-    # 5) 读取原始转写
+    # 6) 读取原始转写 JSON
     transcript = load_transcript(transcript_json_in)
 
-    # 6) 对齐每条 utterance 到 best_label
+    # 7) 对齐每条 utterance 到最佳 speaker label
     for utt in transcript:
-        # 支持两种格式：Azure 的 offset/duration（100ns ticks），
-        # 也支持 ICSI JSON 的 start/end（秒）
         if "offset" in utt and "duration" in utt:
-            start_sec = utt["offset"]  / 1e7
+            start_sec = utt["offset"] / 1e7
             end_sec   = start_sec + utt["duration"] / 1e7
         elif "start" in utt and "end" in utt:
             start_sec = utt["start"]
             end_sec   = utt["end"]
         else:
-            # 无法识别的格式
             continue
 
         best_label  = "Unknown"
@@ -90,7 +79,7 @@ def align_speakers(wav_path, transcript_json_in, transcript_json_out):
 
         utt["speaker"] = best_label
 
-    # 7) 保存带 speaker 的 JSON
+    # 8) 保存对齐后结果
     save_transcript(transcript_json_out, transcript)
     print(f"→ Saved diarized transcript to {transcript_json_out}")
 
