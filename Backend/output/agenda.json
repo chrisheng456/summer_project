@@ -1,7 +1,35 @@
 {
-  "title": "see can see the transcript (and 13 more)",
+  "title": "SPEAKER_05 see can see the transcript (and 13 more)",
   "agenda_by_speaker": [
     {
+      "section_id": 1,
+      "heading": "1. SPEAKER_02 [0:00:05 | 0:01:58]",
+      "speaker": "SPEAKER_02",
+      "start_time": "0:00:05",
+      "duration": "0:01:58",
+      "items": [
+        {
+          "id": 1,
+          "actions": [
+            "I did n't get that before",
+            "So maybe you would wanna touch it",
+            "Do they have a map and then you give them a scenario of some sort"
+          ],
+          "decisions": [
+            "No explicit decisions found"
+          ],
+          "conflicts": [
+            "But that does n't necessarily",
+            "But we 'd have to infer a Source Path Goal to some degree for touching the side right",
+            "See I would have thought it was more of a waltz",
+            "I first thought it had something to do with the material that it w that 's why I asked"
+          ]
+        }
+      ]
+    },
+    {
+      "section_id": 2,
+      "heading": "2. SPEAKER_05 [0:00:06 | 0:05:11]",
       "speaker": "SPEAKER_05",
       "start_time": "0:00:06",
       "duration": "0:05:11",
@@ -42,6 +70,8 @@
       ]
     },
     {
+      "section_id": 3,
+      "heading": "3. SPEAKER_03 [0:00:23 | 0:28:55]",
       "speaker": "SPEAKER_03",
       "start_time": "0:00:23",
       "duration": "0:28:55",
@@ -130,6 +160,8 @@
       ]
     },
     {
+      "section_id": 4,
+      "heading": "4. SPEAKER_04 [0:00:52 | 0:28:08]",
       "speaker": "SPEAKER_04",
       "start_time": "0:00:52",
       "duration": "0:28:08",
@@ -223,6 +255,8 @@
       ]
     },
     {
+      "section_id": 5,
+      "heading": "5. Unknown [0:05:26 | -1 day, 22:56:58]",
       "speaker": "Unknown",
       "start_time": "0:05:26",
       "duration": "-1 day, 22:56:58",
@@ -242,30 +276,8 @@
       ]
     },
     {
-      "speaker": "SPEAKER_02",
-      "start_time": "0:00:05",
-      "duration": "0:01:58",
-      "items": [
-        {
-          "id": 1,
-          "actions": [
-            "I did n't get that before",
-            "So maybe you would wanna touch it",
-            "Do they have a map and then you give them a scenario of some sort"
-          ],
-          "decisions": [
-            "No explicit decisions found"
-          ],
-          "conflicts": [
-            "But that does n't necessarily",
-            "But we 'd have to infer a Source Path Goal to some degree for touching the side right",
-            "See I would have thought it was more of a waltz",
-            "I first thought it had something to do with the material that it w that 's why I asked"
-          ]
-        }
-      ]
-    },
-    {
+      "section_id": 6,
+      "heading": "6. SPEAKER_00 [0:16:02 | 0:05:00]",
       "speaker": "SPEAKER_00",
       "start_time": "0:16:02",
       "duration": "0:05:00",
@@ -295,6 +307,8 @@
       ]
     },
     {
+      "section_id": 7,
+      "heading": "7. SPEAKER_01 [0:20:11 | 0:00:36]",
       "speaker": "SPEAKER_01",
       "start_time": "0:20:11",
       "duration": "0:00:36",

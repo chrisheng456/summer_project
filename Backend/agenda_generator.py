@@ -30,9 +30,12 @@ def fmt_time(sec: float) -> str:
     return str(timedelta(seconds=int(sec)))
 
 def build_agenda_by_speaker(summaries, time_info):
+    # 1) 分组
     grp = defaultdict(list)
     for x in summaries:
         grp[x["speaker"]].append(x)
+
+    # 2) 为每个 speaker 构造初步 section（不含 section_id/heading）
     sections = []
     for spk, recs in grp.items():
         ti = time_info.get(spk, {"start_time": 0, "duration": 0})
@@ -50,7 +53,27 @@ def build_agenda_by_speaker(summaries, time_info):
                 "conflicts": x.get("conflicts", [])
             })
         sections.append(sec)
-    return sections
+
+    # 3) 按真实发言开始时间排序
+    sections.sort(key=lambda sec: time_info
+                                .get(sec['speaker'], {})
+                                .get('start_time', float('inf')))
+
+    # 4) 重建列表，把 section_id 和 heading 放到最前面
+    ordered = []
+    for idx, sec in enumerate(sections, 1):
+        heading = f"{idx}. {sec['speaker']} [{sec['start_time']} | {sec['duration']}]"
+        new_sec = {
+            "section_id": idx,
+            "heading":    heading,
+            "speaker":    sec["speaker"],
+            "start_time": sec["start_time"],
+            "duration":   sec["duration"],
+            "items":      sec["items"],
+        }
+        ordered.append(new_sec)
+
+    return ordered
 
 def generate_meeting_title(summaries):
     """
@@ -60,13 +83,10 @@ def generate_meeting_title(summaries):
     if not summaries:
         return "会议摘要"
     raw = summaries[0].get("summary", "")
-    # 去掉类似 "SPEAKER_05 " 的前缀
     title = re.sub(r'^SPEAKER_[^\s]+\s*', '', raw)
-    # 截到第一个分号前
     if ";" in title:
         title = title.split(";", 1)[0]
     title = title.strip()
-    # 限制长度
     if len(title) > 60:
         title = title[:60].rstrip() + "…"
     return title
@@ -83,14 +103,14 @@ def save_agenda_json(sections, title, out_path: Path):
 def save_agenda_docx(sections, title, out_path: Path):
     out_path.parent.mkdir(parents=True, exist_ok=True)
     doc = Document()
-    # 一级标题：只展示会议题目
+    # 一级标题：会议题目
     doc.add_heading(title, level=1)
     # 二级标题：议程
     doc.add_heading("会议议程（按说话人分段）", level=2)
-    for idx, sec in enumerate(sections, 1):
-        h = doc.add_heading(level=3)
-        h.add_run(f"{idx}. {sec['speaker']} ").bold = True
-        h.add_run(f"[{sec['start_time']} | {sec['duration']}]")
+
+    for sec in sections:
+        # 三级标题直接用 heading，位于本节最前
+        doc.add_heading(sec["heading"], level=3)
         for item in sec["items"]:
             p = doc.add_paragraph(style="List Number")
             p.add_run(f"{item['id']}. {sec['speaker']}").bold = True
@@ -103,6 +123,7 @@ def save_agenda_docx(sections, title, out_path: Path):
             for cf in item.get("conflicts", []):
                 pc = doc.add_paragraph(style="List Bullet")
                 pc.add_run(cf)
+
     doc.save(str(out_path))
 
 if __name__ == "__main__":
