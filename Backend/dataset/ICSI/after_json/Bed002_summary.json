@@ -1,6 +1,9 @@
 [
   {
+    "id": "section1",
     "speaker": "SPEAKER_05",
+    "start": 0.0,
+    "end": 1044.91,
     "actions": [
       "You can see the transcript",
       "So you would just read that one",
@@ -34,7 +37,10 @@
     "summary": "SPEAKER_05 see can see the transcript (and 13 more); decided: \"So because the general environment is so challenging we decided to to do at leas...\"; raised concern: \"We 're talking about doing all at the same time but I think cognitively that wou...\"."
   },
   {
+    "id": "section2",
     "speaker": "SPEAKER_03",
+    "start": 0.0,
+    "end": 3821.3,
     "actions": [
       "Well we can make up aliases for each of us",
       "And touch it",
@@ -116,7 +122,10 @@
     "summary": "SPEAKER_03 make we can make up aliases for each of us (and 26 more); decided: \"but uh I think we we will agree on that um to come up with a with a sort of very...\"; raised concern: \"We could pursue um if we thought it 's it 's worth it\"."
   },
   {
+    "id": "section3",
     "speaker": "SPEAKER_04",
+    "start": 0.0,
+    "end": 3880.93,
     "actions": [
       "We m We may wind up with ver We we may need versions of all this garbage",
       "So why do n't you tell us briefly your give give your e normal schpiel",
@@ -203,7 +212,10 @@
     "summary": "SPEAKER_04 need We may wind up with ver We we may need versions of all this garbage (and 27 more); decided: \"and they do n't have the option of entering it\"; raised concern: \"It 's really simple though\"."
   },
   {
+    "id": "section4",
     "speaker": "Unknown",
+    "start": 0.0,
+    "end": 3797.7,
     "actions": [
       "Three five one nine O three six four O two three O eight seven three nine eight seven five nine Uh strike that"
     ],
@@ -216,7 +228,10 @@
     "summary": "Unknown strike five one nine O three six four O two three O eight seven three nine eight seven five nine Uh strike that; made no major decisions; had no significant conflicts."
   },
   {
+    "id": "section5",
     "speaker": "SPEAKER_02",
+    "start": 5.79,
+    "end": 3831.73,
     "actions": [
       "I did n't get that before",
       "So maybe you would wanna touch it",
@@ -234,7 +249,10 @@
     "summary": "SPEAKER_02 get id n't get that before (and 2 more); made no major decisions; raised concern: \"But that does n't necessarily\"."
   },
   {
+    "id": "section6",
     "speaker": "SPEAKER_00",
+    "start": 962.6,
+    "end": 3833.86,
     "actions": [
       "Do you wanna see a picture",
       "Take them into account",
@@ -257,7 +275,10 @@
     "summary": "SPEAKER_00 see you wanna see a picture (and 4 more); made no major decisions; raised concern: \"But Um Not from that data\"."
   },
   {
+    "id": "section7",
     "speaker": "SPEAKER_01",
+    "start": 1211.57,
+    "end": 3796.26,
     "actions": [
       "No specific actions identified"
     ],

@@ -27,6 +27,9 @@
 </template>
 
 <script setup lang="ts">
+import axios from 'axios';
+
+
 // 需先安装并全局注册 Element Plus
 </script>
 
