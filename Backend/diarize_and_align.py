@@ -9,6 +9,26 @@ import sys
 import json
 import time
 import torch
+
+def ensure_ctranslate2():
+    try:
+        import ctranslate2
+    except ImportError:
+        print("➡️ ctranslate2 未安装，正在自动安装最新版本…")
+        subprocess.check_call([sys.executable, "-m", "pip", "install", "ctranslate2"])
+        # 再次尝试导入
+        import ctranslate2
+
+# 在其他库导入前先保证 ctranslate2 在环境中
+ensure_ctranslate2()
+
+
+# 然后正常导入你脚本里其他的东西
+import os
+os.environ["HF_HUB_DISABLE_SYMLINKS"]        = "1"
+os.environ["HF_HUB_DISABLE_SYMLINKS_WARNING"] = "1"
+import json, time, torch
+from pyannote.audio import Pipeline
 from pyannote.audio import Pipeline
 
 def load_transcript(json_path):
