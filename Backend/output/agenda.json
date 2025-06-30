@@ -1,13 +1,16 @@
 {
   "agenda_by_speaker": [
     {
+      "section": 1,
       "speaker": "SPEAKER_05",
-      "start_time": "0:00:00",
-      "duration": "1:58:11",
+      "start_time": "0:00:06",
+      "duration": "0:05:11",
       "items": [
         {
           "id": 1,
-          "summary": "SPEAKER_05 see can see the transcript (and 13 more); decided: \"So because the general environment is so challenging we decided to to do at leas...\"; raised concern: \"We 're talking about doing all at the same time but I think cognitively that wou...\".",
+          "action_summary": "SPEAKER_05 see can see the transcript (and 13 more)",
+          "decision_summary": "So because the general environment is so challenging we decided to to do at leas...",
+          "concern_summary": "We 're talking about doing all at the same time but I think cognitively that wou...",
           "actions": [
             "You can see the transcript",
             "So you would just read that one",
@@ -42,13 +45,16 @@
       ]
     },
     {
+      "section": 2,
       "speaker": "SPEAKER_03",
-      "start_time": "0:00:00",
-      "duration": "11:04:17",
+      "start_time": "0:00:23",
+      "duration": "0:28:55",
       "items": [
         {
           "id": 1,
-          "summary": "SPEAKER_03 make we can make up aliases for each of us (and 26 more); decided: \"but uh I think we we will agree on that um to come up with a with a sort of very...\"; raised concern: \"We could pursue um if we thought it 's it 's worth it\".",
+          "action_summary": "SPEAKER_03 make we can make up aliases for each of us (and 26 more)",
+          "decision_summary": "but uh I think we we will agree on that um to come up with a with a sort of very...",
+          "concern_summary": "We could pursue um if we thought it 's it 's worth it",
           "actions": [
             "Well we can make up aliases for each of us",
             "And touch it",
@@ -131,13 +137,16 @@
       ]
     },
     {
+      "section": 3,
       "speaker": "SPEAKER_04",
-      "start_time": "0:00:00",
-      "duration": "0:33:34",
+      "start_time": "0:00:52",
+      "duration": "0:28:08",
       "items": [
         {
           "id": 1,
-          "summary": "SPEAKER_04 need We may wind up with ver We we may need versions of all this garbage (and 27 more); decided: \"and they do n't have the option of entering it\"; raised concern: \"It 's really simple though\".",
+          "action_summary": "SPEAKER_04 need We may wind up with ver We we may need versions of all this garbage (and 27 more)",
+          "decision_summary": "and they do n't have the option of entering it",
+          "concern_summary": "It 's really simple though",
           "actions": [
             "We m We may wind up with ver We we may need versions of all this garbage",
             "So why do n't you tell us briefly your give give your e normal schpiel",
@@ -225,13 +234,16 @@
       ]
     },
     {
+      "section": 4,
       "speaker": "Unknown",
-      "start_time": "0:00:00",
+      "start_time": "0:05:26",
       "duration": "-1 day, 22:56:58",
       "items": [
         {
           "id": 1,
-          "summary": "Unknown strike five one nine O three six four O two three O eight seven three nine eight seven five nine Uh strike that; made no major decisions; had no significant conflicts.",
+          "action_summary": "Unknown strike five one nine O three six four O two three O eight seven three nine eight seven five nine Uh strike that; made no major decisions; had no significant conflicts.",
+          "decision_summary": "",
+          "concern_summary": "",
           "actions": [
             "Three five one nine O three six four O two three O eight seven three nine eight seven five nine Uh strike that"
           ],
@@ -245,13 +257,16 @@
       ]
     },
     {
+      "section": 5,
       "speaker": "SPEAKER_02",
       "start_time": "0:00:05",
       "duration": "0:01:58",
       "items": [
         {
           "id": 1,
-          "summary": "SPEAKER_02 get id n't get that before (and 2 more); made no major decisions; raised concern: \"But that does n't necessarily\".",
+          "action_summary": "SPEAKER_02 get id n't get that before (and 2 more); made no major decisions",
+          "decision_summary": "",
+          "concern_summary": "But that does n't necessarily",
           "actions": [
             "I did n't get that before",
             "So maybe you would wanna touch it",
@@ -270,13 +285,16 @@
       ]
     },
     {
+      "section": 6,
       "speaker": "SPEAKER_00",
       "start_time": "0:16:02",
       "duration": "0:05:00",
       "items": [
         {
           "id": 1,
-          "summary": "SPEAKER_00 see you wanna see a picture (and 4 more); made no major decisions; raised concern: \"But Um Not from that data\".",
+          "action_summary": "SPEAKER_00 see you wanna see a picture (and 4 more); made no major decisions",
+          "decision_summary": "",
+          "concern_summary": "But Um Not from that data",
           "actions": [
             "Do you wanna see a picture",
             "Take them into account",
@@ -300,13 +318,16 @@
       ]
     },
     {
+      "section": 7,
       "speaker": "SPEAKER_01",
       "start_time": "0:20:11",
       "duration": "0:00:36",
       "items": [
         {
           "id": 1,
-          "summary": "SPEAKER_01 proposed no specific actions; made no major decisions; had no significant conflicts.",
+          "action_summary": "SPEAKER_01 proposed no specific actions; made no major decisions; had no significant conflicts.",
+          "decision_summary": "",
+          "concern_summary": "",
           "actions": [
             "No specific actions identified"
           ],

@@ -1,111 +1,215 @@
-import json
-from datetime import timedelta
-from pathlib import Path
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
 
-from transformers import pipeline   # 或者你喜欢的任何摘要模型
+import json
+import re
+import argparse
+from pathlib import Path
+from datetime import timedelta
+from collections import defaultdict
 from docx import Document
 
-def load_transcript(json_path: Path):
-    with open(json_path, encoding="utf-8") as f:
-        data = json.load(f)
-    return data["lines"]  # 每项含 speaker, offset (100ns), duration (100ns), start_time, text
+def load_json(path: Path):
+    """从文件加载 JSON"""
+    with open(path, encoding="utf-8") as f:
+        return json.load(f)
 
-def segment_lines(lines, max_segment_duration_sec=300):
-    segments = []
-    cur_seg = {"lines": [], "start_offset": None, "end_offset": None}
-    prev_speaker = None
+def compute_speaker_times(diarized_records):
+    """
+    统计每个说话人的最早发言（排除 start==0 的假段落）和总时长
+    返回：{ speaker: {"start_time": float, "duration": float}, ... }
+    """
+    segs_by_spk = defaultdict(list)
+    for r in diarized_records:
+        spk = r.get("speaker", "Unknown")
+        s, e = r.get("start", 0.0), r.get("end", 0.0)
+        segs_by_spk[spk].append((s, e - s))
+    out = {}
+    for spk, segs in segs_by_spk.items():
+        # 先过滤掉 start==0 的“假”分段
+        valid = [(s, d) for s, d in segs if s > 0]
+        if valid:
+            starts, durs = zip(*valid)
+        else:
+            # 如果该人所有分段都从 0 开始，就用原始数据
+            starts, durs = zip(*segs)
+        out[spk] = {
+            "start_time": min(starts),
+            "duration":   sum(durs)
+        }
+    return out
 
-    for ln in lines:
+def fmt_time(sec: float) -> str:
+    """把秒数转成 hh:mm:ss 格式"""
+    return str(timedelta(seconds=int(sec)))
 
-        if cur_seg["start_offset"] is None:
-            cur_seg["start_offset"] = ln["offset"]
+def split_summary(combined: str):
+    """
+    把形如
+      "see ...; decided: \"...\"; raised concern: \"...\""
+    的 summary 字符串，拆成三部分：
+      action_summary, decision_summary, concern_summary
+    """
+    # 匹配 decided 和 raised concern
+    dec_m = re.search(r'; decided: "([^"]*)"', combined)
+    con_m = re.search(r'; raised concern: "([^"]*)"', combined)
 
+    # action_summary 部分是从开头到第一个 '; decided' 或 '; raised concern'
+    end_idx = min(
+        dec_m.start() if dec_m else len(combined),
+        con_m.start() if con_m else len(combined)
+    )
+    action_summary = combined[:end_idx].strip().rstrip(';')
 
-        elapsed_sec = (ln["offset"] - cur_seg["start_offset"]) / 10_000_000
+    decision_summary = dec_m.group(1) if dec_m else ""
+    concern_summary  = con_m.group(1) if con_m else ""
+    return action_summary, decision_summary, concern_summary
 
+def build_agenda_by_speaker(summaries, time_info):
+    """
+    按说话人分段生成议程结构：
+    [
+      {
+        "speaker": "...",
+        "start_time": "hh:mm:ss",
+        "duration":   "hh:mm:ss",
+        "items": [
+           {
+             "id": 1,
+             "action_summary": "...",
+             "decision_summary": "...",
+             "concern_summary": "...",
+             "actions": [...],
+             "decisions": [...],
+             "conflicts": [...]
+           },
+           ...
+        ]
+      },
+      ...
+    ]
+    """
+    grp = defaultdict(list)
+    for x in summaries:
+        grp[x["speaker"]].append(x)
 
-        time_exceeded = elapsed_sec > max_segment_duration_sec
-        speaker_changed = (prev_speaker is not None and ln["speaker"] != prev_speaker)
+    sections = []
+    for spk, recs in grp.items():
+        ti = time_info.get(spk, {"start_time": 0, "duration": 0})
+        sec = {
+            "speaker":     spk,
+            "start_time":  fmt_time(ti["start_time"]),
+            "duration":    fmt_time(ti["duration"]),
+            "items":       []
+        }
+        for idx, x in enumerate(recs, start=1):
+            action_summary, decision_summary, concern_summary = split_summary(x["summary"])
+            sec["items"].append({
+                "id":               idx,
+                "action_summary":   action_summary,
+                "decision_summary": decision_summary,
+                "concern_summary":  concern_summary,
+                "actions":          x.get("actions", []),
+                "decisions":        x.get("decisions", []),
+                "conflicts":        x.get("conflicts", [])
+            })
+        sections.append(sec)
+    return sections
 
-        if time_exceeded or speaker_changed:
+def save_agenda_json(sections, out_path: Path):
+    """
+    将按说话人分段的议程写入 JSON，
+    并且在每个分组开头加上 "section" 序号
+    """
+    out_path.parent.mkdir(parents=True, exist_ok=True)
 
-            segments.append(cur_seg)
+    numbered = []
+    for idx, sec in enumerate(sections, start=1):
+        # 先把 section 放前面，再展开原 sec 的所有字段
+        sec_numbered = {"section": idx, **sec}
+        numbered.append(sec_numbered)
 
-            cur_seg = {
-                "lines": [],
-                "start_offset": ln["offset"],
-                "end_offset": None
-            }
-
-
-        cur_seg["lines"].append(ln)
-        cur_seg["end_offset"] = ln["offset"] + ln["duration"]
-
-        prev_speaker = ln["speaker"]
-
-
-    if cur_seg["lines"]:
-        segments.append(cur_seg)
-
-    return segments
-
-
-def extract_topic(text: str):
-
-    summarizer = pipeline("summarization", model="sshleifer/distilbart-cnn-12-6")
-    res = summarizer(text, max_length=20, min_length=5, do_sample=False)
-    return res[0]["summary_text"]
-
-def build_agenda_items(segments):
-
-    items = []
-    for idx, seg in enumerate(segments, start=1):
-        # 计算起止时间
-        start_off = seg["start_offset"] // 10_000_000
-        end_off   = seg["end_offset"]   // 10_000_000
-        start_ts  = str(timedelta(seconds=int(start_off)))
-        duration  = end_off - start_off
-
-
-        speakers = [ln["speaker"] for ln in seg["lines"]]
-        main_spk = max(set(speakers), key=speakers.count)
-
-
-        text = " ".join(ln["text"] for ln in seg["lines"])
-        topic = extract_topic(text)
-
-        items.append({
-            "id": idx,
-            "start_time": start_ts,
-            "duration_sec": duration,
-            "speaker": main_spk,
-            "topic": topic
-        })
-    return items
-
-def save_agenda_json(items, out_path: Path):
+    output = {"agenda_by_speaker": numbered}
     with open(out_path, "w", encoding="utf-8") as f:
-        json.dump({"agenda": items}, f, ensure_ascii=False, indent=2)
+        json.dump(output, f, ensure_ascii=False, indent=2)
 
-def save_agenda_docx(items, out_path: Path):
+
+
+def save_agenda_docx(sections, out_path: Path):
+    """
+    将按说话人分段的议程写入 DOCX，
+    并且每一组前加 “Section N.” 的编号
+    """
+    out_path.parent.mkdir(parents=True, exist_ok=True)
     doc = Document()
-    doc.add_heading("会议议程 (Agenda)", level=1)
-    for it in items:
-        p = doc.add_paragraph()
-        p.add_run(f"{it['id']}. [{it['start_time']}] ").bold = True
-        p.add_run(f"{it['speaker']} (时长 {it['duration_sec']} 秒): ")
-        p.add_run(it["topic"])
-    doc.save(out_path)
+    doc.add_heading("会议议程（按说话人分段）", level=1)
+
+    # 按 sections 的顺序，从 1 开始编号
+    for sec_idx, sec in enumerate(sections, start=1):
+        # 二级标题：Section N. Speaker + 时间信息
+        h = doc.add_heading(level=2)
+        h.add_run(f"Section {sec_idx}. ").bold = True
+        h.add_run(f"{sec['speaker']} ").bold = True
+        h.add_run(f"[起始：{sec['start_time']}，总时长：{sec['duration']}]")
+
+        # 列出该说话人所有议题
+        for it in sec["items"]:
+            p = doc.add_paragraph(style="List Number")
+            p.add_run(f"{it['id']}. ").bold = True
+            p.add_run(it["action_summary"])
+
+            # Decision／Concern／Actions 列表保持不变
+            if it["decision_summary"]:
+                p2 = doc.add_paragraph(style="List Bullet")
+                p2.add_run("Decision: " + it["decision_summary"])
+            if it["concern_summary"]:
+                p3 = doc.add_paragraph(style="List Bullet")
+                p3.add_run("Concern: " + it["concern_summary"])
+            for act in it.get("actions", []):
+                pa = doc.add_paragraph(style="List Bullet 2")
+                pa.add_run(act)
+
+    doc.save(str(out_path))
+
 
 if __name__ == "__main__":
-    # 1. 自动找到最新转录 JSON
-    latest = sorted(Path(".").glob("meeting_minutes_*.json"))[-1]
-    lines = load_transcript(latest)
-    # 2. 分段
-    segs = segment_lines(lines, max_segment_duration_sec=300)
-    # 3. 生成 agenda item 列表
-    agenda = build_agenda_items(segs)
-    # 4. 输出 JSON 和 DOCX
-    save_agenda_json(agenda, Path("agenda.json"))
-    save_agenda_docx(agenda,   Path("agenda.docx"))
-    print("✅ 议程已生成：agenda.json & agenda.docx")
+    parser = argparse.ArgumentParser(description="按说话人分段生成会议议程")
+    this_dir = Path(__file__).parent
+
+    parser.add_argument(
+        "--diarized",
+        help="说话人分段 JSON 文件路径（含 start/end 字段）",
+        default=str(this_dir / "dataset" / "ICSI" / "diarized_json" / "Bed002_diarized.json")
+    )
+    parser.add_argument(
+        "--summary",
+        help="summary_json.py 生成的 summary 文件路径",
+        default=str(this_dir / "dataset" / "ICSI" / "after_json" / "Bed002_summary.json")
+    )
+    parser.add_argument(
+        "--out_json",
+        help="输出的 Agenda JSON 文件路径",
+        default=str(this_dir / "output" / "agenda.json")
+    )
+    parser.add_argument(
+        "--out_docx",
+        help="输出的 Agenda DOCX 文件路径",
+        default=str(this_dir / "output" / "agenda.docx")
+    )
+    args = parser.parse_args()
+
+    # 确保输出目录存在
+    Path(args.out_json).parent.mkdir(parents=True, exist_ok=True)
+    Path(args.out_docx).parent.mkdir(parents=True, exist_ok=True)
+
+    diarized = load_json(Path(args.diarized))
+    summaries = load_json(Path(args.summary))
+    time_info = compute_speaker_times(diarized)
+    sections = build_agenda_by_speaker(summaries, time_info)
+
+    save_agenda_json(sections, Path(args.out_json))
+    save_agenda_docx(sections,  Path(args.out_docx))
+
+    print("✅ 按说话人分段的议程已生成：")
+    print("   JSON →", args.out_json)
+    print("   DOCX →", args.out_docx)
