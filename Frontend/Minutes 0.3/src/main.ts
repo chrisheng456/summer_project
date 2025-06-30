@@ -10,6 +10,10 @@ import 'element-plus/dist/index.css'
 //引入pinia
 import { createPinia } from 'pinia'
 
+if (import.meta.env.MODE === 'development') {
+  import('./mock') // 只在开发环境加载 mock 文件
+}
+
 //创建一个app
 const app =createApp(App)
 const pinia =createPinia();
