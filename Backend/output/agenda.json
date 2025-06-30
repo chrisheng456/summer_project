@@ -1,7 +1,7 @@
 {
+  "title": "see can see the transcript (and 13 more)",
   "agenda_by_speaker": [
     {
-      "section": 1,
       "speaker": "SPEAKER_05",
       "start_time": "0:00:06",
       "duration": "0:05:11",
@@ -42,7 +42,6 @@
       ]
     },
     {
-      "section": 2,
       "speaker": "SPEAKER_03",
       "start_time": "0:00:23",
       "duration": "0:28:55",
@@ -131,7 +130,6 @@
       ]
     },
     {
-      "section": 3,
       "speaker": "SPEAKER_04",
       "start_time": "0:00:52",
       "duration": "0:28:08",
@@ -225,7 +223,6 @@
       ]
     },
     {
-      "section": 4,
       "speaker": "Unknown",
       "start_time": "0:05:26",
       "duration": "-1 day, 22:56:58",
@@ -245,7 +242,6 @@
       ]
     },
     {
-      "section": 5,
       "speaker": "SPEAKER_02",
       "start_time": "0:00:05",
       "duration": "0:01:58",
@@ -270,7 +266,6 @@
       ]
     },
     {
-      "section": 6,
       "speaker": "SPEAKER_00",
       "start_time": "0:16:02",
       "duration": "0:05:00",
@@ -300,7 +295,6 @@
       ]
     },
     {
-      "section": 7,
       "speaker": "SPEAKER_01",
       "start_time": "0:20:11",
       "duration": "0:00:36",

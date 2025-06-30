@@ -10,208 +10,123 @@ from collections import defaultdict
 from docx import Document
 
 def load_json(path: Path):
-    """从文件加载 JSON"""
     with open(path, encoding="utf-8") as f:
         return json.load(f)
 
 def compute_speaker_times(diarized_records):
-    """
-    统计每个说话人的最早发言（排除 start==0 的假段落）和总时长
-    返回：{ speaker: {"start_time": float, "duration": float}, ... }
-    """
-    segs_by_spk = defaultdict(list)
+    segs = defaultdict(list)
     for r in diarized_records:
         spk = r.get("speaker", "Unknown")
         s, e = r.get("start", 0.0), r.get("end", 0.0)
-        segs_by_spk[spk].append((s, e - s))
+        segs[spk].append((s, e - s))
     out = {}
-    for spk, segs in segs_by_spk.items():
-        # 先过滤掉 start==0 的“假”分段
-        valid = [(s, d) for s, d in segs if s > 0]
-        if valid:
-            starts, durs = zip(*valid)
-        else:
-            # 如果该人所有分段都从 0 开始，就用原始数据
-            starts, durs = zip(*segs)
-        out[spk] = {
-            "start_time": min(starts),
-            "duration":   sum(durs)
-        }
+    for spk, lst in segs.items():
+        valid = [(s, d) for s, d in lst if s > 0]
+        starts, durs = zip(*valid) if valid else zip(*lst)
+        out[spk] = {"start_time": min(starts), "duration": sum(durs)}
     return out
 
 def fmt_time(sec: float) -> str:
-    """把秒数转成 hh:mm:ss 格式"""
     return str(timedelta(seconds=int(sec)))
 
-def split_summary(combined: str):
-    """
-    把形如
-      "see ...; decided: \"...\"; raised concern: \"...\""
-    的 summary 字符串，拆成三部分：
-      action_summary, decision_summary, concern_summary
-    """
-    # 匹配 decided 和 raised concern
-    dec_m = re.search(r'; decided: "([^"]*)"', combined)
-    con_m = re.search(r'; raised concern: "([^"]*)"', combined)
-
-    # action_summary 部分是从开头到第一个 '; decided' 或 '; raised concern'
-    end_idx = min(
-        dec_m.start() if dec_m else len(combined),
-        con_m.start() if con_m else len(combined)
-    )
-    action_summary = combined[:end_idx].strip().rstrip(';')
-
-    decision_summary = dec_m.group(1) if dec_m else ""
-    concern_summary  = con_m.group(1) if con_m else ""
-    return action_summary, decision_summary, concern_summary
-
 def build_agenda_by_speaker(summaries, time_info):
-    """
-    按说话人分段生成议程结构：
-    [
-      {
-        "speaker": "...",
-        "start_time": "hh:mm:ss",
-        "duration":   "hh:mm:ss",
-        "items": [
-           {
-             "id": 1,
-             "action_summary": "...",
-             "decision_summary": "...",
-             "concern_summary": "...",
-             "actions": [...],
-             "decisions": [...],
-             "conflicts": [...]
-           },
-           ...
-        ]
-      },
-      ...
-    ]
-    """
     grp = defaultdict(list)
     for x in summaries:
         grp[x["speaker"]].append(x)
-
     sections = []
     for spk, recs in grp.items():
         ti = time_info.get(spk, {"start_time": 0, "duration": 0})
         sec = {
-            "speaker":     spk,
-            "start_time":  fmt_time(ti["start_time"]),
-            "duration":    fmt_time(ti["duration"]),
-            "items":       []
+            "speaker":    spk,
+            "start_time": fmt_time(ti["start_time"]),
+            "duration":   fmt_time(ti["duration"]),
+            "items":      []
         }
-        for idx, x in enumerate(recs, start=1):
+        for i, x in enumerate(recs, 1):
             sec["items"].append({
-                "id": idx,
-                "actions": x.get("actions", []),
+                "id":        i,
+                "actions":   x.get("actions", []),
                 "decisions": x.get("decisions", []),
                 "conflicts": x.get("conflicts", [])
             })
-
         sections.append(sec)
     return sections
 
-def save_agenda_json(sections, out_path: Path):
+def generate_meeting_title(summaries):
     """
-    将按说话人分段的议程写入 JSON，
-    并且在每个分组开头加上 "section" 序号
+    直接取第一条 summary，去掉开头的 SPEAKER_xxx 前缀，
+    截到第一个分号前作为会议题目
     """
+    if not summaries:
+        return "会议摘要"
+    raw = summaries[0].get("summary", "")
+    # 去掉类似 "SPEAKER_05 " 的前缀
+    title = re.sub(r'^SPEAKER_[^\s]+\s*', '', raw)
+    # 截到第一个分号前
+    if ";" in title:
+        title = title.split(";", 1)[0]
+    title = title.strip()
+    # 限制长度
+    if len(title) > 60:
+        title = title[:60].rstrip() + "…"
+    return title
+
+def save_agenda_json(sections, title, out_path: Path):
     out_path.parent.mkdir(parents=True, exist_ok=True)
-
-    numbered = []
-    for idx, sec in enumerate(sections, start=1):
-        # 先把 section 放前面，再展开原 sec 的所有字段
-        sec_numbered = {"section": idx, **sec}
-        numbered.append(sec_numbered)
-
-    output = {"agenda_by_speaker": numbered}
+    payload = {
+        "title": title,
+        "agenda_by_speaker": sections
+    }
     with open(out_path, "w", encoding="utf-8") as f:
-        json.dump(output, f, ensure_ascii=False, indent=2)
+        json.dump(payload, f, ensure_ascii=False, indent=2)
 
-
-
-def save_agenda_docx(sections, out_path: Path):
-    """
-    将按说话人分段的议程写入 DOCX，
-    只展示 actions / decisions / conflicts，不再引用已删除的 summary 字段
-    """
-    from docx import Document
-
+def save_agenda_docx(sections, title, out_path: Path):
     out_path.parent.mkdir(parents=True, exist_ok=True)
     doc = Document()
-    doc.add_heading("会议议程（按说话人分段）", level=1)
-
-    for sec_idx, sec in enumerate(sections, start=1):
-        # 二级标题：Section N. Speaker + 时间信息
-        h = doc.add_heading(level=2)
-        h.add_run(f"Section {sec_idx}. ").bold = True
-        h.add_run(f"{sec['speaker']} ").bold = True
-        h.add_run(f"[起始：{sec['start_time']}，总时长：{sec['duration']}]")
-
-        # 列出该说话人所有议题，输出编号 + 说话人
-        for it in sec["items"]:
+    # 一级标题：只展示会议题目
+    doc.add_heading(title, level=1)
+    # 二级标题：议程
+    doc.add_heading("会议议程（按说话人分段）", level=2)
+    for idx, sec in enumerate(sections, 1):
+        h = doc.add_heading(level=3)
+        h.add_run(f"{idx}. {sec['speaker']} ").bold = True
+        h.add_run(f"[{sec['start_time']} | {sec['duration']}]")
+        for item in sec["items"]:
             p = doc.add_paragraph(style="List Number")
-            p.add_run(f"{it['id']}. {sec['speaker']}").bold = True
-
-            # 列出所有 actions
-            for act in it.get("actions", []):
+            p.add_run(f"{item['id']}. {sec['speaker']}").bold = True
+            for act in item.get("actions", []):
                 pa = doc.add_paragraph(style="List Bullet")
-                pa.add_run("Action: " + act)
-
-            # 列出所有 decisions
-            for dec in it.get("decisions", []):
+                pa.add_run(act)
+            for dec in item.get("decisions", []):
                 pd = doc.add_paragraph(style="List Bullet")
-                pd.add_run("Decision: " + dec)
-
-            # 列出所有 conflicts
-            for cf in it.get("conflicts", []):
+                pd.add_run(dec)
+            for cf in item.get("conflicts", []):
                 pc = doc.add_paragraph(style="List Bullet")
-                pc.add_run("Conflict: " + cf)
-
+                pc.add_run(cf)
     doc.save(str(out_path))
 
-
-
 if __name__ == "__main__":
-    parser = argparse.ArgumentParser(description="按说话人分段生成会议议程")
-    this_dir = Path(__file__).parent
-
-    parser.add_argument(
-        "--diarized",
-        help="说话人分段 JSON 文件路径（含 start/end 字段）",
-        default=str(this_dir / "dataset" / "ICSI" / "diarized_json" / "Bed002_diarized.json")
-    )
-    parser.add_argument(
-        "--summary",
-        help="summary_json.py 生成的 summary 文件路径",
-        default=str(this_dir / "dataset" / "ICSI" / "after_json" / "Bed002_summary.json")
-    )
-    parser.add_argument(
-        "--out_json",
-        help="输出的 Agenda JSON 文件路径",
-        default=str(this_dir / "output" / "agenda.json")
-    )
-    parser.add_argument(
-        "--out_docx",
-        help="输出的 Agenda DOCX 文件路径",
-        default=str(this_dir / "output" / "agenda.docx")
-    )
+    parser = argparse.ArgumentParser("生成简短会议题目并按说话人分段输出议程")
+    base = Path(__file__).parent
+    parser.add_argument("--diarized",
+        default=str(base/"dataset"/"ICSI"/"diarized_json"/"Bed002_diarized.json"))
+    parser.add_argument("--summary",
+        default=str(base/"dataset"/"ICSI"/"after_json"/"Bed002_summary.json"))
+    parser.add_argument("--out_json",
+        default=str(base/"output"/"agenda.json"))
+    parser.add_argument("--out_docx",
+        default=str(base/"output"/"agenda.docx"))
     args = parser.parse_args()
 
-    # 确保输出目录存在
-    Path(args.out_json).parent.mkdir(parents=True, exist_ok=True)
-    Path(args.out_docx).parent.mkdir(parents=True, exist_ok=True)
+    diar = load_json(Path(args.diarized))
+    summ = load_json(Path(args.summary))
+    times = compute_speaker_times(diar)
+    secs  = build_agenda_by_speaker(summ, times)
+    title = generate_meeting_title(summ)
 
-    diarized = load_json(Path(args.diarized))
-    summaries = load_json(Path(args.summary))
-    time_info = compute_speaker_times(diarized)
-    sections = build_agenda_by_speaker(summaries, time_info)
+    save_agenda_json(secs, title, Path(args.out_json))
+    save_agenda_docx(secs, title, Path(args.out_docx))
 
-    save_agenda_json(sections, Path(args.out_json))
-    save_agenda_docx(sections,  Path(args.out_docx))
-
-    print("✅ 按说话人分段的议程已生成：")
+    print("✅ 已生成简短题目及议程：")
     print("   JSON →", args.out_json)
     print("   DOCX →", args.out_docx)
