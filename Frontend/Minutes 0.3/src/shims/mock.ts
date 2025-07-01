@@ -1,27 +1,36 @@
-// src/mock/mockMeetings.ts
-import Mock from 'mockjs';
+import Mock from 'mockjs'
 
-const data = Mock.mock({
-  'meetings|5': [
+const rawMeetings = Mock.mock({
+  'meetings|1-7': [
     {
       'id|+1': 1,
-      'title': '@ctitle(5, 10)',
-      'attendess': '@cname, @cname, @cname',
+      'attendess': '@name, @name, @name',
       'time': '@datetime',
-      'speaker': '@cname',
+      'speaker': '@name',
       'actions|1-5': ['@sentence(6, 12)'],
-      'decisions|0-2': ['@csentence(6, 15)'],
-      'conflicts|0-3': ['@csentence(5, 10)'],
+      'decisions|0-2': ['@sentence(6, 15)'],
+      'conflicts|0-3': ['@sentence(5, 10)'],
       'summary': '@paragraph(1, 2)',
-    },
-  ],
-});
+      'duration':''
+    }
+  ]
+})
 
-// 拦截 GET 请求
+// 添加统一的 abstract 字段（模拟整场会议的总览摘要）
+const data = {
+  abstract: Mock.mock('@paragraph(2, 3)'),
+  meetings: rawMeetings.meetings.map((item: any) => ({
+    ...item,
+    title: `Section ${item.id}`
+  }))
+}
+
+export default data
+
 Mock.mock('/api/meetings', 'get', () => {
   return {
     code: 200,
     message: 'success',
-    data: data.meetings,
-  };
-});
+    data: data,
+  }
+})

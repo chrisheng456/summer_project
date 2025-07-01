@@ -1,23 +1,23 @@
 <template>
   <div class="container">
-    <!-- 上传区域 -->
+    <!-- Upload Section -->
     <div class="upload-section">
-      <h3>上传新音频</h3>
+      <h3>Upload New Audio</h3>
       <input type="file" @change="handleUpload" />
     </div>
 
-    <!-- 历史记录 -->
+    <!-- History Table -->
     <div class="history-section">
-      <h3 class="table-title">历史记录</h3>
+      <h3 class="table-title">Upload History</h3>
       <div class="table-wrapper">
         <table>
-          <thead >
+          <thead>
             <tr>
-              <th>文件名</th>
-              <th>参众人数</th>
-              <th>会议时长</th>
-              <th>上传时间</th>
-              <th>详情</th>
+              <th>Filename</th>
+              <th>Participants</th>
+              <th>Duration</th>
+              <th>Uploaded At</th>
+              <th>Details</th>
             </tr>
           </thead>
           <tbody>
@@ -27,7 +27,7 @@
               <td>{{ item.duration }}</td>
               <td>{{ item.uploadTime }}</td>
               <td>
-                <button @click="viewDetail">View Detail</button>
+                <button @click="viewDetail">View Details</button>
               </td>
             </tr>
           </tbody>
@@ -36,6 +36,7 @@
     </div>
   </div>
 </template>
+
 
 
 <script lang="ts" setup>
@@ -113,13 +114,18 @@ function viewDetail() {
 }
 
 .table-title {
-  text-align: center;
+  text-align: center;          /* 居中对齐文字 */
   font-size: 20px;
   font-weight: bold;
-  margin-bottom: 12px;
+  margin: 16px auto;           /* 上下间距，居中 */
   color: #333;
+  background-color: hsl(210, 4%, 78%);   /* 浅蓝色背景 */
+  padding: 12px 24px;          /* 内边距增强可读性 */
+  border-radius: 8px;          /* 圆角效果 */
+  border: 1px solid hwb(198 92% 4%);   /* 淡蓝边框 */
+  width: fit-content;          /* 自动适配内容宽度 */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
 }
-
 table {
   width: 100%;
   border-collapse: collapse;
