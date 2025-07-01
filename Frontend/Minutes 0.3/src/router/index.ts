@@ -2,8 +2,8 @@
 import {createRouter, createWebHistory, RouterLink} from 'vue-router'//创建路由器，引入createRouter
 //导入一个个需要呈现的组件
 import LoginPage from '@/pages/LoginPage.vue'
-import MeetingSummary from '@/pages/MeetingSummary.vue'
 import UploadHistory from '@/pages/UploadHistory.vue'
+import MeetingNotes from '@/pages/MeetingNotes.vue'
 
 //  第二步：创建路由器
 const router =createRouter({
@@ -14,11 +14,13 @@ const router =createRouter({
         path:'/LoginPage',
         component:LoginPage
     },
- 
-    {   name:"MeetingSummary",
-        path:'/MeetingSummary',
-        component:MeetingSummary
+
+   {
+        name:"MeetingNotes",
+        path:'/MeetingNotes',
+        component:MeetingNotes
     },
+ 
 
     {   name:"UploadHistory",
         path:'/UploadHistory',

@@ -14,7 +14,7 @@
   </div>
 </template>
 
-<script lang="ts" setup name =logInPage>
+<script lang="ts" setup name =LoginPage>
 import { ref } from 'vue'
 import { RouterView,useRouter} from 'vue-router';
 
@@ -26,7 +26,6 @@ function handleLogin() {
   router.push('/UploadHistory') 
   console.log('登录中：', username.value, password.value)
   // 可以用 axios 发送请求
-  
 }
 </script>
 

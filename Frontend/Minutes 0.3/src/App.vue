@@ -19,7 +19,7 @@
 // import TranslatePage from './components/translatePage.vue'
 import { ref } from 'vue'
 import { RouterView,useRouter} from 'vue-router';
-import mockjs from 'mockjs'
+
 
 const router = useRouter()
 const showMain = ref(true)  // 控制欢迎页面是否显示
