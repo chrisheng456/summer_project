@@ -13,7 +13,7 @@ import axios from 'axios';
  * const data = await fetchData('https://api.example.com/data');
  * 使用默认导出，在其他文件导入直接使用 import
  */
-export default async function fetchData(url, config = {}) {
+export default async function loadData(url:any, config = {}) {
     try {
         const response = await axios.get(url, config);
         return response.data;
