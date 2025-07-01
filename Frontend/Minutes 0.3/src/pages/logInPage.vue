@@ -9,7 +9,6 @@
       <div class="links">
         <a href="#">Forgot Password</a>
         <a href="#">Register Account</a>
-        <a href="#">Other Help</a>
       </div>
     </div>
   </div>
