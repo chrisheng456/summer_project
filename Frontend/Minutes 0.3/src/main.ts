@@ -11,7 +11,8 @@ import 'element-plus/dist/index.css'
 import { createPinia } from 'pinia'
 // 只在开发环境加载 mock 文件
 if (import.meta.env.MODE === 'development') {
-  import('./shims/mock')
+  import('./shims/mock'),
+  import ('./mock/mockLogin')
 }
 
 //创建一个app

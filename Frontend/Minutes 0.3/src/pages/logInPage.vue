@@ -5,6 +5,7 @@
       <input v-model="username" type="text" placeholder="Username" />
       <input v-model="password" type="password" placeholder="Password" />
       <button class="login-button" @click="handleLogin">Login</button>
+      <p v-if="errorMessage" class="error">{{ errorMessage }}</p>
       <div class="links">
         <a href="#">Forgot Password</a>
         <a href="#">Register Account</a>
@@ -14,18 +15,33 @@
   </div>
 </template>
 
-<script lang="ts" setup name =LoginPage>
+<script lang="ts" setup name="LoginPage">
 import { ref } from 'vue'
-import { RouterView,useRouter} from 'vue-router';
+import { useRouter } from 'vue-router'
+import axios from 'axios'
 
 const router = useRouter()
 const username = ref('')
 const password = ref('')
+const errorMessage = ref('')
 
-function handleLogin() {
-  router.push('/UploadHistory') 
-  console.log('登录中：', username.value, password.value)
-  // 可以用 axios 发送请求
+async function handleLogin() {
+  try {
+    const res = await axios.post('/api/login', {
+      username: username.value,
+      password: password.value,
+    })
+
+    if (res.data.code === 200) {
+      console.log('Login success')
+      router.push('/UploadHistory') // 登录成功跳转页面
+    } else {
+      errorMessage.value = res.data.message || 'Login failed'
+    }
+  } catch (error) {
+    errorMessage.value = 'Network or server error'
+    console.error('Login error:', error)
+  }
 }
 </script>
 
@@ -35,7 +51,7 @@ function handleLogin() {
   display: flex;
   justify-content: center;
   align-items: center;
-  background: url('background.jpg') no-repeat center center/cover;
+  background: url('background.jpg') no-repeat center center / cover;
 }
 
 .login-container {
@@ -65,6 +81,11 @@ input {
   border-radius: 5px;
   color: white;
   cursor: pointer;
+}
+
+.error {
+  color: red;
+  margin-top: 10px;
 }
 
 .links {
