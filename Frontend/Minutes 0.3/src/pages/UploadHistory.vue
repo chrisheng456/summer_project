@@ -75,6 +75,7 @@ function viewDetail() {
 </script>
 
 <style scoped>
+/* 页面容器 */
 .container {
   display: flex;
   flex-direction: column;
@@ -83,80 +84,89 @@ function viewDetail() {
   min-height: 100vh;
   background-color: #f5f7fa;
   box-sizing: border-box;
+  font-family: 'Helvetica Neue', Arial, sans-serif;
 }
 
-/* 上传区域样式 */
+/* 上传区域 */
 .upload-section {
-  margin-bottom: 40px;
-  text-align: center;
-  background-color: #ffffff;
-  padding: 20px 30px;
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+  background-color: #fff;
+  padding: 24px 32px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
   width: 100%;
   max-width: 600px;
+  margin-bottom: 40px;
+  text-align: center;
 }
 
 .upload-section h3 {
   margin-bottom: 16px;
+  font-size: 1.25rem;
+  color: #333;
 }
 
-/* 历史记录表格区域 */
+/* 表格外层容器 */
 .table-wrapper {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
   width: 100%;
   max-width: 1000px;
   height: 320px;
   overflow-y: auto;
-  border-radius: 8px;
-  background: #ffffff;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
-  padding: 16px;
 }
 
+/* 表格标题（历史记录标题） */
 .table-title {
-  text-align: center;          /* 居中对齐文字 */
+  text-align: center;
   font-size: 20px;
-  font-weight: bold;
-  margin: 16px auto;           /* 上下间距，居中 */
+  font-weight: 600;
+  margin: 16px auto 20px;
+  padding: 10px 24px;
   color: #333;
-  background-color: hsl(210, 4%, 78%);   /* 浅蓝色背景 */
-  padding: 12px 24px;          /* 内边距增强可读性 */
-  border-radius: 8px;          /* 圆角效果 */
-  border: 1px solid hwb(198 92% 4%);   /* 淡蓝边框 */
-  width: fit-content;          /* 自动适配内容宽度 */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+  background-color: #c7cbce;
+  border-radius: 8px;
+  border: 1px solid #a5a9ac;
+  width: fit-content;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
 }
+
+/* 表格结构 */
 table {
   width: 100%;
   border-collapse: collapse;
   table-layout: fixed;
+  font-size: 15px;
 }
 
 thead th {
   position: sticky;
   top: 0;
   background-color: #e8ebf0;
-  font-weight: bold;
+  font-weight: 600;
   padding: 12px;
   text-align: left;
-  border-bottom: 1px solid #ddd;
+  border-bottom: 1px solid #ccc;
 }
 
 tbody td {
   padding: 12px;
   border-bottom: 1px solid #f0f0f0;
   word-break: break-word;
+  color: #444;
 }
 
 /* 按钮样式 */
 button {
-  padding: 6px 12px;
+  padding: 6px 14px;
   background-color: #409eff;
   color: #fff;
   border: none;
   border-radius: 4px;
   cursor: pointer;
-  transition: background-color 0.2s;
+  transition: background-color 0.25s ease;
+  font-size: 14px;
 }
 
 button:hover {
