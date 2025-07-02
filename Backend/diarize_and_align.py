@@ -1,103 +1,85 @@
-# diarize_and_align.py
-
+#!/usr/bin/env python3
 import os
-# 禁用 symlink，以免 Windows 权限不足报错
-os.environ["HF_HUB_DISABLE_SYMLINKS"]        = "1"
-os.environ["HF_HUB_DISABLE_SYMLINKS_WARNING"] = "1"
-
-import sys
 import json
-import time
+import argparse
+import tempfile
 import torch
-
-def ensure_ctranslate2():
-    try:
-        import ctranslate2
-    except ImportError:
-        print("➡️ ctranslate2 未安装，正在自动安装最新版本…")
-        subprocess.check_call([sys.executable, "-m", "pip", "install", "ctranslate2"])
-        # 再次尝试导入
-        import ctranslate2
-
-# 在其他库导入前先保证 ctranslate2 在环境中
-ensure_ctranslate2()
-
-
-# 然后正常导入你脚本里其他的东西
-import os
-os.environ["HF_HUB_DISABLE_SYMLINKS"]        = "1"
-os.environ["HF_HUB_DISABLE_SYMLINKS_WARNING"] = "1"
-import json, time, torch
-from pyannote.audio import Pipeline
+import torchaudio
+import whisper
 from pyannote.audio import Pipeline
 
-def load_transcript(json_path):
-    with open(json_path, "r", encoding="utf-8") as f:
-        return json.load(f)
+# 加载模型
+HF_TOKEN_ENV = "HUGGINGFACE_TOKEN"
 
-def save_transcript(json_path, transcript):
-    with open(json_path, "w", encoding="utf-8") as f:
-        json.dump(transcript, f, ensure_ascii=False, indent=2)
-
-def align_speakers(wav_path, transcript_json_in, transcript_json_out):
-    # 1) 选设备：优先 GPU，否则 CPU
-    device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
-    print(f"→ Using device: {device}")
-
-    # 2) 加载 pipeline（不含 device），再 to(device)
+# 核心函数：说话人分离 + ASR 对齐
+def diarize_and_transcribe(wav_path: str, output_json: str, hf_token: str):
+    print("▶ Running speaker diarization...")
     pipeline = Pipeline.from_pretrained(
-        "pyannote/speaker-diarization",
-        use_auth_token=True
+        "pyannote/speaker-diarization@2.1",
+        use_auth_token=hf_token
     )
-    pipeline.to(device)
-
-    # 3) 运行说话人分离
-    start = time.perf_counter()
     diarization = pipeline(wav_path)
-    elapsed = time.perf_counter() - start
-    print(f"→ Diarization done in {elapsed/60:.2f} minutes")
 
-    # 4) 转成列表 (start_sec, end_sec, speaker_label)
-    diar_segments = [
-        (segment.start, segment.end, label)
-        for segment, _, label in diarization.itertracks(yield_label=True)
-    ]
+    print("▶ Loading Whisper ASR model...")
+    device = "cuda" if torch.cuda.is_available() else "cpu"
+    asr_model = whisper.load_model("small", device=device)
 
-    # 5) 读取原始转写
-    transcript = load_transcript(transcript_json_in)
+    print("▶ Loading audio and slicing by speaker segments...")
+    waveform, sample_rate = torchaudio.load(wav_path)
+    waveform = waveform.to(device)
 
-    # 6) 对齐每条 utterance 到 best_label
-    for utt in transcript:
-        # 支持两种格式：Azure 的 offset/duration（100ns ticks），
-        # 也支持 ICSI JSON 的 start/end（秒）
-        if "offset" in utt and "duration" in utt:
-            start_sec = utt["offset"]  / 1e7
-            end_sec   = start_sec + utt["duration"] / 1e7
-        elif "start" in utt and "end" in utt:
-            start_sec = utt["start"]
-            end_sec   = utt["end"]
-        else:
-            # 无法识别的格式
-            continue
+    segments = []
+    for segment, _, speaker in diarization.itertracks(yield_label=True):
+        start, end = segment.start, segment.end
+        sf, ef = int(start * sample_rate), int(end * sample_rate)
+        clip = waveform[:, sf:ef]
 
-        best_label  = "Unknown"
-        max_overlap = 0.0
-        for seg_start, seg_end, label in diar_segments:
-            overlap = max(0.0, min(end_sec, seg_end) - max(start_sec, seg_start))
-            if overlap > max_overlap:
-                max_overlap = overlap
-                best_label  = label
+        with tempfile.NamedTemporaryFile(suffix=".wav", delete=False) as tmp:
+            torchaudio.save(tmp.name, clip.cpu(), sample_rate)
+            result = asr_model.transcribe(tmp.name, fp16=(device=="cuda"))
+        os.unlink(tmp.name)
 
-        utt["speaker"] = best_label
+        text = result.get("text", "").strip()
+        segments.append({
+            "speaker": speaker,
+            "start": round(start, 3),
+            "end":   round(end, 3),
+            "text":  text
+        })
 
-    # 7) 保存带 speaker 的 JSON
-    save_transcript(transcript_json_out, transcript)
-    print(f"→ Saved diarized transcript to {transcript_json_out}")
+    # 排序并写入 JSON
+    segments.sort(key=lambda x: x["start"])
+    os.makedirs(os.path.dirname(output_json), exist_ok=True)
+    with open(output_json, "w", encoding="utf-8") as f:
+        json.dump(segments, f, indent=2, ensure_ascii=False)
+
+    print(f"✅ Aligned JSON saved to {output_json}")
 
 if __name__ == "__main__":
-    if len(sys.argv) != 4:
-        print("Usage: python diarize_and_align.py WAV_PATH IN_JSON OUT_JSON")
-        sys.exit(1)
+    parser = argparse.ArgumentParser(
+        description="One-step diarization + ASR: input WAV → aligned JSON in script directory"
+    )
+    parser.add_argument(
+        "wav",
+        help="输入 WAV 文件路径"
+    )
+    parser.add_argument(
+        "--hf_token",
+        default=os.getenv(HF_TOKEN_ENV),
+        help=f"HuggingFace 访问令牌，或设置环境变量 {HF_TOKEN_ENV}"
+    )
+    args = parser.parse_args()
 
-    wav_path, transcript_in, transcript_out = sys.argv[1:]
-    align_speakers(wav_path, transcript_in, transcript_out)
+    if not os.path.isfile(args.wav):
+        parser.error(f"找不到音频文件: {args.wav}")
+    if not args.hf_token:
+        parser.error(
+            f"请通过 --hf_token 或环境变量 {HF_TOKEN_ENV} 提供 HuggingFace 访问令牌。"
+        )
+
+    # 自动生成输出文件名：脚本同目录，基于 wav 名称
+    script_dir = os.path.dirname(os.path.realpath(__file__))
+    base = os.path.splitext(os.path.basename(args.wav))[0] + "_aligned.json"
+    output_path = os.path.join(script_dir, base)
+
+    diarize_and_transcribe(args.wav, output_path, args.hf_token)
