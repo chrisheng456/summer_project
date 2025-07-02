@@ -13,12 +13,13 @@
   </div>
 </template>
 
+
+
 <script setup lang="ts" name="MeetingAbstract">
 import { ref, watch } from 'vue'
 
 // 声明传入的 abstract 字符串
 const props = defineProps<{ abstract: string }>()
-
 const isEditing = ref(false)
 const editableAbstract = ref('')
 

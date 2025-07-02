@@ -53,6 +53,7 @@
   </div>
 </template>
 
+
 <script setup lang="ts" name ="SectionContent">
 import type { MeetingRecord } from '@/types/interface'
 import { ref, watch } from 'vue'
@@ -70,6 +71,7 @@ watch(
   },
   { immediate: true }
 )
+
 
 function toggleEdit() {
   if (isEditing.value) {
