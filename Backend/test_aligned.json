@@ -1,0 +1,74 @@
+[
+  {
+    "speaker": "SPEAKER_00",
+    "start": 0.858,
+    "end": 10.038,
+    "text": "Good afternoon everyone, and welcome to FinTech Plus Inc. Second Quarter 2023 earnings call. I'm John Doe, CEO of FinTech Plus."
+  },
+  {
+    "speaker": "SPEAKER_00",
+    "start": 10.983,
+    "end": 15.033,
+    "text": "We've had a stellar Q2 with a revenue of 125 million."
+  },
+  {
+    "speaker": "SPEAKER_00",
+    "start": 15.843,
+    "end": 26.913,
+    "text": "a 25% increase year over year. Our gross profit margin stands at a solid 58% due in part to cost efficiencies gained from our scalable business model."
+  },
+  {
+    "speaker": "SPEAKER_00",
+    "start": 27.706,
+    "end": 53.93,
+    "text": "Our EBITDA has surged to $37.5 million, translating to a remarkable 30% EBITDA margin. Our net income for the quarter rose to $16 million, which is a noteworthy increase from $10 million in Q2 2022. Our total addressable market has grown substantially thanks to the expansion of our high-yield savings product line in the new RoboAdvisor platform."
+  },
+  {
+    "speaker": "SPEAKER_00",
+    "start": 55.195,
+    "end": 71.513,
+    "text": "We've been diversifying our asset-backed securities portfolio, investing heavily in collateralized debt obligations and residential mortgage-backed securities. We've also invested $25 million in AAA-rated corporate bonds, enhancing our risk-adjusted returns."
+  },
+  {
+    "speaker": "SPEAKER_00",
+    "start": 73.724,
+    "end": 91.865,
+    "text": "As for our balance sheet, total assets reached 1.5 billion, with total liabilities at 900 million, leaving us with a solid equity base of 600 million. Our debt-to-acquity ratio stands at 1.5, a healthy figure considering our expansionary phase."
+  },
+  {
+    "speaker": "SPEAKER_00",
+    "start": 93.147,
+    "end": 104.302,
+    "text": "We continue to see substantial organic user growth with customer acquisition cost dropping by 15% and lifetime value growing by 25%."
+  },
+  {
+    "speaker": "SPEAKER_00",
+    "start": 104.96,
+    "end": 112.351,
+    "text": "Our LTV-CAC ratio is at an impressive 3.5% X."
+  },
+  {
+    "speaker": "SPEAKER_00",
+    "start": 114.342,
+    "end": 135.554,
+    "text": "In terms of risk management, we have a value at risk model in place with a 99% confidence level indicating that our maximum loss will not exceed $5 million in the next trading day. We have adopted a conservative approach to managing our leverage and have a healthy tier run capital ratio of 12.5%."
+  },
+  {
+    "speaker": "SPEAKER_00",
+    "start": 137.832,
+    "end": 151.822,
+    "text": "Our forecast for the coming quarter is positive. We expect revenue to be around 135 million, an 8% quarter over quarter growth, driven primarily by our cutting-edge blockchain chain solutions and AI-driven predictive analytics."
+  },
+  {
+    "speaker": "SPEAKER_00",
+    "start": 153.239,
+    "end": 166.891,
+    "text": "We're also excited about the upcoming IPO of our fintech subsidiary Pay Plus, which we expect to raise $200 million, significantly bolstering our liquidity and paving the way for aggressive growth strategies."
+  },
+  {
+    "speaker": "SPEAKER_00",
+    "start": 167.532,
+    "end": 174.957,
+    "text": "We thank our shareholders for their continued faith in us, and we look forward to an even more successful Q3. Thank you so much."
+  }
+]

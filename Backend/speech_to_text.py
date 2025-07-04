@@ -3,159 +3,110 @@ speech_to_text.py
 ------------------------------------
 • TrueText（自动标点 + 首字母大写）
 • 说话人分离（Diarization）
-• 保存为 Word 和 JSON（带时间戳文件名）
+• 保存为 Word 和 JSON（仅包含 start/end/text）
+• 用 ffmpeg 自动把 .m4a 转成 16kHz 单声道 WAV
 """
-import time
 import os
 import json
-import uuid
 import threading
+import subprocess
 from datetime import datetime
-from datetime import timedelta
-from decimal import Decimal           # 用来做高精度毫秒取整
 from pathlib import Path
 
+import azure.cognitiveservices.speech as speechsdk  # pip install -U azure-cognitiveservices-speech
+from docx import Document                         # pip install python-docx
 
-
-import azure.cognitiveservices.speech as speechsdk     # pip install -U azure-cognitiveservices-speech
-from docx import Document                              # pip install python-docx
-
-# ─────────────────────────────────────────────────────
-# 1. 读取密钥：系统环境变量，或取消注释使用 .env
-# ─────────────────────────────────────────────────────
-# from dotenv import load_dotenv
-# load_dotenv()                                       # 若项目根有 .env，可启用
-
+# 1. 读取密钥
 speech_key     = os.getenv("AZURE_SPEECH_KEY")
 service_region = os.getenv("AZURE_SPEECH_REGION", "ukwest")
-
 if not speech_key:
     raise RuntimeError("❌ 找不到 AZURE_SPEECH_KEY，请先在系统变量或 .env 中设置")
 
-# ─────────────────────────────────────────────────────
 # 2. SpeechConfig & 功能开关
-# ─────────────────────────────────────────────────────
 speech_config = speechsdk.SpeechConfig(subscription=speech_key, region=service_region)
-
-# TrueText：自动标点 / 大小写
 speech_config.set_property(
     speechsdk.PropertyId.SpeechServiceResponse_PostProcessingOption,
-    "TrueText"                   # 或 "TrueText-NoFiller"
+    "TrueText"
 )
-
-# 说话人分离
 speech_config.set_property(
     speechsdk.PropertyId.SpeechServiceResponse_DiarizeIntermediateResults,
     "true"
 )
+speech_config.request_word_level_timestamps()
 
-speech_config.request_word_level_timestamps()          # 可选：字级时间戳
+# 3. 用 ffmpeg 自动把 .m4a 转成 16kHz 单声道 WAV
+BASE_DIR = Path(__file__).parent
+src_path = BASE_DIR / "Trustee Meeting Recording (30 June 2025) V1.m4a"
+wav_path = BASE_DIR / "tmp_converted.wav"
 
-# ─────────────────────────────────────────────────────
-# 3. 音频文件
-# ─────────────────────────────────────────────────────
-AUDIO_PATH = Path("test.wav")      # ← 改成自己的音频文件
-if not AUDIO_PATH.exists():
-    raise FileNotFoundError(f"找不到音频文件：{AUDIO_PATH.resolve()}")
+if not src_path.exists():
+    raise FileNotFoundError(f"找不到源文件：{src_path.resolve()}")
 
-audio_config = speechsdk.AudioConfig(filename=str(AUDIO_PATH))
+print(f"🔄 转换音频：{src_path.name} → {wav_path.name} （16kHz 单声道 WAV）")
+subprocess.run([
+    "ffmpeg", "-y",
+    "-i", str(src_path),
+    "-ac", "1",
+    "-ar", "16000",
+    str(wav_path)
+], check=True)
 
-# ConversationTranscriber 支持 Diarization
-transcriber = speechsdk.transcription.ConversationTranscriber(
+# 4. 准备 Azure 转写
+audio_config = speechsdk.AudioConfig(filename=str(wav_path))
+transcriber  = speechsdk.transcription.ConversationTranscriber(
     speech_config=speech_config,
     audio_config=audio_config
 )
 
-# ─────────────────────────────────────────────────────
-# 4. 事件回调
-# ─────────────────────────────────────────────────────
-lines = []                          # 保存每一句
-done  = threading.Event()           # 等待识别结束用
+lines   = []             # 存储每句的时间戳和文本
+is_done = threading.Event()
 
 def _on_transcribed(evt: speechsdk.SpeechRecognitionEventArgs):
-    # 只要最终识别的结果
     if evt.result.reason != speechsdk.ResultReason.RecognizedSpeech:
         return
-
     text = evt.result.text.strip()
-    # 过滤掉：1) 没有说话人  2) 文本也是空的
-    if not evt.result.speaker_id or not text:
+    if not text:
         return
-
-    # 计算起始时间
-    sec_total = int(evt.result.offset / 10_000_000)
-    start_ts  = time.strftime("%H:%M:%S", time.gmtime(sec_total))
-
-    # 存入行对象
-    speaker = evt.result.speaker_id
-    lines.append({
-        "speaker"   : speaker,
-        "text"      : text,
-        "offset"    : evt.result.offset,
-        "duration"  : evt.result.duration,
-        "start_time": start_ts,
-    })
-
-    # 实时输出
-    print(f"[{start_ts}] {speaker}: {text}")
-
-
+    start_sec = evt.result.offset / 10_000_000
+    end_sec   = start_sec + (evt.result.duration / 10_000_000)
+    lines.append({"start": start_sec, "end": end_sec, "text": text})
+    print(f"[{start_sec:.2f}s - {end_sec:.2f}s] {text}")
 
 def _on_session_stopped(_):
     print("=== 识别结束 ===")
-    done.set()
+    is_done.set()
 
 def _on_canceled(evt):
     details = speechsdk.CancellationDetails(evt)
     print(f"CANCELED: {details.reason} / {details.error_details}")
-    done.set()
+    is_done.set()
 
 transcriber.transcribed.connect(_on_transcribed)
 transcriber.session_stopped.connect(_on_session_stopped)
 transcriber.canceled.connect(_on_canceled)
 
-# ─────────────────────────────────────────────────────
 # 5. 开始转写 & 等待结束
-# ─────────────────────────────────────────────────────
-print(f"▶ 开始识别 {AUDIO_PATH} ...")
+print(f"▶ 开始识别 {wav_path.name} ...")
 transcriber.start_transcribing_async()
-done.wait()
+is_done.wait()
 transcriber.stop_transcribing_async()
 
-# ─────────────────────────────────────────────────────
-# 6. 整理 & 生成带时间戳文件名
-# ─────────────────────────────────────────────────────
-lines.sort(key=lambda x: x["offset"])
-# plain_text（给 transcription 字段 & Word 用）
-plain_text = "\n".join(
-    f"[{ln['start_time']}] {ln['speaker']}: {ln['text']}" for ln in lines
-)
+# 6. 整理 & 保存输出（不加时间戳，使用输入文件名前缀）
+lines.sort(key=lambda x: x["start"])
+base_name = src_path.stem  # 取音频文件名去掉扩展
 
-stamp      = datetime.now().strftime("%Y%m%d_%H%M%S")
-docx_name  = f"meeting_transcription_{stamp}.docx"
-json_name  = f"meeting_minutes_{stamp}.json"
-out_id     = str(uuid.uuid4())
+docx_name = f"{base_name}.docx"
+json_name = f"{base_name}.json"
 
-# (a) Word
+# (a) 保存为 Word
 doc = Document()
 doc.add_heading("会议逐字稿", level=1)
 for ln in lines:
-    doc.add_paragraph(f"[{ln['start_time']}] {ln['speaker']}: {ln['text']}")
+    doc.add_paragraph(f"[{ln['start']:.2f}s - {ln['end']:.2f}s] {ln['text']}")
 doc.save(docx_name)
 print(f"✅ 已保存 Word：{docx_name}")
 
-# (b) JSON
-output = {
-    "id"              : out_id,
-    "timestamp"       : stamp,
-    "transcription"   : plain_text,
-    "lines"           : lines,
-    "abstract_summary": None,
-    "key_points"      : [],
-    "action_items"    : [],
-    "sentiment"       : None,
-    "attachment"      : [],
-}
+# (b) 保存为 JSON
 with open(json_name, "w", encoding="utf-8") as f:
-    json.dump(output, f, ensure_ascii=False, indent=2)
+    json.dump({"lines": lines}, f, ensure_ascii=False, indent=2)
 print(f"✅ 已保存 JSON：{json_name}")
