@@ -1,8 +1,10 @@
+#!/usr/bin/env python3
+# api_generate_all_meetings.py
+
 import requests
 import json
 import os
 from datetime import datetime
-
 
 def get_bearer_token():
     """获取API认证令牌"""
@@ -11,156 +13,86 @@ def get_bearer_token():
     password = "Ruixiong24937!"
 
     payload = {"username": username, "password": password}
-
-    response = requests.post(url, json=payload)
-
-    if response.status_code == 200:
-        data = response.json()
-        if data.get("authentication_complete"):
-            print("✅ 登录成功！Token已获取")
-            return data["bearer_token"]
-        else:
-            raise Exception("❌ 登录失败：未完成认证")
+    resp = requests.post(url, json=payload)
+    resp.raise_for_status()
+    data = resp.json()
+    if data.get("authentication_complete"):
+        print("✅ 登录成功，已获取 Bearer Token")
+        return data["bearer_token"]
     else:
-        raise Exception(f"❌ 获取Token失败，状态码: {response.status_code}")
-
+        raise RuntimeError("❌ 登录失败：authentication_complete=False")
 
 def get_current_user_info(headers):
-    """获取当前用户信息及其关联的Scheme"""
+    """获取当前用户信息及其关联的 Scheme 列表"""
     url = "https://pensionpal2test.azurewebsites.net/api/currentUser"
-    response = requests.get(url, headers=headers)
+    resp = requests.get(url, headers=headers)
+    resp.raise_for_status()
+    data = resp.json()
+    schemes = data.get("schemes") or []
+    print(f"→ 当前用户共关联 {len(schemes)} 个 Scheme")
+    return schemes
 
-    if response.status_code != 200:
-        raise Exception(f"❌ 无法获取用户信息 (状态码 {response.status_code})")
-
-    return response.json()
-
-
-def get_scheme_meetings(scheme_id, headers):
-    """获取特定Scheme下的所有会议列表"""
+def fetch_meetings_list(scheme_id, headers):
+    """拉取某个 scheme 下的会议列表"""
     url = f"https://pensionpal2test.azurewebsites.net/api/scheme/{scheme_id}/meetings"
-    response = requests.get(url, headers=headers)
+    resp = requests.get(url, headers=headers)
+    resp.raise_for_status()
+    return resp.json()
 
-    if response.status_code != 200:
-        print(f"⚠️ 无法获取Scheme {scheme_id}的会议列表 (状态码 {response.status_code})")
-        return []
-
-    return response.json()
-
-
-def get_meeting_details(scheme_id, scheme_name, meeting_id, headers):
-    """获取单个会议的详细信息"""
+def fetch_meeting_detail(scheme_id, meeting_id, headers):
+    """拉取单个会议的完整详情"""
     url = f"https://pensionpal2test.azurewebsites.net/api/scheme/{scheme_id}/meetings/{meeting_id}"
-    response = requests.get(url, headers=headers)
-
-    if response.status_code != 200:
-        print(f"❌ 无法获取会议 {meeting_id} 详情 (状态码 {response.status_code})")
-        return None
-
-    meeting_data = response.json()
-
-    # 结构化会议数据
-    structured_meeting = {
-        "scheme_id": scheme_id,
-        "scheme_name": scheme_name,
-        "meeting_id": meeting_id,
-        "title": meeting_data.get("name", "未命名会议"),
-        "start_time": meeting_data.get("startTime", "N/A"),
-        "location": meeting_data.get("location", "N/A"),
-        "participants": [],
-        "agenda_items": []
-    }
-
-    # 处理参与者
-    for person in meeting_data.get("attendees", []):
-        structured_meeting["participants"].append({
-            "name": person.get("name", "未知"),
-            "attending": person.get("attending", False)
-        })
-
-    # 处理议程项目
-    for item in meeting_data.get("agenda", []):
-        structured_meeting["agenda_items"].append({
-            "title": item.get("title", "未命名议程"),
-            "owner": item.get("owner", "N/A"),
-            "duration_minutes": item.get("lengthMinutes", 0)
-        })
-
-    return structured_meeting
-
+    resp = requests.get(url, headers=headers)
+    resp.raise_for_status()
+    return resp.json()
 
 def main():
-    try:
-        print("🚀 开始获取会议数据...")
+    # 1. 登录拿 Token
+    token = get_bearer_token()
+    headers = {
+        "Authorization": f"Bearer {token}",
+        "Content-Type": "application/json"
+    }
 
-        # 获取Token并设置headers
-        token = get_bearer_token()
-        headers = {
-            "Content-Type": "application/json",
-            "Authorization": f"Bearer {token}"
-        }
+    # 2. 获取当前用户关联的 schemes
+    schemes = get_current_user_info(headers)
 
-        # 获取当前用户信息
-        user_data = get_current_user_info(headers)
-        schemes = user_data.get('schemes', [])
+    all_meetings = []
+    # 3. 遍历每个 scheme，拉会议列表 & 详情
+    for scheme in schemes:
+        sid  = scheme["id"]
+        name = scheme.get("name", "")
+        print(f"\n=== Scheme {sid} «{name}» ===")
+        meetings = fetch_meetings_list(sid, headers)
+        print(f"  • 共 {len(meetings)} 个 meeting")
 
-        if not schemes:
-            print("⚠️ 用户没有关联任何scheme")
-            return
-
-        print(f"🔍 找到 {len(schemes)} 个scheme")
-
-        # 创建所有会议数据的集合
-        all_meetings = []
-        total_meeting_count = 0
-
-        # 遍历所有scheme
-        for scheme in schemes:
-            scheme_name = scheme.get("name", "未命名Scheme")
-            scheme_id = scheme.get("id")
-
-            if not scheme_id:
+        for m in meetings:
+            mid = m["id"]
+            print(f"    - Meeting {mid}: ", end="", flush=True)
+            try:
+                detail = fetch_meeting_detail(sid, mid, headers)
+            except Exception as e:
+                print(f"❌ 拉取失败 ({e})")
                 continue
+            # 给 detail 里打标记，方便后续追溯
+            detail["_scheme_id"]   = sid
+            detail["_scheme_name"] = name
+            all_meetings.append(detail)
+            print("✔")
 
-            print(f"\n📂 处理scheme: {scheme_name} (ID: {scheme_id})")
+    # 4. 保存到文件
+    out = {
+        "generated_at": datetime.utcnow().isoformat() + "Z",
+        "total_schemes":  len(schemes),
+        "total_meetings": len(all_meetings),
+        "meetings":       all_meetings
+    }
+    here = os.path.dirname(__file__)
+    out_path = os.path.join(here, "all_meetings_data.json")
+    with open(out_path, "w", encoding="utf-8") as f:
+        json.dump(out, f, ensure_ascii=False, indent=2)
 
-            # 获取当前scheme的所有会议列表
-            meetings = get_scheme_meetings(scheme_id, headers)
-            print(f"  找到 {len(meetings)} 个会议")
-
-            # 处理每个会议
-            for meeting in meetings:
-                meeting_id = meeting.get("id")
-
-                if not meeting_id:
-                    continue
-
-                meeting_details = get_meeting_details(scheme_id, scheme_name, meeting_id, headers)
-
-                if meeting_details:
-                    all_meetings.append(meeting_details)
-                    total_meeting_count += 1
-                    print(f"  已获取会议: {meeting_details['title']} (ID: {meeting_id})")
-
-        # 创建最终结果结构
-        result = {
-            "generated_at": datetime.now().isoformat(),
-            "total_schemes": len(schemes),
-            "total_meetings": total_meeting_count,
-            "meetings": all_meetings
-        }
-
-        # 保存为单个JSON文件
-        filename = "all_meetings_data.json"
-        with open(filename, "w", encoding="utf-8") as f:
-            json.dump(result, f, ensure_ascii=False, indent=2)
-
-        print(f"\n✅ 完成! 共处理 {len(schemes)} 个scheme, {total_meeting_count} 个会议")
-        print(f"📁 所有数据已保存到: {filename}")
-
-    except Exception as e:
-        print(f"❌ 程序执行出错: {str(e)}")
-
+    print(f"\n✅ 已将 {len(all_meetings)} 条会议详情写入 `{out_path}`")
 
 if __name__ == "__main__":
     main()

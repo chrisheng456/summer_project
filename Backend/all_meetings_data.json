@@ -1,388 +1,266 @@
-
 {
-
-  "generated_at": "2025-07-02T16:08:23.620370",
+  "generated_at": "2025-07-05T15:46:06.566245Z",
   "total_schemes": 1,
-  "total_meetings": 3,
+  "total_meetings": 1,
   "meetings": [
     {
-      "scheme_id": 47,
-      "scheme_name": "The ABC Pension Scheme",
-      "meeting_id": 713,
-      "title": "Trustee Meeting",
-      "start_time": "2025-06-04T10:00:00",
+      "id": 714,
+      "name": "Trustee Meeting",
+      "date": "2024-11-18T00:00:00",
+      "startTime": "2025-06-04T10:00:00",
       "location": "ABC House",
-      "participants": [
+      "attendees": [
         {
+          "id": 6139,
           "name": "Emma Barker",
-          "attending": true
+          "attending": true,
+          "userCanEdit": true
         },
         {
+          "id": 6142,
           "name": "Fred Brown",
-          "attending": true
+          "attending": true,
+          "userCanEdit": true
         },
         {
+          "id": 6140,
           "name": "James Smith",
-          "attending": true
+          "attending": true,
+          "userCanEdit": true
         },
         {
+          "id": 6143,
           "name": "Oliver Wright",
-          "attending": false
+          "attending": true,
+          "userCanEdit": true
         },
         {
+          "id": 6141,
           "name": "Rose Patel",
-          "attending": true
+          "attending": true,
+          "userCanEdit": true
         },
         {
+          "id": 6138,
           "name": "Rui Xiong",
-          "attending": true
+          "attending": true,
+          "userCanEdit": true
         }
       ],
-      "agenda_items": [
+      "agenda": [
         {
+          "id": 9855,
+          "number": "1",
           "title": "Welcome and apologies",
+          "indent": 0,
+          "calculatedStartTime": "2025-06-04T10:00:00",
+          "lengthMinutes": 2,
           "owner": "James Smith",
-          "duration_minutes": 2
+          "action_colour": "0x39c0ed",
+          "htmlText": "",
+          "attachment": []
         },
         {
+          "id": 9856,
+          "number": "2",
           "title": "Conflicts of Interest",
+          "indent": 0,
+          "calculatedStartTime": "2025-06-04T10:02:00",
+          "lengthMinutes": 3,
           "owner": "James Smith",
-          "duration_minutes": 3
+          "action": "Declaration",
+          "action_colour": "0x39c0ed",
+          "htmlText": "",
+          "attachment": []
         },
         {
+          "id": 9857,
+          "number": "3",
           "title": "Minutes of previous meeting",
+          "indent": 0,
+          "calculatedStartTime": "2025-06-04T10:05:00",
+          "lengthMinutes": 10,
           "owner": "James Smith",
-          "duration_minutes": 10
+          "action": "Approval",
+          "action_colour": "0x39c0ed",
+          "htmlText": "",
+          "attachment": []
         },
         {
+          "id": 9858,
+          "number": "4",
           "title": "Matters arising",
+          "indent": 0,
+          "calculatedStartTime": "2025-06-04T10:15:00",
+          "lengthMinutes": 20,
           "owner": "James Smith",
-          "duration_minutes": 20
+          "action": "Discussion",
+          "action_colour": "0x39c0ed",
+          "htmlText": "",
+          "attachment": []
         },
         {
+          "id": 9859,
+          "number": "4.1",
           "title": "Mr Smith",
-          "owner": "N/A",
-          "duration_minutes": 0
+          "indent": 1,
+          "action_colour": "0x39c0ed",
+          "htmlText": "",
+          "attachment": []
         },
         {
+          "id": 9860,
+          "number": "5",
           "title": "Administration and Accounts",
+          "indent": 0,
+          "calculatedStartTime": "2025-06-04T10:35:00",
+          "lengthMinutes": 30,
           "owner": "Emma Barker",
-          "duration_minutes": 30
+          "action_colour": "0x39c0ed",
+          "htmlText": "",
+          "attachment": []
         },
         {
+          "id": 9861,
+          "number": "5.1",
           "title": "Regular Administration Report",
-          "owner": "N/A",
-          "duration_minutes": 0
+          "indent": 1,
+          "action_colour": "0x39c0ed",
+          "htmlText": "",
+          "attachment": []
         },
         {
+          "id": 9862,
+          "number": "5.2",
           "title": "Trustee Report and Accounts",
-          "owner": "N/A",
-          "duration_minutes": 0
+          "indent": 1,
+          "action_colour": "0x39c0ed",
+          "htmlText": "",
+          "attachment": []
         },
         {
+          "id": 9863,
+          "number": "6",
           "title": "Investment",
+          "indent": 0,
+          "calculatedStartTime": "2025-06-04T11:05:00",
+          "lengthMinutes": 45,
           "owner": "Emma Barker",
-          "duration_minutes": 45
+          "action_colour": "0x39c0ed",
+          "htmlText": "",
+          "attachment": []
         },
         {
+          "id": 9864,
+          "number": "6.1",
           "title": "Investment Strategy",
-          "owner": "N/A",
-          "duration_minutes": 0
+          "indent": 1,
+          "action_colour": "0x39c0ed",
+          "htmlText": "",
+          "attachment": []
         },
         {
+          "id": 9865,
+          "number": "6.2",
           "title": "Investment Monitoring Report",
-          "owner": "N/A",
-          "duration_minutes": 0
+          "indent": 1,
+          "action_colour": "0x39c0ed",
+          "htmlText": "",
+          "attachment": []
         },
         {
+          "id": 9866,
+          "number": "6.3",
           "title": "Statement of Investment Principles",
-          "owner": "N/A",
-          "duration_minutes": 0
+          "indent": 1,
+          "action_colour": "0x39c0ed",
+          "htmlText": "",
+          "attachment": []
         },
         {
+          "id": 9867,
+          "number": "6.4",
           "title": "Implementation Report",
-          "owner": "N/A",
-          "duration_minutes": 0
+          "indent": 1,
+          "action_colour": "0x39c0ed",
+          "htmlText": "",
+          "attachment": []
         },
         {
+          "id": 9868,
+          "number": "7",
           "title": "Scheme Funding",
+          "indent": 0,
+          "calculatedStartTime": "2025-06-04T11:50:00",
+          "lengthMinutes": 45,
           "owner": "Emma Barker",
-          "duration_minutes": 45
+          "action_colour": "0x39c0ed",
+          "htmlText": "",
+          "attachment": []
         },
         {
+          "id": 9869,
+          "number": "7.1",
           "title": "Actuarial Valuation (31 December 2024)",
-          "owner": "N/A",
-          "duration_minutes": 0
+          "indent": 1,
+          "action_colour": "0x39c0ed",
+          "htmlText": "",
+          "attachment": []
         },
         {
+          "id": 9870,
+          "number": "8",
           "title": "Governance",
+          "indent": 0,
+          "calculatedStartTime": "2025-06-04T12:35:00",
+          "lengthMinutes": 30,
           "owner": "Rose Patel",
-          "duration_minutes": 30
+          "action_colour": "0x39c0ed",
+          "htmlText": "",
+          "attachment": []
         },
         {
+          "id": 9871,
+          "number": "8.1",
           "title": "Risk Register",
-          "owner": "N/A",
-          "duration_minutes": 0
+          "indent": 1,
+          "action_colour": "0x39c0ed",
+          "htmlText": "",
+          "attachment": []
         },
         {
+          "id": 9872,
+          "number": "8.2",
           "title": "Data Protection Policy",
-          "owner": "N/A",
-          "duration_minutes": 0
+          "indent": 1,
+          "action_colour": "0x39c0ed",
+          "htmlText": "",
+          "attachment": []
         },
         {
+          "id": 9873,
+          "number": "9",
           "title": "Cyber Security Policy",
-          "owner": "N/A",
-          "duration_minutes": 0
+          "indent": 0,
+          "calculatedStartTime": "2025-06-04T13:05:00",
+          "action_colour": "0x39c0ed",
+          "htmlText": "",
+          "attachment": []
         },
         {
+          "id": 9874,
+          "number": "10",
           "title": "Any Other Business",
+          "indent": 0,
           "owner": "James Smith",
-          "duration_minutes": 0
-        }
-      ]
-    },
-    {
-      "scheme_id": 47,
-      "scheme_name": "The ABC Pension Scheme",
-      "meeting_id": 714,
-      "title": "Trustee Meeting",
-      "start_time": "2025-06-04T10:00:00",
-      "location": "ABC House",
-      "participants": [
-        {
-          "name": "Emma Barker",
-          "attending": true
-        },
-        {
-          "name": "Fred Brown",
-          "attending": true
-        },
-        {
-          "name": "James Smith",
-          "attending": true
-        },
-        {
-          "name": "Oliver Wright",
-          "attending": true
-        },
-        {
-          "name": "Rose Patel",
-          "attending": true
-        },
-        {
-          "name": "Rui Xiong",
-          "attending": true
+          "action_colour": "0x39c0ed",
+          "htmlText": "",
+          "attachment": []
         }
       ],
-      "agenda_items": [
-        {
-          "title": "Welcome and apologies",
-          "owner": "James Smith",
-          "duration_minutes": 2
-        },
-        {
-          "title": "Conflicts of Interest",
-          "owner": "James Smith",
-          "duration_minutes": 3
-        },
-        {
-          "title": "Minutes of previous meeting",
-          "owner": "James Smith",
-          "duration_minutes": 10
-        },
-        {
-          "title": "Matters arising",
-          "owner": "James Smith",
-          "duration_minutes": 20
-        },
-        {
-          "title": "Mr Smith",
-          "owner": "N/A",
-          "duration_minutes": 0
-        },
-        {
-          "title": "Administration and Accounts",
-          "owner": "Emma Barker",
-          "duration_minutes": 30
-        },
-        {
-          "title": "Regular Administration Report",
-          "owner": "N/A",
-          "duration_minutes": 0
-        },
-        {
-          "title": "Trustee Report and Accounts",
-          "owner": "N/A",
-          "duration_minutes": 0
-        },
-        {
-          "title": "Investment",
-          "owner": "Emma Barker",
-          "duration_minutes": 45
-        },
-        {
-          "title": "Investment Strategy",
-          "owner": "N/A",
-          "duration_minutes": 0
-        },
-        {
-          "title": "Investment Monitoring Report",
-          "owner": "N/A",
-          "duration_minutes": 0
-        },
-        {
-          "title": "Statement of Investment Principles",
-          "owner": "N/A",
-          "duration_minutes": 0
-        },
-        {
-          "title": "Implementation Report",
-          "owner": "N/A",
-          "duration_minutes": 0
-        },
-        {
-          "title": "Scheme Funding",
-          "owner": "Emma Barker",
-          "duration_minutes": 45
-        },
-        {
-          "title": "Actuarial Valuation (31 December 2024)",
-          "owner": "N/A",
-          "duration_minutes": 0
-        },
-        {
-          "title": "Governance",
-          "owner": "Rose Patel",
-          "duration_minutes": 30
-        },
-        {
-          "title": "Risk Register",
-          "owner": "N/A",
-          "duration_minutes": 0
-        },
-        {
-          "title": "Data Protection Policy",
-          "owner": "N/A",
-          "duration_minutes": 0
-        },
-        {
-          "title": "Cyber Security Policy",
-          "owner": "N/A",
-          "duration_minutes": 0
-        },
-        {
-          "title": "Any Other Business",
-          "owner": "James Smith",
-          "duration_minutes": 0
-        }
-      ]
-    },
-    {
-      "scheme_id": 47,
-      "scheme_name": "The ABC Pension Scheme",
-      "meeting_id": 718,
-      "title": "Trustee Meeting",
-      "start_time": "2025-06-30T18:00:00",
-      "location": "ABC House",
-      "participants": [
-        {
-          "name": "Alan Buckberry",
-          "attending": true
-        },
-        {
-          "name": "Andy Rogers",
-          "attending": true
-        },
-        {
-          "name": "Chris Marshall",
-          "attending": false
-        },
-        {
-          "name": "Mark Stephenson",
-          "attending": true
-        },
-        {
-          "name": "Mila Lebedenko",
-          "attending": false
-        }
-      ],
-      "agenda_items": [
-        {
-          "title": "Welcome and apologies",
-          "owner": "Mark Stephenson",
-          "duration_minutes": 2
-        },
-        {
-          "title": "Conflicts of Interest",
-          "owner": "Mark Stephenson",
-          "duration_minutes": 3
-        },
-        {
-          "title": "Minutes of previous meeting",
-          "owner": "Mark Stephenson",
-          "duration_minutes": 5
-        },
-        {
-          "title": "Matters arising",
-          "owner": "Mark Stephenson",
-          "duration_minutes": 5
-        },
-        {
-          "title": "Mr A Tate (Death Case)",
-          "owner": "N/A",
-          "duration_minutes": 0
-        },
-        {
-          "title": "PensionPal - Risk Register and Training Records ",
-          "owner": "Mark Stephenson",
-          "duration_minutes": 10
-        },
-        {
-          "title": "Administration",
-          "owner": "Mark Stephenson",
-          "duration_minutes": 15
-        },
-        {
-          "title": "Regular Administration Report",
-          "owner": "N/A",
-          "duration_minutes": 0
-        },
-        {
-          "title": "Pensions Dashboard",
-          "owner": "N/A",
-          "duration_minutes": 0
-        },
-        {
-          "title": "Scheme Funding",
-          "owner": "Alan Buckberry",
-          "duration_minutes": 25
-        },
-        {
-          "title": "Actuarial Valuation (31 December 2024)",
-          "owner": "N/A",
-          "duration_minutes": 0
-        },
-        {
-          "title": "Governance",
-          "owner": "Mark Stephenson",
-          "duration_minutes": 30
-        },
-        {
-          "title": "Policy Governance and Own Risk Assessment",
-          "owner": "N/A",
-          "duration_minutes": 0
-        },
-        {
-          "title": "Risk Register",
-          "owner": "N/A",
-          "duration_minutes": 0
-        },
-        {
-          "title": "Any Other Business",
-          "owner": "Mark Stephenson",
-          "duration_minutes": 0
-        }
-      ]
+      "attachment": [],
+      "_scheme_id": 47,
+      "_scheme_name": "The ABC Pension Scheme"
     }
   ]
 }
