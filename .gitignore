@@ -1,6 +1,14 @@
 **/.DS_Store
 # Python 虚拟环境
+venv/
 .venv/
+ENV/
+env/
+
+# Python 缓存文件
+__pycache__/
+*.py[cod]
+
 
 
 
