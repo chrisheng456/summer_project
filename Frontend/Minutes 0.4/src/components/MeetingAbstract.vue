@@ -25,12 +25,6 @@ const editableAbstract = ref('')
 
 // 当 props.abstract 变化时，同步更新可编辑版本
 watch(
-<<<<<<< HEAD
-  () => props.abstract,
-  (val) => {
-    editableAbstract.value = val
-  },
-=======
   // ① 要侦听的内容
   () => props.abstract,
 
@@ -40,7 +34,6 @@ watch(
   },
 
   // ③ 选项对象
->>>>>>> 664582e (修改登录界面样式并修复上传组件)
   { immediate: true }
 )
 

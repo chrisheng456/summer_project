@@ -3,9 +3,6 @@
     <!-- Upload Section -->
     <div class="upload-section">
       <h3>Upload New Audio</h3>
-<<<<<<< HEAD
-      <input type="file" @change="handleUpload" />
-=======
       <el-upload
         class="upload-card"
         action="#"
@@ -29,7 +26,6 @@
         </template>
       </el-upload>
 
->>>>>>> 664582e (修改登录界面样式并修复上传组件)
     </div>
 
     <!-- History Table -->
@@ -68,12 +64,9 @@
 <script lang="ts" setup>
 import { ref } from 'vue'
 import { useRouter } from 'vue-router'
-<<<<<<< HEAD
-=======
 import { ElMessage } from 'element-plus'
 import { UploadFilled } from '@element-plus/icons-vue'
 
->>>>>>> 664582e (修改登录界面样式并修复上传组件)
 
 interface HistoryItem {
   id: string
@@ -86,31 +79,18 @@ interface HistoryItem {
 const router = useRouter()
 const history = ref<HistoryItem[]>([])
 
-<<<<<<< HEAD
-function handleUpload(event: Event) {
-  const fileInput = event.target as HTMLInputElement
-  const file = fileInput.files?.[0]
-  if (file) {
-    const newItem: HistoryItem = {
-      id: Date.now().toString(),
-      filename: file.name,
-=======
 function handleUpload(file: any) {
   const rawFile = file.raw
   if (rawFile) {
     const newItem: HistoryItem = {
       id: Date.now().toString(),
       filename: rawFile.name,
->>>>>>> 664582e (修改登录界面样式并修复上传组件)
       participants: Math.floor(Math.random() * 10 + 1),
       duration: `${Math.floor(Math.random() * 60)} min`,
       uploadTime: new Date().toLocaleString()
     }
     history.value.unshift(newItem)
-<<<<<<< HEAD
-=======
     ElMessage.success('Upload success (mocked)')
->>>>>>> 664582e (修改登录界面样式并修复上传组件)
   }
 }
 
@@ -135,29 +115,15 @@ function viewDetail() {
 /* 上传区域 */
 .upload-section {
   background-color: #fff;
-<<<<<<< HEAD
-  padding: 24px 32px;
-  border-radius: 10px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
-  width: 100%;
-  max-width: 600px;
-=======
   padding: 20px 20px;
   border-radius: 12px;
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.337);
   width: 100%;
   max-width: 1000px;
->>>>>>> 664582e (修改登录界面样式并修复上传组件)
   margin-bottom: 40px;
   text-align: center;
 }
 
-<<<<<<< HEAD
-.upload-section h3 {
-  margin-bottom: 16px;
-  font-size: 1.25rem;
-  color: #333;
-=======
 .upload-section:hover {
   box-shadow: 0 12px 32px rgba(0, 0, 0, 0.2); /* 增加阴影，让卡片悬浮感更强 */
   transform: translateY(-4px);                /* 轻微上移 */
@@ -187,41 +153,21 @@ input[type="file"] {
 
 input[type="file"]:hover {
   border-color: #66b1ff;
->>>>>>> 664582e (修改登录界面样式并修复上传组件)
 }
 
 /* 表格外层容器 */
 .table-wrapper {
   background-color: #fff;
   padding: 20px;
-<<<<<<< HEAD
-  border-radius: 10px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
-=======
   border-radius: 12px;
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.337);
->>>>>>> 664582e (修改登录界面样式并修复上传组件)
   width: 100%;
   max-width: 1000px;
   height: 320px;
   overflow-y: auto;
 }
 
-<<<<<<< HEAD
-/* 表格标题（历史记录标题） */
-.table-title {
-  text-align: center;
-  font-size: 20px;
-  font-weight: 600;
-  margin: 16px auto 20px;
-  padding: 10px 24px;
-  color: #333;
-  background-color: #c7cbce;
-  border-radius: 8px;
-  border: 1px solid #a5a9ac;
-  width: fit-content;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
-=======
+
 /* 表格标题 */
 .table-title {
   text-align: center;
@@ -234,7 +180,6 @@ input[type="file"]:hover {
   border: 1px solid #d0d4d9;
   width: fit-content;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
->>>>>>> 664582e (修改登录界面样式并修复上传组件)
 }
 
 /* 表格结构 */
@@ -248,32 +193,6 @@ table {
 thead th {
   position: sticky;
   top: 0;
-<<<<<<< HEAD
-  background-color: #e8ebf0;
-  font-weight: 600;
-  padding: 12px;
-  text-align: left;
-  border-bottom: 1px solid #ccc;
-}
-
-tbody td {
-  padding: 12px;
-  border-bottom: 1px solid #f0f0f0;
-  word-break: break-word;
-  color: #444;
-}
-
-/* 按钮样式 */
-button {
-  padding: 6px 14px;
-  background-color: #409eff;
-  color: #fff;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-  transition: background-color 0.25s ease;
-  font-size: 14px;
-=======
   background-color: #f4f6f9;
   font-weight: 700;
   padding: 14px 12px;
@@ -312,14 +231,10 @@ button {
   font-size: 14px;
   font-weight: 500;
   box-shadow: 0 2px 6px rgba(64, 158, 255, 0.4);
->>>>>>> 664582e (修改登录界面样式并修复上传组件)
 }
 
 button:hover {
   background-color: #66b1ff;
-<<<<<<< HEAD
-}
-=======
   transform: translateY(-1px);
 }
 
@@ -343,5 +258,4 @@ button:hover {
   }
 }
 
->>>>>>> 664582e (修改登录界面样式并修复上传组件)
 </style>

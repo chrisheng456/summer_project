@@ -11,10 +11,7 @@
     "type-check": "vue-tsc --build"
   },
   "dependencies": {
-<<<<<<< HEAD
-=======
     "axios": "^1.10.0",
->>>>>>> 664582e (修改登录界面样式并修复上传组件)
     "element-plus": "^2.10.2",
     "mitt": "^3.0.1",
     "pinia": "^3.0.3",
