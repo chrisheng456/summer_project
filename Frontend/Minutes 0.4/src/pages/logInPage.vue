@@ -1,22 +1,33 @@
 <template>
-  <div class="page-wrapper">
-    <div class="login-container">
-      <h2>LOGO</h2>
-      <input v-model="username" type="text" placeholder="Username" />
-      <input v-model="password" type="password" placeholder="Password" />
-      <button class="login-button" @click="handleLogin">Login</button>
-      <p v-if="errorMessage" class="error">{{ errorMessage }}</p>
-      <div class="links">
-        <a href="#">Forgot Password</a>
-        <a href="#">Register Account</a>
+  <div class="page-layout">
+    <!-- 左边：图片+欢迎文字 -->
+    <LeftImagePanel imageUrl="/assets/login-bg.jpg">
+      <div class="overlay-content">
+        <p style="color: #eee">AI meeting assistant</p>
+      </div>
+    </LeftImagePanel>
+
+    <!-- 右边：登录框 -->
+    <div class="page-wrapper">
+      <div class="login-container">
+        <h2>LOGO</h2>
+        <input v-model="username" type="text" placeholder="Username" />
+        <input v-model="password" type="password" placeholder="Password" />
+        <button class="login-button" @click="handleLogin">Login</button>
+        <p v-if="errorMessage" class="error">{{ errorMessage }}</p>
+        <div class="links">
+          <a href="#">Forgot Password</a>
+          <a href="#">Register Account</a>
+        </div>
       </div>
     </div>
   </div>
 </template>
 
-<script lang="ts" setup name="LoginPage">
+<script setup lang="ts">
 import { ref } from 'vue'
 import { useRouter } from 'vue-router'
+import LeftImagePanel from '@/components/LeftImagePanel.vue'
 import axios from 'axios'
 
 const router = useRouter()
@@ -32,35 +43,40 @@ async function handleLogin() {
     })
 
     if (res.data.code === 200) {
-      console.log('Login success')
-      router.push('/UploadHistory') // 登录成功跳转页面
+
+      console.log("成功登录")
+      router.push('/UploadHistory')
     } else {
       errorMessage.value = res.data.message || 'Login failed'
     }
-  } catch (error) {
-    errorMessage.value = 'Network or server error'
-    console.error('Login error:', error)
+  } catch (e) {
+    errorMessage.value = 'Network error'
   }
 }
 </script>
 
 <style scoped>
-.page-wrapper {
+.page-layout {
+  display: flex;
   height: 100vh;
+}
+
+.page-wrapper {
+  flex: 1;  
+  background-color: rgba(230, 231, 231, 0.5);
   display: flex;
   justify-content: center;
   align-items: center;
-  background: url('background.jpg') no-repeat center center / cover;
 }
 
 .login-container {
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgba(182, 184, 184, 0.457);
   padding: 40px;
   border-radius: 10px;
   text-align: center;
   width: 300px;
-  color: white;
-  font-family: Arial, sans-serif;
+  color: rgba(37, 28, 28, 0.741);
+
 }
 
 input {
@@ -75,7 +91,7 @@ input {
   width: 80%;
   padding: 10px;
   margin: 20px 0;
-  background-color: #14191f;
+  background-color: #3c1cf1af;
   border: none;
   border-radius: 5px;
   color: white;
@@ -97,4 +113,6 @@ a {
   color: white;
   text-decoration: none;
 }
+
 </style>
+

@@ -58,9 +58,19 @@ activeIndex: number
 .level-2 {
   margin-bottom: 8px;
   padding: 6px 12px;
+<<<<<<< HEAD
   padding-left: 20px; /* 缩进显示层级感 */
   border-radius: 6px;
   transition: background-color 0.3s ease, font-weight 0.3s ease;
+=======
+  padding-left: 20px; /* 初始缩进 */
+  border-radius: 6px;
+  transition:
+    background-color 0.3s ease,
+    font-weight 0.3s ease,
+    padding-left 0.3s ease; /* ✨ 添加平滑过渡效果 */
+    /* 在 0.3 秒内，padding-left 会从初始值慢慢开始 → 加速 → 然后再慢慢结束，形成一种自然流畅的感觉。 */
+>>>>>>> 664582e (修改登录界面样式并修复上传组件)
   cursor: pointer;
 }
 
@@ -74,6 +84,10 @@ activeIndex: number
 .level-2:hover {
   background-color: #e6f4ff;
   font-weight: 700;
+<<<<<<< HEAD
+=======
+  padding-left: 28px; /* ✨ 鼠标悬停时偏移更多 */
+>>>>>>> 664582e (修改登录界面样式并修复上传组件)
 }
 
 .level-2.active {
