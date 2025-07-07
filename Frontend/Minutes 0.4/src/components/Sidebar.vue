@@ -48,7 +48,7 @@ activeIndex: number
 .level-0,
 .level-1 {
   font-weight: 700;
-  font-size: 1rem;
+  font-size: 1.5rem;
   margin-bottom: 12px;
   padding-left: 0;
 }
