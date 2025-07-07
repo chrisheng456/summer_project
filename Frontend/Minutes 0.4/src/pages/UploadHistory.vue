@@ -1,5 +1,18 @@
 <template>
   <div class="container">
+    <el-dropdown trigger="click" @command="handleCommand">
+      <span class="avatar-wrapper">
+        <el-avatar size="medium">{{ userInitial }}</el-avatar>
+      </span>
+      <template #dropdown>
+        <el-dropdown-menu>
+          <el-dropdown-item disabled>{{ username }}</el-dropdown-item>
+          <el-dropdown-item divided command="settings">Settings</el-dropdown-item>
+          <el-dropdown-item command="logout">Log out</el-dropdown-item>
+        </el-dropdown-menu>
+      </template>
+    </el-dropdown>
+
     <!-- Upload Section -->
     <div class="upload-section">
       <h3>Upload New Audio</h3>
@@ -78,6 +91,19 @@ interface HistoryItem {
 
 const router = useRouter()
 const history = ref<HistoryItem[]>([])
+
+
+const username = 'Gaoxinjie'
+const userInitial = username[0].toUpperCase()
+
+function handleCommand(command: string) {
+  if (command === 'logout') {
+    ElMessage.success('Logged out')
+    router.push('/login')  // 回到登录页
+  } else if (command === 'settings') {
+    ElMessage.info('Settings page coming soon')
+  }
+}
 
 function handleUpload(file: any) {
   const rawFile = file.raw
@@ -257,5 +283,16 @@ button:hover {
     font-size: 1.2rem;
   }
 }
+
+/* 固定头像在右上角 */
+.avatar-wrapper {
+  position: fixed;
+  top: 20px;
+  right: 30px;
+  z-index: 9999;
+  cursor: pointer;
+}
+
+
 
 </style>
