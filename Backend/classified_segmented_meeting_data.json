@@ -129,7 +129,8 @@
         }
       ],
       "label": "conflict",
-      "label_score": 0.5924399495124817
+      "label_score": 0.5924399495124817,
+      "explanation": ""
     },
     {
       "id": 9856,
@@ -260,7 +261,8 @@
         }
       ],
       "label": "action",
-      "label_score": 0.5137046575546265
+      "label_score": 0.5137046575546265,
+      "explanation": "Pension Regulators General Code talks heavily about trustee knowledge and understanding . Trustees need to decide who the benefit needs to be paid to . The next item on the agenda is a quick training"
     },
     {
       "id": 9857,
@@ -727,7 +729,8 @@
         }
       ],
       "label": "action",
-      "label_score": 0.31665369868278503
+      "label_score": 0.31665369868278503,
+      "explanation": "Trustees need to maintain a list of items the trustees should be familiar with and we need to review our knowledge and understanding and identify any . The guidance doesn't prescribe an amount of training"
     },
     {
       "id": 9858,
@@ -1512,7 +1515,8 @@
         }
       ],
       "label": "other",
-      "label_score": 0.29325738549232483
+      "label_score": 0.29325738549232483,
+      "explanation": ""
     },
     {
       "id": 9859,
@@ -1523,7 +1527,8 @@
       "htmlText": "",
       "attachment": [],
       "label": null,
-      "label_score": null
+      "label_score": null,
+      "explanation": ""
     },
     {
       "id": 9860,
@@ -2427,7 +2432,8 @@
         }
       ],
       "label": "action",
-      "label_score": 0.2956908047199249
+      "label_score": 0.2956908047199249,
+      "explanation": "North Point North Point Pension Trustees' Valuation of the pension plan has been undertaken as at 31st December 2024 . Three years ago there was a deficit of £26.2 million"
     },
     {
       "id": 9861,
@@ -2438,7 +2444,8 @@
       "htmlText": "",
       "attachment": [],
       "label": null,
-      "label_score": null
+      "label_score": null,
+      "explanation": ""
     },
     {
       "id": 9862,
@@ -2449,7 +2456,8 @@
       "htmlText": "",
       "attachment": [],
       "label": null,
-      "label_score": null
+      "label_score": null,
+      "explanation": ""
     },
     {
       "id": 9863,
@@ -2464,7 +2472,8 @@
       "attachment": [],
       "lines": [],
       "label": null,
-      "label_score": null
+      "label_score": null,
+      "explanation": ""
     },
     {
       "id": 9864,
@@ -2475,7 +2484,8 @@
       "htmlText": "",
       "attachment": [],
       "label": null,
-      "label_score": null
+      "label_score": null,
+      "explanation": ""
     },
     {
       "id": 9865,
@@ -2486,7 +2496,8 @@
       "htmlText": "",
       "attachment": [],
       "label": null,
-      "label_score": null
+      "label_score": null,
+      "explanation": ""
     },
     {
       "id": 9866,
@@ -2497,7 +2508,8 @@
       "htmlText": "",
       "attachment": [],
       "label": null,
-      "label_score": null
+      "label_score": null,
+      "explanation": ""
     },
     {
       "id": 9867,
@@ -2508,7 +2520,8 @@
       "htmlText": "",
       "attachment": [],
       "label": null,
-      "label_score": null
+      "label_score": null,
+      "explanation": ""
     },
     {
       "id": 9868,
@@ -2523,7 +2536,8 @@
       "attachment": [],
       "lines": [],
       "label": null,
-      "label_score": null
+      "label_score": null,
+      "explanation": ""
     },
     {
       "id": 9869,
@@ -2534,7 +2548,8 @@
       "htmlText": "",
       "attachment": [],
       "label": null,
-      "label_score": null
+      "label_score": null,
+      "explanation": ""
     },
     {
       "id": 9870,
@@ -2549,7 +2564,8 @@
       "attachment": [],
       "lines": [],
       "label": null,
-      "label_score": null
+      "label_score": null,
+      "explanation": ""
     },
     {
       "id": 9871,
@@ -2560,7 +2576,8 @@
       "htmlText": "",
       "attachment": [],
       "label": null,
-      "label_score": null
+      "label_score": null,
+      "explanation": ""
     },
     {
       "id": 9872,
@@ -2571,7 +2588,8 @@
       "htmlText": "",
       "attachment": [],
       "label": null,
-      "label_score": null
+      "label_score": null,
+      "explanation": ""
     },
     {
       "id": 9873,
@@ -2584,7 +2602,8 @@
       "attachment": [],
       "lines": [],
       "label": null,
-      "label_score": null
+      "label_score": null,
+      "explanation": ""
     },
     {
       "id": 9874,
@@ -2596,7 +2615,8 @@
       "htmlText": "",
       "attachment": [],
       "label": null,
-      "label_score": null
+      "label_score": null,
+      "explanation": ""
     }
   ],
   "attachment": []

@@ -2,35 +2,50 @@
 # text_classification.py
 
 import json
+import re
 import torch
 from pathlib import Path
-from transformers import pipeline
+from transformers import pipeline, AutoTokenizer
 
-# ── 配置：把你的输入/输出文件名写在这里 ───────────────────────────────────────
-# 输入文件应该是 combined_api 脚本生成、按 agenda 切分并带有 "lines" 的 JSON
-INPUT_JSON = "segmented_meeting_data.json"
-# 自动在同目录、同文件名基础上加前缀
+# ── CONFIGURATION ──────────────────────────────────────────────────────────────
+INPUT_JSON  = "segmented_meeting_data.json"
 INPUT_PATH  = Path(INPUT_JSON)
 OUTPUT_JSON = str(INPUT_PATH.parent / f"classified_{INPUT_PATH.name}")
+
+# summarization settings for action explanation
+EXPL_MODEL    = "sshleifer/distilbart-cnn-12-6"
+MAX_EXPL_TOKS = 40
+MIN_EXPL_TOKS = 10
 # ────────────────────────────────────────────────────────────────────────────────
 
-def load_data(path: str):
-    """Load JSON from path."""
+def load_data(path):
     with open(path, 'r', encoding='utf-8') as f:
         return json.load(f)
 
-def save_data(data, path: str):
-    """Save JSON to path."""
+def save_data(data, path):
     with open(path, 'w', encoding='utf-8') as f:
         json.dump(data, f, ensure_ascii=False, indent=2)
 
-def classify_sections(input_path: str, output_path: str):
-    """
-    对每个 agenda section 下的所有 lines 合并文本后做 zero-shot 分类，
-    并把 label 和 label_score 写回到每个 agenda item 中。
-    """
-    # 1. 准备 classifier（zero-shot）
+def split_chunks(text, tokenizer, max_tokens):
+    """Split text into chunks of <= max_tokens (by token count), on sentence boundaries."""
+    sentences = re.split(r'(?<=[\.!?])\s+', text)
+    chunks, current, cur_len = [], [], 0
+    for sent in sentences:
+        toks = tokenizer.encode(sent, add_special_tokens=False)
+        if cur_len + len(toks) > max_tokens:
+            chunks.append(" ".join(current))
+            current, cur_len = [], 0
+        current.append(sent)
+        cur_len += len(toks)
+    if current:
+        chunks.append(" ".join(current))
+    return chunks
+
+def classify_sections(input_path, output_path):
+    # device
     device = 0 if torch.cuda.is_available() else -1
+
+    # zero-shot classifier for labels
     classifier = pipeline(
         "zero-shot-classification",
         model="facebook/bart-large-mnli",
@@ -38,44 +53,78 @@ def classify_sections(input_path: str, output_path: str):
         batch_size=8
     )
 
-    # 2. 候选标签列表
-    candidate_labels = ["action", "decision", "conflict", "other"]
+    # summarizer for explanation, plus its tokenizer
+    summarizer = pipeline(
+        "summarization",
+        model=EXPL_MODEL,
+        device=device
+    )
+    tokenizer = AutoTokenizer.from_pretrained(EXPL_MODEL)
+    max_model_tokens = tokenizer.model_max_length
 
-    # 3. 加载整份 JSON（支持单会话或多会话格式）
+    labels = ["action", "decision", "conflict", "other"]
     data = load_data(input_path)
-    if isinstance(data, dict) and "meetings" in data:
-        meetings = data["meetings"]
-        wrap_key = "meetings"
-    else:
-        meetings = [data]
-        wrap_key = None
 
-    # 4. 遍历所有会议和每个 agenda item
+    # support single meeting or batch under "meetings"
+    if isinstance(data, dict) and "meetings" in data:
+        meetings, wrap_key = data["meetings"], "meetings"
+    else:
+        meetings, wrap_key = [data], None
+
     for meeting in meetings:
         for item in meeting.get("agenda", []):
-            # 合并本节所有 utterance/text
-            lines = item.get("lines", [])
-            text = " ".join([ln.get("text", "").strip() for ln in lines]).strip()
-
-            # 如果没有文本则跳过
-            if not text:
-                item["label"] = None
+            texts = [ln.get("text","").strip() for ln in item.get("lines",[])]
+            full_text = " ".join(texts).strip()
+            if not full_text:
+                item["label"]       = None
                 item["label_score"] = None
+                item["explanation"] = ""
                 continue
 
-            # 做分类
-            result = classifier(text, candidate_labels=candidate_labels)
-            item["label"]       = result["labels"][0]
-            item["label_score"] = float(result["scores"][0])
+            # 1) zero-shot classification
+            res = classifier(full_text, candidate_labels=labels)
+            item["label"]       = res["labels"][0]
+            item["label_score"] = float(res["scores"][0])
 
-    # 5. 保存结果，保持原结构
-    if wrap_key:
-        out_data = {wrap_key: meetings}
-    else:
-        out_data = meetings[0]
+            # 2) for actions, generate a single-sentence explanation
+            if item["label"] == "action":
+                # if the section is very long, split into manageable chunks
+                if len(tokenizer.encode(full_text, add_special_tokens=False)) > max_model_tokens - 50:
+                    chunks = split_chunks(full_text, tokenizer, max_model_tokens - 50)
+                else:
+                    chunks = [full_text]
 
+                exps = []
+                for ch in chunks:
+                    prompt = f"Summarize the required action in one sentence: {ch}"
+                    out = summarizer(
+                        prompt,
+                        max_length=MAX_EXPL_TOKS,
+                        min_length=MIN_EXPL_TOKS,
+                        do_sample=False
+                    )
+                    exps.append(out[0]["summary_text"].strip())
+
+                # join chunk‐level results into one line, then ensure it's still concise
+                explanation = " ".join(exps)
+                if len(tokenizer.encode(explanation, add_special_tokens=False)) > MAX_EXPL_TOKS:
+                    # final pass to squeeze into one sentence
+                    out2 = summarizer(
+                        explanation,
+                        max_length=MAX_EXPL_TOKS,
+                        min_length=MIN_EXPL_TOKS,
+                        do_sample=False
+                    )
+                    explanation = out2[0]["summary_text"].strip()
+
+                item["explanation"] = explanation
+            else:
+                item["explanation"] = ""
+
+    # write back
+    out_data = {wrap_key: meetings} if wrap_key else meetings[0]
     save_data(out_data, output_path)
-    print(f"✅ Classification done. Saved to {output_path}")
+    print(f"✅ Classification done. Output → {output_path}")
 
-if __name__ == "__main__":
-    classify_sections(INPUT_JSON, OUTPUT_JSON)
+if __name__=="__main__":
+    classify_sections(str(INPUT_PATH), OUTPUT_JSON)

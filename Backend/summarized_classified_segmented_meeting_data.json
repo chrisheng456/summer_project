@@ -130,6 +130,7 @@
       ],
       "label": "conflict",
       "label_score": 0.5924399495124817,
+      "explanation": "",
       "summary": " Mark is chairing the meeting . Mila and Chris can't join us, but we are correct so continue ."
     },
     {
@@ -262,6 +263,7 @@
       ],
       "label": "action",
       "label_score": 0.5137046575546265,
+      "explanation": "Pension Regulators General Code talks heavily about trustee knowledge and understanding . Trustees need to decide who the benefit needs to be paid to . The next item on the agenda is a quick training",
       "summary": " Pension Regulators General Code talks heavily about trustee knowledge and understanding . Trustees must be able to demonstrate skills and experience to run the scheme effectively ."
     },
     {
@@ -730,6 +732,7 @@
       ],
       "label": "action",
       "label_score": 0.31665369868278503,
+      "explanation": "Trustees need to maintain a list of items the trustees should be familiar with and we need to review our knowledge and understanding and identify any . The guidance doesn't prescribe an amount of training",
       "summary": " Trustees need to maintain records of learning activities . We need to be able to demonstrate as a group that you possess or that we possess the skills and experience to run the scheme effectively . You need to demonstrate you possess . You can do this on the website and also on the iPad . You have to start filling this in straight away .  The idea would be to try and complete the skills matrix once a year . You can make sure by the end of the year at least answer these questions once . So although we've not done this before, I think it will be a good discipline ."
     },
     {
@@ -1516,6 +1519,7 @@
       ],
       "label": "other",
       "label_score": 0.29325738549232483,
+      "explanation": "",
       "summary": " There hasn't been a lot of activity on Steam in the last quarter, but if I quickly the report, the admin report was in the pack, I'll just quickly skim through some of the key bits . At the end of the period, there were 121 deferred members and 209 pensioners . The main projects we've had on the go are the accounts, pension increases, GNP  Government is working on pension dashboards which will allow savers to access information about their pensions in one place . All schemes need to be connected to the central government dashboard by the 31st of October 2026 .  Trustees will be able to connect by the 31st of August 2025 to the pension per member websites that has this information on it . They can't see their benefits in the main bit of information that we provide to the dashboard, but they'll just be signposted to this other information that's publicly available .  The value of that money today might be saying 70 lbs. If you invest 70 lbs today, it will grow at 100 lbs at the point of that particular pension payment that's due . That's what we call the present value of a payment . It's the value of the amount of money we need to hold today to be able to make a higher amount ."
     },
     {
@@ -1528,6 +1532,7 @@
       "attachment": [],
       "label": null,
       "label_score": null,
+      "explanation": "",
       "summary": ""
     },
     {
@@ -2433,6 +2438,7 @@
       ],
       "label": "action",
       "label_score": 0.2956908047199249,
+      "explanation": "North Point North Point Pension Trustees' Valuation of the pension plan has been undertaken as at 31st December 2024 . Three years ago there was a deficit of £26.2 million",
       "summary": " The rate of return on investments is linked to the types of investments and what we would expect them to reasonably return in the future . It's also based on the rate of mortality of your pension scheme members, how long do we think they're going to live? And the longer they live, the more money you need to hold today in reserve to pay those pensions .  Valuation of the pension plan has been undertaken as at 31st December 2024 . It's done months every three years . Valuation is snapshot of what the assets were worth at that time . Asset assets are valued at 99.7 million at the time of the . market value of the liabilities .  Three years ago there was a deficit of £26.2 million and that has improved over the last three years . The investments have done better than we thought they would, which means the asset value today is higher than we predicted it to be 3 years ago .  If you were to. choose to try to buy out today. You would have to literally ask the employer to contribute £18.7 million to make up the right amount of premium . As an alternative to that, you can look at other plans to do it .  We project that the scheme will be fully funded on a fully insurance buyout basis by about 2029 . The next stages are to speak with your covenant advisor to make sure that you have a good understanding of what the covenant is . Speak with your investment advisor to discuss the investment strategies that you conduct going forward in light of these valuation results ."
     },
     {
@@ -2445,6 +2451,7 @@
       "attachment": [],
       "label": null,
       "label_score": null,
+      "explanation": "",
       "summary": ""
     },
     {
@@ -2457,6 +2464,7 @@
       "attachment": [],
       "label": null,
       "label_score": null,
+      "explanation": "",
       "summary": ""
     },
     {
@@ -2473,6 +2481,7 @@
       "lines": [],
       "label": null,
       "label_score": null,
+      "explanation": "",
       "summary": ""
     },
     {
@@ -2485,6 +2494,7 @@
       "attachment": [],
       "label": null,
       "label_score": null,
+      "explanation": "",
       "summary": ""
     },
     {
@@ -2497,6 +2507,7 @@
       "attachment": [],
       "label": null,
       "label_score": null,
+      "explanation": "",
       "summary": ""
     },
     {
@@ -2509,6 +2520,7 @@
       "attachment": [],
       "label": null,
       "label_score": null,
+      "explanation": "",
       "summary": ""
     },
     {
@@ -2521,6 +2533,7 @@
       "attachment": [],
       "label": null,
       "label_score": null,
+      "explanation": "",
       "summary": ""
     },
     {
@@ -2537,6 +2550,7 @@
       "lines": [],
       "label": null,
       "label_score": null,
+      "explanation": "",
       "summary": ""
     },
     {
@@ -2549,6 +2563,7 @@
       "attachment": [],
       "label": null,
       "label_score": null,
+      "explanation": "",
       "summary": ""
     },
     {
@@ -2565,6 +2580,7 @@
       "lines": [],
       "label": null,
       "label_score": null,
+      "explanation": "",
       "summary": ""
     },
     {
@@ -2577,6 +2593,7 @@
       "attachment": [],
       "label": null,
       "label_score": null,
+      "explanation": "",
       "summary": ""
     },
     {
@@ -2589,6 +2606,7 @@
       "attachment": [],
       "label": null,
       "label_score": null,
+      "explanation": "",
       "summary": ""
     },
     {
@@ -2603,6 +2621,7 @@
       "lines": [],
       "label": null,
       "label_score": null,
+      "explanation": "",
       "summary": ""
     },
     {
@@ -2616,6 +2635,7 @@
       "attachment": [],
       "label": null,
       "label_score": null,
+      "explanation": "",
       "summary": ""
     }
   ],
