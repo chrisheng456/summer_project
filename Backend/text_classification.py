@@ -2,129 +2,142 @@
 # text_classification.py
 
 import json
-import re
-import torch
-from pathlib import Path
-from transformers import pipeline, AutoTokenizer
+import argparse
+import datetime
+from collections import defaultdict
+import spacy
 
-# ── CONFIGURATION ──────────────────────────────────────────────────────────────
-INPUT_JSON  = "segmented_meeting_data.json"
-INPUT_PATH  = Path(INPUT_JSON)
-OUTPUT_JSON = str(INPUT_PATH.parent / f"classified_{INPUT_PATH.name}")
+# —— 配置 & 工具函数 —— #
 
-# summarization settings for action explanation
-EXPL_MODEL    = "sshleifer/distilbart-cnn-12-6"
-MAX_EXPL_TOKS = 40
-MIN_EXPL_TOKS = 10
-# ────────────────────────────────────────────────────────────────────────────────
+# 加载 spaCy 英文模型
+nlp = spacy.load("en_core_web_md")
 
-def load_data(path):
-    with open(path, 'r', encoding='utf-8') as f:
-        return json.load(f)
+def iso_to_seconds(ts: str, base: datetime.datetime) -> float:
+    """
+    把 ISO 时间戳转换成秒，基于分会的 startTime 计算相对秒数
+    """
+    t = datetime.datetime.fromisoformat(ts)
+    return (t - base).total_seconds()
 
-def save_data(data, path):
-    with open(path, 'w', encoding='utf-8') as f:
-        json.dump(data, f, ensure_ascii=False, indent=2)
+def extract_key_elements(text: str) -> dict:
+    """
+    基于 spaCy + 关键词，提取 actions / decisions / conflicts
+    返回原始句列表，和一句话 summary
+    """
+    doc = nlp(text)
+    actions, decisions, conflicts = [], [], []
 
-def split_chunks(text, tokenizer, max_tokens):
-    """Split text into chunks of <= max_tokens (by token count), on sentence boundaries."""
-    sentences = re.split(r'(?<=[\.!?])\s+', text)
-    chunks, current, cur_len = [], [], 0
-    for sent in sentences:
-        toks = tokenizer.encode(sent, add_special_tokens=False)
-        if cur_len + len(toks) > max_tokens:
-            chunks.append(" ".join(current))
-            current, cur_len = [], 0
-        current.append(sent)
-        cur_len += len(toks)
-    if current:
-        chunks.append(" ".join(current))
-    return chunks
+    decision_kw = {"decide","agree","choose","conclude","select","option"}
+    conflict_kw = {"but","however","although","issue","problem","concern","disagree"}
 
-def classify_sections(input_path, output_path):
-    # device
-    device = 0 if torch.cuda.is_available() else -1
+    for sent in doc.sents:
+        s = sent.text.strip()
+        low = s.lower()
+        # 决策
+        if any(k in low for k in decision_kw):
+            decisions.append(s)
+        # 冲突
+        if any(k in low for k in conflict_kw):
+            conflicts.append(s)
+        # 行动：根动词 + 宾语
+        root = [t for t in sent if t.dep_=="ROOT"]
+        if root and any(ch.dep_ in ("dobj","xcomp","ccomp") for ch in root[0].children):
+            actions.append(s)
 
-    # zero-shot classifier for labels
-    classifier = pipeline(
-        "zero-shot-classification",
-        model="facebook/bart-large-mnli",
-        device=device,
-        batch_size=8
+    # 最少保证不空
+    if not actions:    actions = ["No actions detected"]
+    if not decisions:  decisions = ["No decisions detected"]
+    if not conflicts:  conflicts = ["No conflicts detected"]
+
+    # 构造一句话 summary
+    summary = (
+        f"Actions: {actions[0]}{'...' if len(actions)>1 else ''}; "
+        f"Decisions: {decisions[0]}{'...' if len(decisions)>1 else ''}; "
+        f"Conflicts: {conflicts[0]}{'...' if len(conflicts)>1 else ''}."
     )
+    return {
+        "actions":    actions,
+        "decisions":  decisions,
+        "conflicts":  conflicts,
+        "summary":    summary
+    }
 
-    # summarizer for explanation, plus its tokenizer
-    summarizer = pipeline(
-        "summarization",
-        model=EXPL_MODEL,
-        device=device
+# —— 主流程 —— #
+
+def main(api_json_path, aligned_json_path, output_path):
+    # 1. 载入 API JSON
+    with open(api_json_path, "r", encoding="utf-8") as f:
+        api = json.load(f)
+
+    # 必须有 startTime & agenda 列表
+    meeting_start = api.get("startTime")
+    agenda = api.get("agenda")
+    if not meeting_start or not isinstance(agenda, list):
+        print("⚠️ 未从 API JSON 中读取到有效的 startTime/agenda")
+        return
+    base_dt = datetime.datetime.fromisoformat(meeting_start)
+
+    # 2. 构造 sections：计算每个条目的相对开始/结束秒数
+    sections = []
+    for item in agenda:
+        title = item.get("title","")
+        num   = item.get("number","")
+        cs    = item.get("calculatedStartTime")
+        length = item.get("lengthMinutes", 0)
+        if not cs: continue
+        start_s = iso_to_seconds(cs, base_dt)
+        end_s   = start_s + length*60
+        sections.append({
+            "number": num,
+            "title":   title,
+            "start":   start_s,
+            "end":     end_s
+        })
+
+    # 3. 读对齐 JSON，把每段 text 按 start 分配到对应 section
+    with open(aligned_json_path, "r", encoding="utf-8") as f:
+        aligned = json.load(f)
+
+    by_section = defaultdict(list)
+    for seg in aligned:
+        t0 = seg.get("start",0)
+        # 找到第一个满足 t0 in [sec.start, sec.end) 的 section
+        for sec in sections:
+            if sec["start"] <= t0 < sec["end"]:
+                by_section[ (sec["number"],sec["title"]) ].append(seg["text"])
+                break
+
+    # 4. 对每个 section 下的文本做提取 & 总结
+    output = []
+    for num,title in by_section:
+        texts = by_section[(num,title)]
+        full_text = " ".join(texts)
+        analysis = extract_key_elements(full_text)
+
+        output.append({
+            "section_number": num,
+            "section_title":  title,
+            "analysis":       analysis,
+            "raw_texts":      texts
+        })
+
+    # 5. 写文件
+    with open(output_path, "w", encoding="utf-8") as f:
+        json.dump({
+            "meeting_id":   api.get("meeting_id"),
+            "meeting_name": api.get("name", ""),
+            "sections":     output
+        }, f, ensure_ascii=False, indent=2)
+
+    print(f"✅ 结果已保存到 {output_path}")
+
+if __name__ == "__main__":
+    parser = argparse.ArgumentParser(
+        description="基于 API 分段 + 对齐结果，做 per-section 分类 & 摘要"
     )
-    tokenizer = AutoTokenizer.from_pretrained(EXPL_MODEL)
-    max_model_tokens = tokenizer.model_max_length
+    parser.add_argument("api_json",    help="从后端拿到的 all_meetings JSON")
+    parser.add_argument("aligned_json",help="diarize_and_align 脚本生成的 aligned.json")
+    parser.add_argument("output",      help="输出 JSON 文件路径")
+    args = parser.parse_args()
 
-    labels = ["action", "decision", "conflict", "other"]
-    data = load_data(input_path)
-
-    # support single meeting or batch under "meetings"
-    if isinstance(data, dict) and "meetings" in data:
-        meetings, wrap_key = data["meetings"], "meetings"
-    else:
-        meetings, wrap_key = [data], None
-
-    for meeting in meetings:
-        for item in meeting.get("agenda", []):
-            texts = [ln.get("text","").strip() for ln in item.get("lines",[])]
-            full_text = " ".join(texts).strip()
-            if not full_text:
-                item["label"]       = None
-                item["label_score"] = None
-                item["explanation"] = ""
-                continue
-
-            # 1) zero-shot classification
-            res = classifier(full_text, candidate_labels=labels)
-            item["label"]       = res["labels"][0]
-            item["label_score"] = float(res["scores"][0])
-
-            # 2) for actions, generate a single-sentence explanation
-            if item["label"] == "action":
-                # if the section is very long, split into manageable chunks
-                if len(tokenizer.encode(full_text, add_special_tokens=False)) > max_model_tokens - 50:
-                    chunks = split_chunks(full_text, tokenizer, max_model_tokens - 50)
-                else:
-                    chunks = [full_text]
-
-                exps = []
-                for ch in chunks:
-                    prompt = f"Summarize the required action in one sentence: {ch}"
-                    out = summarizer(
-                        prompt,
-                        max_length=MAX_EXPL_TOKS,
-                        min_length=MIN_EXPL_TOKS,
-                        do_sample=False
-                    )
-                    exps.append(out[0]["summary_text"].strip())
-
-                # join chunk‐level results into one line, then ensure it's still concise
-                explanation = " ".join(exps)
-                if len(tokenizer.encode(explanation, add_special_tokens=False)) > MAX_EXPL_TOKS:
-                    # final pass to squeeze into one sentence
-                    out2 = summarizer(
-                        explanation,
-                        max_length=MAX_EXPL_TOKS,
-                        min_length=MIN_EXPL_TOKS,
-                        do_sample=False
-                    )
-                    explanation = out2[0]["summary_text"].strip()
-
-                item["explanation"] = explanation
-            else:
-                item["explanation"] = ""
-
-    # write back
-    out_data = {wrap_key: meetings} if wrap_key else meetings[0]
-    save_data(out_data, output_path)
-    print(f"✅ Classification done. Output → {output_path}")
-
-if __name__=="__main__":
-    classify_sections(str(INPUT_PATH), OUTPUT_JSON)
+    main(args.api_json, args.aligned_json, args.output)
