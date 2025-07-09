@@ -5,6 +5,9 @@
     <button class="edit-btn" @click="toggleEdit">
       {{ isEditing ? 'Save' : 'Edit' }}
     </button>
+    <button class="reset-btn" @click="resetEdit">
+      Reset
+    </button>    
 
     <p><strong>Time:</strong></p>
     <div v-if="isEditing">
@@ -71,6 +74,12 @@ watch(
   },
   { immediate: true }
 )
+
+function resetEdit() {
+  if (editableSection.value) {
+    editableSection.value = JSON.parse(JSON.stringify(props.section))
+  }
+}
 
 
 function toggleEdit() {
@@ -145,4 +154,21 @@ li {
 .edit-btn:hover {
   background-color: #005fa3;
 }
+
+.reset-btn {
+  float: right;
+  margin-top: -2.5rem;
+  margin-right: 5rem;
+  padding: 6px 12px;
+  border: none;
+  background-color: #007acc;
+  color: white;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.reset-btn:hover {
+  background-color: #999;
+}
+
 </style>

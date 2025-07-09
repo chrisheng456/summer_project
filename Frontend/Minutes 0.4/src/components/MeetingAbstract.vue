@@ -6,6 +6,11 @@
       {{ isEditing ? 'Save' : 'Edit' }}
     </button>
 
+    <button class="reset-btn" @click="resetEdit">
+      Reset
+    </button>        
+   
+
     <div v-if="isEditing">
       <textarea v-model="editableAbstract" class="input" />
     </div>
@@ -44,6 +49,12 @@ function toggleEdit() {
   }
   isEditing.value = !isEditing.value
 }
+
+function resetEdit() {
+  editableAbstract.value = props.abstract
+}
+
+
 </script>
 
 <style scoped>
@@ -90,6 +101,22 @@ h2 {
 }
 
 .edit-btn:hover {
+  background-color: #005fa3;
+}
+
+.reset-btn {
+  position: absolute;
+  top: 1.5rem;
+  right: 5rem;
+  background-color: #007acc;
+  color: white;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.reset-btn:hover {
   background-color: #005fa3;
 }
 </style>
