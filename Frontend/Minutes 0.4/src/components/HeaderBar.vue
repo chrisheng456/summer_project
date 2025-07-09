@@ -1,6 +1,6 @@
 <template>
   <div class="page-header">
-    <div class="header-title">Meeting Dashboard</div>
+    <div class="header-title">Logo</div>
     <el-dropdown trigger="click" @command="handleCommand">
       <span class="avatar-wrapper">
         <el-avatar size="medium">{{ userInitial }}</el-avatar>
@@ -40,12 +40,12 @@ function handleCommand(command: string) {
   top: 0;
   left: 0;
   right: 0;
-  height: 60px;
+  height: 40px;
   background-color: #f9fafb;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0 24px;
+  padding: 10 24px;
   box-shadow: 0 1px 6px rgba(0, 0, 0, 0.1);
   z-index: 10000;
 }
