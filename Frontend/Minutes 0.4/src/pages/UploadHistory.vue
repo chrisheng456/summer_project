@@ -1,76 +1,84 @@
 <template>
-  <div class="container">
-    <el-dropdown trigger="click" @command="handleCommand">
-      <span class="avatar-wrapper">
-        <el-avatar size="medium">{{ userInitial }}</el-avatar>
-      </span>
-      <template #dropdown>
-        <el-dropdown-menu>
-          <el-dropdown-item disabled>{{ username }}</el-dropdown-item>
-          <el-dropdown-item divided command="settings">Settings</el-dropdown-item>
-          <el-dropdown-item command="logout">Log out</el-dropdown-item>
-        </el-dropdown-menu>
-      </template>
-    </el-dropdown>
-
-    <!-- Upload Section -->
-    <div class="upload-section">
-      <h3>Upload New Audio</h3>
-      <el-upload
-        class="upload-card"
-        action="#"
-        drag
-        :auto-upload="false"
-        :on-change="handleUpload"
-        accept=".mp3,.wav,.m4a"
-        :limit="100"
-        :file-list="[]"
-      >
-        <el-icon class="upload-icon">
-          <UploadFilled />
-        </el-icon>
-
-        <div class="el-upload__text">
-          Drop audio file here or <em>click to upload</em>
-        </div>
-        
-        <template #tip>
-          <div class="el-upload__tip">Only mp3/wav/m4a files</div>
+  <div>
+    <!-- ✅ 页面顶部栏 -->
+    <div class="page-header">
+      <div class="header-title">Meeting Dashboard</div>
+      <el-dropdown trigger="click" @command="handleCommand">
+        <span class="avatar-wrapper">
+          <el-avatar size="medium">{{ userInitial }}</el-avatar>
+        </span>
+        <template #dropdown>
+          <el-dropdown-menu>
+            <el-dropdown-item disabled>{{ username }}</el-dropdown-item>
+            <el-dropdown-item divided command="settings">Settings</el-dropdown-item>
+            <el-dropdown-item command="logout">Log out</el-dropdown-item>
+          </el-dropdown-menu>
         </template>
-      </el-upload>
-
+      </el-dropdown>
     </div>
 
-    <!-- History Table -->
-    <div class="history-section">
-      <h3 class="table-title">Upload History</h3>
-      <div class="table-wrapper">
-        <table>
-          <thead>
-            <tr>
-              <th>Filename</th>
-              <th>Participants</th>
-              <th>Duration</th>
-              <th>Uploaded At</th>
-              <th>Details</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr v-for="item in history" :key="item.id">
-              <td>{{ item.filename }}</td>
-              <td>{{ item.participants }}</td>
-              <td>{{ item.duration }}</td>
-              <td>{{ item.uploadTime }}</td>
-              <td>
-                <button @click="viewDetail">View Details</button>
-              </td>
-            </tr>
-          </tbody>
-        </table>
+    <!-- ✅ 内容区加外层容器 -->
+    <div class="container">
+      <!-- Upload Section -->
+      <div class="upload-section">
+        <h3>Upload New Audio</h3>
+        <el-upload
+          class="upload-card"
+          action="#"
+          drag
+          :auto-upload="false"
+          :on-change="handleUpload"
+          accept=".mp3,.wav,.m4a"
+          :limit="100"
+          :file-list="[]"
+        >
+          <el-icon class="upload-icon">
+            <UploadFilled />
+          </el-icon>
+
+          <div class="el-upload__text">
+            Drop audio file here or <em>click to upload</em>
+          </div>
+
+          <template #tip>
+            <div class="el-upload__tip">Only mp3/wav/m4a files</div>
+          </template>
+        </el-upload>
+      </div>
+
+      <!-- History Table -->
+      <div class="history-section">
+        <h3 class="table-title">Upload History</h3>
+        <div class="table-wrapper">
+          <table>
+            <thead>
+              <tr>
+                <th>Filename</th>
+                <th>Participants</th>
+                <th>Duration</th>
+                <th>Uploaded At</th>
+                <th>Details</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr v-for="item in history" :key="item.id">
+                <td>{{ item.filename }}</td>
+                <td>{{ item.participants }}</td>
+                <td>{{ item.duration }}</td>
+                <td>{{ item.uploadTime }}</td>
+                <td>
+                  <button @click="viewDetail">View Details</button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
       </div>
     </div>
   </div>
 </template>
+
+
 
 
 
@@ -284,14 +292,33 @@ button:hover {
   }
 }
 
-/* 固定头像在右上角 */
-.avatar-wrapper {
+
+.page-header {
   position: fixed;
-  top: 20px;
-  right: 30px;
-  z-index: 9999;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 60px;
+  background-color: #f9fafb;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 24px;
+  box-shadow: 0 1px 6px rgba(0, 0, 0, 0.1);
+  z-index: 10000;
+}
+
+.header-title {
+  font-size: 18px;
+  font-weight: 600;
+  color: #333;
+}
+
+/* ⚠️ 原 avatar-wrapper 改为不固定定位 */
+.avatar-wrapper {
   cursor: pointer;
 }
+
 
 
 

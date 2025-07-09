@@ -3,7 +3,9 @@
 <div class="sidebar">
   <!-- 顶部内容 -->
   <div @click="$emit('select', -1)" class="level-0">Meeting Details</div>
+  <div @click="$emit('select', -1)" class="level-0">Transcription</div>
   <div class="level-1">Agenda</div>
+  
 
   <!-- Section 列表 -->
   <div
@@ -17,6 +19,14 @@
 <!-- 子组件点击事件，触发父组件的事件select，调用handleSelect函数，传入参数赋值给activeIndex -->
     {{ section.title }}
   </div>
+
+<div class="download-area">
+
+  <span class="level-3">Download</span>
+</div>
+  
+
+
 </div>
 </template>
 
@@ -68,8 +78,26 @@ activeIndex: number
   cursor: pointer;
 }
 
+.download-area {
+  display: flex;
+}
+
+.level-3 {
+  margin-left: 100px;
+  padding: 6px 12px;
+  background-color: #b1a7a5;
+  border-radius: 5px;
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.05);
+  font-size: 1rem;
+  margin-top: 50px;
+  font-weight: 700;
+
+}
+
+
 /* 一级导航项：Meeting Details 和 Agenda */
-.level-0:hover {
+.level-0:hover,
+.level-3:hover {
   background-color: #e6f4ff;
   font-weight: 700;
   cursor: pointer;
@@ -86,5 +114,7 @@ activeIndex: number
   font-weight: 600;
   color: #007acc;
 }
+
+
 
 </style>
