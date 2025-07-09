@@ -129,7 +129,7 @@
         }
       ],
       "label": "conflict",
-      "label_score": 0.5924399495124817,
+      "label_score": 0.592439591884613,
       "explanation": ""
     },
     {
@@ -261,7 +261,7 @@
         }
       ],
       "label": "action",
-      "label_score": 0.5137046575546265,
+      "label_score": 0.5137038230895996,
       "explanation": "Pension Regulators General Code talks heavily about trustee knowledge and understanding . Trustees need to decide who the benefit needs to be paid to . The next item on the agenda is a quick training"
     },
     {
@@ -729,7 +729,7 @@
         }
       ],
       "label": "action",
-      "label_score": 0.31665369868278503,
+      "label_score": 0.31665441393852234,
       "explanation": "Trustees need to maintain a list of items the trustees should be familiar with and we need to review our knowledge and understanding and identify any . The guidance doesn't prescribe an amount of training"
     },
     {
@@ -1515,7 +1515,7 @@
         }
       ],
       "label": "other",
-      "label_score": 0.29325738549232483,
+      "label_score": 0.2932579517364502,
       "explanation": ""
     },
     {
@@ -2432,7 +2432,7 @@
         }
       ],
       "label": "action",
-      "label_score": 0.2956908047199249,
+      "label_score": 0.29569002985954285,
       "explanation": "North Point North Point Pension Trustees' Valuation of the pension plan has been undertaken as at 31st December 2024 . Three years ago there was a deficit of £26.2 million"
     },
     {

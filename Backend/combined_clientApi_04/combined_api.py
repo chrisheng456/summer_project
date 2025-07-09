@@ -65,7 +65,7 @@ def segment_transcript(all_meet_file, transcript_file, output_file):
 if __name__ == '__main__':
     # example invocation for single‐meeting 714.json:
     segment_transcript(
-        '714.json',
+        '../714.json',
         'Trustee Meeting Recording (30 June 2025) V1_V2_with_speakers.json',
         'segmented_meeting_data.json'
     )
