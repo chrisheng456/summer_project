@@ -1,0 +1,2284 @@
+{
+  "lines": [
+    {
+      "start": 3.52,
+      "end": 5.6,
+      "text": "Hi, everybody. Welcome to the meeting.",
+      "speaker": "SPEAKER_01"
+    },
+    {
+      "start": 7.24,
+      "end": 14.440000000000001,
+      "text": "We've received apologies from Mila and Chris. Unfortunately they can't join us, but we are correct so.",
+      "speaker": "SPEAKER_01"
+    },
+    {
+      "start": 16.76,
+      "end": 17.64,
+      "text": "Continue.",
+      "speaker": "SPEAKER_01"
+    },
+    {
+      "start": 19.78,
+      "end": 33.22,
+      "text": "For the purpose of the recording, it's worth me mentioning I'm chairing the meeting today. I'm Mark. We've also got Andy. I'm an environment trustee. We've got Alan here as well. Hi. Yeah, I'm Alan. I'm a skin actor.",
+      "speaker": "SPEAKER_01"
+    },
+    {
+      "start": 35.21,
+      "end": 53.33,
+      "text": "So moving on to item number 2 on the agenda, which is conflicts of interest. Has anybody got any conflict to declare? There's nothing from me, Alan, anything from you? No, thanks, Andy. Potentially on the funding section as I represent the employer. Yeah, OK.",
+      "speaker": "SPEAKER_01"
+    },
+    {
+      "start": 54.63,
+      "end": 61.03,
+      "text": "Yeah. No, that's good. Thank you. And add that to the potential conflicts in the register.",
+      "speaker": "SPEAKER_01"
+    },
+    {
+      "start": 62.67,
+      "end": 65.15,
+      "text": "So moving on to the minutes of the previous meeting.",
+      "speaker": "SPEAKER_01"
+    },
+    {
+      "start": 66.03,
+      "end": 73.59,
+      "text": "They were included in the meeting pack. I assume you've all read those and then we've got any comments on the minutes of the previous meeting.",
+      "speaker": "SPEAKER_01"
+    },
+    {
+      "start": 73.59,
+      "end": 75.23,
+      "text": "Will look good to me.",
+      "speaker": "SPEAKER_02"
+    },
+    {
+      "start": 76.19,
+      "end": 80.67,
+      "text": "Yes, I read them and they were fine. Thank you. I'll arrange for them to be signed.",
+      "speaker": "SPEAKER_01"
+    },
+    {
+      "start": 83.04,
+      "end": 102.72,
+      "text": "And register unlocked. So now we'll move on to Max arising. Unfortunately, we've received notification today of a death from Mr. Tate's. I don't know the member actually personally, I don't know whether either of you have sort of come across Mr. Tate's, no.",
+      "speaker": "SPEAKER_01"
+    },
+    {
+      "start": 104.58,
+      "end": 119.66,
+      "text": "No. So we're notified by the current partner, which is Tanya Woods. So the information is in the pack. But basically we've got an expression of wish form, but that's dated 1982.",
+      "speaker": "SPEAKER_01"
+    },
+    {
+      "start": 120.83,
+      "end": 136.10999999999999,
+      "text": "So it's obviously ours. We've only been notified today. We don't have any other information. But as trustees we need to decide who the benefit needs to be paid to. The benefit is a lump sum of full time salary and there's also a spouse suspension.",
+      "speaker": "SPEAKER_01"
+    },
+    {
+      "start": 141.01,
+      "end": 143.76999999999998,
+      "text": "So what should we do here?",
+      "speaker": "SPEAKER_01"
+    },
+    {
+      "start": 145.43,
+      "end": 155.83,
+      "text": "Obviously we need more information. Do we know if the children are still alive? Do we know why the current partner isn't? The spouse mentioned the expression of wish at the.",
+      "speaker": "SPEAKER_02"
+    },
+    {
+      "start": 155.83,
+      "end": 171.07000000000002,
+      "text": "Moment we don't have any more information, we can ask the administrator to find these kind of things out. So what do you think? Who should we contact? Should we go back to Tanya? That's probably the best course of action, isn't it, to see whether she can provide any more information?",
+      "speaker": "SPEAKER_01"
+    },
+    {
+      "start": 171.96,
+      "end": 174.76000000000002,
+      "text": "I think so, particularly one thing to understand.",
+      "speaker": "SPEAKER_00"
+    },
+    {
+      "start": 176.46,
+      "end": 182.18,
+      "text": "He his dependents are particularly financially dependent and whether or not.",
+      "speaker": "SPEAKER_00"
+    },
+    {
+      "start": 182.18,
+      "end": 194.5,
+      "text": "He has any dependent children who would qualify for a benefit under the rules and also what their marital status is as well because that may have an impact on what the benefit is.",
+      "speaker": "SPEAKER_00"
+    },
+    {
+      "start": 194.5,
+      "end": 202.5,
+      "text": "Yeah, I'll ask the administrator to try and find out this information and also obviously need a death certificate and birth certificate and so on, so.",
+      "speaker": "SPEAKER_01"
+    },
+    {
+      "start": 203.48,
+      "end": 210.32,
+      "text": "Shall I, shall I suggest that we have an action for them to do that and I think it's quite important to get dealt with quite quickly.",
+      "speaker": "SPEAKER_01"
+    },
+    {
+      "start": 210.91,
+      "end": 214.03,
+      "text": "So within the next sort by the end of the week probably.",
+      "speaker": "SPEAKER_01"
+    },
+    {
+      "start": 215.99,
+      "end": 216.43,
+      "text": "Sounds good.",
+      "speaker": "SPEAKER_01"
+    },
+    {
+      "start": 218.27,
+      "end": 224.51000000000002,
+      "text": "OK. And we'll keep you notified of that so we can make a decision as soon as we receive all the information.",
+      "speaker": "SPEAKER_01"
+    },
+    {
+      "start": 225.88,
+      "end": 229.64,
+      "text": "Alright, thanks. So the next item on the agenda is?",
+      "speaker": "SPEAKER_01"
+    },
+    {
+      "start": 231.23,
+      "end": 252.23,
+      "text": "Oh, I'm going to provide a quick training session on pension power and in particular in relation to the risk register and training records modules on there. So the reason for this is that there's been a proposal that we transition our current risk register and our training records onto pension account.",
+      "speaker": "SPEAKER_01"
+    },
+    {
+      "start": 253.15,
+      "end": 254.95000000000002,
+      "text": "If I just quickly show you that.",
+      "speaker": "SPEAKER_01"
+    },
+    {
+      "start": 258.18,
+      "end": 264.46,
+      "text": "I'm actually showing it to you on the test scheme, so this isn't our live scheme.",
+      "speaker": "SPEAKER_01"
+    },
+    {
+      "start": 265.79,
+      "end": 273.83000000000004,
+      "text": "Currently, what we do is we as trustees, we maintain our own records on a spreadsheet of training events that we attend.",
+      "speaker": "SPEAKER_01"
+    },
+    {
+      "start": 276.33,
+      "end": 293.72999999999996,
+      "text": "But going forward, we're going to now do this on pension power. And as background, there was a general, the Pension Regulators General Code talks quite heavily about trustee knowledge and understanding and some of the points that they particularly bring out in the sections about how you govern these areas.",
+      "speaker": "SPEAKER_01"
+    },
+    {
+      "start": 295.56,
+      "end": 302.92,
+      "text": "You need to be able to demonstrate as a group that you possess or that we possess the skills and experience to run the scheme effectively.",
+      "speaker": "SPEAKER_01"
+    },
+    {
+      "start": 304.03,
+      "end": 307.22999999999996,
+      "text": "We need to maintain records of learning activities.",
+      "speaker": "SPEAKER_01"
+    },
+    {
+      "start": 308.15,
+      "end": 318.22999999999996,
+      "text": "Maintain a list of items the trustees should be familiar with and we need to review our knowledge and understanding and identify any.",
+      "speaker": "SPEAKER_01"
+    },
+    {
+      "start": 319.27,
+      "end": 321.75,
+      "text": "So you have to start filling this in straight away.",
+      "speaker": "SPEAKER_02"
+    },
+    {
+      "start": 322.51,
+      "end": 325.87,
+      "text": "Yes. So if I just show you, we'll start with the training records area.",
+      "speaker": "SPEAKER_01"
+    },
+    {
+      "start": 328.34,
+      "end": 331.46,
+      "text": "You'll see on pension power each of our names are listed.",
+      "speaker": "SPEAKER_01"
+    },
+    {
+      "start": 332.87,
+      "end": 344.99,
+      "text": "Next to your own name, you'll have an information icon on the right hand side. The table shows us the amount of training that we've done in the previous period and the current.",
+      "speaker": "SPEAKER_01"
+    },
+    {
+      "start": 346.15,
+      "end": 355.19,
+      "text": "And at the top here, we've got some configuration. So this is saying that our current training period is the calendar year and the target number of hours.",
+      "speaker": "SPEAKER_01"
+    },
+    {
+      "start": 356.88,
+      "end": 363.2,
+      "text": "We've started by setting this to 10 hours, so first of all, as a trustee board we need to agree whether 10 hours is sufficient.",
+      "speaker": "SPEAKER_01"
+    },
+    {
+      "start": 365.03,
+      "end": 373.42999999999995,
+      "text": "Or whether we should be aiming for a higher number. I think 10 hours would be the minimum. The guidance doesn't prescribe an amount of training.",
+      "speaker": "SPEAKER_01"
+    },
+    {
+      "start": 374.23,
+      "end": 377.71000000000004,
+      "text": "Think we're a relatively small scheme, therefore.",
+      "speaker": "SPEAKER_01"
+    },
+    {
+      "start": 379.9,
+      "end": 384.29999999999995,
+      "text": "I think it's reasonable to set something between 10 and 15 hours of our target.",
+      "speaker": "SPEAKER_01"
+    },
+    {
+      "start": 385.75,
+      "end": 389.83,
+      "text": "MSN player this is Yeah, OK, so.",
+      "speaker": "SPEAKER_01"
+    },
+    {
+      "start": 391.07,
+      "end": 395.55,
+      "text": "I suggest that we start off with a target of 10 hours.",
+      "speaker": "SPEAKER_01"
+    },
+    {
+      "start": 396.43,
+      "end": 400.03000000000003,
+      "text": "And then we review that and see how we get on with that. How much have?",
+      "speaker": "SPEAKER_01"
+    },
+    {
+      "start": 400.03,
+      "end": 404.83,
+      "text": "We been recording or trying to record previously.",
+      "speaker": "SPEAKER_02"
+    },
+    {
+      "start": 404.83,
+      "end": 421.63,
+      "text": "Yeah, it's historically, I'm sure our records haven't been kept up to date properly. We've been using pretty ad hoc approach and I think a couple of trustees have managed to meet 10 hours, but most of them fall short of that.",
+      "speaker": "SPEAKER_01"
+    },
+    {
+      "start": 422.56,
+      "end": 431.32,
+      "text": "If you bear in mind though, we've not necessarily always recorded all the training that we do. So for example at meetings we may have covered training and not recording it.",
+      "speaker": "SPEAKER_01"
+    },
+    {
+      "start": 432.23,
+      "end": 445.79,
+      "text": "Thank you. So to actually record it, you click on your information icon and you'll see at the bottom you've got a new training button. Click on the new training button and then you get a form to fill in.",
+      "speaker": "SPEAKER_01"
+    },
+    {
+      "start": 448.78,
+      "end": 454.46,
+      "text": "I'll just quickly show you that the most important thing when you're filling in the form is to make sure you put in a duration here.",
+      "speaker": "SPEAKER_01"
+    },
+    {
+      "start": 456.91,
+      "end": 461.63000000000005,
+      "text": "And press update, and once you've done that, your training record will go into your own.",
+      "speaker": "SPEAKER_01"
+    },
+    {
+      "start": 463.59,
+      "end": 464.86999999999995,
+      "text": "Trading records table.",
+      "speaker": "SPEAKER_01"
+    },
+    {
+      "start": 467.96,
+      "end": 470.76,
+      "text": "You can do this on the website and also on the iPad.",
+      "speaker": "SPEAKER_01"
+    },
+    {
+      "start": 472.35,
+      "end": 474.63,
+      "text": "I think that's fairly straightforward. Any questions about that?",
+      "speaker": "SPEAKER_01"
+    },
+    {
+      "start": 476.39,
+      "end": 484.22999999999996,
+      "text": "Night looks good and obviously you can see it's the chair that everyone's up to speed with relevant training.",
+      "speaker": "SPEAKER_00"
+    },
+    {
+      "start": 485.11,
+      "end": 486.91,
+      "text": "Can we all see each other's trainings and.",
+      "speaker": "SPEAKER_02"
+    },
+    {
+      "start": 486.91,
+      "end": 493.15000000000003,
+      "text": "So you can see this front page so you can see the amount of training that.",
+      "speaker": "SPEAKER_01"
+    },
+    {
+      "start": 493.15,
+      "end": 504.78999999999996,
+      "text": "Everybody's done, but you only get an information icon next to your own name, so you can only click through to see the details of your own training events, so you can't see everybody else's.",
+      "speaker": "SPEAKER_01"
+    },
+    {
+      "start": 508.28,
+      "end": 520.9599999999999,
+      "text": "So if we all agree, I suggest we from now on we record our training on pension power, we're all responsible for recording training that we do individually.",
+      "speaker": "SPEAKER_01"
+    },
+    {
+      "start": 521.91,
+      "end": 529.39,
+      "text": "But if we do training where more than one of the trustees is involved, the scheme secretary can update the training for you.",
+      "speaker": "SPEAKER_01"
+    },
+    {
+      "start": 530.67,
+      "end": 532.67,
+      "text": "On behalf of all the trustees in one go.",
+      "speaker": "SPEAKER_01"
+    },
+    {
+      "start": 534.43,
+      "end": 535.0699999999999,
+      "text": "That sounds good.",
+      "speaker": "SPEAKER_01"
+    },
+    {
+      "start": 538.51,
+      "end": 540.95,
+      "text": "And we're going to do that for every trustee meeting.",
+      "speaker": "SPEAKER_02"
+    },
+    {
+      "start": 540.95,
+      "end": 549.19,
+      "text": "Yeah, I think trustee meetings will have an item on the agenda just to make sure that people aren't keeping their records up up to date, OK.",
+      "speaker": "SPEAKER_01"
+    },
+    {
+      "start": 550.98,
+      "end": 568.14,
+      "text": "So that's the recording records of training. The other new area, and we've not done this before, is the concept of a skills matrix. As I said at the beginning, one of the requirements in the general code is the trustees need to maintain a list of items that the trustee should be familiar with.",
+      "speaker": "SPEAKER_01"
+    },
+    {
+      "start": 569.23,
+      "end": 574.47,
+      "text": "And so there's a list here of all the areas, and these are taken from the general code.",
+      "speaker": "SPEAKER_01"
+    },
+    {
+      "start": 576.03,
+      "end": 576.91,
+      "text": "And you'll see.",
+      "speaker": "SPEAKER_01"
+    },
+    {
+      "start": 578.55,
+      "end": 582.9499999999999,
+      "text": "There's an information icon next to your name which allows you to.",
+      "speaker": "SPEAKER_01"
+    },
+    {
+      "start": 584.11,
+      "end": 586.91,
+      "text": "Drill down to your own skills matrix.",
+      "speaker": "SPEAKER_01"
+    },
+    {
+      "start": 588.4,
+      "end": 595.4,
+      "text": "We'll see. There's a key here with the level. So one is limited on their understanding and four is an advanced level of understanding.",
+      "speaker": "SPEAKER_01"
+    },
+    {
+      "start": 596.11,
+      "end": 599.15,
+      "text": "And we can edit our own scores using the edit button.",
+      "speaker": "SPEAKER_01"
+    },
+    {
+      "start": 602.42,
+      "end": 615.38,
+      "text": "If you the first time you answer a question, it'll be blank and you can just select a score. Once you've done that, the next time you answer the question you can either confirm and all that does is update the date here.",
+      "speaker": "SPEAKER_01"
+    },
+    {
+      "start": 616.63,
+      "end": 618.43,
+      "text": "Or you can change the score.",
+      "speaker": "SPEAKER_01"
+    },
+    {
+      "start": 619.75,
+      "end": 633.27,
+      "text": "Like that you don't need to answer all the questions in one go. You can save the changes at any point. So you can do it piece meal. So although we've not done this before, I think it will be a good discipline to start doing this going forward.",
+      "speaker": "SPEAKER_01"
+    },
+    {
+      "start": 635.19,
+      "end": 635.5100000000001,
+      "text": "Yeah.",
+      "speaker": "SPEAKER_01"
+    },
+    {
+      "start": 638.08,
+      "end": 650.6800000000001,
+      "text": "You'll notice there's a there's a row that says percentage up to date. So this is the percentage of questions that each trustees answered in the last 12 months. So the idea would be to try and complete the skills matrix once a year.",
+      "speaker": "SPEAKER_01"
+    },
+    {
+      "start": 652.19,
+      "end": 655.83,
+      "text": "Yeah. And I suggest in the January meeting.",
+      "speaker": "SPEAKER_01"
+    },
+    {
+      "start": 656.67,
+      "end": 665.31,
+      "text": "We'll just review to make sure everybody is safe. You can make sure by the end of the year at least answer these questions once.",
+      "speaker": "SPEAKER_01"
+    },
+    {
+      "start": 666.75,
+      "end": 671.47,
+      "text": "Can I say one of the trustees is on a nil percent? Is that does that mean they they're new or?",
+      "speaker": "SPEAKER_00"
+    },
+    {
+      "start": 671.47,
+      "end": 681.07,
+      "text": "That's just because they haven't gone through the exercise yet if this is just the example, obviously. So we'll all start on 0%.",
+      "speaker": "SPEAKER_01"
+    },
+    {
+      "start": 684.4,
+      "end": 695.76,
+      "text": "One thing we'll need to agree is whether these are the right questions. So these have been taken from the general code. I suggest we start by using those questions for the first one through.",
+      "speaker": "SPEAKER_01"
+    },
+    {
+      "start": 697.91,
+      "end": 699.1899999999999,
+      "text": "And see how we'll get on with that.",
+      "speaker": "SPEAKER_01"
+    },
+    {
+      "start": 701.04,
+      "end": 702.3199999999999,
+      "text": "Want to start later by January you said?",
+      "speaker": "SPEAKER_02"
+    },
+    {
+      "start": 703.67,
+      "end": 712.1899999999999,
+      "text": "Yes, I think we'll, I think we'll ask pension power to send some instructions to you and.",
+      "speaker": "SPEAKER_01"
+    },
+    {
+      "start": 713.43,
+      "end": 718.5899999999999,
+      "text": "With a view to starting using both the training records and the skills matrix straight away.",
+      "speaker": "SPEAKER_01"
+    },
+    {
+      "start": 720.47,
+      "end": 720.83,
+      "text": "OK.",
+      "speaker": "SPEAKER_00"
+    },
+    {
+      "start": 720.83,
+      "end": 729.19,
+      "text": "Sounds good and particularly as you're just about to receive your valuation results and having training on that subject would be?",
+      "speaker": "SPEAKER_00"
+    },
+    {
+      "start": 729.19,
+      "end": 733.6300000000001,
+      "text": "Helpful. Yeah. And we'll be able to record some of today's.",
+      "speaker": "SPEAKER_01"
+    },
+    {
+      "start": 734.43,
+      "end": 740.1899999999999,
+      "text": "Training from evaluation presentation onto here, so I'll arrange for that to be done.",
+      "speaker": "SPEAKER_01"
+    },
+    {
+      "start": 744.44,
+      "end": 748.5600000000001,
+      "text": "OK. So that's the other area we're going to cover is the risk register.",
+      "speaker": "SPEAKER_01"
+    },
+    {
+      "start": 750.82,
+      "end": 779.74,
+      "text": "At the moment, the risk register, it hasn't been reviewed for a couple of years. We use a spreadsheet. It was inherited from a previous advisor. We need to do a formal review of that and I suggest we do that at the next meeting. But in the meantime, we're going to transition the risk registrar to pension power. We'll currently use a spreadsheet. Pension power makes it a lot easier for us to update the risk register and so I'll just show you what you end up with on the system.",
+      "speaker": "SPEAKER_01"
+    },
+    {
+      "start": 780.51,
+      "end": 794.71,
+      "text": "Yesterday. So on Pension power we have a summary tab which shows us the risk categories and where all the risks are. We have a summary of our scoring system, so this will be reviewed when we do the full risk register review. Well, this is where we are at the moment.",
+      "speaker": "SPEAKER_01"
+    },
+    {
+      "start": 796.7,
+      "end": 799.7,
+      "text": "And then for each of the areas we have.",
+      "speaker": "SPEAKER_01"
+    },
+    {
+      "start": 801.19,
+      "end": 806.11,
+      "text": "So does that match our current way of measuring risks or is this something that's been imposed on?",
+      "speaker": "SPEAKER_02"
+    },
+    {
+      "start": 806.11,
+      "end": 830.59,
+      "text": "Us. So this is just an example. So what we're proposing is that we'll ask pension power to map our existing risk register to pension power. So we'll have we'll have the same risk categories, the same scoring system and the same risks mentioned and this just makes it easier to maintain it. So for example, if we click on an individual risk we get.",
+      "speaker": "SPEAKER_01"
+    },
+    {
+      "start": 831.63,
+      "end": 848.83,
+      "text": "A dashboard which shows us everything we need to know about this risk. So the controls we've got in place, the scoring and any changes are shown at the bottom from the previous version of the spreader. So we've now got an audit trail. If we use this, we'll have an audit trail of how the risk register is changing over time.",
+      "speaker": "SPEAKER_01"
+    },
+    {
+      "start": 849.79,
+      "end": 858.31,
+      "text": "So if we will agree, we'll ask pension power to map our existing risk register and we'll start using it on pension power.",
+      "speaker": "SPEAKER_01"
+    },
+    {
+      "start": 859.31,
+      "end": 861.75,
+      "text": "Will I be able to see that on the iPad app or would like to?",
+      "speaker": "SPEAKER_02"
+    },
+    {
+      "start": 861.75,
+      "end": 866.55,
+      "text": "Log on to the website. Yeah, that's a good question. It's available on the iPad app and on.",
+      "speaker": "SPEAKER_01"
+    },
+    {
+      "start": 866.55,
+      "end": 867.91,
+      "text": "The website excellent.",
+      "speaker": "SPEAKER_01"
+    },
+    {
+      "start": 867.91,
+      "end": 869.91,
+      "text": "Is there like a version?",
+      "speaker": "SPEAKER_00"
+    },
+    {
+      "start": 869.91,
+      "end": 874.31,
+      "text": "History then, so you could see the actual document from the past.",
+      "speaker": "SPEAKER_00"
+    },
+    {
+      "start": 874.31,
+      "end": 884.51,
+      "text": "So these are on the front page when you click on risk register. The top row is the current working version and you'll see previous versions below.",
+      "speaker": "SPEAKER_01"
+    },
+    {
+      "start": 885.4,
+      "end": 890.3199999999999,
+      "text": "So when we're happy that the current version is has been reviewed properly, we will publish that.",
+      "speaker": "SPEAKER_01"
+    },
+    {
+      "start": 890.75,
+      "end": 898.99,
+      "text": "And then that will appear in the list and then we'll have an audit trail between them or we'll see how the scores are changing over time. It sounds great.",
+      "speaker": "SPEAKER_01"
+    },
+    {
+      "start": 902.79,
+      "end": 904.3499999999999,
+      "text": "OK. Any questions on that?",
+      "speaker": "SPEAKER_01"
+    },
+    {
+      "start": 907.11,
+      "end": 911.27,
+      "text": "Yeah, next we've got administration.",
+      "speaker": "SPEAKER_01"
+    },
+    {
+      "start": 913.23,
+      "end": 924.79,
+      "text": "There hasn't been a lot of activity on Steam in the last quarter, but if I quickly the report, the admin report was in the pack, I'll just quickly skim through some of the key bits.",
+      "speaker": "SPEAKER_01"
+    },
+    {
+      "start": 925.83,
+      "end": 930.63,
+      "text": "So the period we're looking at is 1st of April 2025 to 30 June.",
+      "speaker": "SPEAKER_01"
+    },
+    {
+      "start": 932.44,
+      "end": 935.36,
+      "text": "We start off with the summary of the membership so.",
+      "speaker": "SPEAKER_01"
+    },
+    {
+      "start": 936.71,
+      "end": 942.11,
+      "text": "At the end of the period, there were 121 deferred members and 209 pensioners.",
+      "speaker": "SPEAKER_01"
+    },
+    {
+      "start": 943.35,
+      "end": 956.95,
+      "text": "The main projects we've had on the go over the last quarter are the accounts, pension increases, GNP reconciliation and GNP equalisation, and I'll talk about those very briefly in a moment.",
+      "speaker": "SPEAKER_01"
+    },
+    {
+      "start": 962.8,
+      "end": 977.8399999999999,
+      "text": "It's worth turning to the membership movement and statistics. Just quickly at the beginning of the period, we had 123 deferred and 209 pensioners. And you can see we've had a small number of movements. So we've had a couple of people retired.",
+      "speaker": "SPEAKER_01"
+    },
+    {
+      "start": 979.51,
+      "end": 981.03,
+      "text": "But not a lot going on as you can see.",
+      "speaker": "SPEAKER_01"
+    },
+    {
+      "start": 982.66,
+      "end": 1001.4599999999999,
+      "text": "We don't have a table showing all the posts that we received and the enquiries from members and the there's not been a lot of activity. The main thing is that we've had, we've done, we've processed 11 retirement quotes and two transfer out requests and neither of them have actually gone ahead yet. Those transfers haven't.",
+      "speaker": "SPEAKER_01"
+    },
+    {
+      "start": 1004.7,
+      "end": 1021.1,
+      "text": "I can see lots of 100%. Does that mean the administrators met all their Slas? So the administrators are claiming that they've met all their Slas. So they've they've processed the case in the number in the correct number of days. Perfect. That's good news.",
+      "speaker": "SPEAKER_01"
+    },
+    {
+      "start": 1021.1,
+      "end": 1024.5,
+      "text": "Does include Mr. Tate's case. That's only his commitment.",
+      "speaker": "SPEAKER_02"
+    },
+    {
+      "start": 1024.5,
+      "end": 1029.22,
+      "text": "Good point. Yeah, this was produced before Mr. Tay's case has come into service.",
+      "speaker": "SPEAKER_01"
+    },
+    {
+      "start": 1030.03,
+      "end": 1034.87,
+      "text": "Obviously the death isn't recorded on here yet, so I'll ask them to make sure that it's on the next one.",
+      "speaker": "SPEAKER_01"
+    },
+    {
+      "start": 1044.78,
+      "end": 1059.46,
+      "text": "As you know, we've just increased pensions in payment as of the 1st of July in accordance to the rules. And there's a table here which just shows us the different pension increases in payment that are applied to each of the tranches of pension.",
+      "speaker": "SPEAKER_01"
+    },
+    {
+      "start": 1060.18,
+      "end": 1066.5,
+      "text": "And I'm not even going to start to explain these because it's very intricate, but you can see broadly we're paying.",
+      "speaker": "SPEAKER_01"
+    },
+    {
+      "start": 1067.74,
+      "end": 1070.02,
+      "text": "About 3% increases each year.",
+      "speaker": "SPEAKER_01"
+    },
+    {
+      "start": 1071.83,
+      "end": 1073.71,
+      "text": "In accordance with the rules, Yes. No.",
+      "speaker": "SPEAKER_01"
+    },
+    {
+      "start": 1077.71,
+      "end": 1091.67,
+      "text": "So we've got some exercises on the go, we've got AGMP reconciliation exercise going on and there's been a papers being prepared on that at the moment and it'll be ready for the next trustee meeting. That's one of the actions from this meeting.",
+      "speaker": "SPEAKER_01"
+    },
+    {
+      "start": 1092.7,
+      "end": 1098.38,
+      "text": "We're also doing a GMP equalization exercise, a data quality exercise.",
+      "speaker": "SPEAKER_01"
+    },
+    {
+      "start": 1100.62,
+      "end": 1104.54,
+      "text": "And we're also processing the account at the moment or the administrator is.",
+      "speaker": "SPEAKER_01"
+    },
+    {
+      "start": 1106.63,
+      "end": 1109.3100000000002,
+      "text": "Is there anything important?",
+      "speaker": "SPEAKER_00"
+    },
+    {
+      "start": 1110.35,
+      "end": 1121.83,
+      "text": "Yeah, it's all going to plan and we'll provide full reports to the trustees in due course. I wanted to mention or focus on the cash flow and there's a table in Section 7 on cash flow.",
+      "speaker": "SPEAKER_01"
+    },
+    {
+      "start": 1124.66,
+      "end": 1131.14,
+      "text": "We receive £954,000 per quarter from the employer.",
+      "speaker": "SPEAKER_01"
+    },
+    {
+      "start": 1132.18,
+      "end": 1135.46,
+      "text": "We have to pay pensions of 1.38 million.",
+      "speaker": "SPEAKER_01"
+    },
+    {
+      "start": 1136.78,
+      "end": 1150.02,
+      "text": "And so you can see that the bank accounts at the start of the period had a balance of 1.1 million and at the end it has a balance of 597,000.",
+      "speaker": "SPEAKER_01"
+    },
+    {
+      "start": 1151.67,
+      "end": 1158.79,
+      "text": "But given we're going to have to pay out pensions of 1.38 million, even though we'll receive some.",
+      "speaker": "SPEAKER_01"
+    },
+    {
+      "start": 1159.9,
+      "end": 1173.98,
+      "text": "Deficit funding contributions, I think it's probably wise to top up the bank account to make sure we we've previously agreed we should maintain a float of 750,000 in the bank account.",
+      "speaker": "SPEAKER_01"
+    },
+    {
+      "start": 1175.06,
+      "end": 1177.26,
+      "text": "So it's currently below that amount.",
+      "speaker": "SPEAKER_00"
+    },
+    {
+      "start": 1177.26,
+      "end": 1196.9,
+      "text": "OK. So it's just about 150,000 below that. So I'm going to suggest that we authorize the investment consultants to disinvest and pay 150K into the bank account. We could actually arrange for it for them to pay a.",
+      "speaker": "SPEAKER_01"
+    },
+    {
+      "start": 1196.9,
+      "end": 1204.9,
+      "text": "Little bit more, particularly because we've we've done a transfer of quote recently which may require some more.",
+      "speaker": "SPEAKER_01"
+    },
+    {
+      "start": 1207.11,
+      "end": 1208.87,
+      "text": "I think that would make sense. Yes, definitely.",
+      "speaker": "SPEAKER_00"
+    },
+    {
+      "start": 1208.87,
+      "end": 1210.9099999999999,
+      "text": "So what should we say?",
+      "speaker": "SPEAKER_00"
+    },
+    {
+      "start": 1212.02,
+      "end": 1217.06,
+      "text": "Are there any other expenses like inaccuracies or anything else that we should forecast?",
+      "speaker": "SPEAKER_00"
+    },
+    {
+      "start": 1218.6,
+      "end": 1224.12,
+      "text": "If I just show you we've got some forthcoming normal retirements in the next 12 months.",
+      "speaker": "SPEAKER_01"
+    },
+    {
+      "start": 1225.38,
+      "end": 1231.3400000000001,
+      "text": "So pensioners might potentially take some of their benefits as cash.",
+      "speaker": "SPEAKER_01"
+    },
+    {
+      "start": 1233.02,
+      "end": 1237.98,
+      "text": "So you can see the scale of this here. We haven't done the calculations.",
+      "speaker": "SPEAKER_01"
+    },
+    {
+      "start": 1239.02,
+      "end": 1240.94,
+      "text": "So we probably do need to.",
+      "speaker": "SPEAKER_01"
+    },
+    {
+      "start": 1241.94,
+      "end": 1247.38,
+      "text": "Make allowance for them, particularly the two that are retiring in September.",
+      "speaker": "SPEAKER_01"
+    },
+    {
+      "start": 1249.15,
+      "end": 1255.39,
+      "text": "Yeah, I think that's making an assumption of taking that amount if I fill around would be appropriate, yes.",
+      "speaker": "SPEAKER_00"
+    },
+    {
+      "start": 1255.39,
+      "end": 1261.47,
+      "text": "I mean these are the amounts of pension, so there could potentially.",
+      "speaker": "SPEAKER_01"
+    },
+    {
+      "start": 1262.78,
+      "end": 1263.82,
+      "text": "Commute some of that.",
+      "speaker": "SPEAKER_01"
+    },
+    {
+      "start": 1267.1,
+      "end": 1271.3799999999999,
+      "text": "Four times the pension, so should we say.",
+      "speaker": "SPEAKER_01"
+    },
+    {
+      "start": 1272.26,
+      "end": 1274.62,
+      "text": "I mean we need to be at least 150.",
+      "speaker": "SPEAKER_01"
+    },
+    {
+      "start": 1275.5,
+      "end": 1276.82,
+      "text": "So we say 250.",
+      "speaker": "SPEAKER_01"
+    },
+    {
+      "start": 1278.14,
+      "end": 1280.14,
+      "text": "As long as we're happy, that makes.",
+      "speaker": "SPEAKER_00"
+    },
+    {
+      "start": 1281.5,
+      "end": 1290.1,
+      "text": "The potential cash flows out, obviously we don't want to be having to do it in a rush because we're about to run out of money if we go around for.",
+      "speaker": "SPEAKER_00"
+    },
+    {
+      "start": 1291.18,
+      "end": 1292.46,
+      "text": "What we think is reasonable.",
+      "speaker": "SPEAKER_00"
+    },
+    {
+      "start": 1292.66,
+      "end": 1294.26,
+      "text": "So we'll ask the.",
+      "speaker": "SPEAKER_01"
+    },
+    {
+      "start": 1296.5,
+      "end": 1318.22,
+      "text": "I think that we'll have to circulate a disinvestment instruction to the investment advisor. So I'll ask the administrator to arrange that for a sort of sign. It sounds good and it's already set out a lot of more funds that comes from. Yeah, sounds good to me. And we're going to be doing investment review as part of the valuation, so we'll make sure that's.",
+      "speaker": "SPEAKER_01"
+    },
+    {
+      "start": 1318.22,
+      "end": 1320.82,
+      "text": "Covered as well. So when will you do that by?",
+      "speaker": "SPEAKER_02"
+    },
+    {
+      "start": 1322.57,
+      "end": 1328.6499999999999,
+      "text": "We probably need to do it fairly soon, so probably in the next couple of weeks. Everything is reasonable.",
+      "speaker": "SPEAKER_01"
+    },
+    {
+      "start": 1328.65,
+      "end": 1330.3300000000002,
+      "text": "I would agree with that.",
+      "speaker": "SPEAKER_02"
+    },
+    {
+      "start": 1331.46,
+      "end": 1332.02,
+      "text": "OK, Yeah.",
+      "speaker": "SPEAKER_02"
+    },
+    {
+      "start": 1336.85,
+      "end": 1339.57,
+      "text": "I think that's all I need to say on the admin report.",
+      "speaker": "SPEAKER_01"
+    },
+    {
+      "start": 1342.13,
+      "end": 1343.2900000000002,
+      "text": "Great. I'll send it in order.",
+      "speaker": "SPEAKER_00"
+    },
+    {
+      "start": 1344.18,
+      "end": 1346.66,
+      "text": "Nice to see everything being done on time, yeah?",
+      "speaker": "SPEAKER_00"
+    },
+    {
+      "start": 1348.93,
+      "end": 1349.49,
+      "text": "OK.",
+      "speaker": "SPEAKER_01"
+    },
+    {
+      "start": 1351.75,
+      "end": 1358.71,
+      "text": "We've got a presentation on the pension dashboards which I'll quickly run through.",
+      "speaker": "SPEAKER_01"
+    },
+    {
+      "start": 1364.15,
+      "end": 1367.7900000000002,
+      "text": "So are you all familiar broadly with what the pension dashboards are?",
+      "speaker": "SPEAKER_01"
+    },
+    {
+      "start": 1370.14,
+      "end": 1371.3000000000002,
+      "text": "No, not really.",
+      "speaker": "SPEAKER_02"
+    },
+    {
+      "start": 1372.58,
+      "end": 1374.1,
+      "text": "I saw the document about it, but.",
+      "speaker": "SPEAKER_02"
+    },
+    {
+      "start": 1374.1,
+      "end": 1396.9399999999998,
+      "text": "So basically the government have been working for quite a long time now on a new concept which will mean that individual pension scheme members will be able to log on to a central website and obtain information about all of their pension schemes and also information about their state pension.",
+      "speaker": "SPEAKER_01"
+    },
+    {
+      "start": 1398.4,
+      "end": 1404.96,
+      "text": "In order for that to happen, all the schemes like ourselves, we have to connect to the pension dashboard.",
+      "speaker": "SPEAKER_01"
+    },
+    {
+      "start": 1406.98,
+      "end": 1413.66,
+      "text": "And what? Who's responsible for doing that? Who have we, our administrators to do it do?",
+      "speaker": "SPEAKER_02"
+    },
+    {
+      "start": 1413.66,
+      "end": 1431.42,
+      "text": "We do it. So the trustees are responsible for making sure it all happens. This report here is our proposal from the administrator on how this should go ahead and they've done a bit of work on it already anyway. And so if I just quickly summarise sort of what's happening.",
+      "speaker": "SPEAKER_01"
+    },
+    {
+      "start": 1434.38,
+      "end": 1441.74,
+      "text": "So as you'll see on the front page, pension dashboards will enable savers to access that information about their pensions in one place.",
+      "speaker": "SPEAKER_01"
+    },
+    {
+      "start": 1443.83,
+      "end": 1452.03,
+      "text": "There's a target for skins to connect, so all schemes need to be connected to the dashboard by the 31st of October 2026.",
+      "speaker": "SPEAKER_01"
+    },
+    {
+      "start": 1455.54,
+      "end": 1467.22,
+      "text": "Lots of commercial organisations will actually be able to provide a front end to the dashboard going forward, or the first front end will be provided by the money helper sites.",
+      "speaker": "SPEAKER_01"
+    },
+    {
+      "start": 1468.62,
+      "end": 1472.8999999999999,
+      "text": "Enough to be made publicly available, probably in 2027.",
+      "speaker": "SPEAKER_01"
+    },
+    {
+      "start": 1472.9,
+      "end": 1477.5,
+      "text": "There's no need for us to worry about the end of things. Actually, we just have to.",
+      "speaker": "SPEAKER_02"
+    },
+    {
+      "start": 1477.5,
+      "end": 1477.86,
+      "text": "Provide.",
+      "speaker": "SPEAKER_02"
+    },
+    {
+      "start": 1477.86,
+      "end": 1492.6599999999999,
+      "text": "We need to connect to the central government dashboard, so we need a third party bit of software to connect our data electronically to that and that will facilitate.",
+      "speaker": "SPEAKER_01"
+    },
+    {
+      "start": 1493.55,
+      "end": 1498.59,
+      "text": "Then our information being available to members, I mean in practice, what actually happens?",
+      "speaker": "SPEAKER_01"
+    },
+    {
+      "start": 1498.82,
+      "end": 1520.9399999999998,
+      "text": "Is when a member requests information, we get sent a message to say is it our, is it our member, you, do we have any information on this particular person? And then we provide the information on request. So we don't provide the central database with all our data upfront. It's a real time interaction between US and the dashboard.",
+      "speaker": "SPEAKER_01"
+    },
+    {
+      "start": 1522.42,
+      "end": 1524.26,
+      "text": "And this is what this report goes through.",
+      "speaker": "SPEAKER_01"
+    },
+    {
+      "start": 1527.23,
+      "end": 1546.15,
+      "text": "So some of the technical bits about how it works. So the government have got an online service which will allow us to verify that members are who they say they are and that's called the gov.docsorrygov.uk one login. So I've done that recently for my.",
+      "speaker": "SPEAKER_01"
+    },
+    {
+      "start": 1548.03,
+      "end": 1548.87,
+      "text": "I don't remember it's.",
+      "speaker": "SPEAKER_00"
+    },
+    {
+      "start": 1548.87,
+      "end": 1577.03,
+      "text": "Full of it, so that verifies. And once we've got that information, we can be confident that the information we've been asked for is the right person. So then we then have to decide if it matches to information that we've got. And there are various ways that can be done. It can be done. A full match is where we're absolutely certain it's the right person and we can confidently provide the data. A partial match is when we're less sure and we might go back and ask them For more information.",
+      "speaker": "SPEAKER_01"
+    },
+    {
+      "start": 1584.94,
+      "end": 1586.74,
+      "text": "One of the things that we need to do.",
+      "speaker": "SPEAKER_01"
+    },
+    {
+      "start": 1587.62,
+      "end": 1607.83,
+      "text": "In the process is to make sure in order that we're ready, we need to make sure that first of all our admin records are accurate and up to date. So there is a currently a data cleanse exercise on the go to make sure that the information we're going to give to the dashboard is accurate. So the administrator is doing that at the moment.",
+      "speaker": "SPEAKER_01"
+    },
+    {
+      "start": 1607.91,
+      "end": 1609.1100000000001,
+      "text": "And when does that aim to be complete?",
+      "speaker": "SPEAKER_02"
+    },
+    {
+      "start": 1612.1,
+      "end": 1613.62,
+      "text": "We've got a timeline here.",
+      "speaker": "SPEAKER_01"
+    },
+    {
+      "start": 1614.58,
+      "end": 1615.26,
+      "text": "Sorry, I didn't.",
+      "speaker": "SPEAKER_01"
+    },
+    {
+      "start": 1615.26,
+      "end": 1621.34,
+      "text": "I didn't see that. So by the 31st of August 2025 we're we're suggesting that we'll.",
+      "speaker": "SPEAKER_01"
+    },
+    {
+      "start": 1621.34,
+      "end": 1622.1399999999999,
+      "text": "Be able to connect.",
+      "speaker": "SPEAKER_01"
+    },
+    {
+      "start": 1625.25,
+      "end": 1627.41,
+      "text": "And we are on target to do that at the moment.",
+      "speaker": "SPEAKER_01"
+    },
+    {
+      "start": 1634.25,
+      "end": 1642.21,
+      "text": "So we've got some decisions that we need to make as a board. Some of them have already been made. The first one is about the matching principles.",
+      "speaker": "SPEAKER_01"
+    },
+    {
+      "start": 1644.15,
+      "end": 1646.39,
+      "text": "And decisions on that were made at the last trustee meeting.",
+      "speaker": "SPEAKER_01"
+    },
+    {
+      "start": 1649.97,
+      "end": 1651.33,
+      "text": "We also need to do.",
+      "speaker": "SPEAKER_01"
+    },
+    {
+      "start": 1653.66,
+      "end": 1665.26,
+      "text": "Provide information about signposting so this is so, as well as providing some basic information to members. The basic information is the pension amounts that they can expect to get.",
+      "speaker": "SPEAKER_01"
+    },
+    {
+      "start": 1666.66,
+      "end": 1691.5400000000002,
+      "text": "We can also signpost them to other information, so information about the booklet, the scheme booklet or the statement investment principles for example. So we need to agree how that's all going to work. And what we're proposing is that we send them to the pension per member websites that has this information on it. So if you're if you're happy, we can use that as our signposting.",
+      "speaker": "SPEAKER_01"
+    },
+    {
+      "start": 1691.54,
+      "end": 1693.5,
+      "text": "So which sign was that?",
+      "speaker": "SPEAKER_01"
+    },
+    {
+      "start": 1694.42,
+      "end": 1699.0600000000002,
+      "text": "Which that's the member website that Pensionpile host for us.",
+      "speaker": "SPEAKER_01"
+    },
+    {
+      "start": 1700.99,
+      "end": 1708.75,
+      "text": "And that will give them information about the accounts, the rules of the booklets, the benefits and the things like the statement investment principles.",
+      "speaker": "SPEAKER_01"
+    },
+    {
+      "start": 1710.06,
+      "end": 1724.74,
+      "text": "Sounds great. Can they see their own benefits on that? No, they can't. The only way they'll see their benefits in the main bit of information that we provide to the dashboard, but they'll just be signposted to this other information that's all publicly available.",
+      "speaker": "SPEAKER_01"
+    },
+    {
+      "start": 1725.82,
+      "end": 1727.46,
+      "text": "Non contentious information.",
+      "speaker": "SPEAKER_02"
+    },
+    {
+      "start": 1727.46,
+      "end": 1731.9,
+      "text": "Yes, on the member website, yeah.",
+      "speaker": "SPEAKER_01"
+    },
+    {
+      "start": 1737.05,
+      "end": 1747.09,
+      "text": "Up on the last page there's some next steps, and I've just set out who the owner of each is. I don't think it's necessary for us to go through them now.",
+      "speaker": "SPEAKER_01"
+    },
+    {
+      "start": 1748.38,
+      "end": 1749.8600000000001,
+      "text": "Unless there are any questions.",
+      "speaker": "SPEAKER_01"
+    },
+    {
+      "start": 1751.81,
+      "end": 1753.25,
+      "text": "No, thank you. That's good.",
+      "speaker": "SPEAKER_00"
+    },
+    {
+      "start": 1753.25,
+      "end": 1755.09,
+      "text": "That's good. OK.",
+      "speaker": "SPEAKER_02"
+    },
+    {
+      "start": 1757.02,
+      "end": 1760.1,
+      "text": "So then the next item.",
+      "speaker": "SPEAKER_01"
+    },
+    {
+      "start": 1761.46,
+      "end": 1765.22,
+      "text": "Is scheme funding so if I could hand over to Alan?",
+      "speaker": "SPEAKER_01"
+    },
+    {
+      "start": 1767.66,
+      "end": 1769.26,
+      "text": "To tell us about the valuation.",
+      "speaker": "SPEAKER_01"
+    },
+    {
+      "start": 1769.26,
+      "end": 1793.78,
+      "text": "Thank you, Mark. Sachin, I may actually to the scheme and it's my job to undertake an actuarial evaluation of the scheme every three years to report back to the trustees about the financial health of the scheme and also to look at the whether it's going to be contributions made to it by the employer going forwards and if so.",
+      "speaker": "SPEAKER_00"
+    },
+    {
+      "start": 1794.79,
+      "end": 1795.07,
+      "text": "How much?",
+      "speaker": "SPEAKER_00"
+    },
+    {
+      "start": 1796.34,
+      "end": 1823.3,
+      "text": "Very fundamentally as trustee it's your role to make sure that the members benefits secure, that there's enough money in the fund to pay what those benefits that are due to members as and when they fall due. Which means having enough money available to pay each pensioners pension each month and ultimately to make all the payments to other members out and when they retire for the whole of their lives.",
+      "speaker": "SPEAKER_00"
+    },
+    {
+      "start": 1824.75,
+      "end": 1831.47,
+      "text": "So there's a report that I prepared and sent to you a few weeks ago.",
+      "speaker": "SPEAKER_00"
+    },
+    {
+      "start": 1832.26,
+      "end": 1859.98,
+      "text": "And what I thought we could do is have a look at that report now to go through in some detail of what the results of the valuation are so far and take you through the next steps that you will need to undertake as trustees to be able for me to finalize the valuation and to sign off the appropriate level of contributions that they're going to be made to the fund. One, she agreed that with the employer.",
+      "speaker": "SPEAKER_00"
+    },
+    {
+      "start": 1861.11,
+      "end": 1866.51,
+      "text": "So any questions on the purpose of the valuation at this point?",
+      "speaker": "SPEAKER_00"
+    },
+    {
+      "start": 1867.54,
+      "end": 1869.74,
+      "text": "I know you've seen their wealth. I can understand.",
+      "speaker": "Unknown"
+    },
+    {
+      "start": 1869.74,
+      "end": 1876.5,
+      "text": "Thank you. So if we start off on page 25, if you don't mind turning to that, please?",
+      "speaker": "SPEAKER_00"
+    },
+    {
+      "start": 1887.69,
+      "end": 1911.93,
+      "text": "OK. This page is called calculating the technical provisions. The technical provisions is a word we use to describe how much in pound terms is the value of the liabilities. So it's adding up all of the pensions that are going to be paid forever more for a life of the pension scheme to all the members and then.",
+      "speaker": "SPEAKER_00"
+    },
+    {
+      "start": 1912.82,
+      "end": 1923.54,
+      "text": "Trying to place the value in today's money on what all of those payments in the future are going to be. So we're allowing for the probability.",
+      "speaker": "SPEAKER_00"
+    },
+    {
+      "start": 1924.34,
+      "end": 1939.78,
+      "text": "That each payment is going to be made because it's not certain. If some a pension, say very old that's over 100 years old today, it's less, less and less likely that they're going to receive their pension in the future because ultimately it will stop when they die.",
+      "speaker": "SPEAKER_00"
+    },
+    {
+      "start": 1940.82,
+      "end": 1950.26,
+      "text": "So we make assumptions on how long we think members are going to live for so that we can estimate how long will the trustees will be paying their pension.",
+      "speaker": "SPEAKER_00"
+    },
+    {
+      "start": 1951.98,
+      "end": 1963.82,
+      "text": "We also allow for the what we call the discount rate, so if a particular pension is paid £100 in 10 years time.",
+      "speaker": "SPEAKER_00"
+    },
+    {
+      "start": 1964.74,
+      "end": 1981.18,
+      "text": "You don't need to hold £100 in your bank account now to pay that. You need to hold a smaller amount to allow for the fact that money will be invested and will grow to 100 lbs over time, so once it's been discounted.",
+      "speaker": "SPEAKER_00"
+    },
+    {
+      "start": 1982.46,
+      "end": 2003.66,
+      "text": "The value of that money today might be saying 70 lbs. We know on our assumptions, if you invest 70 lbs today, it will grow at 100 lbs at the point of that particular pension payment that's due. That's what we call the present value of a payment. It's the value of the amount of money we need to hold today or we need to hold today as trustees to be able to make a higher amount.",
+      "speaker": "SPEAKER_00"
+    },
+    {
+      "start": 2003.66,
+      "end": 2007.5,
+      "text": "In the future and we've agreed what those assumptions are actually.",
+      "speaker": "SPEAKER_02"
+    },
+    {
+      "start": 2008.58,
+      "end": 2032.22,
+      "text": "We set our assumptions for your approval. So part of the job today is to talk around what the assumptions are because it's for the trustees to decide what the assumptions are going to be. It's I, I've also made a recommendation of what I think is reasonable and ultimately the responsibility of you to say yes, we're happy with those assumptions.",
+      "speaker": "SPEAKER_00"
+    },
+    {
+      "start": 2034.23,
+      "end": 2039.23,
+      "text": "And also to some extent, the employer needs to be involved in this process because.",
+      "speaker": "SPEAKER_00"
+    },
+    {
+      "start": 2040.26,
+      "end": 2049.18,
+      "text": "If employer contributions are required, then the Empire quite rightly has to say in regulating those contributions that's a reasonable or not.",
+      "speaker": "SPEAKER_00"
+    },
+    {
+      "start": 2050.97,
+      "end": 2056.41,
+      "text": "So on page 25 then, the technical questions is just an estimate of how much.",
+      "speaker": "SPEAKER_00"
+    },
+    {
+      "start": 2057.22,
+      "end": 2066.4599999999996,
+      "text": "The trustees need to help in their assets today to be able to pay all of the benefits that are going to be paid in the future.",
+      "speaker": "SPEAKER_00"
+    },
+    {
+      "start": 2070.75,
+      "end": 2097.23,
+      "text": "It's important when we're making assumptions about how long people are going to live, what rates are the investments going to grant in the future That will simply set what we call the past of funding. In other words, if the investment turns down to be really large in the future, you don't need help so much money today. If your assets don't do so well, you need more money today to be able to.",
+      "speaker": "SPEAKER_00"
+    },
+    {
+      "start": 2097.78,
+      "end": 2100.2200000000003,
+      "text": "£500 in the future.",
+      "speaker": "SPEAKER_00"
+    },
+    {
+      "start": 2101.95,
+      "end": 2112.91,
+      "text": "So you mentioned about the assumptions with the trustees. Who decides what assumptions does the employer get to say on those or is it down to us?",
+      "speaker": "SPEAKER_01"
+    },
+    {
+      "start": 2112.91,
+      "end": 2114.0299999999997,
+      "text": "In this particular.",
+      "speaker": "SPEAKER_00"
+    },
+    {
+      "start": 2114.03,
+      "end": 2122.07,
+      "text": "Scale it's down to the trustees and it does depend on how the roads are written. But in your particular scheme, this is how it's set out, yes. OK.",
+      "speaker": "SPEAKER_00"
+    },
+    {
+      "start": 2123.95,
+      "end": 2143.5899999999997,
+      "text": "So it's important to think about what are the key assumptions that we're going to be making. So fundamentally it's the rate of return on the investments that you hold, which are linked to the types of investments that you you're holding and what we would expect them to reasonably return in the future, it's also based on.",
+      "speaker": "SPEAKER_00"
+    },
+    {
+      "start": 2145.55,
+      "end": 2157.9100000000003,
+      "text": "The rate of mortality of your pension scheme members, how long do we think they're going to live? The longer we think they're going to live, the more they're going to receive and hence the more money you need to hold today in reserve to pay those pensions.",
+      "speaker": "SPEAKER_00"
+    },
+    {
+      "start": 2159.62,
+      "end": 2176.06,
+      "text": "And some of lots of other assumptions for linked to inflation, for example, and some of your benefits are linked to inflation in the future. So we have to estimate what our future information is going to be in order to work out what we think people are going to be paid in the future.",
+      "speaker": "SPEAKER_00"
+    },
+    {
+      "start": 2177.87,
+      "end": 2197.71,
+      "text": "As it notes on page 25, the actual scheme experience, what's really going to happen is going to be different assumptions. That's just a fact. We can estimate what we think the assumptions are going to be for how long people are going to live, but we can only estimate it. We don't know. These are uncertain future events.",
+      "speaker": "SPEAKER_00"
+    },
+    {
+      "start": 2200.8,
+      "end": 2225.6800000000003,
+      "text": "So in the event that these functions turn out to be wrong, if we've underestimated how much money is going to be paid into the fund, it just makes you pay less now or more later. And vice versa, if there's not enough money in the fund because of the experience of the scheme, it would just pay more in the future so that everyone's got their pensions paid in full. That's the you.",
+      "speaker": "SPEAKER_00"
+    },
+    {
+      "start": 2226.87,
+      "end": 2233.27,
+      "text": "You're looking for and it's trusted to the pension fund, everyone's benefits secure and everyone gets their payments on time.",
+      "speaker": "SPEAKER_00"
+    },
+    {
+      "start": 2235.22,
+      "end": 2247.8999999999996,
+      "text": "OK. The last section on the right hand side of page 25 says Assumption should be chosen prudently and should be supported by the strength of the employer covenants. So sorry.",
+      "speaker": "SPEAKER_00"
+    },
+    {
+      "start": 2247.9,
+      "end": 2250.78,
+      "text": "Can you remind me what the employee covenant is?",
+      "speaker": "SPEAKER_00"
+    },
+    {
+      "start": 2250.78,
+      "end": 2259.98,
+      "text": "Yes. So the employment covenant is basically how much capacity does the employer have to pay contribution within to the pension scheme.",
+      "speaker": "SPEAKER_00"
+    },
+    {
+      "start": 2261.03,
+      "end": 2265.11,
+      "text": "If their balance sheet, their financial strength strong enough to support for example.",
+      "speaker": "SPEAKER_00"
+    },
+    {
+      "start": 2265.62,
+      "end": 2273.06,
+      "text": "An increase in employer contributions if, for example, the assets went down in value but reliability didn't.",
+      "speaker": "SPEAKER_00"
+    },
+    {
+      "start": 2274.5,
+      "end": 2294.26,
+      "text": "So crucially, you can get an independent review from an appropriate expert in that field as to how strong they believe the employer covenant is and ultimately if there was a shock to this game, like say the stock market crashed or whatever, that's relevant to your scheme.",
+      "speaker": "SPEAKER_00"
+    },
+    {
+      "start": 2295.5,
+      "end": 2301.86,
+      "text": "Is the employer going to make up to make up the shortfall the stronger the employment covenant is?",
+      "speaker": "SPEAKER_00"
+    },
+    {
+      "start": 2302.82,
+      "end": 2331.6600000000003,
+      "text": "Generally speaking, the trustees could consider taking a slightly higher level of risk within their investment strategy so as to take advantage of potential higher returns associated with higher risk. Because if the government is very strong from the employer, if you take that risk and it doesn't work out, in fact, let's say yes, assets underperform, you know, you've got a strong employer there who can make up any shortfall in the pension environment.",
+      "speaker": "SPEAKER_00"
+    },
+    {
+      "start": 2335.42,
+      "end": 2338.2200000000003,
+      "text": "I'm assuming the employee would have to be comfortable with that investment.",
+      "speaker": "SPEAKER_01"
+    },
+    {
+      "start": 2338.14,
+      "end": 2343.8599999999997,
+      "text": "Absolutely. So this is a, this is an agreement that needs to be reached upon.",
+      "speaker": "SPEAKER_00"
+    },
+    {
+      "start": 2345.9,
+      "end": 2371.02,
+      "text": "What's inappropriate level of risk within your particular pension fund taking them out of your investment strategy? How risky is it and what's the employer's appetite to make good and short footfall in the funds that may occur in the future? In the event the investments don't turn out to be as good as we the investment returns and turn out to be as good as we'd hopes.",
+      "speaker": "SPEAKER_00"
+    },
+    {
+      "start": 2372.72,
+      "end": 2375.16,
+      "text": "That's obviously the strength of the employer government.",
+      "speaker": "SPEAKER_02"
+    },
+    {
+      "start": 2376.34,
+      "end": 2382.6200000000003,
+      "text": "Could be affected by the same thing which affects investments, so there could be a common risk between the two.",
+      "speaker": "SPEAKER_02"
+    },
+    {
+      "start": 2382.62,
+      "end": 2398.2599999999998,
+      "text": "Absolutely. They've got the concentration of risk there. So again, that's why it's important as trustee is that obviously you can look at those sort of concentrations as part of your review of the employees covenant. But ultimately.",
+      "speaker": "SPEAKER_00"
+    },
+    {
+      "start": 2399.26,
+      "end": 2425.75,
+      "text": "The only way you can be secure is to buy out the liabilities of the pension fund with an insurance company. So that means literally handing over the assets of the funds to an insurance company who will accept those assets in return for promising to pay all of the benefits that are due to the members. So it becomes the insurance.",
+      "speaker": "SPEAKER_00"
+    },
+    {
+      "start": 2426.71,
+      "end": 2430.03,
+      "text": "Company's responsibility. You pay for the premium important assets.",
+      "speaker": "SPEAKER_00"
+    },
+    {
+      "start": 2431.26,
+      "end": 2456.0200000000004,
+      "text": "They take on the responsibility to pay the pension and stuff on in the future and you therefore can seek to wind up the scheme at a future date where you you've then got certainty that all your pensioners are going to get paid in the future because the insurer has taken on responsibility to do that in return for a buyout payment. Yeah, and.",
+      "speaker": "SPEAKER_00"
+    },
+    {
+      "start": 2456.02,
+      "end": 2460.78,
+      "text": "Yeah, I'm not sure you because you're relatively new as a trustee. I'm not sure whether you're aware.",
+      "speaker": "SPEAKER_01"
+    },
+    {
+      "start": 2460.9,
+      "end": 2484.78,
+      "text": "Scheme has a contingency has been agreed with the employer as well. There's a legal process by which I think it's one of the properties that the employer will on those contingencies will form to the pension scheme. So that does strengthen our position in terms of the covenants. So yeah, I think we shared the papers with you on joining, but you know.",
+      "speaker": "SPEAKER_01"
+    },
+    {
+      "start": 2488.11,
+      "end": 2492.79,
+      "text": "Thank you. So let's have a look at the highlights of the.",
+      "speaker": "SPEAKER_00"
+    },
+    {
+      "start": 2494.5,
+      "end": 2499.46,
+      "text": "Valuation at this next stage, so if you'd like to look at page one to start with.",
+      "speaker": "SPEAKER_00"
+    },
+    {
+      "start": 2503.15,
+      "end": 2528.07,
+      "text": "So as I mentioned, the reports of the valuation of the pension plan has been undertaken as at 31st December 2024. It's done months every three years. And so this is a snapshot at that time of what the assets were worth at that time. And also it's an estimate of what we think the pension funds liabilities to pay benefits to members in the future.",
+      "speaker": "SPEAKER_00"
+    },
+    {
+      "start": 2528.58,
+      "end": 2532.46,
+      "text": "Was at our 31st December 2024.",
+      "speaker": "SPEAKER_00"
+    },
+    {
+      "start": 2535.44,
+      "end": 2557.52,
+      "text": "And as you can see, the report's address to the trustees and I've set out and report my advice in relation to what I think reasonable actual area of assumptions would be. For example, how long do you think your members are going to live, which is crucial to how much, how many payments they're going to receive?",
+      "speaker": "SPEAKER_00"
+    },
+    {
+      "start": 2557.55,
+      "end": 2566.4300000000003,
+      "text": "And a reasonable range of assumptions as well. There's no correct one answer. I'll give you a range of assumptions and show you the volatility of the.",
+      "speaker": "SPEAKER_00"
+    },
+    {
+      "start": 2569.39,
+      "end": 2576.5499999999997,
+      "text": "Balance sheet of the pension scheme, looking at different variations of how prudent or not prudent assumptions are.",
+      "speaker": "SPEAKER_00"
+    },
+    {
+      "start": 2577.98,
+      "end": 2578.54,
+      "text": "OK.",
+      "speaker": "SPEAKER_02"
+    },
+    {
+      "start": 2581.34,
+      "end": 2601.34,
+      "text": "So there's also a new funding code that's been set out by the government's Pensions Regulator, which now includes a what's called a possible low dependency funding basis. And I know Mark's been looking into this, so he's going to tell you now a bit about what that is.",
+      "speaker": "SPEAKER_00"
+    },
+    {
+      "start": 2602.66,
+      "end": 2604.94,
+      "text": "So basically under the previous funding.",
+      "speaker": "SPEAKER_01"
+    },
+    {
+      "start": 2607.3,
+      "end": 2617.3,
+      "text": "Regime, we need to just set our assumptions at this valuation make would be reviewed at the next valuation. Now there's a new concept has been brought in.",
+      "speaker": "SPEAKER_01"
+    },
+    {
+      "start": 2618.82,
+      "end": 2645.1800000000003,
+      "text": "Which means that by the time our scheme is deemed as mature, which is with it when the discounted, the average discounted term for the liabilities, which is 10 years. So roughly when the average term for liabilities is 10 years, by that point of time we have to have a low dependency funding basis, which means if the employer steps away from the scheme at that point.",
+      "speaker": "SPEAKER_01"
+    },
+    {
+      "start": 2645.95,
+      "end": 2647.0699999999997,
+      "text": "We'll be able to run the scheme.",
+      "speaker": "SPEAKER_01"
+    },
+    {
+      "start": 2648.34,
+      "end": 2674.5,
+      "text": "It's independent without any support. In order to do that, we need a strong set of assumptions, which means we're assuming a very conservative set of investment returns for example. But we also have to have our investment allocation aligned to that as well. So we have to have a low risk investment allocation at that point. So if the value of assets moves because of market.",
+      "speaker": "SPEAKER_01"
+    },
+    {
+      "start": 2676.83,
+      "end": 2677.39,
+      "text": "Volatility then?",
+      "speaker": "SPEAKER_01"
+    },
+    {
+      "start": 2678.02,
+      "end": 2692.78,
+      "text": "Ideally, we want our assets and liabilities to be matched so that the value of the assets and liabilities move in line with each other and so we need to set a low dependency funding basis for a point in future.",
+      "speaker": "SPEAKER_01"
+    },
+    {
+      "start": 2693.46,
+      "end": 2719.82,
+      "text": "Which means that at that point in time, if we stick to that, those assumptions and that investment strategy will be less subject to volatility in the scheme will be able to operate as in a self-sufficiency environment. So I think Alan, I think you'll talk about what we set our assumptions at now, but then we'll linearly move towards the loan dependency funding basis over time.",
+      "speaker": "SPEAKER_01"
+    },
+    {
+      "start": 2720.79,
+      "end": 2722.31,
+      "text": "That's right, yes.",
+      "speaker": "SPEAKER_00"
+    },
+    {
+      "start": 2724.46,
+      "end": 2752.58,
+      "text": "Before we get into the detail of those assumptions, if you have a look at page 2, you can see the actual funding position of the scheme on a variety of different sets of assumptions as at 31st December 2024. So the first thing to note in the green box is that the assets are valued at 99.7 million at that time. So that is the market value of the assets that's.",
+      "speaker": "SPEAKER_00"
+    },
+    {
+      "start": 2753.7,
+      "end": 2780.5,
+      "text": "Everything else is our estimate of what we think the liabilities of the pension fund are in the future on different sets of assumptions. So the first orange figure shows a liability of 99.3 million, which means when you compare that with the asset value, there's a small surface of assets of North Point, £4 million. In other words, there's enough assets.",
+      "speaker": "SPEAKER_00"
+    },
+    {
+      "start": 2781.15,
+      "end": 2783.87,
+      "text": "To pay everyone's pensions in the future.",
+      "speaker": "SPEAKER_00"
+    },
+    {
+      "start": 2784.34,
+      "end": 2786.58,
+      "text": "On this side of assumptions, which is good news.",
+      "speaker": "SPEAKER_00"
+    },
+    {
+      "start": 2789.19,
+      "end": 2807.35,
+      "text": "The TP basis is called the Technical Provisions basis, which is basically just a reasonably prudent set of assumptions allowing for how strong you think the employees government is. The stronger the government, the more the less prudence you need to build into this set of assumptions.",
+      "speaker": "SPEAKER_00"
+    },
+    {
+      "start": 2809.11,
+      "end": 2811.3900000000003,
+      "text": "And you can see that their positions improved.",
+      "speaker": "SPEAKER_00"
+    },
+    {
+      "start": 2813.42,
+      "end": 2842.38,
+      "text": "Three years ago there was a deficit of £26.2 million and that has improved over the last three years from £26.2 million to assets to 1.4 million surplus and obviously that's good news. One of the reasons for it largely that the employer has been paying in contributions to narrow the deficit. There's also been some positive member experience which means that you've had a few deaths.",
+      "speaker": "SPEAKER_00"
+    },
+    {
+      "start": 2844.19,
+      "end": 2863.07,
+      "text": "Where people died before we thought they would die, which means the funds not paid the pensions as long as we thought they would, which is a from a financial point of view, that means they've been a slight gain on the value of the liabilities and also crucially, the investments have done better than we thought they would.",
+      "speaker": "SPEAKER_00"
+    },
+    {
+      "start": 2863.62,
+      "end": 2870.46,
+      "text": "For the last three years too, which means the asset value today is higher than we predicted it to be 3 years ago.",
+      "speaker": "SPEAKER_00"
+    },
+    {
+      "start": 2870.46,
+      "end": 2875.9,
+      "text": "So interest rates have increased a lot over that period. Is that relevant? It's.",
+      "speaker": "SPEAKER_01"
+    },
+    {
+      "start": 2875.9,
+      "end": 2881.34,
+      "text": "Absolutely relevant because we set our assumptions.",
+      "speaker": "SPEAKER_00"
+    },
+    {
+      "start": 2882.14,
+      "end": 2891.58,
+      "text": "With reference to what the interest rate on government guilt says and over the last few years, particularly since they.",
+      "speaker": "SPEAKER_00"
+    },
+    {
+      "start": 2894.33,
+      "end": 2899.97,
+      "text": "The issues with the trust, government and changes in worldwide.",
+      "speaker": "SPEAKER_00"
+    },
+    {
+      "start": 2901.86,
+      "end": 2930.42,
+      "text": "Issues interest rates, investments substantially and guilt impair rates of guilt yields of increased substantially as well. And what that does in practice, the higher the guilt yield, the lower the family will place on your pension fund liabilities. So liabilities have gone down, assets have gone up. So that that's that means the deficit has been removed and there's no small surplus on these assumptions.",
+      "speaker": "SPEAKER_00"
+    },
+    {
+      "start": 2932.41,
+      "end": 2941.81,
+      "text": "Mark was talking earlier about the load of homelessly funding basis, which is the position that we need to look at.",
+      "speaker": "SPEAKER_00"
+    },
+    {
+      "start": 2943.06,
+      "end": 2948.86,
+      "text": "In time. So there's the different set of assumptions that you're looking to adopt at a point in the future.",
+      "speaker": "SPEAKER_00"
+    },
+    {
+      "start": 2948.86,
+      "end": 2950.7000000000003,
+      "text": "Do you know what that point in the future?",
+      "speaker": "SPEAKER_02"
+    },
+    {
+      "start": 2950.7,
+      "end": 2951.14,
+      "text": "Is going to be.",
+      "speaker": "SPEAKER_02"
+    },
+    {
+      "start": 2951.14,
+      "end": 2954.3799999999997,
+      "text": "We do, actually. Yes, it's.",
+      "speaker": "SPEAKER_00"
+    },
+    {
+      "start": 2956.14,
+      "end": 2958.94,
+      "text": "It's about 22 years time.",
+      "speaker": "SPEAKER_00"
+    },
+    {
+      "start": 2962.68,
+      "end": 2965.8399999999997,
+      "text": "And at that point, you'll be adopting.",
+      "speaker": "SPEAKER_00"
+    },
+    {
+      "start": 2968.39,
+      "end": 2977.1099999999997,
+      "text": "We were proposing to adopt what's called the fast track assumptions, which is a set of assumptions linked to guilt yields at the moment.",
+      "speaker": "SPEAKER_00"
+    },
+    {
+      "start": 2978.54,
+      "end": 3001.5099999999998,
+      "text": "When we're doing evaluation today and this would mean that the Pensions Regulator wouldn't scrutinize that your valuation results and the way you've set them and the amount of contributions you'll request them from the employer as much as if you didn't have quite such a stringent.",
+      "speaker": "SPEAKER_00"
+    },
+    {
+      "start": 3001.55,
+      "end": 3003.23,
+      "text": "Stringent family. Unbelievable.",
+      "speaker": "SPEAKER_00"
+    },
+    {
+      "start": 3004.22,
+      "end": 3023.22,
+      "text": "So on the Gray box, on the low dependency funding basis, as and when that would be adopted in the future, if it was adopted today, the liability would be 106 million rather than 99 million, which means there will be a deficit to be paid off of £6.7 million.",
+      "speaker": "SPEAKER_00"
+    },
+    {
+      "start": 3025.14,
+      "end": 3028.2999999999997,
+      "text": "We've got to address that in the next 22 years.",
+      "speaker": "SPEAKER_02"
+    },
+    {
+      "start": 3028.3,
+      "end": 3040.1000000000004,
+      "text": "You have in daycare, some will set out a service of potential payments, but also looking at the investment strategy too. The more risk you take in your investment strategy.",
+      "speaker": "SPEAKER_00"
+    },
+    {
+      "start": 3040.1,
+      "end": 3042.98,
+      "text": "Could be used to remove the deficit over time too.",
+      "speaker": "SPEAKER_00"
+    },
+    {
+      "start": 3044.18,
+      "end": 3052.8199999999997,
+      "text": "And finally in the pink box, the important indicative by our estimate here is what I mean as we were talking about buying out.",
+      "speaker": "SPEAKER_00"
+    },
+    {
+      "start": 3054.02,
+      "end": 3073.58,
+      "text": "Giving the money to insurance company. The insurance company then takes on the responsibility, pay all your members pensions, leaving the trustee to have no responsibility because you basically got a promise that's already ensured that they will all get paid. So that's your ultimate solution should you wish to take it. You can basically.",
+      "speaker": "SPEAKER_00"
+    },
+    {
+      "start": 3074.66,
+      "end": 3093.5,
+      "text": "Make sure all the pensioners and other mental scheme will get the benefits in the form from an insurance company. You get the insurance company the appropriate premium and then you can then choose to wind the scheme up should you wish to do so and then have no further responsibility. The key thing there is you have no risk.",
+      "speaker": "SPEAKER_00"
+    },
+    {
+      "start": 3094.54,
+      "end": 3109.18,
+      "text": "Once you bought out everyone's pensions in full, you have no further risk of the investments were to do poorly. So as a market crash that wouldn't affect you because the insurer is the firm who would be paying all your members benefits.",
+      "speaker": "SPEAKER_00"
+    },
+    {
+      "start": 3109.18,
+      "end": 3118.7,
+      "text": "My understanding is that the employer doesn't have an appetite to buy out at the moment because the employer thinks that the it's too expensive to do that.",
+      "speaker": "SPEAKER_01"
+    },
+    {
+      "start": 3119.95,
+      "end": 3127.23,
+      "text": "Indeed. So as you can see, the estimated buyout premium was at 31st December 2024.",
+      "speaker": "SPEAKER_00"
+    },
+    {
+      "start": 3127.66,
+      "end": 3141.18,
+      "text": "Was 119.4 million in the pink box, so that's more than the assets that you currently hold. So at the moment there would be a shortfall of 18.7% so if.",
+      "speaker": "SPEAKER_00"
+    },
+    {
+      "start": 3143.67,
+      "end": 3144.55,
+      "text": "If you were to.",
+      "speaker": "SPEAKER_00"
+    },
+    {
+      "start": 3145.98,
+      "end": 3162.58,
+      "text": "Choose to try to buy out today. You would have to literally ask the employer to contribute £18.7 million to make up the right amount of premium. You need to buy out of 1 pensions in full and I could imagine that the employer wouldn't want to do that at the moment.",
+      "speaker": "SPEAKER_00"
+    },
+    {
+      "start": 3164.3,
+      "end": 3188.1800000000003,
+      "text": "It's like this. Then that would be a good solution you could consider should you wish, because as I said, your priority is just to make sure everyone gets their benefits and flow. So as an alternative to that, you can look at other plans to do it. So you can continue to ask the employer to make a reasonable contribution to mention scheme on a quarterly basis.",
+      "speaker": "SPEAKER_00"
+    },
+    {
+      "start": 3189.11,
+      "end": 3196.35,
+      "text": "And you can also review your asset strategy to see how much risk you're prepared to take.",
+      "speaker": "SPEAKER_00"
+    },
+    {
+      "start": 3196.98,
+      "end": 3217.02,
+      "text": "In order to gain a better return on their assets in the future. And if you'd like to just I know Mark's been looking at the chart at the bottom here. So you can see from this that on a particular set of asset assumptions that.",
+      "speaker": "SPEAKER_00"
+    },
+    {
+      "start": 3219.09,
+      "end": 3222.53,
+      "text": "Asset value in Gray will grow.",
+      "speaker": "SPEAKER_00"
+    },
+    {
+      "start": 3224.26,
+      "end": 3225.26,
+      "text": "To cross.",
+      "speaker": "SPEAKER_00"
+    },
+    {
+      "start": 3226.38,
+      "end": 3228.1800000000003,
+      "text": "The buying out red line.",
+      "speaker": "SPEAKER_00"
+    },
+    {
+      "start": 3230.14,
+      "end": 3232.18,
+      "text": "In the year 2030.",
+      "speaker": "SPEAKER_00"
+    },
+    {
+      "start": 3233.38,
+      "end": 3235.58,
+      "text": "That's based on our current investment strategy.",
+      "speaker": "SPEAKER_01"
+    },
+    {
+      "start": 3235.58,
+      "end": 3245.8199999999997,
+      "text": "That's right. So in only five years time on these assumptions you would hold enough money to be able to buy out the benefits in?",
+      "speaker": "SPEAKER_00"
+    },
+    {
+      "start": 3245.82,
+      "end": 3249.46,
+      "text": "Full and if you look at the continuation of this.",
+      "speaker": "SPEAKER_00"
+    },
+    {
+      "start": 3251.71,
+      "end": 3262.59,
+      "text": "Asset value in the Gray, you can see that it actually exceeds the buyout value in the future of years and this charter goes up to year 2036 and other words.",
+      "speaker": "SPEAKER_00"
+    },
+    {
+      "start": 3262.59,
+      "end": 3268.9900000000002,
+      "text": "Assuming the buyout value isn't guaranteed for insurance companies think they would.",
+      "speaker": "SPEAKER_02"
+    },
+    {
+      "start": 3268.99,
+      "end": 3275.95,
+      "text": "Give us now exactly. Yeah, it's a good question, Andy. So it is based on current market conditions, but also.",
+      "speaker": "SPEAKER_00"
+    },
+    {
+      "start": 3276.79,
+      "end": 3287.91,
+      "text": "It's based on how long the insurance company thinks your members might want to live, and they're also their appetite to take on the risk if they've not sold much business this year.",
+      "speaker": "SPEAKER_00"
+    },
+    {
+      "start": 3288.42,
+      "end": 3312.1,
+      "text": "By my office you are cheaper right because I want to get some business on board and vice versa. Once I've written up their quotes here then they might be less competitive in the market but you can use the broker to work with them through that take you through that to get make sure in the event wanted to try to do this then they will get you a quality insurer at a good price.",
+      "speaker": "SPEAKER_00"
+    },
+    {
+      "start": 3313.87,
+      "end": 3317.23,
+      "text": "So it's a very interesting situation on these assumptions in that.",
+      "speaker": "SPEAKER_00"
+    },
+    {
+      "start": 3318.3,
+      "end": 3344.3,
+      "text": "Really you, your remit, if you like, is just to reach the red line. There's a on these assumptions, you can do that within a few years. But if you did actually hold on to and not know actually buy out at that point, if that, if that's how it turns out to be, you could actually hold the assets and have even more money in the plots over and above what's required to buy.",
+      "speaker": "SPEAKER_00"
+    },
+    {
+      "start": 3344.3,
+      "end": 3347.3,
+      "text": "The bank So what would happen if the asset if we get.",
+      "speaker": "SPEAKER_01"
+    },
+    {
+      "start": 3348.18,
+      "end": 3353.3799999999997,
+      "text": "Very large surplus by 202036. What would happen to the extra money then?",
+      "speaker": "SPEAKER_01"
+    },
+    {
+      "start": 3353.38,
+      "end": 3372.94,
+      "text": "So you have to check the rules of the scheme. So there's no new legislation coming through that would allow the employer to obtain a return of those funds. But you'd certainly have to check the rules of scheme because some of it may actually be promised to remember. So you would actually be able to secure more benefits than.",
+      "speaker": "SPEAKER_00"
+    },
+    {
+      "start": 3372.94,
+      "end": 3373.86,
+      "text": "Their actual due.",
+      "speaker": "SPEAKER_00"
+    },
+    {
+      "start": 3374.74,
+      "end": 3375.7799999999997,
+      "text": "So we don't have to try the.",
+      "speaker": "SPEAKER_00"
+    },
+    {
+      "start": 3375.78,
+      "end": 3381.6200000000003,
+      "text": "Rules on that one. Well, presumably increased pension, increase in pensions in payment. Yes, exactly.",
+      "speaker": "SPEAKER_01"
+    },
+    {
+      "start": 3383.5,
+      "end": 3384.78,
+      "text": "So this is a quite.",
+      "speaker": "SPEAKER_00"
+    },
+    {
+      "start": 3384.78,
+      "end": 3388.1400000000003,
+      "text": "Unusual. So we're all conflicted in that we're all members of the pension scheme.",
+      "speaker": "SPEAKER_01"
+    },
+    {
+      "start": 3388.14,
+      "end": 3388.7799999999997,
+      "text": "Here.",
+      "speaker": "SPEAKER_01"
+    },
+    {
+      "start": 3388.78,
+      "end": 3392.0600000000004,
+      "text": "Yes, it would affect your benefit possibly to that as well.",
+      "speaker": "SPEAKER_01"
+    },
+    {
+      "start": 3400.55,
+      "end": 3403.07,
+      "text": "So that is the current situation.",
+      "speaker": "SPEAKER_00"
+    },
+    {
+      "start": 3405.11,
+      "end": 3406.75,
+      "text": "If you turn over the page.",
+      "speaker": "SPEAKER_00"
+    },
+    {
+      "start": 3409.3,
+      "end": 3410.86,
+      "text": "Just to summarise that.",
+      "speaker": "SPEAKER_00"
+    },
+    {
+      "start": 3414.53,
+      "end": 3423.3300000000004,
+      "text": "In the second paragraph, the low dependency funding basis is adapted at 6.7 million at 31st December 2024.",
+      "speaker": "SPEAKER_00"
+    },
+    {
+      "start": 3424.0,
+      "end": 3428.8,
+      "text": "And it's based on the same assumptions as the technical provisions, but with a.",
+      "speaker": "SPEAKER_00"
+    },
+    {
+      "start": 3430.48,
+      "end": 3442.0,
+      "text": "Lower discount rate based on the guilt rate plus 1/2 of a percent. So that's the position that you would love to be in as the scheme matures.",
+      "speaker": "SPEAKER_00"
+    },
+    {
+      "start": 3444.28,
+      "end": 3448.2000000000003,
+      "text": "The buyout deficit is an estimated $18.7 million.",
+      "speaker": "SPEAKER_00"
+    },
+    {
+      "start": 3449.36,
+      "end": 3469.6800000000003,
+      "text": "Which compares to 100 million as at the previous valuation date three years ago. So that situation has changed massively. And the main reason for that is the fact that guilt rates have gone up so much, which is brought down by our premiums, but not been reflected in the funding position as much.",
+      "speaker": "SPEAKER_00"
+    },
+    {
+      "start": 3473.75,
+      "end": 3484.47,
+      "text": "Exercise that you've been under hedged on the buyout liabilities, so the liabilities fell by more than the assets and other improvements in insurance pricing.",
+      "speaker": "SPEAKER_00"
+    },
+    {
+      "start": 3486.04,
+      "end": 3504.7599999999998,
+      "text": "So based on this estimate and assuming contributions and that the current investment strategy remains as it is, then we project that the scheme will be fully funded on a fully insurance buyout basis by about 2029.",
+      "speaker": "SPEAKER_00"
+    },
+    {
+      "start": 3505.68,
+      "end": 3510.64,
+      "text": "Which is a slight improvement compared to the previous projections.",
+      "speaker": "SPEAKER_00"
+    },
+    {
+      "start": 3511.44,
+      "end": 3520.88,
+      "text": "So the next stages are to speak with your covenant advisor to make sure.",
+      "speaker": "SPEAKER_00"
+    },
+    {
+      "start": 3522.2,
+      "end": 3526.8399999999997,
+      "text": "That you have a good understanding of what the covenant is. How strong is the employer?",
+      "speaker": "SPEAKER_00"
+    },
+    {
+      "start": 3528.0,
+      "end": 3533.6,
+      "text": "Speak with your investment advisor to discuss the Rangers of.",
+      "speaker": "SPEAKER_00"
+    },
+    {
+      "start": 3535.28,
+      "end": 3540.88,
+      "text": "Investment strategies that you conduct going forward in the light of these valuation results.",
+      "speaker": "SPEAKER_00"
+    },
+    {
+      "start": 3542.64,
+      "end": 3564.56,
+      "text": "To read through the rest of this report, which I'll take you through at a separate meeting, to say that you're fully and fully aware of how we've come up with the values on page 2 here, what are our underlying assumptions, and for you to decide based on my advice about using a reasonable or not.",
+      "speaker": "SPEAKER_00"
+    },
+    {
+      "start": 3566.16,
+      "end": 3577.68,
+      "text": "And then you finally felt actually we think that to prudence, for example on the orange technical provisions, then we could look to change the studies if you feel that's appropriate and recalculate.",
+      "speaker": "SPEAKER_00"
+    },
+    {
+      "start": 3579.12,
+      "end": 3604.6,
+      "text": "But to be honest, I think the assumption is proposed here are reasonable for this valuation and as long as you're happy to take the stats that we've discussed. So making sure you're happy with these assumptions, make sure you're happy with the underlying investment strategy and the sanctions around that you're happy with the covenant, you can then open the discussion with the employer.",
+      "speaker": "SPEAKER_00"
+    },
+    {
+      "start": 3606.29,
+      "end": 3613.09,
+      "text": "To see if they agree to our proposals for the contributions to be paid for a short amount of time.",
+      "speaker": "SPEAKER_00"
+    },
+    {
+      "start": 3613.4,
+      "end": 3616.36,
+      "text": "Until this game is fully funded on a process.",
+      "speaker": "SPEAKER_00"
+    },
+    {
+      "start": 3618.33,
+      "end": 3627.37,
+      "text": "I think we've already engaged with the covenant advisor and their reports due by the end of this month. So that will be circulated for trustees when we get that.",
+      "speaker": "SPEAKER_01"
+    },
+    {
+      "start": 3629.73,
+      "end": 3636.97,
+      "text": "You mentioned about arranging another meeting. Do we do that after we've received the covenant advice to think?",
+      "speaker": "SPEAKER_01"
+    },
+    {
+      "start": 3636.97,
+      "end": 3653.6099999999997,
+      "text": "That would if it's because it's due that shortly, that will be a good idea, yes, because all of this is in the context of the strength of the employees covenant. So I'll start making the assumption about what I think it is based on the information I've been given so far.",
+      "speaker": "SPEAKER_00"
+    },
+    {
+      "start": 3654.44,
+      "end": 3656.96,
+      "text": "But we need confirmation from an expert in that field.",
+      "speaker": "SPEAKER_00"
+    },
+    {
+      "start": 3656.96,
+      "end": 3661.12,
+      "text": "So I'll ask the Steam secretary to circulate possible dates for.",
+      "speaker": "SPEAKER_01"
+    },
+    {
+      "start": 3661.12,
+      "end": 3668.52,
+      "text": "For a meeting in toward the end of July, yes, that'll be fine. Sounds good. That's an action for Steam Secretary. Yeah.",
+      "speaker": "SPEAKER_01"
+    },
+    {
+      "start": 3669.88,
+      "end": 3675.76,
+      "text": "And justice confirmation. All of the points I've just discussed are on page 36 of the report.",
+      "speaker": "SPEAKER_00"
+    },
+    {
+      "start": 3682.59,
+      "end": 3685.55,
+      "text": "OK. Thank you. Thanks. Any questions, Andy?",
+      "speaker": "SPEAKER_00"
+    },
+    {
+      "start": 3687.65,
+      "end": 3688.69,
+      "text": "Thank you. Thank you.",
+      "speaker": "SPEAKER_02"
+    },
+    {
+      "start": 3692.1,
+      "end": 3709.98,
+      "text": "OK, the last agenda item is an overview of governance and in view of the time I know some of us have got trains to catch, I suggest that we move back to the next meeting. It's all about the Pensions Regulators general code of practice.",
+      "speaker": "SPEAKER_01"
+    },
+    {
+      "start": 3711.32,
+      "end": 3717.6800000000003,
+      "text": "So if everybody's happy with that, with moving that agenda item to the next meeting and they'll close the meeting here.",
+      "speaker": "SPEAKER_01"
+    },
+    {
+      "start": 3719.49,
+      "end": 3725.77,
+      "text": "In terms of any other business, has anybody got anything that they would like to raise under any other business, Alan?",
+      "speaker": "SPEAKER_01"
+    },
+    {
+      "start": 3725.77,
+      "end": 3727.65,
+      "text": "No, not for many. Thank you.",
+      "speaker": "SPEAKER_01"
+    },
+    {
+      "start": 3727.65,
+      "end": 3729.61,
+      "text": "Andy, nothing for me, OK.",
+      "speaker": "SPEAKER_01"
+    },
+    {
+      "start": 3729.61,
+      "end": 3736.73,
+      "text": "In which case it only we just need to set the date of the next meeting, which I think is in the diary anyway.",
+      "speaker": "SPEAKER_01"
+    },
+    {
+      "start": 3739.61,
+      "end": 3743.65,
+      "text": "I think it's the first week in September.",
+      "speaker": "SPEAKER_01"
+    },
+    {
+      "start": 3745.55,
+      "end": 3755.55,
+      "text": "I think we need to check that, but I think it's in the diary already. Thanks a lot. Apart from that, that's I think we can mark the meeting as closed. Thank you. Thank you very much.",
+      "speaker": "SPEAKER_01"
+    }
+  ]
+}

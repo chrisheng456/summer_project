@@ -1,116 +1,81 @@
 #!/usr/bin/env python3
 import os
 import json
-import argparse
-import tempfile
 import subprocess
-
-import torch
-import torchaudio
-import whisper
+from pathlib import Path
+from dotenv import load_dotenv
 from pyannote.audio import Pipeline
 
-HF_TOKEN_ENV = "HUGGINGFACE_TOKEN"
+# 加载 .env 中的 HUGGINGFACE_TOKEN（如果有的话）
+load_dotenv()
 
-def ensure_wav_pcm16(input_path: str) -> str:
-    """
-    如果输入已经是 PCM16 单声道 WAV，则直接返回原路径；
-    否则用 ffmpeg 转码到临时文件并返回新路径。
-    """
-    # 检查文件后缀
-    ext = os.path.splitext(input_path)[1].lower()
-    if ext == ".wav":
-        # 再用 torchaudio 看看是不是 16kHz 单声道 pcm_s16le
-        try:
-            info = torchaudio.info(input_path)
-            fmt = info.to_dict().get("format", "")
-            if info.num_channels == 1 and info.sample_rate == 16000:
-                return input_path
-        except Exception:
-            pass  # fall through to transcode
+# ── CONFIGURATION ──────────────────────────────────────────────────────────────
+AZURE_JSON  = Path("Trustee Meeting Recording (30 June 2025) V1.json")
+INPUT_AUDIO = Path("Trustee Meeting Recording (30 June 2025) V1.m4a")
+WAV_PATH    = INPUT_AUDIO.with_suffix(".wav")
+OUTPUT_JSON = AZURE_JSON.with_name(AZURE_JSON.stem + "_V2_with_speakers.json")
+HF_TOKEN    = os.getenv("HUGGINGFACE_TOKEN", os.getenv("HF_TOKEN"))
+# ────────────────────────────────────────────────────────────────────────────────
 
-    # 转成 WAV PCM16LE, 16kHz, 单声道
-    tmp = tempfile.NamedTemporaryFile(suffix=".wav", delete=False)
-    tmp.close()
-    out_path = tmp.name
-    cmd = [
-        "ffmpeg", "-y", "-i", input_path,
-        "-ar", "16000", "-ac", "1", "-c:a", "pcm_s16le",
-        out_path
-    ]
-    subprocess.run(cmd, check=True, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
-    return out_path
+# Step 1: Read transcript
+print(f"1) Reading transcript: {AZURE_JSON.name}")
+with open(AZURE_JSON, "r", encoding="utf-8") as f:
+    data = json.load(f)
+lines = data.get("lines", [])
+print(f"   → {len(lines)} lines loaded.\n", flush=True)
 
-def diarize_and_transcribe(wav_path: str, output_json: str, hf_token: str):
-    # 如果格式不符，先转码
-    real_wav = ensure_wav_pcm16(wav_path)
+# Step 2: Convert to WAV quietly
+print(f"2) Converting audio to WAV: {INPUT_AUDIO.name} → {WAV_PATH.name}", flush=True)
+subprocess.run([
+    "ffmpeg",
+    "-hide_banner", "-loglevel", "error",  # suppress ffmpeg info
+    "-y",
+    "-i", str(INPUT_AUDIO),
+    "-ac", "1",
+    "-ar", "16000",
+    "-c:a", "pcm_s16le",
+    str(WAV_PATH)
+], check=True)
+print("   → Conversion done.\n", flush=True)
 
-    print("▶ Running speaker diarization...")
-    pipeline = Pipeline.from_pretrained(
-        "pyannote/speaker-diarization@2.1",
-        use_auth_token=hf_token
-    )
-    diarization = pipeline(real_wav)
+# Step 3: Diarization
+print("3) Running pyannote speaker diarization...", flush=True)
+pipeline = Pipeline.from_pretrained(
+    "pyannote/speaker-diarization@2.1",
+    use_auth_token=HF_TOKEN
+)
+diarization = pipeline(str(WAV_PATH))
 
-    print("▶ Loading Whisper ASR model...")
-    device = "cuda" if torch.cuda.is_available() else "cpu"
-    asr_model = whisper.load_model("small", device=device)
+segments = []
+print("   → Segments found:", flush=True)
+for turn, _, speaker in diarization.itertracks(yield_label=True):
+    seg = {"start": turn.start, "end": turn.end, "speaker": speaker}
+    segments.append(seg)
+    print(f"     • [{turn.start:.2f}s - {turn.end:.2f}s] → Speaker {speaker}", flush=True)
+print(f"   → {len(segments)} segments.\n", flush=True)
 
-    print("▶ Loading audio and slicing by speaker segments...")
-    waveform, sample_rate = torchaudio.load(real_wav)
-    waveform = waveform.to(device)
+# Step 4: Define assign_speaker
+def assign_speaker(t0: float, t1: float) -> str:
+    overlaps = []
+    for s in segments:
+        ist = max(t0, s["start"])
+        ied = min(t1, s["end"])
+        ov = max(0.0, ied - ist)
+        if ov > 0:
+            overlaps.append((ov, s["speaker"]))
+    return max(overlaps, key=lambda x: x[0])[1] if overlaps else "Unknown"
 
-    segments = []
-    for segment, _, speaker in diarization.itertracks(yield_label=True):
-        start, end = segment.start, segment.end
-        sf, ef = int(start * sample_rate), int(end * sample_rate)
-        clip = waveform[:, sf:ef]
+# Step 5: Assign & print merged JSON live
+print("4) Assigning speakers and streaming JSON:", flush=True)
+for ln in lines:
+    t0, t1 = ln.get("start", 0.0), ln.get("end", 0.0)
+    ln["speaker"] = assign_speaker(t0, t1)
+    print(json.dumps(ln, ensure_ascii=False), flush=True)
 
-        # 临时存片段去识别
-        with tempfile.NamedTemporaryFile(suffix=".wav", delete=False) as tmp:
-            torchaudio.save(tmp.name, clip.cpu(), sample_rate)
-            result = asr_model.transcribe(tmp.name, fp16=(device=="cuda"))
-        os.unlink(tmp.name)
+print(f"\n   → Assigned speakers to {len(lines)} lines.\n", flush=True)
 
-        text = result.get("text", "").strip()
-        segments.append({
-            "speaker": speaker,
-            "start": round(start, 3),
-            "end":   round(end, 3),
-            "text":  text
-        })
-
-    # 排序并写入 JSON
-    segments.sort(key=lambda x: x["start"])
-    os.makedirs(os.path.dirname(output_json), exist_ok=True)
-    with open(output_json, "w", encoding="utf-8") as f:
-        json.dump(segments, f, indent=2, ensure_ascii=False)
-
-    print(f"✅ Aligned JSON saved to {output_json}")
-
-if __name__ == "__main__":
-    parser = argparse.ArgumentParser(
-        description="One-step diarization + ASR: any audio → aligned JSON"
-    )
-    parser.add_argument(
-        "wav",
-        help="输入音频文件路径（支持 mp3/m4a/flac/ogg/… 自动转码）"
-    )
-    parser.add_argument(
-        "--hf_token",
-        default=os.getenv(HF_TOKEN_ENV),
-        help=f"HuggingFace 访问令牌，或设置环境变量 {HF_TOKEN_ENV}"
-    )
-    args = parser.parse_args()
-
-    if not os.path.isfile(args.wav):
-        parser.error(f"找不到音频文件: {args.wav}")
-    if not args.hf_token:
-        parser.error(f"请通过 --hf_token 或环境变量 {HF_TOKEN_ENV} 提供 HuggingFace 访问令牌。")
-
-    # 输出文件名：脚本同目录，基于输入名 + _aligned.json
-    script_dir = os.path.dirname(os.path.realpath(__file__))
-    base = os.path.splitext(os.path.basename(args.wav))[0] + "_aligned.json"
-    output_path = os.path.join(script_dir, base)
-
-    diarize_and_transcribe(args.wav, output_path, args.hf_token)
+# Step 6: Write output JSON
+print(f"5) Writing output JSON: {OUTPUT_JSON.name}", flush=True)
+with open(OUTPUT_JSON, "w", encoding="utf-8") as f:
+    json.dump({"lines": lines}, f, ensure_ascii=False, indent=2)
+print("   → Done.", flush=True)
