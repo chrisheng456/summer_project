@@ -1,21 +1,8 @@
 <template>
   <div>
+    
     <!-- ✅ 页面顶部栏 -->
-    <div class="page-header">
-      <div class="header-title">Meeting Dashboard</div>
-      <el-dropdown trigger="click" @command="handleCommand">
-        <span class="avatar-wrapper">
-          <el-avatar size="medium">{{ userInitial }}</el-avatar>
-        </span>
-        <template #dropdown>
-          <el-dropdown-menu>
-            <el-dropdown-item disabled>{{ username }}</el-dropdown-item>
-            <el-dropdown-item divided command="settings">Settings</el-dropdown-item>
-            <el-dropdown-item command="logout">Log out</el-dropdown-item>
-          </el-dropdown-menu>
-        </template>
-      </el-dropdown>
-    </div>
+    <HeaderBar />
 
     <!-- ✅ 内容区加外层容器 -->
     <div class="container">
@@ -87,6 +74,7 @@ import { ref } from 'vue'
 import { useRouter } from 'vue-router'
 import { ElMessage } from 'element-plus'
 import { UploadFilled } from '@element-plus/icons-vue'
+import HeaderBar from '@/components/HeaderBar.vue'
 
 
 interface HistoryItem {
