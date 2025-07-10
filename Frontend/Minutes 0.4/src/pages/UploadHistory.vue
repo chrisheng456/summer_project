@@ -56,7 +56,7 @@
                 <td>{{ item.participants }}</td>
                 <td>{{ item.duration }}</td>
                 <td>{{ item.uploadTime }}</td>
-                <td>
+                <td >
                   <button @click="viewDetail">View Details</button>
                 </td>
 
@@ -332,7 +332,8 @@ button:hover {
 
 /* ...列占位 */
 .action-column {
-  width: 20px;
+  width: 10px;
+  max-width: 15px;
   text-align: left;
   padding: 0 40px 0 0;
 }
