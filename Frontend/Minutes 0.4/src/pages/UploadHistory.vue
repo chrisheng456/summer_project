@@ -47,6 +47,7 @@
                 <th>Duration</th>
                 <th>Uploaded At</th>
                 <th>Details</th>
+                <th class="action-column"></th>
               </tr>
             </thead>
             <tbody>
@@ -58,6 +59,22 @@
                 <td>
                   <button @click="viewDetail">View Details</button>
                 </td>
+
+                <td class="action-column">
+                  <el-dropdown trigger="click">
+                    <div class="dots-button">
+                      <span class="el-dropdown-link">⋮</span>
+                    </div>
+
+                    <template #dropdown>
+                      <el-dropdown-menu>
+                        <el-dropdown-item @click="downloadFile(item)">Download</el-dropdown-item>
+                        <el-dropdown-item divided @click="deleteFile(item.id)">Delete</el-dropdown-item>
+                      </el-dropdown-menu>
+                    </template>
+                  </el-dropdown>
+                </td>
+
               </tr>
             </tbody>
           </table>
@@ -74,6 +91,8 @@ import { useRouter } from 'vue-router'
 import { ElMessage } from 'element-plus'
 import { UploadFilled } from '@element-plus/icons-vue'
 import HeaderBar from '@/components/HeaderBar.vue'
+import { MoreFilled } from '@element-plus/icons-vue'
+
 
 // 定义历史数据类型
 interface HistoryItem {
@@ -121,6 +140,18 @@ function handleUpload(file: any) {
 function viewDetail() {
   router.push(`/MeetingNotes`)
 }
+
+function downloadFile(item: HistoryItem) {
+  ElMessage.success(`Start downloading ${item.filename}`)
+  // 实际可替换为后端下载链接：
+  // window.open(`/api/files/download/${item.id}`)
+}
+
+function deleteFile(id: string) {
+  history.value = history.value.filter(item => item.id !== id)
+  ElMessage.success('File deleted')
+}
+
 </script>
 
 <style scoped>
@@ -179,14 +210,11 @@ function viewDetail() {
 .table-title {
   text-align: center;
   font-size: 1.5rem;
-  font-weight: 700;
-  margin: 16px auto 20px;
+  font-weight: 600;
+  margin: 16px auto 10px;
   padding: 10px 24px;
   color: #333;
-  border-radius: 8px;
-  border: 1px solid #d0d4d9;
   width: fit-content;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
 }
 
 /* 表格本体 */
@@ -201,11 +229,11 @@ table {
 thead th {
   position: sticky;                     /* 表头固定 */
   top: 0;
-  background-color: #f4f6f9;
+  background-color: #fff;
   font-weight: 700;
   padding: 14px 12px;
   text-align: left;
-  border-bottom: 2px solid #ddd;
+  border-bottom: 1.5px solid #eee;
   color: #333;
 }
 
@@ -292,4 +320,40 @@ button:hover {
 .avatar-wrapper {
   cursor: pointer;
 }
+
+/* ...样式 */
+.el-dropdown-link {
+  font-size: 25px;
+  color: #666;
+  cursor: pointer;
+  user-select: none;
+  font-weight: bold;
+}
+
+/* ...列占位 */
+.action-column {
+  width: 20px;
+  text-align: left;
+  padding: 0 40px 0 0;
+}
+
+/* ...套一个圆形按钮外壳 */
+.dots-button {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background-color: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  font-size: 18px;
+  color: #666;
+}
+
+.dots-button:hover {
+  background-color: #e0e6ed; /* hover 显示淡灰色圆圈 */
+}
+
 </style>
