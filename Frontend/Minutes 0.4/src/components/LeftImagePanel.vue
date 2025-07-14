@@ -1,5 +1,5 @@
 <template>
-  <div class="left-panel" :style="{ backgroundImage: `url(${imageUrl})` }">
+  <div class="left-panel" :style="backgroundStyle">
     <div class="image-wrapper">
       <slot></slot>
     </div>
@@ -7,27 +7,33 @@
 </template>
 
 <script setup lang="ts">
-defineProps<{ imageUrl: string }>()
+import { computed } from 'vue'
+
+// 接收 props
+const props = defineProps<{ imageUrl: string }>()
+
+// 动态背景样式，防止图片路径被错处理
+const backgroundStyle = computed(() => ({
+  backgroundImage: `url(${props.imageUrl})`,
+  backgroundSize: 'cover',
+  backgroundPosition: 'center',
+}))
 </script>
 
 <style scoped>
-/* 左侧面板样式 */
 .left-panel {
-  width: 60vw;                  /* 占据视口宽度的 60% */
-  height: 100vh;                /* 高度为整个视口高度 */
-  background-size: cover;      /* 背景图铺满，不拉伸变形 */
-  background-position: center; /* 背景图居中显示 */
+  width: 60vw;
+  height: 100vh;
 }
 
 /* 遮罩 + 内容容器 */
 .image-wrapper {
   width: 100%;
   height: 100%;
-  background-color: rgba(185, 175, 187, 0.441); /* 添加半透明遮罩层（灰紫色） */
+  background-color: rgba(185, 175, 187, 0.441);
   display: flex;
-  justify-content: center;      /* 水平居中插槽内容 */
-  align-items: center;          /* 垂直居中插槽内容 */
-  flex-direction: column;       /* 垂直排列插槽中的元素 */
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
 </style>
-

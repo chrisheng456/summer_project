@@ -64,7 +64,6 @@ function handleCommand(command: string) {
   justify-content: space-between; /* 两端对齐 */
   align-items: center;          /* 垂直居中 */
   padding: 10px 24px;           /* 上下左右内边距 */
-  box-shadow: 0 1px 6px rgba(0, 0, 0, 0.1); /* 阴影 */
   z-index: 10000;               /* 保证顶层显示 */
 }
 

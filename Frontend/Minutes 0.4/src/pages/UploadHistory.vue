@@ -171,6 +171,7 @@ function deleteFile(id: string) {
 .upload-section {
   background-color: #fff;               /* 白色背景 */
   padding: 20px 20px;
+  margin-top: 20px;
   border-radius: 12px;                  /* 圆角 */
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.337);  /* 阴影 */
   width: 100%;

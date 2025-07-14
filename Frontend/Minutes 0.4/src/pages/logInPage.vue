@@ -1,7 +1,7 @@
 <template>
   <div class="page-layout">
     <!-- 左边：图片+欢迎文字 -->
-    <LeftImagePanel imageUrl="/assets/login-bg.jpg">
+    <LeftImagePanel :imageUrl="loginBg">
       <div class="overlay-content">
         <p style="color: #eee">AI meeting assistant</p>
       </div>
@@ -29,6 +29,7 @@ import { ref } from 'vue'
 import { useRouter } from 'vue-router'
 import LeftImagePanel from '@/components/LeftImagePanel.vue'
 import axios from 'axios'
+import loginBg from '@/assets/login-bg.jpg'
 
 const router = useRouter()
 const username = ref('')
