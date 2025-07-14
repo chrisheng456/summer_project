@@ -44,7 +44,7 @@ function handleCommand(command: string) {
   if (command === 'logout') {
     // 点击退出，提示消息并跳转到登录页
     ElMessage.success('Logged out')
-    router.push('/login')
+    router.push('/loginPage')
   } else if (command === 'settings') {
     // 点击设置，弹出提示
     ElMessage.info('Settings page coming soon')
