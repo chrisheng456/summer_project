@@ -2,9 +2,6 @@
   <div class="page-layout">
     <!-- 左边：图片+欢迎文字 -->
     <LeftImagePanel :imageUrl="loginBg">
-      <div class="overlay-content">
-        <p style="color: #eee">AI meeting assistant</p>
-      </div>
     </LeftImagePanel>
 
     <!-- 右边：登录框 -->

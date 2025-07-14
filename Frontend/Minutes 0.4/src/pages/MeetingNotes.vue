@@ -21,7 +21,7 @@
 
       <!-- AI交互区域 -->
       <div class="question-header">
-        <h3 style="display:inline-block;">你有什么想问AI的吗？</h3>
+        <h3 style="display:inline-block;">Do you have any questions for AI?</h3>
         <button class="toggle-btn" @click="showInput = !showInput">
           {{ showInput ? '▼' : '▶' }}
         </button>
@@ -29,14 +29,14 @@
 
       <div v-if="showInput" class="bottom-input-area">
         <!-- 用户输入指令 -->
-        <textarea v-model="newContent" rows="4" placeholder="请输入指令（如：请帮我简化当前Summary）"></textarea>
-        <button @click="submitContent" :disabled="loading">{{ loading ? '处理中...' : '提交' }}</button>
+        <textarea v-model="newContent" rows="4" placeholder="Enter your instruction (e.g., Please simplify the current summary)"></textarea>
+        <button @click="submitContent" :disabled="loading">{{ loading ? 'Processing...' : 'Submit' }}</button>
 
         <!-- 显示AI结果，允许应用 -->
         <div v-if="aiReply" class="ai-reply-box">
-          <h4>AI建议：</h4>
+          <h4>AI Suggestion:</h4>
           <div class="ai-reply-text">{{ aiReply }}</div>
-          <button @click="applyAIContent">应用到页面</button>
+          <button @click="applyAIContent">Apply to Page</button>
         </div>
       </div>
     </main>

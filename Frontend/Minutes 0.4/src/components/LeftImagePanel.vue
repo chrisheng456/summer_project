@@ -30,7 +30,7 @@ const backgroundStyle = computed(() => ({
 .image-wrapper {
   width: 100%;
   height: 100%;
-  background-color: rgba(185, 175, 187, 0.441);
+  background-color: transparent; 
   display: flex;
   justify-content: center;
   align-items: center;
