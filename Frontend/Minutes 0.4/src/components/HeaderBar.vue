@@ -59,7 +59,7 @@ function handleCommand(command: string) {
   left: 0;
   right: 0;
   height: 40px;
-  background-color: #f9fafb;    /* 浅色背景 */
+  background-color: #ffffff !important;    
   display: flex;                /* 横向布局 */
   justify-content: space-between; /* 两端对齐 */
   align-items: center;          /* 垂直居中 */
