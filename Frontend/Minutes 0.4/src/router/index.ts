@@ -30,7 +30,8 @@ const routes =
     component:Register
     },
 
-    {   name:"UploadHistory",
+    {   
+    name:"UploadHistory",
     path:'/UploadHistory',
     component:UploadHistory
     }

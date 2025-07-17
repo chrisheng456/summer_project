@@ -1,17 +1,23 @@
 <template>
   <div class="page-layout">
-    <!-- 左边：图片+欢迎文字 -->
+    <!-- 左边：插画区 -->
     <LeftImagePanel :imageUrl="loginBg">
     </LeftImagePanel>
 
     <!-- 右边：登录框 -->
     <div class="page-wrapper">
       <div class="login-container">
-        <h2>LOGO</h2>
+        <!-- LOGO -->
+        <img src="@/assets/logo.png" alt="AutoMinute Logo" class="logo" />   
+        <!-- 欢迎语 -->
+        <h2 class="welcome-title">Welcome! <br />Let's get started.</h2>
+        <!-- 登录表单 -->
         <input v-model="username" type="text" placeholder="Username" />
         <input v-model="password" type="password" placeholder="Password" />
         <button class="login-button" @click="handleLogin">Login</button>
+        <!-- 错误信息 -->
         <p v-if="errorMessage" class="error">{{ errorMessage }}</p>
+        <!-- 其他链接 -->
         <div class="links">
           <a href="#">Forgot Password</a>
           <a @click.prevent="goToRegister" style="color: white; cursor: pointer;">Register Account</a>
@@ -60,28 +66,42 @@ function goToRegister() {
 .page-layout {
   display: flex;
   height: 100vh;
+  background-color: white;
 }
 
 .page-wrapper {
   flex: 1;  
-  background-color: rgba(230, 231, 231, 0.5);
+  background-color: white;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
 .login-container {
-  background-color: rgba(182, 184, 184, 0.457);
+  background-color: white;
   padding: 40px;
   border-radius: 10px;
   text-align: center;
-  width: 300px;
+  width: 350px;
   color: rgba(37, 28, 28, 0.741);
 
 }
 
+.logo {
+  height: 150px;
+  margin-bottom: 1px;
+}
+
+.welcome-title {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 6px;
+  color: #333;
+  text-align: left;
+}
+
 input {
-  width: 80%;
+  width: 90%;
   padding: 10px;
   margin: 10px 0;
   border: none;

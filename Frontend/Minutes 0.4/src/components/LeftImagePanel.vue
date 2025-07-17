@@ -22,7 +22,7 @@ const backgroundStyle = computed(() => ({
 
 <style scoped>
 .left-panel {
-  width: 60vw;
+  width: 55vw;
   height: 100vh;
 }
 
