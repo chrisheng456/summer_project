@@ -129,57 +129,91 @@ with open("raw_response.json", "w", encoding="utf-8") as f:
     json.dump(results_data, f, indent=2)
 print("✅ Saved raw API response to raw_response.json")
 
+
+# === 改进的时间戳解析函数 ===
+def parse_time_value(time_value):
+    """解析时间值，支持多种格式"""
+    if isinstance(time_value, (int, float)):
+        # 如果是数字，直接返回（假设单位是秒）
+        return time_value
+
+    if isinstance(time_value, str):
+        # 处理ISO 8601持续时间格式 (PTxx.xxS)
+        if time_value.startswith("PT"):
+            try:
+                # 提取数字部分并转换为浮点数
+                time_str = time_value[2:-1]  # 去掉"PT"和"S"
+                return float(time_str)
+            except ValueError:
+                return 0.0
+
+    # 如果无法解析，返回0
+    return 0.0
+
+
 # === 提取结构化信息 ===
 final_output = {"lines": []}
 print("\n🔍 Analyzing API response structure...")
 print(f"Response keys: {list(results_data.keys())}")
 
-def parse_pt_time(pt_string):
-    try:
-        return float(pt_string.replace("PT", "").replace("S", ""))
-    except:
-        return 0.0
-
 if "recognizedPhrases" in results_data:
+    print("✅ Found 'recognizedPhrases' in results")
     for phrase in results_data["recognizedPhrases"]:
         if "nBest" not in phrase or len(phrase["nBest"]) == 0:
             continue
+
         best = phrase["nBest"][0]
         speaker = f"SPEAKER_{phrase.get('speaker', 0):02d}"
 
-        if "offset" in phrase:
-            if isinstance(phrase["offset"], str):
-                offset = parse_pt_time(phrase["offset"])
-                duration = parse_pt_time(phrase["duration"])
-            else:
-                offset = phrase.get("offsetInTicks", 0) / 10**7
-                duration = phrase.get("durationInTicks", 0) / 10**7
-            start = round(offset, 2)
-            end = round(offset + duration, 2)
+        # 优先使用ticks格式的时间戳（更精确）
+        if "offsetInTicks" in phrase and "durationInTicks" in phrase:
+            offset_sec = phrase["offsetInTicks"] / 10000000.0
+            duration_sec = phrase["durationInTicks"] / 10000000.0
         else:
-            start, end = 0.0, 0.0
+            # 回退到其他格式
+            offset_sec = parse_time_value(phrase.get("offset", 0))
+            duration_sec = parse_time_value(phrase.get("duration", 0))
 
+        # 计算结束时间（开始时间 + 持续时间）
+        end_sec = offset_sec + duration_sec
+
+        # 添加到结果列表
         final_output["lines"].append({
-            "start": start,
-            "end": end,
+            "start": round(offset_sec, 2),
+            "end": round(end_sec, 2),
             "text": best["display"],
             "speaker": speaker
         })
 
 elif "combinedRecognizedPhrases" in results_data:
+    print("⚠️ Using fallback 'combinedRecognizedPhrases'")
     for segment in results_data["combinedRecognizedPhrases"]:
+        speaker = f"SPEAKER_{segment.get('speaker', 0):02d}"
+
         for best in segment.get("nBest", []):
-            speaker = f"SPEAKER_{segment.get('speaker', 0):02d}"
-            text = best.get("display", "")
+            # 优先使用ticks格式的时间戳
+            if "offsetInTicks" in segment and "durationInTicks" in segment:
+                offset_sec = segment["offsetInTicks"] / 10000000.0
+                duration_sec = segment["durationInTicks"] / 10000000.0
+            else:
+                # 回退到其他格式
+                offset_sec = parse_time_value(segment.get("offset", 0))
+                duration_sec = parse_time_value(segment.get("duration", 0))
+
+            # 计算结束时间
+            end_sec = offset_sec + duration_sec
+
+            # 添加到结果列表
             final_output["lines"].append({
-                "start": 0.0,
-                "end": 0.0,
-                "text": text,
+                "start": round(offset_sec, 2),
+                "end": round(end_sec, 2),
+                "text": best.get("display", ""),
                 "speaker": speaker
             })
 
 # 如果完全没有内容，尝试兜底策略
 if not final_output["lines"]:
+    print("⚠️ No lines extracted, trying fallback methods")
     if "display" in results_data:
         final_output["lines"].append({
             "start": 0.0,
