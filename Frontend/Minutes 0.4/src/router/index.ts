@@ -4,6 +4,7 @@ import {createRouter, createWebHistory, RouterLink} from 'vue-router'//创建路
 import LoginPage from '@/pages/LoginPage.vue'
 import UploadHistory from '@/pages/UploadHistory.vue'
 import MeetingNotes from '@/pages/MeetingNotes.vue'
+import Register from '@/pages/Register.vue'
 
 //  第二步：创建路由器
 const routes =
@@ -23,7 +24,11 @@ const routes =
     path:'/MeetingNotes',
     component:MeetingNotes
     },
-
+    {
+    name:"Register",
+    path:'/Register',
+    component:Register
+    },
 
     {   name:"UploadHistory",
     path:'/UploadHistory',
