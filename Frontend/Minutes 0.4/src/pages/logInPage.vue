@@ -89,14 +89,14 @@ function goToRegister() {
 }
 
 .logo {
-  height: 150px;
-  margin-bottom: 1px;
+  height: 80px;
+  margin-bottom: 20px;
 }
 
 .welcome-title {
   font-size: 30px;
   font-weight: bold;
-  margin-bottom: 6px;
+  margin-bottom: 15px;
   color: #333;
   text-align: left;
 }

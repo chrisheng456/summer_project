@@ -6,7 +6,9 @@
     <!-- 右边：注册框 -->
     <div class="page-wrapper">
       <div class="register-container">
-        <h2>Register</h2>
+        <!-- LOGO -->
+        <img src="@/assets/logo.png" alt="AutoMinute Logo" class="logo" />   
+        <h2 class="register-title">Create your account</h2>
         <input v-model="username" type="text" placeholder="Username" />
         <input v-model="email" type="email" placeholder="Email" />
         <input v-model="password" type="password" placeholder="Password" />
@@ -75,14 +77,15 @@ async function handleRegister() {
 
 .page-wrapper {
   flex: 1;  
-  background-color: rgba(230, 231, 231, 0.5);
+  background-color: white;
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
+  padding-top: 50px;
 }
 
 .register-container {
-  background-color: rgba(182, 184, 184, 0.457);
+  background-color: white;
   padding: 40px;
   border-radius: 10px;
   text-align: center;
@@ -91,12 +94,11 @@ async function handleRegister() {
 }
 
 input {
-  width: 80%;
+  width: 100%;
   padding: 10px;
   margin: 10px 0;
-  border: none;
+  border: 1px solid black;
   border-radius: 5px;
-  box-sizing: border-box;
 }
 
 .register-button {
@@ -122,8 +124,21 @@ input {
 }
 
 a {
-  color: white;
+  color: balck;
   text-decoration: none;
   margin: 0 10px;
+}
+
+.register-title {
+  font-size: 30px;
+  font-weight: bold;
+  margin-bottom: 15px;
+  color: #333;
+  text-align: left;
+}
+
+.logo {
+  height: 80px;
+  margin-bottom: 20px;
 }
 </style>

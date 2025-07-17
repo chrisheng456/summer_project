@@ -1,7 +1,9 @@
 <template>
   <div class="page-header">
     <!-- 左侧Logo区域 -->
-    <div class="header-title">Logo</div>
+    <div class="header-title">
+      <img src="@/assets/logo.png" alt="Logo" class="logo-image" />
+    </div>
 
     <!-- 右侧用户头像下拉菜单 -->
     <el-dropdown trigger="click" @command="handleCommand">
@@ -75,5 +77,10 @@ function handleCommand(command: string) {
 
 .avatar-wrapper {
   cursor: pointer;              /* 鼠标悬停变手型 */
+}
+
+.logo-image {
+  height: 130px;       /* 可根据需要调整大小 */
+  object-fit: contain;
 }
 </style>
