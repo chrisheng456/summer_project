@@ -19,8 +19,8 @@
         <p v-if="errorMessage" class="error">{{ errorMessage }}</p>
         <!-- 其他链接 -->
         <div class="links">
-          <a href="#">Forgot Password</a>
-          <a @click.prevent="goToRegister" style="color: white; cursor: pointer;">Register Account</a>
+          <a >Forgot Password</a>
+          <a @click.prevent="goToRegister" style="cursor: pointer;">Register Account</a>
         </div>
       </div>
     </div>
@@ -74,7 +74,8 @@ function goToRegister() {
   background-color: white;
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
+  padding-top: 50px;
 }
 
 .login-container {
@@ -93,7 +94,7 @@ function goToRegister() {
 }
 
 .welcome-title {
-  font-size: 24px;
+  font-size: 30px;
   font-weight: bold;
   margin-bottom: 6px;
   color: #333;
@@ -101,10 +102,10 @@ function goToRegister() {
 }
 
 input {
-  width: 90%;
+  width: 100%;
   padding: 10px;
   margin: 10px 0;
-  border: none;
+  border: 1px solid black;
   border-radius: 5px;
 }
 
@@ -130,8 +131,9 @@ input {
   font-size: 14px;
 }
 
+
 a {
-  color: white;
+  color: balck;
   text-decoration: none;
 }
 
