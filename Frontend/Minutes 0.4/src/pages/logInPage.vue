@@ -19,7 +19,7 @@
         <p v-if="errorMessage" class="error">{{ errorMessage }}</p>
         <!-- 其他链接 -->
         <div class="links">
-          <a >Forgot Password</a>
+          <a @click.prevent="goToForgotPassword" style="cursor: pointer;">Forgot Password</a>
           <a @click.prevent="goToRegister" style="cursor: pointer;">Register Account</a>
         </div>
       </div>
@@ -59,6 +59,10 @@ async function handleLogin() {
 }
 function goToRegister() {
   router.push('/Register')
+}
+
+function goToForgotPassword() {
+  router.push('/ForgotPassword')
 }
 </script>
 

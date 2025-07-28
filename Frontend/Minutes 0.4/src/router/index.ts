@@ -5,6 +5,8 @@ import LoginPage from '@/pages/LoginPage.vue'
 import UploadHistory from '@/pages/UploadHistory.vue'
 import MeetingNotes from '@/pages/MeetingNotes.vue'
 import Register from '@/pages/Register.vue'
+import ForgotPassword from "@/pages/ForgotPassword.vue";
+
 
 //  第二步：创建路由器
 const routes =
@@ -28,6 +30,12 @@ const routes =
     name:"Register",
     path:'/Register',
     component:Register
+    },
+
+    {
+    path: "/ForgotPassword",
+    name: "ForgotPassword",
+    component: ForgotPassword
     },
 
     {   
