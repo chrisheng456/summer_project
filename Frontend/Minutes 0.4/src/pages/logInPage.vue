@@ -77,11 +77,11 @@ function goToForgotPassword() {
 
 .page-wrapper {
   flex: 1;  
+  background-color: white;
   display: flex;
   justify-content: center;
   align-items: flex-start;
   padding-top: 50px;
-  background-color: white;
 }
 
 .login-container {
@@ -89,9 +89,9 @@ function goToForgotPassword() {
   padding: 40px;
   border-radius: 10px;
   text-align: center;
-  width: 90%;
-  max-width: 350px; /* 确保最大宽度 */
+  width: 350px;
   color: rgba(37, 28, 28, 0.741);
+
 }
 
 .logo {
@@ -100,7 +100,7 @@ function goToForgotPassword() {
 }
 
 .welcome-title {
-  font-size: 28px;
+  font-size: 30px;
   font-weight: bold;
   margin-bottom: 15px;
   color: #333;
@@ -109,16 +109,16 @@ function goToForgotPassword() {
 
 input {
   width: 100%;
-  padding: 12px;
+  padding: 10px;
   margin: 10px 0;
   border: 1px solid black;
   border-radius: 5px;
 }
 
 .login-button {
-  width: 100%;
-  padding: 12px;
-  margin-top: 20px;
+  width: 80%;
+  padding: 10px;
+  margin: 20px 0;
   background-color: #3c1cf1af;
   border: none;
   border-radius: 5px;
