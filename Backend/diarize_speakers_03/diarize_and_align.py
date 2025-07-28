@@ -13,7 +13,7 @@ from azure.storage.blob import (
 from datetime import datetime, timedelta
 
 # === 加载环境变量 ===
-load_dotenv()
+load_dotenv(override=True)
 speech_key = os.getenv("AZURE_SPEECH_KEY")
 region = os.getenv("AZURE_SPEECH_REGION", "uksouth")
 storage_conn = os.getenv("AZURE_STORAGE_CONNECTION_STRING")
