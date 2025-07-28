@@ -80,7 +80,7 @@ function handleCommand(command: string) {
 }
 
 .logo-image {
-  height: 130px;       /* 可根据需要调整大小 */
+  height: 80px;       /* 可根据需要调整大小 */
   object-fit: contain;
 }
 </style>
