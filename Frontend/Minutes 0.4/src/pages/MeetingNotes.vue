@@ -171,7 +171,6 @@ h3 {
 /* 切换按钮样式 */
 .toggle-btn {
   margin-left: 10px;
-  background: none;
   border: none;
   font-size: 18px;
   cursor: pointer;
