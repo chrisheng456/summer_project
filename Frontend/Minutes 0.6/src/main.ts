@@ -15,6 +15,8 @@ if (import.meta.env.MODE === 'development') {
   import ('./shims/mockLogin')
 }
 
+import axios from 'axios'
+
 //创建一个app
 const app =createApp(App)
 const pinia =createPinia();
@@ -23,3 +25,17 @@ app.use(router)// app安装插件：使用路由和 Element Plus（或其他组�
 app.use(ElementPlus)
 app.use(pinia); // 直接传入 createPinia() 的结果
 app.mount('#app')//挂载整个app到id=app中
+
+// 设置基础URL（指向后端）
+axios.defaults.baseURL = 'http://localhost:3000'
+
+// 请求拦截器（自动添加token）
+axios.interceptors.request.use(config => {
+  const token = localStorage.getItem('token')
+  if (token) {
+    config.headers.Authorization = `Bearer ${token}`
+  }
+  return config
+})
+
+export default axios

@@ -39,24 +39,27 @@ const username = ref('')
 const password = ref('')
 const errorMessage = ref('')
 
+
 async function handleLogin() {
   try {
     const res = await axios.post('/api/login', {
       username: username.value,
-      password: password.value,
+      password: password.value
     })
 
-    if (res.data.code === 200) {
-
-      console.log("成功登录")
-      router.push('/UploadHistory')
-    } else {
-      errorMessage.value = res.data.message || 'Login failed'
-    }
-  } catch (e) {
-    errorMessage.value = 'Network error'
+    // 存储token和用户信息
+    localStorage.setItem('token', res.data.token)
+    localStorage.setItem('user', JSON.stringify(res.data.user))
+    
+    router.push('/UploadHistory')
+  } catch (e: any) {
+    // 更详细的错误处理
+    errorMessage.value = e.response?.data?.error || 
+                        e.message || 
+                        'Login failed'
   }
 }
+
 function goToRegister() {
   router.push('/Register')
 }

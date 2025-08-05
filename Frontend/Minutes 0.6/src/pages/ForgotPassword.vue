@@ -55,16 +55,15 @@ async function handleReset() {
     const res = await axios.post('/api/forgot-password', {
       email: email.value
     })
-
-    if (res.data.code === 200) {
-      successMessage.value = 'Reset link sent to your email'
-    } else {
-      errorMessage.value = res.data.message || 'Failed to send reset link'
-    }
-  } catch (err) {
-    errorMessage.value = 'Network error'
+    
+    successMessage.value = res.data.message || 'Reset link sent to your email'
+  } catch (e: any) {
+    errorMessage.value = e.response?.data?.error || 
+                        e.message || 
+                        'Failed to send reset link'
   }
 }
+
 </script>
 
 <style scoped>

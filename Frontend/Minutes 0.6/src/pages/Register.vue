@@ -46,27 +46,28 @@ function goBack() {
 
 // 注册逻辑
 async function handleRegister() {
+  // 密码确认检查
   if (password.value !== confirmPassword.value) {
     errorMessage.value = 'Passwords do not match'
     return
   }
+
   try {
-    const res = await axios.post('/api/register', {
+    await axios.post('/api/register', {
       username: username.value,
       email: email.value,
-      password: password.value,
+      password: password.value
     })
-
-    if (res.data.code === 200) {
-      // 注册成功后跳转登录页面或其他逻辑
-      router.push('/login')
-    } else {
-      errorMessage.value = res.data.message || 'Registration failed'
-    }
-  } catch (e) {
-    errorMessage.value = 'Network error'
+    
+    // 注册成功后跳转登录页
+    router.push('/LoginPage')
+  } catch (e: any) {
+    errorMessage.value = e.response?.data?.error || 
+                        e.message || 
+                        'Registration failed'
   }
 }
+
 </script>
 
 <style scoped>
