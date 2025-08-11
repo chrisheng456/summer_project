@@ -1,0 +1,137 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\backend(sqlite)\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\backend(sqlite)\\app\\api.py||{3B902123-F8A7-4915-9F01-361F908088D0}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:app\\api.py||{3B902123-F8A7-4915-9F01-361F908088D0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\backend(sqlite)\\app\\config.py||{3B902123-F8A7-4915-9F01-361F908088D0}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:app\\config.py||{3B902123-F8A7-4915-9F01-361F908088D0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\backend(sqlite)\\app\\models.py||{3B902123-F8A7-4915-9F01-361F908088D0}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:app\\models.py||{3B902123-F8A7-4915-9F01-361F908088D0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\backend(sqlite)\\app\\__init__.py||{3B902123-F8A7-4915-9F01-361F908088D0}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:app\\__init__.py||{3B902123-F8A7-4915-9F01-361F908088D0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\backend(sqlite)\\uv.lock||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:uv.lock||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\backend(sqlite)\\meeting_minutes.db||{25834150-CD7E-11D0-92DF-00A0C9138C45}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:meeting_minutes.db||{25834150-CD7E-11D0-92DF-00A0C9138C45}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\backend(sqlite)\\main.py||{3B902123-F8A7-4915-9F01-361F908088D0}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:main.py||{3B902123-F8A7-4915-9F01-361F908088D0}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 2,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "config.py",
+              "DocumentMoniker": "D:\\backend(sqlite)\\app\\config.py",
+              "RelativeDocumentMoniker": "app\\config.py",
+              "ToolTip": "D:\\backend(sqlite)\\app\\config.py",
+              "RelativeToolTip": "app\\config.py",
+              "ViewState": "AgIAAAAAAAAAAAAAAADwvwAAAAAAAAAAAAAAAA==",
+              "Icon": "00000000-0000-0000-0000-000000000000.000000|iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAARXSURBVFhHxZdfiFR1FMc/v3vnzzqrbbvmuqWJCsk2BjW5ML0kK4TkQyEE6dMyCBeqhyR72S2I6KGIejEfhx56kLKMooxArZTMXCIXpBalpJqUTSfN3dm9d6fZ3\u002B/0cOfOztz50xW1vnC4vznn/s75/s45v3MZ\u002BD8hImHVfw4VVgRwHOdG2F0EhvP5/M9hQxgdCezduzes/lfs3r2bdDo9OTk52ROFhBVW3AyMjIykM5nMZeCY4zhrwvZ63BICALlcLlMl8aXjOKvD9gCxsKIVxsfHw6oGDA0NYdt2WE0ul8sAExMTE8ccxxnO5/MXwu9EysDQ0FBHaRU8QC6Xy6TT6RngWNjGrWrCdsjn803xmhQB6glcTwk8zwubARgdHW1JoC0cxxHXdcV1XSmVSh0leM91XfE8ryb1\u002BnZzJVIP2LbdUWKxGIlEkiuecO6Sx\u002BnCDGf/mKM4p0kkEh17pG1KopZgcHCQ05eE/Sd/4a9ZD6M1Rmu0XsBozfLuBGNPbOL898fZsWNHU7wmRYB6AlrrsLmGxJIUT\u002B47wa7N67k87fL\u002ByfNNJFJxi/3PPcKKvt6meDdcgmm3QqWygK3AUmCMwRhdFX89485TkRgisjTsOxKB8fHxtmKMYIzmrc9/4N2vf6qdflEMRmuqHdg0\u002BJpSEqBdCSzLwo7F\u002BXFqlqulMkYMc/MVRAxiBBHDqXNTnDp7EV0jscChl7ayMjXlh0ys/R37jj1KqYORCARQSlEWmxc\u002BOMNvxVLNeX2g1mvNkZfvp08fqDqKQ98eTWzFpusqQbFY5MPvLlCoBa9KqObNa42imkXRsFCC0mEbeCoSgWDmr1q1iolfrzQ4NsavcWvxbalknGWJa2AqoMtgyuCdAdgciUDQ8ZZlUfhztua4pdSdXIymp7uLN3c9SMz9yg9syj6JcgGkMhipB4JBNDw8zLbXj2C0rtbXv\u002BcP3dPPs1u7WL6kFPICSesazJ4AXfIzYCog1efad6Jdw6AEIkJ3wmo48YaB23ht\u002ByXuUu\u002BRnP\u002BsTg6RdD\u002BCmcOwML2Y\u002BiADugLWkmgEghKICOv7lzbUf1tmJco71bhBdDVIXdBa4Oo6uQ5U7FwkAsEtKBQKDN97Z0MGelIGgjEDjY0WDlqvW7YF4JNIBLLZLNlsloGBAR59YDXbMmuwlT8BCf5biOkcOPit/4buLPQ\u002BPgfsi9SE9bAsi3g8jmVVueurUHxlscFMBeJroOs\u002Bn5Ro/9m7Hezap2ASeEYpdTxSBuphjKFcLuN5HvPz876ydrrqab1JuLIfrh6Ea59C8W0wJYC1QJdSaqNS6jhRP0btICL\u002BWA3XNyDS/zTc/QaYCiIWwJRSqlzvo2MJwrpWGBsbY133xzD77eL9rpViNcR6QVl4/a8eSKVSO8P72xKIChHZCOYoM0cHmP4CvLP\u002BvVdx6NoAPVuoLH3MjSeSDyulTof33xSIyO0i8ryIfCMiJfFREpGTIvKiiCwP7wnwD7tNXzLGHmUXAAAAAElFTkSuQmCC",
+              "WhenOpened": "2025-08-07T11:05:32.347Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "models.py",
+              "DocumentMoniker": "D:\\backend(sqlite)\\app\\models.py",
+              "RelativeDocumentMoniker": "app\\models.py",
+              "ToolTip": "D:\\backend(sqlite)\\app\\models.py",
+              "RelativeToolTip": "app\\models.py",
+              "ViewState": "AgIAAAwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "00000000-0000-0000-0000-000000000000.000000|iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAARXSURBVFhHxZdfiFR1FMc/v3vnzzqrbbvmuqWJCsk2BjW5ML0kK4TkQyEE6dMyCBeqhyR72S2I6KGIejEfhx56kLKMooxArZTMXCIXpBalpJqUTSfN3dm9d6fZ3\u002B/0cOfOztz50xW1vnC4vznn/s75/s45v3MZ\u002BD8hImHVfw4VVgRwHOdG2F0EhvP5/M9hQxgdCezduzes/lfs3r2bdDo9OTk52ROFhBVW3AyMjIykM5nMZeCY4zhrwvZ63BICALlcLlMl8aXjOKvD9gCxsKIVxsfHw6oGDA0NYdt2WE0ul8sAExMTE8ccxxnO5/MXwu9EysDQ0FBHaRU8QC6Xy6TT6RngWNjGrWrCdsjn803xmhQB6glcTwk8zwubARgdHW1JoC0cxxHXdcV1XSmVSh0leM91XfE8ryb1\u002BnZzJVIP2LbdUWKxGIlEkiuecO6Sx\u002BnCDGf/mKM4p0kkEh17pG1KopZgcHCQ05eE/Sd/4a9ZD6M1Rmu0XsBozfLuBGNPbOL898fZsWNHU7wmRYB6AlrrsLmGxJIUT\u002B47wa7N67k87fL\u002ByfNNJFJxi/3PPcKKvt6meDdcgmm3QqWygK3AUmCMwRhdFX89485TkRgisjTsOxKB8fHxtmKMYIzmrc9/4N2vf6qdflEMRmuqHdg0\u002BJpSEqBdCSzLwo7F\u002BXFqlqulMkYMc/MVRAxiBBHDqXNTnDp7EV0jscChl7ayMjXlh0ys/R37jj1KqYORCARQSlEWmxc\u002BOMNvxVLNeX2g1mvNkZfvp08fqDqKQ98eTWzFpusqQbFY5MPvLlCoBa9KqObNa42imkXRsFCC0mEbeCoSgWDmr1q1iolfrzQ4NsavcWvxbalknGWJa2AqoMtgyuCdAdgciUDQ8ZZlUfhztua4pdSdXIymp7uLN3c9SMz9yg9syj6JcgGkMhipB4JBNDw8zLbXj2C0rtbXv\u002BcP3dPPs1u7WL6kFPICSesazJ4AXfIzYCog1efad6Jdw6AEIkJ3wmo48YaB23ht\u002ByXuUu\u002BRnP\u002BsTg6RdD\u002BCmcOwML2Y\u002BiADugLWkmgEghKICOv7lzbUf1tmJco71bhBdDVIXdBa4Oo6uQ5U7FwkAsEtKBQKDN97Z0MGelIGgjEDjY0WDlqvW7YF4JNIBLLZLNlsloGBAR59YDXbMmuwlT8BCf5biOkcOPit/4buLPQ\u002BPgfsi9SE9bAsi3g8jmVVueurUHxlscFMBeJroOs\u002Bn5Ro/9m7Hezap2ASeEYpdTxSBuphjKFcLuN5HvPz876ydrrqab1JuLIfrh6Ea59C8W0wJYC1QJdSaqNS6jhRP0btICL\u002BWA3XNyDS/zTc/QaYCiIWwJRSqlzvo2MJwrpWGBsbY133xzD77eL9rpViNcR6QVl4/a8eSKVSO8P72xKIChHZCOYoM0cHmP4CvLP\u002BvVdx6NoAPVuoLH3MjSeSDyulTof33xSIyO0i8ryIfCMiJfFREpGTIvKiiCwP7wnwD7tNXzLGHmUXAAAAAElFTkSuQmCC",
+              "WhenOpened": "2025-08-07T11:05:26.845Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "api.py",
+              "DocumentMoniker": "D:\\backend(sqlite)\\app\\api.py",
+              "RelativeDocumentMoniker": "app\\api.py",
+              "ToolTip": "D:\\backend(sqlite)\\app\\api.py",
+              "RelativeToolTip": "app\\api.py",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "00000000-0000-0000-0000-000000000000.000000|iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAARXSURBVFhHxZdfiFR1FMc/v3vnzzqrbbvmuqWJCsk2BjW5ML0kK4TkQyEE6dMyCBeqhyR72S2I6KGIejEfhx56kLKMooxArZTMXCIXpBalpJqUTSfN3dm9d6fZ3\u002B/0cOfOztz50xW1vnC4vznn/s75/s45v3MZ\u002BD8hImHVfw4VVgRwHOdG2F0EhvP5/M9hQxgdCezduzes/lfs3r2bdDo9OTk52ROFhBVW3AyMjIykM5nMZeCY4zhrwvZ63BICALlcLlMl8aXjOKvD9gCxsKIVxsfHw6oGDA0NYdt2WE0ul8sAExMTE8ccxxnO5/MXwu9EysDQ0FBHaRU8QC6Xy6TT6RngWNjGrWrCdsjn803xmhQB6glcTwk8zwubARgdHW1JoC0cxxHXdcV1XSmVSh0leM91XfE8ryb1\u002BnZzJVIP2LbdUWKxGIlEkiuecO6Sx\u002BnCDGf/mKM4p0kkEh17pG1KopZgcHCQ05eE/Sd/4a9ZD6M1Rmu0XsBozfLuBGNPbOL898fZsWNHU7wmRYB6AlrrsLmGxJIUT\u002B47wa7N67k87fL\u002ByfNNJFJxi/3PPcKKvt6meDdcgmm3QqWygK3AUmCMwRhdFX89485TkRgisjTsOxKB8fHxtmKMYIzmrc9/4N2vf6qdflEMRmuqHdg0\u002BJpSEqBdCSzLwo7F\u002BXFqlqulMkYMc/MVRAxiBBHDqXNTnDp7EV0jscChl7ayMjXlh0ys/R37jj1KqYORCARQSlEWmxc\u002BOMNvxVLNeX2g1mvNkZfvp08fqDqKQ98eTWzFpusqQbFY5MPvLlCoBa9KqObNa42imkXRsFCC0mEbeCoSgWDmr1q1iolfrzQ4NsavcWvxbalknGWJa2AqoMtgyuCdAdgciUDQ8ZZlUfhztua4pdSdXIymp7uLN3c9SMz9yg9syj6JcgGkMhipB4JBNDw8zLbXj2C0rtbXv\u002BcP3dPPs1u7WL6kFPICSesazJ4AXfIzYCog1efad6Jdw6AEIkJ3wmo48YaB23ht\u002ByXuUu\u002BRnP\u002BsTg6RdD\u002BCmcOwML2Y\u002BiADugLWkmgEghKICOv7lzbUf1tmJco71bhBdDVIXdBa4Oo6uQ5U7FwkAsEtKBQKDN97Z0MGelIGgjEDjY0WDlqvW7YF4JNIBLLZLNlsloGBAR59YDXbMmuwlT8BCf5biOkcOPit/4buLPQ\u002BPgfsi9SE9bAsi3g8jmVVueurUHxlscFMBeJroOs\u002Bn5Ro/9m7Hezap2ASeEYpdTxSBuphjKFcLuN5HvPz876ydrrqab1JuLIfrh6Ea59C8W0wJYC1QJdSaqNS6jhRP0btICL\u002BWA3XNyDS/zTc/QaYCiIWwJRSqlzvo2MJwrpWGBsbY133xzD77eL9rpViNcR6QVl4/a8eSKVSO8P72xKIChHZCOYoM0cHmP4CvLP\u002BvVdx6NoAPVuoLH3MjSeSDyulTof33xSIyO0i8ryIfCMiJfFREpGTIvKiiCwP7wnwD7tNXzLGHmUXAAAAAElFTkSuQmCC",
+              "WhenOpened": "2025-08-07T11:05:18.427Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "__init__.py",
+              "DocumentMoniker": "D:\\backend(sqlite)\\app\\__init__.py",
+              "RelativeDocumentMoniker": "app\\__init__.py",
+              "ToolTip": "D:\\backend(sqlite)\\app\\__init__.py",
+              "RelativeToolTip": "app\\__init__.py",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "00000000-0000-0000-0000-000000000000.000000|iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAARXSURBVFhHxZdfiFR1FMc/v3vnzzqrbbvmuqWJCsk2BjW5ML0kK4TkQyEE6dMyCBeqhyR72S2I6KGIejEfhx56kLKMooxArZTMXCIXpBalpJqUTSfN3dm9d6fZ3\u002B/0cOfOztz50xW1vnC4vznn/s75/s45v3MZ\u002BD8hImHVfw4VVgRwHOdG2F0EhvP5/M9hQxgdCezduzes/lfs3r2bdDo9OTk52ROFhBVW3AyMjIykM5nMZeCY4zhrwvZ63BICALlcLlMl8aXjOKvD9gCxsKIVxsfHw6oGDA0NYdt2WE0ul8sAExMTE8ccxxnO5/MXwu9EysDQ0FBHaRU8QC6Xy6TT6RngWNjGrWrCdsjn803xmhQB6glcTwk8zwubARgdHW1JoC0cxxHXdcV1XSmVSh0leM91XfE8ryb1\u002BnZzJVIP2LbdUWKxGIlEkiuecO6Sx\u002BnCDGf/mKM4p0kkEh17pG1KopZgcHCQ05eE/Sd/4a9ZD6M1Rmu0XsBozfLuBGNPbOL898fZsWNHU7wmRYB6AlrrsLmGxJIUT\u002B47wa7N67k87fL\u002ByfNNJFJxi/3PPcKKvt6meDdcgmm3QqWygK3AUmCMwRhdFX89485TkRgisjTsOxKB8fHxtmKMYIzmrc9/4N2vf6qdflEMRmuqHdg0\u002BJpSEqBdCSzLwo7F\u002BXFqlqulMkYMc/MVRAxiBBHDqXNTnDp7EV0jscChl7ayMjXlh0ys/R37jj1KqYORCARQSlEWmxc\u002BOMNvxVLNeX2g1mvNkZfvp08fqDqKQ98eTWzFpusqQbFY5MPvLlCoBa9KqObNa42imkXRsFCC0mEbeCoSgWDmr1q1iolfrzQ4NsavcWvxbalknGWJa2AqoMtgyuCdAdgciUDQ8ZZlUfhztua4pdSdXIymp7uLN3c9SMz9yg9syj6JcgGkMhipB4JBNDw8zLbXj2C0rtbXv\u002BcP3dPPs1u7WL6kFPICSesazJ4AXfIzYCog1efad6Jdw6AEIkJ3wmo48YaB23ht\u002ByXuUu\u002BRnP\u002BsTg6RdD\u002BCmcOwML2Y\u002BiADugLWkmgEghKICOv7lzbUf1tmJco71bhBdDVIXdBa4Oo6uQ5U7FwkAsEtKBQKDN97Z0MGelIGgjEDjY0WDlqvW7YF4JNIBLLZLNlsloGBAR59YDXbMmuwlT8BCf5biOkcOPit/4buLPQ\u002BPgfsi9SE9bAsi3g8jmVVueurUHxlscFMBeJroOs\u002Bn5Ro/9m7Hezap2ASeEYpdTxSBuphjKFcLuN5HvPz876ydrrqab1JuLIfrh6Ea59C8W0wJYC1QJdSaqNS6jhRP0btICL\u002BWA3XNyDS/zTc/QaYCiIWwJRSqlzvo2MJwrpWGBsbY133xzD77eL9rpViNcR6QVl4/a8eSKVSO8P72xKIChHZCOYoM0cHmP4CvLP\u002BvVdx6NoAPVuoLH3MjSeSDyulTof33xSIyO0i8ryIfCMiJfFREpGTIvKiiCwP7wnwD7tNXzLGHmUXAAAAAElFTkSuQmCC",
+              "WhenOpened": "2025-08-07T11:05:21.892Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "uv.lock",
+              "DocumentMoniker": "D:\\backend(sqlite)\\uv.lock",
+              "RelativeDocumentMoniker": "uv.lock",
+              "ToolTip": "D:\\backend(sqlite)\\uv.lock",
+              "RelativeToolTip": "uv.lock",
+              "ViewState": "AgIAAAAAAAAAAAAAAADwvwAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2025-08-07T11:05:14.705Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "meeting_minutes.db",
+              "DocumentMoniker": "D:\\backend(sqlite)\\meeting_minutes.db",
+              "RelativeDocumentMoniker": "meeting_minutes.db",
+              "ToolTip": "D:\\backend(sqlite)\\meeting_minutes.db",
+              "RelativeToolTip": "meeting_minutes.db",
+              "Icon": "00000000-0000-0000-0000-000000000000.000000|iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAN5SURBVFhH7ZddTFtVHMB/mJZSDGtZ2QZoByMbk304pgO06AbqSKaZyaLJojgz5cGY6BKFpmHRzMUoTpy\u002B\u002BeCrT4tfMS4sMUGSiclGVT4CLchMOyEp4SsNpS1t77nXB5Csp0Av6wgv/pLz8j///zm/c/85N/fCZqJpWpYcA2h1OX2glcpxfWT5FZVT7e3tffLMSqwi0KJd/PBjOayLC\u002B\u002Bfx2w2B0PhhXo9EvfJgXvB2dearHn353Q5nc5KeU5mQwQKi4p1S2yIAOuQ2DABdEpsqAA6JNZ9Czy3buMbC2DKNnKs5hBGgyFp/ovLnxIMBpNidxBsu/RZvhxModXVosXj8eURiUS06dmgFo/HtWtdN7RvO7q0b652arfHA1o4HNHGA5NJ\u002BauNVleLJu\u002BlqwW/uge53tNPZ/cfzIfDCCEQQtDTO8TVzm5\u002B6e5hcnpWLtNFWoGJqVnCkQiqEITCEYQqUJcEFuIxYrEYqirwjvrkUl2kFbDlb2GbzYoiBEIoFBbYeL7hSaoOVSCURRGzycTBit1yqS7SChgNBvaW7Vw\u002BddEOG0aDgVJ78XIrthVY2Wq1yKW6SCsQjizwm7sfIQSqKhjw/IV31Ie7bxBVLLZj5JafoZFRuVQX6QWiUULzYVR18bRzoXncfYMMjfyNWIqpqmBqZtWrtyZpBbbb8tlfXkaOycQue/FiKxQFVQisljzsDxSSm5PDvvIybvb2Mx6YkJdYk7QCAAcrdnPqRD2OqkosW/KWe//4ow/TUFdL44sn8f0zxtdXvuPzL78CIBKJysusSPJrTAeHDzyEb2wcTdUo2rGdH679zM3fexFCQUkkiEWjXGhrZ2pyCte75yixPygvkYSuJ3AnJfZi6hzV1D9RA8AN95\u002BEQiGyjUZePf0Cjx05jM/vZ25uDo93WC5PYd0CMk2Np1GUBDWPVOKoPkLTmZfJt1go31PGiYZn5PQUMha48v2PKIkE3uERpmdm8HiHmQgEGOgf4KeODjk9hYwFTNlGRCLB4JCHt5tdXPzoE4SSQFEUcs25cnoKGQu8/spLuN45x/Gnji1tnOCD987T6mzm6fo6OT2FjAUKbFup2LuHo7UOjtY6OHumkQP791FTXSWnrkjGAv9RWrKTt958g5PPPStPrck9E7hb/hfYdIFVvoqbfZB1lz\u002Bna6H52y5d3iVHN5V/AfK3tNgdnL6eAAAAAElFTkSuQmCC",
+              "WhenOpened": "2025-08-07T11:05:12.498Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "main.py",
+              "DocumentMoniker": "D:\\backend(sqlite)\\main.py",
+              "RelativeDocumentMoniker": "main.py",
+              "ToolTip": "D:\\backend(sqlite)\\main.py",
+              "RelativeToolTip": "main.py",
+              "ViewState": "AgIAAAAAAAAAAAAAAADwvwAAAAAAAAAAAAAAAA==",
+              "Icon": "00000000-0000-0000-0000-000000000000.000000|iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAARXSURBVFhHxZdfiFR1FMc/v3vnzzqrbbvmuqWJCsk2BjW5ML0kK4TkQyEE6dMyCBeqhyR72S2I6KGIejEfhx56kLKMooxArZTMXCIXpBalpJqUTSfN3dm9d6fZ3\u002B/0cOfOztz50xW1vnC4vznn/s75/s45v3MZ\u002BD8hImHVfw4VVgRwHOdG2F0EhvP5/M9hQxgdCezduzes/lfs3r2bdDo9OTk52ROFhBVW3AyMjIykM5nMZeCY4zhrwvZ63BICALlcLlMl8aXjOKvD9gCxsKIVxsfHw6oGDA0NYdt2WE0ul8sAExMTE8ccxxnO5/MXwu9EysDQ0FBHaRU8QC6Xy6TT6RngWNjGrWrCdsjn803xmhQB6glcTwk8zwubARgdHW1JoC0cxxHXdcV1XSmVSh0leM91XfE8ryb1\u002BnZzJVIP2LbdUWKxGIlEkiuecO6Sx\u002BnCDGf/mKM4p0kkEh17pG1KopZgcHCQ05eE/Sd/4a9ZD6M1Rmu0XsBozfLuBGNPbOL898fZsWNHU7wmRYB6AlrrsLmGxJIUT\u002B47wa7N67k87fL\u002ByfNNJFJxi/3PPcKKvt6meDdcgmm3QqWygK3AUmCMwRhdFX89485TkRgisjTsOxKB8fHxtmKMYIzmrc9/4N2vf6qdflEMRmuqHdg0\u002BJpSEqBdCSzLwo7F\u002BXFqlqulMkYMc/MVRAxiBBHDqXNTnDp7EV0jscChl7ayMjXlh0ys/R37jj1KqYORCARQSlEWmxc\u002BOMNvxVLNeX2g1mvNkZfvp08fqDqKQ98eTWzFpusqQbFY5MPvLlCoBa9KqObNa42imkXRsFCC0mEbeCoSgWDmr1q1iolfrzQ4NsavcWvxbalknGWJa2AqoMtgyuCdAdgciUDQ8ZZlUfhztua4pdSdXIymp7uLN3c9SMz9yg9syj6JcgGkMhipB4JBNDw8zLbXj2C0rtbXv\u002BcP3dPPs1u7WL6kFPICSesazJ4AXfIzYCog1efad6Jdw6AEIkJ3wmo48YaB23ht\u002ByXuUu\u002BRnP\u002BsTg6RdD\u002BCmcOwML2Y\u002BiADugLWkmgEghKICOv7lzbUf1tmJco71bhBdDVIXdBa4Oo6uQ5U7FwkAsEtKBQKDN97Z0MGelIGgjEDjY0WDlqvW7YF4JNIBLLZLNlsloGBAR59YDXbMmuwlT8BCf5biOkcOPit/4buLPQ\u002BPgfsi9SE9bAsi3g8jmVVueurUHxlscFMBeJroOs\u002Bn5Ro/9m7Hezap2ASeEYpdTxSBuphjKFcLuN5HvPz876ydrrqab1JuLIfrh6Ea59C8W0wJYC1QJdSaqNS6jhRP0btICL\u002BWA3XNyDS/zTc/QaYCiIWwJRSqlzvo2MJwrpWGBsbY133xzD77eL9rpViNcR6QVl4/a8eSKVSO8P72xKIChHZCOYoM0cHmP4CvLP\u002BvVdx6NoAPVuoLH3MjSeSDyulTof33xSIyO0i8ryIfCMiJfFREpGTIvKiiCwP7wnwD7tNXzLGHmUXAAAAAElFTkSuQmCC",
+              "WhenOpened": "2025-08-07T11:05:08.415Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

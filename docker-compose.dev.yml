@@ -1,0 +1,10 @@
+services:
+  db:
+    image: mariadb:11.7
+    environment:
+      MYSQL_ROOT_PASSWORD: ${DB_PASS}
+      MYSQL_DATABASE: ${DB_NAME}
+    volumes:
+      - ./.docker/db:/var/lib/mysql
+    ports:
+      - "3306:3306"
