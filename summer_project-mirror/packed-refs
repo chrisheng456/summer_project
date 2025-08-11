@@ -1,8 +1,0 @@
-# pack-refs with: peeled fully-peeled sorted 
-e1ba66bf48cf58f6eab88c03ee258f04934a81b0 refs/heads/Rui
-8e8dc7fe92944d205dac5c0270c96564d1ef5ee1 refs/heads/Zibin
-152f76f2b17faed2c268a5601fd944a925a8fb4f refs/heads/backend-api-clean
-fd75d38b08973056520ebb53bfff5fa69c9a351e refs/heads/main
-e29229e804aac83a5678852008afb0f2a3c3fd4e refs/pull/1/head
-8e8dc7fe92944d205dac5c0270c96564d1ef5ee1 refs/pull/2/head
-85e5d7438aa0b8100818fcf3f7667ed560b4e648 refs/pull/2/merge
