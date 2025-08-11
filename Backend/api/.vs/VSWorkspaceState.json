@@ -1,0 +1,16 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\app",
+    "\\app\\pipeline",
+    "\\app\\pipeline\\s00_audio_converter",
+    "\\app\\pipeline\\s01_speech_to_text",
+    "\\app\\pipeline\\s02_data_cleaning",
+    "\\app\\pipeline\\s03_speaker_diarization",
+    "\\app\\pipeline\\s04_customer_api",
+    "\\app\\pipeline\\s05_text_classification",
+    "\\app\\utils"
+  ],
+  "SelectedNode": "\\app\\pipeline\\s05_text_classification\\__init__.py",
+  "PreviewInSolutionExplorer": false
+}
