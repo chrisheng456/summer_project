@@ -3,7 +3,7 @@ import torch
 from loguru import logger
 from transformers import pipeline, AutoTokenizer
 
-from app.schema.process_information import ProcessInformation
+from ...schema.process_information import ProcessInformation
 
 EXPL_MODEL = "sshleifer/distilbart-cnn-12-6"
 MAX_EXPL_TOKS = 25

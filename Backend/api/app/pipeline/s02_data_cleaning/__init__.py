@@ -2,7 +2,7 @@ import re
 import spacy
 from nltk.tokenize import sent_tokenize
 
-from app.schema.process_information import ProcessInformation
+from ...schema.process_information import ProcessInformation
 
 nlp = spacy.load("en_core_web_sm")
 

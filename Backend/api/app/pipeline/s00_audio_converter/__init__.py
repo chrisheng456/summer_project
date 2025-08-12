@@ -2,7 +2,7 @@ from loguru import logger
 from pydub import AudioSegment
 from pathlib import Path
 
-from app.schema.process_information import ProcessInformation
+from ...schema.process_information import ProcessInformation
 
 
 class AudioConverterPipeline:

@@ -1,7 +1,7 @@
 from pyannote.audio import Pipeline
 
-from app.config import app_config
-from app.schema.process_information import ProcessInformation
+from ...config import app_config
+from ...schema.process_information import ProcessInformation
 
 
 class SpeakerDiarizationPipeline:

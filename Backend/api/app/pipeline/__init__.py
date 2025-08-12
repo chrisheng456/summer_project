@@ -4,8 +4,8 @@ import tempfile
 from loguru import logger
 from fastapi import UploadFile
 
-from app.schema.process_information import ProcessInformation
-from app.models import ConversionTask
+from ..schema.process_information import ProcessInformation
+from ..models import ConversionTask
 
 from .s00_audio_converter import AudioConverterPipeline
 from .s01_speech_to_text import SpeechToTextPipeline

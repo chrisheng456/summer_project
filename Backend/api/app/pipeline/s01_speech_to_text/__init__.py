@@ -3,8 +3,8 @@ from typing import List, Dict, Optional
 import time
 import azure.cognitiveservices.speech as speechsdk
 
-from app.schema.process_information import ProcessInformation
-from app.config import app_config
+from ...schema.process_information import ProcessInformation
+from ...config import app_config
 
 
 class SpeechToTextPipeline:
