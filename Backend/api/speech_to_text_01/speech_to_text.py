@@ -18,7 +18,7 @@ from docx import Document                         # pip install python-docx
 
 # 1. 读取密钥
 speech_key     = os.getenv("AZURE_SPEECH_KEY")
-service_region = os.getenv("AZURE_SPEECH_REGION", "ukwest")
+service_region = os.getenv("AZURE_SPEECH_REGION", "uksouth")
 if not speech_key:
     raise RuntimeError("❌ 找不到 AZURE_SPEECH_KEY，请先在系统变量或 .env 中设置")
 
