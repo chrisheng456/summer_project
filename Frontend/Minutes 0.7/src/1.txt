@@ -1,0 +1,87 @@
+	•	src/api/
+放所有“请求后端”的代码：http.ts（axios 实例）、各模块接口封装 meeting.api.ts、user.api.ts 等。
+小技巧：做一个 index.ts 统一导出；baseURL 放 .env 里。
+	•	src/assets/
+静态资源：图片、字体、全局样式（如 styles/variables.css）。会被打包处理。
+组件里引用：@/assets/logo.png。
+	•	src/components/
+可复用的通用组件：按钮、表格、对话框、上传组件等（不与路由强绑定）。
+	•	src/pages/（或 views）
+路由页面级组件：Home.vue、MeetingDetail.vue、Login.vue。
+路由里 path -> component 指向这里的文件。
+	•	src/router/
+路由配置：index.ts（创建 createRouter、createWebHistory，定义 routes、守卫、权限控制等）。
+	•	src/shims/
+TypeScript 的“声明补丁”。例如 shims-vue.d.ts 让 TS 认识 *.vue、*.svg 的导入类型。
+	•	src/types/
+TypeScript 类型与接口：meeting.d.ts / interface.ts（如 MeetingRecord, ApiResponse<T>）。
+建议导出公共类型给 api 和组件复用。
+	•	App.vue
+根组件：全局布局入口（顶部导航、侧边栏、<router-view/> 放页面内容）。
+	•	main.ts
+应用启动入口：创建 app、注册路由 & Pinia、挂载到 #app。
+（如果要启用 Mock，一定要在这里最早 import mock 文件）
+
+
+
+任务：
+
+
+迁移总流程（清单）
+	1.	关掉 Mock（或做成可开关）
+	2.	建 axios 实例（src/api/http.ts，baseURL 走 .env）
+	3.	按模块封装接口（meeting.api.ts、user.api.ts）
+	4.	把 fetchMeetingData 改为调真实 API 并做“字段映射”
+	5.	登录态——login.ts 调后端，保存 token，axios 拦截器带上
+	6.	在页面替换调用（不再调用 loadData('/api/meetings')）
+	7.	本地验证（Network 200、响应结构正确）
+	8.	（可选）兜底：后端挂了回退 Mock（开发友好）
+
+
+前端这边的分工
+	1.	types（领域模型）
+你贴的 MeetingRecord / MeetingData 就是“前端要用的数据形状”。
+
+这些类型定义了页面真正需要的数据，是你在组件里渲染、在 Pinia 里保存的“标准格式”。
+
+	2.	api（请求层）
+只负责把后端的数据拉回来（可能是别的字段名、别的结构），不要做业务处理。
+	3.	service/mapper（映射层）
+把后端返回的原始结构 → 转成 types 里定义的结构。这一步叫“修剪/映射/适配”。
+
+好处：后端字段改名时，只改映射，不用全项目搜一遍。
+
+	4.	store/hook（状态与使用）
+把转换后的数据放到 Pinia 或组合式函数里，提供给页面。
+
+
+
+---
+
+现在还需要改：
+
+1.上边栏的名称
+2.连接api：
+	1.账号
+	2.连接后端
+	3.合并ai询问，可不可以识别？
+	4.transaction界面的下载按钮
+3.页面中的中文
+4.代码中的注释
+5.上传页面的bug
+6.账号密码找回
+7.transcrption页面
+
+
+---
+1.连接不成功问题
+
+2.登录账号，怎么某个账号对一个某个数据
+3.是否要连接客户的api，显示
+4.scheme_id之类的，应该是对应客户账号的某个账号下的所有会议信息，如果在我们不连接客户的情况下怎么做
+那我们如果单独做怎么做
+ 4.1只做公共的，同一个数据库控制不同账户，但是看到的上传历史是公共的，不对应相应账号
+
+5.连接成功后json数据形式
+ 5.1没有decision，conflict怎么办
+6.明天和客户开会说哪些？？？？
