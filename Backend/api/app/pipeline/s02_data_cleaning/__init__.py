@@ -6,144 +6,53 @@ from ...schema.process_information import ProcessInformation
 
 nlp = spacy.load("en_core_web_sm")
 
+# 仅保留真正“口头填充”的冗余词（删除）；保留有含义的语气词
 PURE_FILLER_WORDS = {
-    "uh",
-    "um",
-    "ah",
-    "er",
-    "hm",
-    "hmm",
-    "eh",
-    "mhm",
-    "uh-huh",
-    "uh-uh",
-    "erm",
-    "ummm",
-    "uhm",
-    "mm",
-    "mmm",
-    "huh",
+    "uh","um","ah","er","hm","hmm","eh","mhm","uh-huh","uh-uh","erm","ummm","uhm","mm","mmm","huh",
 }
 
-MEANINGFUL_INTERJECTIONS = {
-    "yes",
-    "no",
-    "yeah",
-    "yep",
-    "nope",
-    "okay",
-    "ok",
-    "right",
-    "oh",
-    "ah",
-    "wow",
-    "great",
-    "good",
-    "fine",
-    "exactly",
-    "absolutely",
-    "certainly",
-    "sure",
-    "agreed",
-    "understood",
-    "got it",
-    "please",
-    "thanks",
-    "thank you",
-}
-
+# 缩写替换
 ABBREVIATIONS = {
-    "btw": "by the way",
-    "w/": "with",
-    "w/o": "without",
-    "e.g.": "for example",
-    "i.e.": "that is",
-    "etc.": "and so on",
-    "vs.": "versus",
-    "approx.": "approximately",
-    "&": "and",
-    "+": "plus",
-    "re:": "regarding",
-    "asap": "as soon as possible",
-    "afaik": "as far as i know",
-    "imo": "in my opinion",
-    "imho": "in my humble opinion",
-    "fyi": "for your information",
-    "tbh": "to be honest",
-    "n/a": "not applicable",
+    "btw":"by the way","w/":"with","w/o":"without","e.g.":"for example","i.e.":"that is","etc.":"and so on",
+    "&":"and","+":"plus","re:":"regarding","asap":"as soon as possible","fyi":"for your information",
 }
 
+# 简单噪音模式
 NOISE_PATTERNS = [
-    r"\([^)]*\)",  # 删除括号内容
-    r"\[[^\]]*\]",  # 删除方括号内容
-    # 删除特定噪音词
-    r"\b(?:cough|laugh|laughter|applause|breath|sigh|noise|static)\b",
-    r"\b(?:\w*[\*#]\w*)\b",  # 删除含特殊符号的词
+    r"\([^)]*\)", r"\[[^\]]*\]", r"\b(?:cough|laugh|laughter|applause|breath|sigh|noise|static)\b",
+    r"\b(?:\w*[\*#]\w*)\b",
 ]
 
-
-def clean_text(text):
+def clean_text(text: str) -> str:
+    # 1) 替换缩写
     for abbr, full in ABBREVIATIONS.items():
-        text = re.sub(
-            rf"\b{re.escape(abbr)}\b", full, text, flags=re.IGNORECASE
-        )
-    filler_pattern = (
-        r"\b(?:" + "|".join(map(re.escape, PURE_FILLER_WORDS)) + r")\b"
-    )
-    text = re.sub(filler_pattern, "", text, flags=re.IGNORECASE)
-    for pattern in NOISE_PATTERNS:
-        text = re.sub(pattern, "", text, flags=re.IGNORECASE)
+        text = re.sub(rf"\b{re.escape(abbr)}\b", full, text, flags=re.IGNORECASE)
+    # 2) 删除冗余口头词
+    filler = r"\b(?:" + "|".join(map(re.escape, PURE_FILLER_WORDS)) + r")\b"
+    text = re.sub(filler, "", text, flags=re.IGNORECASE)
+    # 3) 去噪
+    for p in NOISE_PATTERNS:
+        text = re.sub(p, "", text, flags=re.IGNORECASE)
+    # 4) 规范标点与空格
     text = re.sub(r"([,.?!;:])\1+", r"\1", text)
     text = re.sub(r"\s+([,.?!;:])", r"\1", text)
     text = re.sub(r"([,.?!;:])(\w)", r"\1 \2", text)
-    text = re.sub(r"\s{2,}", " ", text)
-    text = text.strip()
-    if text and text[-1] not in {".", "?", "!"}:
+    text = re.sub(r"\s{2,}", " ", text).strip()
+    if text and text[-1] not in {".","?","!"}:
         text += "."
     return text
 
-
-def should_keep_sentence(sentence):
-    if not sentence.strip():
-        return False
-    doc = nlp(sentence)
-    has_content = any(
-        token.pos_ in {"NOUN", "VERB", "ADJ", "ADV", "PROPN"}
-        or token.text.lower() in MEANINGFUL_INTERJECTIONS
-        for token in doc
-    )
-    return has_content
-
-
-def process_sentence(sentence):
-    doc = nlp(sentence)
-    tokens = [token.text for token in doc]
-    pos_tags = [token.pos_ for token in doc]
-    lemmas = [token.lemma_ for token in doc]
-    return {
-        "sentence": sentence,
-        "tokens": tokens,
-        "pos_tags": pos_tags,
-        "lemmas": lemmas,
-    }
-
-
-def process_utterance(utterance):
-    cleaned_text = clean_text(utterance["text"])
-    sentences = sent_tokenize(cleaned_text)
-    meaningful_sentences = [
-        sent for sent in sentences if should_keep_sentence(sent)
-    ]
-    processed_sentences = [
-        process_sentence(sent) for sent in meaningful_sentences
-    ]
-    return processed_sentences
-
-
 class DataCleaningPipeline:
     def process(self, info: ProcessInformation):
-        # 假设info.transcription是一个说话段落列表，每个元素有'text'字段
-        if not hasattr(info, "transcription") or not info.transcription:
+        """
+        就地覆盖每条识别行的 text；不再产生 tokens/lemmas/processed 等冗余字段。
+        仅当 info.transcription 存在时处理。
+        """
+        if not getattr(info, "transcription", None):
             return
-        for utterance in info.transcription:
-            utterance["processed"] = process_utterance(utterance)
+        for ln in info.transcription:
+            t = (ln.get("text") or "").strip()
+            if t:
+                ln["text"] = clean_text(t)
+        # 若前面有地方读取 cleaned_transcription，可按需复制一份：
+        info.cleaned_transcription = info.transcription

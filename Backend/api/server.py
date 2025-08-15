@@ -4,12 +4,23 @@ from __future__ import annotations
 import os
 from typing import Any, Dict
 
-from fastapi import FastAPI, UploadFile, File, Depends, HTTPException, Body
+from fastapi import (
+    FastAPI,
+    UploadFile,
+    File,
+    Depends,
+    HTTPException,
+    Body,
+    Response,
+    Query,
+)
 from fastapi.encoders import jsonable_encoder
 from fastapi.security import HTTPBearer, HTTPAuthorizationCredentials
 
 from .app.pipeline import process_pipeline
 from .app.utils.pp_client import PPClient
+from .app.utils.pdf_exporter import export_to_pdf
+from .app.utils.word_exporter import export_to_word
 
 app = FastAPI(title="Meeting Pipeline API")
 # 声明 Bearer 认证方案；只要任一接口使用了它，Swagger 右上角就会出现 Authorize 按钮
@@ -28,28 +39,37 @@ def health():
     return {"ok": True}
 
 
-# ---------------- 登录：返回真正的 bearer_token（JWT） ----------------
+# ---------------- 登录：返回远端 bearer_token（JWT），可选同时返回会议列表 ----------------
 @app.post("/auth/login")
-def login(payload: Dict[str, str] = Body(...)):
+def login(
+    payload: Dict[str, str] = Body(..., example={"username": "ruixiong", "password": "******"}),
+    include_meetings: bool = Query(True, description="是否在登录后立即返回会议列表"),
+):
     """
-    简单本地校验 + 远端登录：
-    - 本地仅允许 {ruixiong / Ruixiong24937!}
-    - 成功后调用客户 API /Logon，返回远端的 bearer_token（JWT）
+    - 调客户 API /Logon 登录，返回远端的 bearer_token（JWT）
     - 这个 token 就是你要在 Swagger 右上角 Authorize 里粘贴的“纯 token”（不要写 Bearer ）
+    - 若 include_meetings=True，会顺带返回会议列表
     """
     username = (payload.get("username") or "").strip()
     password = (payload.get("password") or "").strip()
-
-    if not (username == "ruixiong" and password == "Ruixiong24937!"):
-        raise HTTPException(status_code=401, detail="invalid credentials")
+    if not username or not password:
+        raise HTTPException(status_code=400, detail="username/password required")
 
     try:
         client = PPClient()
-        bearer = client.login(username, password)
+        token = client.login(username=username, password=password)
     except Exception as e:
         raise HTTPException(status_code=502, detail=f"remote login failed: {e}")
 
-    return {"ok": True, "token": bearer}
+    resp: Dict[str, Any] = {"ok": True, "token": token}
+    if include_meetings:
+        try:
+            client = PPClient(bearer_token=token)
+            resp["meetings"] = client.list_meetings()
+        except Exception as e:
+            # 不影响登录主流程
+            resp["meetings_error"] = str(e)
+    return resp
 
 
 # ---------------- 拉会议列表（需要 Authorize） ----------------
@@ -67,12 +87,31 @@ def list_meetings(creds: HTTPAuthorizationCredentials = Depends(security)):
     return {"ok": True, "meetings": meetings}
 
 
+# ---------------- 拉某个会议详情（需要 Authorize） ----------------
+@app.get("/customer/meetings/{scheme_id}/{meeting_id}")
+def get_meeting_detail(
+    scheme_id: str,
+    meeting_id: str,
+    creds: HTTPAuthorizationCredentials = Depends(security),
+):
+    """
+    根据 scheme_id + meeting_id 获取会议详情（与 PPClient.meeting_detail 对齐）。
+    """
+    token = creds.credentials
+    try:
+        client = PPClient(bearer_token=token)
+        detail = client.meeting_detail(scheme_id, meeting_id)
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=f"fetch meeting detail failed: {e}")
+    return {"ok": True, "detail": detail}
+
+
 # ---------------- 跑整条流水线（需要 Authorize） ----------------
 @app.post("/pipeline/analyze")
 async def analyze(
-    scheme_id: str,
-    meeting_id: str,
-    file: UploadFile = File(...),
+    scheme_id: str = Query(..., description="Scheme ID"),
+    meeting_id: str = Query(..., description="Meeting ID"),
+    file: UploadFile = File(..., description="会议原始音频文件"),
     creds: HTTPAuthorizationCredentials = Depends(security),
 ):
     """
@@ -93,7 +132,7 @@ async def analyze(
     except Exception as e:
         raise HTTPException(status_code=500, detail=f"pipeline failed: {e}")
 
-    # 组织统一响应
+    # 组织统一响应（字段尽量兼容不同实现）
     stt_lines = getattr(info, "transcription", None)                # S01
     cleaned_lines = getattr(info, "cleaned_transcription", None)    # S02
     diarization = getattr(info, "speaker_segments", None) or getattr(info, "diarization", None)  # S03
@@ -116,3 +155,37 @@ async def analyze(
         "text_summary": summary,
     }
     return jsonable_encoder(payload)
+
+
+# ---------------- 导出：PDF / DOCX（直接接收结果 JSON） ----------------
+@app.post("/export/pdf")
+def export_pdf(result: Dict[str, Any] = Body(..., description="完整的会议结果 JSON（包含 agenda 等）")):
+    """
+    直接把结果 JSON（例如 /pipeline/analyze 返回中的 customer_meeting_detail，
+    或前端合并分类/摘要后的对象）传进来，返回 PDF 文件流。
+    """
+    try:
+        pdf_bytes = export_to_pdf(result)
+    except Exception as e:
+        raise HTTPException(status_code=400, detail=f"export pdf failed: {e}")
+    filename = (result.get("name") or "meeting_minutes").replace('"', "").replace("'", "")
+    headers = {"Content-Disposition": f'attachment; filename="{filename}.pdf"'}
+    return Response(content=pdf_bytes, media_type="application/pdf", headers=headers)
+
+
+@app.post("/export/docx")
+def export_docx(result: Dict[str, Any] = Body(..., description="完整的会议结果 JSON（包含 agenda 等）")):
+    """
+    直接把结果 JSON 传进来，返回 DOCX 文件流。
+    """
+    try:
+        docx_bytes = export_to_word(result)
+    except Exception as e:
+        raise HTTPException(status_code=400, detail=f"export docx failed: {e}")
+    filename = (result.get("name") or "meeting_minutes").replace('"', "").replace("'", "")
+    headers = {"Content-Disposition": f'attachment; filename="{filename}.docx"'}
+    return Response(
+        content=docx_bytes,
+        media_type="application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+        headers=headers,
+    )

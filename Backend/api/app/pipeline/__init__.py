@@ -8,6 +8,7 @@ from .s00_audio_converter import AudioConverterPipeline
 from .s01_speech_to_text import SpeechToTextPipeline
 from .s02_data_cleaning import DataCleaningPipeline
 from .s03_speaker_diarization import SpeakerDiarizationPipeline
+from .s04_agenda_segmenter import AgendaSegmenterPipeline
 from .s05_text_classification import TextClassificationPipeline
 from .s06_text_summary import TextSummaryPipeline
 
@@ -36,6 +37,7 @@ def process_pipeline(
         SpeechToTextPipeline().process(info)
         DataCleaningPipeline().process(info)
         SpeakerDiarizationPipeline().process(info)
+        AgendaSegmenterPipeline().process(info)
         TextClassificationPipeline().process(info)
         TextSummaryPipeline().process(info)
 

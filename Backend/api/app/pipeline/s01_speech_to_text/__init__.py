@@ -101,20 +101,21 @@ class SpeechToTextPipeline:
                 nonlocal lines_this_chunk
                 res = evt.result
                 if res.reason == speechsdk.ResultReason.RecognizedSpeech and res.text.strip():
-                    # offset/duration 单位是 100ns ticks，换算为秒；加上块起点得到全局时间
+                    # offset/duration 单位 100ns → 秒；加上块起点得到全局时间
                     start_sec = getattr(res, "offset", None)
-                    dur_sec = getattr(res, "duration", None)
+                    dur_sec   = getattr(res, "duration", None)
                     try:
                         start_sec = st + (start_sec / 10_000_000) if start_sec is not None else None
-                        dur_sec = (dur_sec / 10_000_000) if dur_sec is not None else None
+                        dur_sec   = (dur_sec / 10_000_000) if dur_sec is not None else None
                     except Exception:
-                        start_sec = None
-                        dur_sec = None
+                        start_sec, dur_sec = None, None
+
+                    end_sec = (start_sec + dur_sec) if (start_sec is not None and dur_sec is not None) else None
 
                     lines_this_chunk.append({
                         "start": float(start_sec) if start_sec is not None else None,
-                        "dur": float(dur_sec) if dur_sec is not None else None,
-                        "text": res.text,
+                        "end":   float(end_sec)   if end_sec   is not None else None,
+                        "text": res.text.strip(),
                     })
 
             # 块结束

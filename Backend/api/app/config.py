@@ -44,16 +44,9 @@ class DataBaseConfig(BaseModel):
 
 
 class AzureSpeechConfig(BaseModel):
-    """
-    Azure 语音服务配置类。
-
-    通过环境变量配置 Azure 语音服务的密钥和区域。
-    """
-
-    # Azure 语音服务密钥
     speech_key: str = Field(..., alias="AZURE_SPEECH_KEY")
-    # Azure 语音服务区域
-    service_region: str = Field(default="ukwest", alias="AZURE_SERVICE_REGION")
+    service_region: str = Field(default="uksouth", alias="AZURE_SPEECH_REGION")
+
 
 
 # Huggingface Token 配置类
