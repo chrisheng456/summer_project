@@ -1,93 +1,118 @@
 # Backend/api/server.py
-import uuid
-from typing import Dict, Any
+from __future__ import annotations
 
-from fastapi import FastAPI, UploadFile, File, HTTPException, Depends
-from fastapi.middleware.cors import CORSMiddleware
+import os
+from typing import Any, Dict
+
+from fastapi import FastAPI, UploadFile, File, Depends, HTTPException, Body
+from fastapi.encoders import jsonable_encoder
 from fastapi.security import HTTPBearer, HTTPAuthorizationCredentials
 
-from .app.utils.pp_client import PPClient
 from .app.pipeline import process_pipeline
-from .app.pipeline.s04_customer_api import CustomerApiPipeline
-# --- force tmp on D: ---
-import os, tempfile, pathlib
-
-WORK_TMP = r"D:\summer_project\tmp"            # 按需改成你的 D 盘目录
-pathlib.Path(WORK_TMP).mkdir(parents=True, exist_ok=True)
-
-os.environ["TMP"]  = WORK_TMP                  # Windows 下 tempfile 识别 TMP/TEMP
-os.environ["TEMP"] = WORK_TMP
-tempfile.tempdir   = WORK_TMP                  # 进一步显式指定
-
-print("TEMP DIR =>", tempfile.gettempdir())    # 可见到 D:\summer_project\tmp
-# --- end ---
-
+from .app.utils.pp_client import PPClient
 
 app = FastAPI(title="Meeting Pipeline API")
-app.add_middleware(
-    CORSMiddleware,
-    allow_origins=["*"], allow_credentials=True, allow_methods=["*"], allow_headers=["*"],
-)
+# 声明 Bearer 认证方案；只要任一接口使用了它，Swagger 右上角就会出现 Authorize 按钮
+security = HTTPBearer(auto_error=True)
 
-# ===== 会话与 Bearer 安全方案 =====
-SESSIONS: Dict[str, Dict[str, Any]] = {}
-security = HTTPBearer(bearerFormat="Bearer", auto_error=False)
 
-def get_session(creds: HTTPAuthorizationCredentials = Depends(security)) -> Dict[str, Any]:
-    """从 Bearer Token 里取出会话；供需要鉴权的接口复用。"""
-    if not creds or (creds.scheme or "").lower() != "bearer":
-        raise HTTPException(status_code=401, detail="missing Authorization header")
-    token = creds.credentials
-    sess = SESSIONS.get(token)
-    if not sess:
-        raise HTTPException(status_code=401, detail="invalid token")
-    return sess
+def _safe_len(x: Any) -> int:
+    try:
+        return len(x) if x is not None else 0
+    except Exception:
+        return 0
 
-# ====== 登录，换取 token，同时拉取会议列表 ======
+
+@app.get("/health")
+def health():
+    return {"ok": True}
+
+
+# ---------------- 登录：返回真正的 bearer_token（JWT） ----------------
 @app.post("/auth/login")
-async def login(payload: Dict[str, str]):
-    username = payload.get("username")
-    password = payload.get("password")
+def login(payload: Dict[str, str] = Body(...)):
+    """
+    简单本地校验 + 远端登录：
+    - 本地仅允许 {ruixiong / Ruixiong24937!}
+    - 成功后调用客户 API /Logon，返回远端的 bearer_token（JWT）
+    - 这个 token 就是你要在 Swagger 右上角 Authorize 里粘贴的“纯 token”（不要写 Bearer ）
+    """
+    username = (payload.get("username") or "").strip()
+    password = (payload.get("password") or "").strip()
 
-    # demo：仍支持硬编码；否则走真实登录
-    if username == "ruixiong" and password == "Ruixiong24937!":
-        bearer = PPClient.login(username, password)
-    else:
+    if not (username == "ruixiong" and password == "Ruixiong24937!"):
         raise HTTPException(status_code=401, detail="invalid credentials")
 
-    meetings = CustomerApiPipeline.list_meetings(bearer)
-    token = str(uuid.uuid4())
-    SESSIONS[token] = {"user": username, "bearer": bearer, "meetings": meetings}
-    return {"ok": True, "token": token, "meetings": meetings}
+    try:
+        client = PPClient()
+        bearer = client.login(username, password)
+    except Exception as e:
+        raise HTTPException(status_code=502, detail=f"remote login failed: {e}")
 
-# ====== 需要鉴权的接口（自动在 Swagger 显示 Authorize 按钮） ======
+    return {"ok": True, "token": bearer}
+
+
+# ---------------- 拉会议列表（需要 Authorize） ----------------
 @app.get("/customer/meetings")
-def list_meetings(sess: Dict[str, Any] = Depends(get_session)):
-    return {"ok": True, "meetings": sess["meetings"]}
+def list_meetings(creds: HTTPAuthorizationCredentials = Depends(security)):
+    """
+    使用 Authorize 配置的 Bearer token（粘贴纯 JWT）拉取会议列表。
+    """
+    token = creds.credentials  # 纯 token
+    try:
+        client = PPClient(bearer_token=token)
+        meetings = client.list_meetings()
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=f"fetch meetings failed: {e}")
+    return {"ok": True, "meetings": meetings}
 
+
+# ---------------- 跑整条流水线（需要 Authorize） ----------------
 @app.post("/pipeline/analyze")
 async def analyze(
     scheme_id: str,
     meeting_id: str,
     file: UploadFile = File(...),
-    sess: Dict[str, Any] = Depends(get_session),
+    creds: HTTPAuthorizationCredentials = Depends(security),
 ):
-    bearer = sess["bearer"]
-    content = await file.read()
+    """
+    前端上传音频 + 选择 scheme / meeting 后调用。
+    Authorize 里填的 Bearer token 会传入流水线，
+    用于在 S00 客户 API 步获取 meeting detail。
+    """
+    bearer_token = creds.credentials
+    data = await file.read()
 
-    info = process_pipeline(
-        input_file_content=content,
-        scheme_id=scheme_id,
-        meeting_id=meeting_id,
-        bearer_token=bearer,
-    )
-    return {
+    try:
+        info = process_pipeline(
+            input_file_content=data,
+            scheme_id=scheme_id,
+            meeting_id=meeting_id,
+            bearer_token=bearer_token,  # <== 传下去给 S00 使用客户 API
+        )
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=f"pipeline failed: {e}")
+
+    # 组织统一响应
+    stt_lines = getattr(info, "transcription", None)                # S01
+    cleaned_lines = getattr(info, "cleaned_transcription", None)    # S02
+    diarization = getattr(info, "speaker_segments", None) or getattr(info, "diarization", None)  # S03
+    classification = getattr(info, "classified_lines", None)        # S05
+    label_counts = getattr(info, "label_counts", None)              # S05
+    summary = getattr(info, "summary", None)                        # S06
+    meeting_detail = getattr(info, "customer_meeting_detail", None) # S00
+
+    payload = {
         "ok": True,
-        "customer_meeting_detail": getattr(info, "customer_meeting_detail", None),
-        "result": getattr(info, "result", None),
+        "customer_meeting_detail": meeting_detail,
+        "speech_to_text": {"total": _safe_len(stt_lines), "lines": stt_lines},
+        "data_cleaning": {"total": _safe_len(cleaned_lines), "lines": cleaned_lines},
+        "speaker_diarization": {"total": _safe_len(diarization), "segments": diarization},
+        "text_classification": {
+            "total": _safe_len(classification),
+            "lines": classification,
+            "label_counts": label_counts,
+        },
+        "text_summary": summary,
     }
-
-# （可选）健康检查
-@app.get("/health")
-def health():
-    return {"status": "ok"}
+    return jsonable_encoder(payload)

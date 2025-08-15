@@ -3,7 +3,7 @@ from __future__ import annotations
 from typing import List, Dict, Any
 from ...schema.process_information import ProcessInformation
 from ...utils.pp_client import PPClient
-
+from loguru import logger
 class CustomerApiPipeline:
     def __init__(self, scheme_id: str | None = None, meeting_id: str | None = None, bearer_token: str | None = None):
         self.scheme_id = scheme_id

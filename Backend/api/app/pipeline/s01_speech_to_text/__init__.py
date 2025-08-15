@@ -18,6 +18,7 @@ CHUNK_SECONDS: float = 300.0
 CHUNK_OVERLAP: float = 1.0
 
 
+
 def _build_speech_config() -> speechsdk.SpeechConfig:
     """
     统一读取 key/region，并把使用到的值打印出来（key 打码）。
