@@ -2,7 +2,7 @@ from fastapi import FastAPI
 
 
 from .config import app_config
-from .api import router
+from .api_legacy import router
 from .models import initialize_database
 
 # 创建 FastAPI 应用程序实例
