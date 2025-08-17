@@ -90,10 +90,6 @@
                     View Details
                   </button>
                 </td>
-
-                <td class="action-column">
-                  <div class="dots-button">⋮</div>
-                </td>
               </tr>
 
               <tr v-if="!history.length">

@@ -21,7 +21,6 @@
   </div>
 
 <div class="download-area">
-
   <span class="level-3">Download</span>
 </div>
   
