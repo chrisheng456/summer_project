@@ -66,9 +66,10 @@ class CustomerApiConfig(BaseModel):
     客户API账号密码配置类，通过环境变量配置。
     """
 
-    username: str = Field(..., alias="CUSTOMER_API_USERNAME")
-    password: str = Field(..., alias="CUSTOMER_API_PASSWORD")
-
+    speech_key: str = Field(..., alias="AZURE_SPEECH_KEY")
+    service_region: str = Field(default="uksouth", alias="AZURE_SPEECH_REGION")
+    storage_connection_string: str = Field(..., alias="AZURE_STORAGE_CONNECTION_STRING")
+    storage_container: str = Field(..., alias="AZURE_STORAGE_CONTAINER")
 
 class Config(BaseModel):
 

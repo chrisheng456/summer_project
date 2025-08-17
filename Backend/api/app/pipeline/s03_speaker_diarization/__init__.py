@@ -1,7 +1,7 @@
 # Backend/api/app/pipeline/s03_speaker_diarization/__init__.py
 
 from __future__ import annotations
-import json, time, uuid
+import json, time, uuid,os
 from pathlib import Path
 from typing import List, Dict, Optional
 
@@ -16,7 +16,10 @@ from azure.storage.blob import (
 
 from ...config import app_config
 from ...schema.process_information import ProcessInformation
+from ...utils.azure_batch_diarizer import azure_batch_diarize
 
+# 默认开启 Azure Batch diarization；如需强制关闭，可临时把这个常量改成 False
+USE_AZURE_BATCH: bool = True
 # --- 可配置 ---
 LOCALE = "en-US"                       # 针对你们数据，按需改
 MAX_SPEAKERS = 8                       # 期望的最大说话人数量（Azure会自动估计）
@@ -157,58 +160,35 @@ def _azure_batch_transcribe(audio_url: str) -> List[Dict]:
 
 
 class SpeakerDiarizationPipeline:
-    """
-    s03：两种运行模式
-    - 默认（推荐稳定）：使用本地 pyannote，对 s01 的结果打说话人标签（原实现）。
-    - 开关为 1 时：走 Azure 批量转写 + 分离，直接产出带 speaker 的转写并覆盖 s01。
-    开关：USE_AZURE_BATCH_DIARIZATION=1
-    """
     def process(self, info: ProcessInformation):
+        # 如果上游已经含有 speaker（例如重复调用），直接跳过
+        if getattr(info, "transcription", None):
+            with_speaker = sum(1 for ln in info.transcription if "speaker" in ln) >= max(1, len(info.transcription)//3)
+            if with_speaker:
+                logger.info("S03: 已含 speaker，跳过说话人分离。")
+                info.diarization = info.transcription
+                return
 
-        use_azure = (getattr(app_config, "use_azure_batch_diarization", None)
-                     or (Path(".env").exists() and "1" in (Path(".env").read_text() or "")))  # 兜底：有人只在 .env 里配字符串
-
-        # 更稳的读取方式：从 config 读 env
-        try:
-            use_azure = bool(int((app_config.extra.get("USE_AZURE_BATCH_DIARIZATION")  # type: ignore
-                                  if hasattr(app_config, "extra") else
-                                  (getattr(app_config, "USE_AZURE_BATCH_DIARIZATION", "0")))))
-        except Exception:
-            pass
-
-        if str(use_azure) == "1":
-            wav = Path(info.input_file)
-            logger.info("🔊 s03 使用 Azure Batch STT + Diarization（覆盖 s01 文本）")
-            blob_url = _upload_with_sas(wav)
-            lines = _azure_batch_transcribe(blob_url)
-            # 直接覆盖 s01 文本（后续 S04/05/06 正常使用）
-            info.transcription = lines
+        if not info.input_file:
+            logger.warning("S03: 缺少 input_file。")
             return
 
-        # --------- 默认：沿用原来的 pyannote 实现（更稳） ----------
-        from pyannote.audio import Pipeline   # 延迟导入，避免没装也能跑 Azure 路线
-        logger.info("🔊 s03 使用本地 pyannote 给 s01 结果打说话人标签（默认）")
-        pipeline = Pipeline.from_pretrained(
-            "pyannote/speaker-diarization@2.1",
-            use_auth_token=app_config.huggingface.token,
-        )
-        diarization = pipeline(str(info.input_file))
-        segments = []
-        for turn, _, speaker in diarization.itertracks(yield_label=True):
-            segments.append({"start": turn.start, "end": turn.end, "speaker": speaker})
-
-        def assign_speaker(t0, t1):
-            overlaps = []
-            for s in segments:
-                ist = max(t0, s["start"]); ied = min(t1, s["end"])
-                ov = max(0.0, ied - ist)
-                if ov > 0: overlaps.append((ov, s["speaker"]))
-            return max(overlaps, key=lambda x: x[0])[1] if overlaps else "Unknown"
-
-        # 没有 s01 结果就不处理
-        if not hasattr(info, "transcription") or not info.transcription:
+        if USE_AZURE_BATCH:
+            logger.info("S03: 使用 Azure Batch（多 Job 并行）进行转写+说话人分离 …")
+            lines = azure_batch_diarize(
+                input_wav_path=info.input_file,
+                segment_seconds=int(os.getenv("SEGMENT_SECONDS", "300")),  # 分片大一些减少 Job 数
+                locale=os.getenv("LOCALE", "en-US"),
+                parallel_jobs=True,                 # ← 真并行：每分片一个 Job
+                max_workers=int(os.getenv("MAX_JOBS", "4")),
+            )
+            if lines:
+                info.transcription = lines
+                info.diarization = lines
+                logger.info(f"S03: 完成，行数={len(lines)}")
+            else:
+                logger.warning("S03: Azure 批量返回空结果。")
             return
 
-        for ln in info.transcription:
-            t0, t1 = ln.get("start", 0.0), ln.get("end", 0.0)
-            ln["speaker"] = assign_speaker(t0, t1)
+        # （可选）若你未来想加本地 pyannote 兜底，可在此处补充
+        logger.info("S03: 未启用 Azure Batch，跳过。")
