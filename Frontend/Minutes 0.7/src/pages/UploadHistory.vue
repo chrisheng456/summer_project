@@ -1,90 +1,105 @@
 <template>
   <div>
-    <!-- 页面顶部栏 -->
     <HeaderBar />
-
-    <!-- 内容区加外层容器 -->
     <div class="container">
-
-      <!-- 上传音频区域 -->
+      <!-- 上传音频 -->
       <div class="upload-section">
         <h3>Upload New Audio</h3>
 
-        <!-- Element Plus 上传组件：支持拖拽、自定义处理上传功能 -->
-        <!-- <el-upload
-          class="upload-card"
-          action="#"                          
-          drag
-          :auto-upload="false"               
-          :on-change="handleUpload"           
-          accept=".mp3,.wav,.m4a"             
-          :limit="100"
-          :file-list="[]"
-        > -->
-
         <el-upload
-  class="upload-card"
-  drag
-  :auto-upload="false"
-  v-model:file-list="fileList"   
-  :on-change="handleUpload"
-  accept=".mp3,.wav,.m4a"
-  :limit="100"
->
-          <el-icon class="upload-icon">
-            <UploadFilled />
-          </el-icon>
-
+          class="upload-card"
+          drag
+          :auto-upload="false"
+          v-model:file-list="fileList"
+          :on-change="onFileChange"
+          accept=".mp3,.wav,.m4a"
+          :limit="1"
+        >
+          <el-icon class="upload-icon"><UploadFilled /></el-icon>
           <div class="el-upload__text">
             Drop audio file here or <em>click to upload</em>
           </div>
-
           <template #tip>
             <div class="el-upload__tip">Only mp3/wav/m4a files</div>
           </template>
         </el-upload>
+
+        <!-- 处理按钮（选了会议 + 选了音频 才能点击） -->
+        <div class="process-bar">
+          <button
+            class="process-btn"
+            :disabled="!selectedKey || !selectedFile || processing"
+            @click="startAnalyze"
+          >
+            {{ processing ? 'Processing…' : 'Process & Analyze' }}
+          </button>
+          <span class="hint" v-if="!selectedKey || !selectedFile">
+            Select a meeting and choose an audio file to enable processing.
+          </span>
+        </div>
       </div>
 
-      <!-- 上传历史表格区域 -->
+      <!-- 会议列表 -->
       <div class="history-section">
-        <h3 class="table-title">Upload History</h3>
+        <h3 class="table-title">Meetings History</h3>
         <div class="table-wrapper">
           <table>
             <thead>
               <tr>
-                <th>Filename</th>
-                <th>Participants</th>
-                <th>Duration</th>
-                <th>Uploaded At</th>
+                <th style="width:60px;">Select</th>
+                <th>Title</th>
+                <th>Date</th>
+                <th>Scheme</th>
+                <th>Status</th>
                 <th>Details</th>
                 <th class="action-column"></th>
               </tr>
             </thead>
+
             <tbody>
-              <tr v-for="item in history" :key="item.id">
-                <td>{{ item.filename }}</td>
-                <td>{{ item.participants }}</td>
-                <td>{{ item.duration }}</td>
-                <td>{{ item.uploadTime }}</td>
-                <td >
-                  <button @click="viewDetail">View Details</button>
+              <tr
+                v-for="item in history"
+                :key="rowKey(item)"
+              >
+                <!-- 单选：选择一个会议 -->
+                <td>
+                  <input
+                    type="radio"
+                    name="meetingRadio"
+                    :value="rowKey(item)"
+                    v-model="selectedKey"
+                  />
+                </td>
+
+                <td>{{ item.title }}</td>
+                <td>{{ formatDate(item.date) }}</td>
+                <td>{{ item.scheme_name }}</td>
+
+                <!-- 简单状态：Done/Processing/None -->
+                <td>
+                  <span v-if="processingKey === rowKey(item)">Processing…</span>
+                  <span v-else-if="isAnalyzed(item)">Done</span>
+                  <span v-else>None</span>
+                </td>
+
+                <td>
+                  <button
+                    :disabled="!isAnalyzed(item)"
+                    @click="viewDetail(item)"
+                  >
+                    View Details
+                  </button>
                 </td>
 
                 <td class="action-column">
-                  <el-dropdown trigger="click">
-                    <div class="dots-button">
-                      <span class="el-dropdown-link">⋮</span>
-                    </div>
-
-                    <template #dropdown>
-                      <el-dropdown-menu>
-                        <el-dropdown-item @click="downloadFile(item)">Download</el-dropdown-item>
-                        <el-dropdown-item divided @click="deleteFile(item.id)">Delete</el-dropdown-item>
-                      </el-dropdown-menu>
-                    </template>
-                  </el-dropdown>
+                  <div class="dots-button">⋮</div>
                 </td>
+              </tr>
 
+              <tr v-if="!history.length">
+                <td colspan="7" style="text-align:center; color:#888; padding:20px;">
+                  No meetings
+                </td>
               </tr>
             </tbody>
           </table>
@@ -96,166 +111,157 @@
 </template>
 
 <script lang="ts" setup>
-import { ref } from 'vue'
+import { ref, onMounted, watch, computed } from 'vue'
 import { useRouter } from 'vue-router'
 import { ElMessage } from 'element-plus'
 import { UploadFilled } from '@element-plus/icons-vue'
 import HeaderBar from '@/components/HeaderBar.vue'
-import { MoreFilled } from '@element-plus/icons-vue'
-import { meetingApi } from '@/api/modules/meeting'
+import { meetingApi } from '@/api/modules'
 import type { UploadFile } from 'element-plus'
+import type { Meetings, MeetingDetail } from '@/types' // 👈 MeetingDetail 在这里引
+import { useMeetingStore } from '@/stores/meeting'     // 👈 Pinia store（需已创建）
 
+// Pinia
+const meetingStore = useMeetingStore()
 
-// 定义历史数据类型
-interface HistoryItem {
-  id: string
-  filename: string
-  participants: number
-  duration: string
-  uploadTime: string
-}
-
+// 会议列表
+const history = ref<Meetings[]>([])
 const router = useRouter()
-const history = ref<HistoryItem[]>([])
 
-// 用户名和头像首字母
-const username = 'Gaoxinjie'
-const userInitial = username[0].toUpperCase()
-
-// 处理用户操作
-function handleCommand(command: string) {
-  if (command === 'logout') {
-    ElMessage.success('Logged out')
-    router.push('/login')
-  } else if (command === 'settings') {
-    ElMessage.info('Settings page coming soon')
+// 1.读取本地会议 + 恢复“上次选中的会议”
+onMounted(() => {
+  try {
+    const raw = localStorage.getItem('meetings')
+    history.value = raw ? JSON.parse(raw) : []
+  } catch {
+    history.value = []
   }
+
+  const last = localStorage.getItem('selectedMeetingKey')
+  if (last) selectedKey.value = last
+})
+
+// 行 key
+const rowKey = (m: Meetings) => `${m.scheme_id}:${m.meeting_id}`
+
+// 当前选中的会议 key
+const selectedKey = ref<string>('')
+watch(selectedKey, v => {
+  localStorage.setItem('selectedMeetingKey', v ?? '')
+})
+
+// 当前选择的会议对象
+const selectedMeeting = computed<Meetings | null>(() => {
+  if (!selectedKey.value) return null
+  const [sid, mid] = selectedKey.value.split(':')
+  return history.value.find(
+    m => String(m.scheme_id) === sid && String(m.meeting_id) === mid
+  ) || null
+})
+
+// 选择的音频
+const selectedFile = ref<File | null>(null)
+const fileList = ref<UploadFile[]>([])
+function onFileChange(file: UploadFile) {
+  selectedFile.value = (file?.raw as File) || null
 }
 
-// 处理上传文件（模拟方式）
-// function handleUpload(file: any) {
-//   const rawFile = file.raw
-//   if (rawFile) {
-//     const newItem: HistoryItem = {
-//       id: Date.now().toString(),
-//       filename: rawFile.name,
-//       participants: Math.floor(Math.random() * 10 + 1),
-//       duration: `${Math.floor(Math.random() * 60)} min`,
-//       uploadTime: new Date().toLocaleString()
-//     }
-//     history.value.unshift(newItem)
-//     ElMessage.success('Upload success (mocked)')
-//   }
-// }
+// 状态：哪个会议正在处理
+const processingKey = ref<string>('')
+const processing = ref(false)
 
-const fileList = ref<UploadFile[]>([])          // 新增：受控文件列表
-const uploading = ref(false)
+// ✅ 是否“已处理完成”统一用 Pinia（避免与本地数组重复维护）
+function isAnalyzed(item: Meetings) {
+  return meetingStore.isAnalyzed(item.scheme_id, item.meeting_id)
+}
 
-// 替换你原来的 handleUpload（模拟方式）
-async function handleUpload(file: UploadFile) {
-  const raw = file.raw as File
-  if (!raw) return
+// 开始处理：把会议 + 音频送到 /pipeline/analyze（等待返回），并把返回结果存入 Pinia
+async function startAnalyze() {
+  const m = selectedMeeting.value
+  if (!m) {
+    ElMessage.warning('Please select a meeting first')
+    return
+  }
+  if (!selectedFile.value) {
+    ElMessage.warning('Please choose an audio file')
+    return
+  }
 
   try {
-    uploading.value = true
+    processing.value = true
+    processingKey.value = rowKey(m)
 
-    // 如果需要带上 schemeId/meetingId，用 convertWithId：
-    // const resp = await meetingApi.convertWithId('scheme-1', 'meeting-714', raw)
+    // ⬇️ 后端直接返回 MeetingDetail
+    const detail = await meetingApi.analyze(
+      selectedFile.value,
+      String(m.scheme_id),
+      String(m.meeting_id)
+    ) as MeetingDetail
 
-    // 普通上传：
-    const resp = await meetingApi.convert(raw, {
-      // 这里可放自定义字段：language、meetingId 等
-      // meetingId: '714'
-    })
+    // ⬇️ 存入 Pinia：key = `${scheme_id}:${meeting_id}`
+    meetingStore.setDetail(detail, m.scheme_id, m.meeting_id)
 
-    // 按你后端返回字段名取任务ID（示例兼容 taskId 或 id）
-    const taskId = (resp as any).taskId ?? (resp as any).id
-
-
-    
-
-
-
-    const newItem: HistoryItem = {
-      id: String(taskId),
-      filename: raw.name,
-      // 这些信息通常要等后端解析完成再查，这里先占位
-      participants: 0,
-      duration: '-',
-      uploadTime: new Date().toLocaleString(),
-    }
-    history.value.unshift(newItem)
-
-    ElMessage.success('文件已上传，正在转换…')
-    // （可选）跳转详情并携带 taskId
-    // router.push({ path: '/MeetingNotes', query: { taskId } })
+    ElMessage.success('Analysis completed')
   } catch (err: any) {
-    ElMessage.error(err?.response?.data?.message || '上传失败，请重试')
+    ElMessage.error(err?.response?.data?.message || 'Analyze failed, please try again')
   } finally {
-    uploading.value = false
-    // 清空选择框（不需要保留缩略项的话）
+    processing.value = false
+    processingKey.value = ''
+    // 清空已选文件（如需保留可去掉）
     fileList.value = []
+    selectedFile.value = null
   }
 }
 
-
-
-
-
-
-
-// 跳转到详情页
-function viewDetail() {
-  router.push(`/MeetingNotes`)
+// 查看详情（只在已处理完成后可点）
+function viewDetail(item: Meetings) {
+  if (!isAnalyzed(item)) return
+  router.push({
+    path: '/MeetingNotes',
+    query: {
+      scheme_id: String(item.scheme_id),
+      meeting_id: String(item.meeting_id),
+    },
+  })
 }
 
-function downloadFile(item: HistoryItem) {
-  ElMessage.success(`Start downloading ${item.filename}`)
-  // 实际可替换为后端下载链接：
-  // window.open(`/api/files/download/${item.id}`)
+// 时间格式
+function formatDate(iso: string) {
+  try { return new Date(iso).toLocaleDateString() } catch { return iso }
 }
-
-function deleteFile(id: string) {
-  history.value = history.value.filter(item => item.id !== id)
-  ElMessage.success('File deleted')
-}
-
 </script>
 
 <style scoped>
-/* 页面主容器：用于整体布局和背景设置 */
 .container {
-  display: flex;                       /* 垂直排列 */
+  display: flex;
   flex-direction: column;
-  align-items: center;                  /* 居中对齐 */
-  padding: 40px 20px;                   /* 上下左右内边距 */
-  min-height: 100vh;                    /* 最小高度铺满屏幕 */
-  background-color: #f5f7fa;            /* 浅灰背景 */
+  align-items: center;
+  padding: 40px 20px;
+  min-height: 100vh;
+  background-color: #f5f7fa;
   box-sizing: border-box;
-  font-family: 'Helvetica Neue', Arial, sans-serif;  /* 设置字体 */
+  font-family: 'Helvetica Neue', Arial, sans-serif;
 }
 
-/* 上传区域：卡片样式 */
+/* Upload card */
 .upload-section {
-  background-color: #fff;               /* 白色背景 */
+  background-color: #fff;
   padding: 20px 20px;
   margin-top: 20px;
-  border-radius: 12px;                  /* 圆角 */
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.337);  /* 阴影 */
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.337);
   width: 100%;
   max-width: 1000px;
-  margin-bottom: 40px;                  /* 与下方内容间距 */
+  margin-bottom: 24px;
   text-align: center;
 }
 
-/* 上传区域：鼠标悬停效果 */
 .upload-section:hover {
-  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.2);  /* 增强阴影 */
-  transform: translateY(-4px);                /* 上移产生悬浮感 */
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.2);
+  transform: translateY(-4px);
   transition: all 0.3s ease;
 }
 
-/* 上传区域标题样式 */
 .upload-section h3 {
   margin-bottom: 16px;
   font-size: 1.5rem;
@@ -263,7 +269,37 @@ function deleteFile(id: string) {
   font-weight: 600;
 }
 
-/* 表格外层容器：用于显示上传历史 */
+/* Process bar & button */
+.process-bar {
+  margin-top: 16px;
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  align-items: center;
+}
+
+.process-btn {
+  padding: 10px 18px;
+  background-color: #3b82f6;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  box-shadow: 0 2px 6px rgba(59, 130, 246, 0.35);
+}
+
+.process-btn[disabled] {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.hint {
+  color: #888;
+  font-size: 13px;
+}
+
+/* Table */
 .table-wrapper {
   background-color: #fff;
   padding: 20px;
@@ -271,11 +307,10 @@ function deleteFile(id: string) {
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.337);
   width: 100%;
   max-width: 1000px;
-  height: 320px;                        /* 固定高度 */
-  overflow-y: auto;                     /* 超出滚动 */
+  height: 420px;
+  overflow-y: auto;
 }
 
-/* 表格标题样式 */
 .table-title {
   text-align: center;
   font-size: 1.5rem;
@@ -286,17 +321,15 @@ function deleteFile(id: string) {
   width: fit-content;
 }
 
-/* 表格本体 */
 table {
   width: 100%;
-  border-collapse: collapse;            /* 去除间隙 */
-  table-layout: fixed;                  /* 固定列宽 */
+  border-collapse: collapse;
+  table-layout: fixed;
   font-size: 15px;
 }
 
-/* 表格表头样式 */
 thead th {
-  position: sticky;                     /* 表头固定 */
+  position: sticky;
   top: 0;
   background-color: #fff;
   font-weight: 700;
@@ -306,29 +339,27 @@ thead th {
   color: #333;
 }
 
-/* 表格单元格样式 */
 tbody td {
   padding: 14px 12px;
   border-bottom: 1px solid #eee;
-  word-break: break-word;               /* 单词换行 */
+  word-break: break-word;
   color: #555;
 }
 
-/* 表格行悬停效果 */
 tbody tr {
   transition: all 0.3s ease;
 }
 
 tbody tr:hover {
-  background-color: #f0f8ff;            /* 淡蓝悬停色 */
-  transform: translateY(-3px);          /* 微上移 */
+  background-color: #f0f8ff;
+  transform: translateY(-3px);
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
 }
 
-/* 按钮通用样式 */
+/* Buttons */
 button {
   padding: 8px 16px;
-  background-color: #409eff;            /* 蓝色按钮 */
+  background-color: #409eff;
   color: #fff;
   border: none;
   border-radius: 6px;
@@ -339,67 +370,36 @@ button {
   box-shadow: 0 2px 6px rgba(64, 158, 255, 0.4);
 }
 
-/* 按钮悬停效果 */
 button:hover {
   background-color: #66b1ff;
   transform: translateY(-1px);
 }
 
-/* 移动端优化：小屏幕适配 */
+button[disabled] {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* Responsive */
 @media (max-width: 768px) {
   .table-wrapper {
     max-width: 100%;
-    overflow-x: auto;                   /* 横向滚动以适应表格 */
+    overflow-x: auto;
   }
+
   table {
-    font-size: 13px;                    /* 缩小字体 */
+    font-size: 13px;
   }
+
   .upload-section {
     padding: 16px;
   }
+
   .upload-section h3 {
     font-size: 1.2rem;
   }
 }
 
-/* 顶部导航栏Header固定样式 */
-.page-header {
-  position: fixed;                      /* 固定定位 */
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 60px;
-  background-color: #f9fafb;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0 24px;
-  box-shadow: 0 1px 6px rgba(0, 0, 0, 0.1);
-  z-index: 10000;                       /* 保证在最上层 */
-}
-
-/* Header标题样式 */
-.header-title {
-  font-size: 18px;
-  font-weight: 600;
-  color: #333;
-}
-
-/* 头像鼠标效果 */
-.avatar-wrapper {
-  cursor: pointer;
-}
-
-/* ...样式 */
-.el-dropdown-link {
-  font-size: 25px;
-  color: #666;
-  cursor: pointer;
-  user-select: none;
-  font-weight: bold;
-}
-
-/* ...列占位 */
 .action-column {
   width: 10px;
   max-width: 15px;
@@ -407,12 +407,11 @@ button:hover {
   padding: 0 40px 0 0;
 }
 
-/* ...套一个圆形按钮外壳 */
 .dots-button {
   width: 32px;
   height: 32px;
   border-radius: 50%;
-  background-color: transparent;
+  background: transparent;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -423,7 +422,6 @@ button:hover {
 }
 
 .dots-button:hover {
-  background-color: #e0e6ed; /* hover 显示淡灰色圆圈 */
+  background-color: #e0e6ed;
 }
-
 </style>

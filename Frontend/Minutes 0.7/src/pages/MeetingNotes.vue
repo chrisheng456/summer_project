@@ -1,6 +1,6 @@
 <template>
   <div class="layout">
-    <!-- 侧边栏区域 -->
+    <!-- 侧边栏 -->
     <aside class="sidebar">
       <Sidebar
         :sections="sections"
@@ -9,17 +9,18 @@
       />
     </aside>
 
+    <!-- 主内容 -->
     <main class="content">
-      <!-- 如果未选择区域，显示摘要 -->
+      <!-- 未选择任何 section 时显示摘要 -->
       <MeetingAbstract v-if="activeIndex === -1" :abstract="defaultAbstract" />
 
-      <!-- 选中区域，显示内容 -->
+      <!-- 选中某个 section 时显示详情 -->
       <SectionContent
         v-else-if="sections.length"
         :section="sections[activeIndex]"
       />
 
-      <!-- AI交互区域 -->
+      <!-- AI 交互 -->
       <div class="question-header">
         <h3 style="display:inline-block;">Do you have any questions for AI?</h3>
         <button class="toggle-btn" @click="showInput = !showInput">
@@ -29,10 +30,16 @@
 
       <div v-if="showInput" class="bottom-input-area">
         <!-- 用户输入指令 -->
-        <textarea v-model="newContent" rows="4" placeholder="Enter your instruction (e.g., Please simplify the current summary)"></textarea>
-        <button @click="submitContent" :disabled="loading">{{ loading ? 'Processing...' : 'Submit' }}</button>
+        <textarea
+          v-model="newContent"
+          rows="4"
+          placeholder="Enter your instruction (e.g., Please simplify the current summary)"
+        />
+        <button @click="submitContent" :disabled="loading">
+          {{ loading ? 'Processing...' : 'Submit' }}
+        </button>
 
-        <!-- 显示AI结果，允许应用 -->
+        <!-- 显示 AI 结果，允许应用 -->
         <div v-if="aiReply" class="ai-reply-box">
           <h4>AI Suggestion:</h4>
           <div class="ai-reply-text">{{ aiReply }}</div>
@@ -44,96 +51,126 @@
 </template>
 
 <script setup lang="ts" name="MeetingNotes">
-import SectionContent from '@/components/SectionContent.vue'
-import Sidebar from '@/components/Sidebar.vue'
-import MeetingAbstract from '@/components/MeetingAbstract.vue'
 import { ref, onMounted } from 'vue'
-import { fetchMeetingsData } from '@/api/fetchMeetingData'
+import { useRoute } from 'vue-router'
+import { ElMessage } from 'element-plus'
+
+import Sidebar from '@/components/Sidebar.vue'
+import SectionContent from '@/components/SectionContent.vue'
+import MeetingAbstract from '@/components/MeetingAbstract.vue'
+
+import { fetchMeetingsData } from '@/api/fetchMeetingsData'
 import type { MeetingRecord } from '@/types/interface'
 
+/** ===================== state ===================== */
 const sections = ref<MeetingRecord[]>([])
 const activeIndex = ref(-1)
 const defaultAbstract = ref('')
-const newContent = ref('')
+
 const showInput = ref(false)
+const newContent = ref('')
 const aiReply = ref('')
 const loading = ref(false)
 
-// 页面加载时，获取会议数据
+const route = useRoute()
+
+/** 把 query 值规范为 string（可能是 string | string[] | undefined） */
+function asString(v: unknown): string | undefined {
+  if (Array.isArray(v)) return v[0] as string
+  if (typeof v === 'string') return v
+  return undefined
+}
+
+/** 页面加载：从路由或本地兜底拿到 schemeId/meetingId，并拉取数据 */
 onMounted(async () => {
-  const result = await fetchMeetingsData()
+  // 1) 优先从路由 query 取
+  let schemeId = asString(route.query.scheme_id)
+  let meetingId = asString(route.query.meeting_id)
+
+  // 2) 刷新导致 query 丢失时，从本地兜底（Upload 页保存过）
+  if (!schemeId || !meetingId) {
+    const key = localStorage.getItem('selectedMeetingKey') || ''
+    if (key.includes(':')) {
+      const [sid, mid] = key.split(':')
+      schemeId = sid
+      meetingId = mid
+    }
+  }
+
+  // 3) 仍然拿不到则提示
+  if (!schemeId || !meetingId) {
+    ElMessage.error('Missing scheme_id / meeting_id, please open from Upload page.')
+    sections.value = []
+    defaultAbstract.value = 'No abstract available.'
+    return
+  }
+
+  // 4) 拉取并渲染（从 Pinia 读原始数据并做修剪）
+  const result = await fetchMeetingsData(schemeId, meetingId)
   sections.value = result.meetings
   defaultAbstract.value = result.abstract || 'No abstract available.'
 })
 
-// 切换section
+/** 选择侧边栏的 section */
 function handleSelect(index: number) {
   activeIndex.value = index
 }
 
-/**
- * 让AI对当前选中内容进行智能处理
- */
+/** 让 AI 改写摘要或当前 section 的 summary */
 async function submitContent() {
-  if (!newContent.value.trim()) {
-    alert('请输入你的AI指令')
+  const prompt = newContent.value.trim()
+  if (!prompt) {
+    ElMessage.warning('请输入你的 AI 指令')
     return
   }
-  loading.value = true
 
-  // 1. 获取AI要处理的内容
-  //    - 如果没选区块，就是摘要
-  //    - 已选区块，可以拓展处理不同属性（此处以summary为例）
+  // 取上下文：未选中则用摘要，已选中则用当前 section 的 summary
   let context = ''
   if (activeIndex.value === -1) {
     context = defaultAbstract.value
   } else if (sections.value[activeIndex.value]) {
-    // 你可按需切换为 summary/keyActions/decisions 等
     context = sections.value[activeIndex.value].summary || ''
   }
 
-  // 2. 组织prompt
-const messages = [
-  { role: 'system', content: '你是一个会议内容智能优化助手。' },
-  { role: 'user', content: context },
-  { role: 'user', content: newContent.value }
-]
+  const messages = [
+    { role: 'system', content: '你是一个会议内容智能优化助手。' },
+    { role: 'user', content: context },
+    { role: 'user', content: prompt }
+  ]
 
   try {
-    // 3. 调用后端
-    const response = await fetch('http://127.0.0.1:8000/api/chat', {
+    loading.value = true
+    const resp = await fetch('http://127.0.0.1:8000/api/chat', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ messages })
     })
-    const data = await response.json()
+    const data = await resp.json()
     aiReply.value = data.reply
-  } catch (error) {
+  } catch (err) {
     aiReply.value = ''
-    alert('调用AI失败，请检查后端服务')
+    ElMessage.error('调用 AI 失败，请检查后端服务')
   } finally {
     loading.value = false
   }
 }
 
-/**
- * 应用AI结果：更新当前摘要或当前section内容
- */
+/** 应用 AI 结果到页面（摘要或当前 section 的 summary） */
 function applyAIContent() {
   if (!aiReply.value) return
 
   if (activeIndex.value === -1) {
     defaultAbstract.value = aiReply.value
   } else if (sections.value[activeIndex.value]) {
-    // 这里以 summary 为例，实际可按需支持更多字段
     sections.value[activeIndex.value].summary = aiReply.value
   }
 
-  // 清空状态
+  // 清空本次交互
   aiReply.value = ''
   newContent.value = ''
 }
 </script>
+
 <style scoped>
 /* 页面基础布局 */
 .layout {
@@ -163,12 +200,9 @@ function applyAIContent() {
   margin-top: 20px;
   margin-bottom: 10px;
 }
+h3 { margin: 0; }
 
-h3 {
-  margin: 0;
-}
-
-/* 切换按钮样式 */
+/* 切换按钮 */
 .toggle-btn {
   margin-left: 10px;
   border: none;
@@ -177,13 +211,12 @@ h3 {
   outline: none;
 }
 
-/* 底部输入区样式 */
+/* 底部输入区 */
 .bottom-input-area {
   margin-top: 10px;
   border-top: 1px solid #ddd;
   padding-top: 10px;
 }
-
 textarea {
   width: 99%;
   box-sizing: border-box;
@@ -201,11 +234,9 @@ button {
   border-radius: 6px;
   color: white;
 }
+button:hover { background-color: #66b1ff; }
 
-button:hover {
-  background-color: #66b1ff;
-}
-
+/* AI 结果展示 */
 .ai-reply-box {
   margin-top: 15px;
   padding: 10px;
@@ -213,7 +244,6 @@ button:hover {
   border-radius: 6px;
   background-color: #f9f9f9;
 }
-
 .ai-reply-text {
   white-space: pre-wrap;
   line-height: 1.6;

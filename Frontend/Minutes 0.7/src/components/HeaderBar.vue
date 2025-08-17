@@ -17,9 +17,6 @@
           <!-- 显示用户名，不可点击 -->
           <el-dropdown-item disabled>{{ username }}</el-dropdown-item>
           
-          <!-- 设置按钮 -->
-          <el-dropdown-item divided command="settings">Settings</el-dropdown-item>
-          
           <!-- 退出按钮 -->
           <el-dropdown-item command="logout">Log out</el-dropdown-item>
         </el-dropdown-menu>
@@ -28,30 +25,32 @@
   </div>
 </template>
 
+
 <script lang="ts" setup>
+import { computed, onMounted } from 'vue'
 import { useRouter } from 'vue-router'
 import { ElMessage } from 'element-plus'
+import { useAuthStore } from '@/stores/user'
 
-// 创建路由对象
 const router = useRouter()
+const auth = useAuthStore()
 
-// 用户名（可改为从登录信息获取）
-const username = 'Gaoxinjie'
+// 首次进入/刷新，从本地载入一次
+onMounted(() => {
+  if (!auth.user && !auth.token) auth.loadFromStorage()
+})
 
-// 获取用户名首字母大写，用作头像
-const userInitial = username[0].toUpperCase()
+const username = computed(() => auth.user?.name || 'Guest')
+const userInitial = computed(() => username.value.charAt(0).toUpperCase())
 
-// 处理下拉菜单点击事件
 function handleCommand(command: string) {
   if (command === 'logout') {
-    // 点击退出，提示消息并跳转到登录页
+    auth.logout()
     ElMessage.success('Logged out')
     router.push('/loginPage')
-  } else if (command === 'settings') {
-    // 点击设置，弹出提示
-    ElMessage.info('Settings page coming soon')
   }
 }
+
 </script>
 
 <style scoped>
