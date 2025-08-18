@@ -19,10 +19,15 @@ export default defineConfig({
   server: {
     proxy: {
       "/api": {
-        target: "http://localhost:8000",
+        target: "http://127.0.0.1:8080",
         changeOrigin: true,
         rewrite: (p) => p.replace(/^\/api/, ""),
       },
+      "/ai-api": {
+      target: "http://127.0.0.1:54232", //  AI 服务
+      changeOrigin: true,
+      rewrite: (p) => p.replace(/^\/ai-api/, "/api"),
+    },
     },
   },
 })

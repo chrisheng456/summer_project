@@ -216,9 +216,9 @@ async function submitContent() {
   { role: 'user', content: newContent.value }
 ]
 
-  try {
+ try {
     loading.value = true
-    const resp = await fetch('http://127.0.0.1:8000/api/chat', {
+    const resp = await fetch('/ai-api/chat', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ messages })
@@ -227,12 +227,11 @@ async function submitContent() {
     aiReply.value = data.reply
   } catch (err) {
     aiReply.value = ''
-    ElMessage.error('调用 AI 失败，请检查后端服务')
+    ElMessage.error('AI failed, please check the backend service.')
   } finally {
     loading.value = false
   }
 }
-
 function applyAIContent() {
   if (!aiReply.value) return
   if (activeIndex.value === -1) {
