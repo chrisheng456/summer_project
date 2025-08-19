@@ -18,7 +18,7 @@ class TextSummaryPipeline:
         max_input_tokens = tokenizer.model_max_length
         agenda = getattr(info, "customer_meeting_detail", {}).get("agenda", [])
         if not agenda:
-            logger.warning("没有找到议程信息")
+            logger.warning("No agenda information found")
             return
         for item in agenda:
             lines = item.get("lines", [])
@@ -28,8 +28,7 @@ class TextSummaryPipeline:
             if not text:
                 item["summary"] = ""
                 continue
-            # 拆分长文本
-            sentences = re.split(r"(?<=[。？！\.!?])\s*", text)
+            sentences = re.split(r"(?<=[\.!?])\s*", text)
             chunks, current = [], []
             current_len = 0
             for sent in sentences:

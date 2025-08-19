@@ -1,4 +1,3 @@
-# Backend/api/app/pipeline/s04_customer_api/__init__.py
 from __future__ import annotations
 from typing import List, Dict, Any
 from ...schema.process_information import ProcessInformation
@@ -37,6 +36,5 @@ class CustomerApiPipeline:
 
         client = PPClient(self.bearer)
         detail = client.meeting_detail(self.scheme_id, self.meeting_id)
-        # 将会议详情挂到 info，后续分类/摘要可用
         info.customer_meeting_detail = detail
         return info
