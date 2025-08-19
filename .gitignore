@@ -1,15 +1,64 @@
+# macOS system files
 **/.DS_Store
-# Python 虚拟环境
+
+# ------------------------
+# Python environment
+# ------------------------
+# Virtual environments
 venv/
 .venv/
 ENV/
 env/
 .env
 
-# Python 缓存文件
+# Python cache files
 __pycache__/
 *.py[cod]
 
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints/
 
+# ------------------------
+# Node.js / Frontend
+# ------------------------
+# Dependencies
+node_modules/
 
+# Build outputs
+dist/
+build/
+out/
 
+# Temporary cache
+.cache/
+.next/
+.nuxt/
+.vite/
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Lock files (keep only one if your team uses a specific package manager)
+package-lock.json
+yarn.lock
+pnpm-lock.yaml
+
+# ------------------------
+# Editor/IDE
+# ------------------------
+# VSCode
+.vscode/
+# JetBrains IDEs
+.idea/
+
+# ------------------------
+# Others
+# ------------------------
+# Test coverage reports
+coverage/
+
+# Local environment files
+*.local
