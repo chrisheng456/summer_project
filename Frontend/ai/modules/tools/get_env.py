@@ -3,7 +3,7 @@ import os
 
 def load_azure_openai_config():
     """
-    加载 Azure OpenAI 的所有配置，从 .env 或环境变量
+    Load all Azure OpenAI configurations from .env or environment variables
     """
     load_dotenv()
     return {

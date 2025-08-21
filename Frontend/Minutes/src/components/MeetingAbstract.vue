@@ -14,8 +14,9 @@
       <textarea v-model="editableAbstract" class="input" />
     </div>
 
-    <!-- 显示态：美化后的竖直列表 -->
-    <div v-else class="abstract-list" :class="{ 'flash': justReset }"><!-- 修改点：加闪烁态 -->
+
+    <!-- Display mode: vertical list -->
+    <div v-else class="abstract-list" :class="{ 'flash': justReset }">
       <div v-for="(row, i) in rows" :key="i" class="row">
         <template v-if="row.isPair">
           <span class="label">{{ row.key }}</span>
@@ -35,8 +36,6 @@ import { ref, watch, computed } from 'vue'
 const props = defineProps<{ abstract: string }>()
 const isEditing = ref(false)
 const editableAbstract = ref('')
-
-// 修改点：用于 reset 后轻微高亮
 const justReset = ref(false)
 
 watch(
@@ -48,20 +47,19 @@ watch(
 function toggleEdit() {
   if (isEditing.value) {
     console.log('保存 abstract:', editableAbstract.value)
-    // 可在此 emit 到父组件或调用保存接口
   }
   isEditing.value = !isEditing.value
 }
 
 function resetEdit() {
   editableAbstract.value = props.abstract
-  isEditing.value = false              // 修改点：重置后退出编辑
-  justReset.value = true               // 修改点：触发高亮动画
-  // 600ms 后移除高亮类
+  isEditing.value = false              
+  justReset.value = true             
   setTimeout(() => (justReset.value = false), 600)
 }
 
-// 按行解析，优先分割第一个冒号
+
+// Parse line by line, prioritize splitting at the first colon
 const rows = computed(() => {
   const lines = (editableAbstract.value || '')
     .split(/\r?\n/)
@@ -101,7 +99,7 @@ h2 {
   padding-bottom: 0.5rem;
 }
 
-/* 保留：你的编辑区样式不改 */
+
 .input {
   width: 100%;
   padding: 8px;
@@ -138,7 +136,7 @@ h2 {
 }
 .reset-btn:hover { background-color: #005fa3; }
 
-/* ===== 显示美化（新加）===== */
+
 .abstract-list {
   margin-top: 1rem;
   display: grid;
@@ -147,7 +145,7 @@ h2 {
 
 .row {
   display: grid;
-  grid-template-columns: 180px 1fr; /* 左标签右内容 */
+  grid-template-columns: 180px 1fr;
   gap: 12px;
   align-items: start;
   padding: 10px 12px;
@@ -156,7 +154,7 @@ h2 {
   border-radius: 8px;
 }
 
-/* 仅有 value 的行（不含冒号）占满 */
+
 .row:not(:has(.label)) {
   grid-template-columns: 1fr;
 }
@@ -172,7 +170,7 @@ h2 {
   word-break: break-word;
 }
 
-/* Reset 后轻微高亮（新加） */
+
 .flash {
   animation: flashBg .6s ease;
 }
@@ -181,7 +179,7 @@ h2 {
   100% { box-shadow: 0 0 0 0 rgba(17, 98, 255, 0); }
 }
 
-/* 窄屏自适应 */
+
 @media (max-width: 640px) {
   .row { grid-template-columns: 120px 1fr; }
 }

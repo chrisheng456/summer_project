@@ -2,7 +2,7 @@
   <div>
     <HeaderBar />
     <div class="container">
-      <!-- 上传音频 -->
+      <!-- Upload audio -->
       <div class="upload-section">
         <h3>Upload New Audio</h3>
 
@@ -24,7 +24,7 @@
           </template>
         </el-upload>
 
-        <!-- 处理按钮（选了会议 + 选了音频 才能点击） -->
+        <!-- Process button (enabled only when a meeting + audio file are selected) -->
         <div class="process-bar">
           <button
             class="process-btn"
@@ -39,7 +39,8 @@
         </div>
       </div>
 
-      <!-- 会议列表 -->
+
+      <!-- Meeting list -->
       <div class="history-section">
         <h3 class="table-title">Meetings History</h3>
         <div class="table-wrapper">
@@ -61,7 +62,7 @@
                 v-for="item in history"
                 :key="rowKey(item)"
               >
-                <!-- 单选：选择一个会议 -->
+
                 <td>
                   <input
                     type="radio"
@@ -75,7 +76,7 @@
                 <td>{{ formatDate(item.date) }}</td>
                 <td>{{ item.scheme_name }}</td>
 
-                <!-- 简单状态：Done/Processing/None -->
+
                 <td>
                   <span v-if="processingKey === rowKey(item)">Processing…</span>
                   <span v-else-if="isAnalyzed(item)">Done</span>
@@ -121,11 +122,11 @@ import { adaptApiResultToMeetingDetail } from '@/api/transform/adaptMeeting'
 // Pinia
 const meetingStore = useMeetingStore()
 
-// 会议列表
+// Meeting list
 const history = ref<Meetings[]>([])
 const router = useRouter()
 
-// 1.读取本地会议 + 恢复“上次选中的会议”
+// Load local meetings + restore "last selected meeting"
 onMounted(() => {
   try {
     const raw = localStorage.getItem('meetings')
@@ -138,18 +139,18 @@ onMounted(() => {
   if (last) selectedKey.value = last
 })
 
-// 行 key
+
 const rowKey = (m: Meetings) => `${m.scheme_id}:${m.meeting_id}`
 
-// 当前选中的会议 key
+// Currently selected meeting key
 const selectedKey = ref<string>('')
 
-// 同步本地存储
+// Sync with local storage
 watch(selectedKey, v => {
   localStorage.setItem('selectedMeetingKey', v ?? '')
 })
 
-// 当前选择的会议对象
+
 const selectedMeeting = computed<Meetings | null>(() => {
   if (!selectedKey.value) return null
   const [sid, mid] = selectedKey.value.split(':')
@@ -158,23 +159,24 @@ const selectedMeeting = computed<Meetings | null>(() => {
   ) || null
 })
 
-// 选择的音频（仅通过 el-upload）
+
+// Selected audio file (via el-upload)
 const selectedFile = ref<File | null>(null)
 const fileList = ref<UploadFile[]>([])
 function onFileChange(file: UploadFile) {
   selectedFile.value = (file?.raw as File) || null
 }
 
-// 状态：哪个会议正在处理
+// State: which meeting is being processed
 const processingKey = ref<string>('')
 const processing = ref(false)
 
-// ✅ 是否“已处理完成”用 Pinia
+// Whether a meeting has been analyzed (via Pinia)
 function isAnalyzed(item: Meetings) {
   return meetingStore.isAnalyzed(item.scheme_id, item.meeting_id)
 }
 
-// 开始处理：送到 /pipeline/analyze，返回结果存 Pinia
+// Start analyzing: send to /pipeline/analyze, save result to Pinia
 async function startAnalyze() {
   const m = selectedMeeting.value
   if (!m) {
@@ -212,13 +214,13 @@ async function startAnalyze() {
   } finally {
     processing.value = false
     processingKey.value = ''
-    // 清空已选文件（如需保留可去掉）
     fileList.value = []
     selectedFile.value = null
   }
 }
 
-// 查看详情（只在已处理完成后可点）
+
+// View details (enabled only if analysis is done)
 function viewDetail(item: Meetings) {
   if (!isAnalyzed(item)) return
   router.push({
@@ -230,7 +232,7 @@ function viewDetail(item: Meetings) {
   })
 }
 
-// 时间格式
+// Format date
 function formatDate(iso: string) {
   try { return new Date(iso).toLocaleDateString() } catch { return iso }
 }

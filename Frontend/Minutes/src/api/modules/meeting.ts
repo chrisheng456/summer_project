@@ -1,11 +1,11 @@
 import { http } from '../http'
 // import type * from '@/types/index';
-import type { MeetingDetail } from '@/types' // 或 '@/types'
+import type { MeetingDetail } from '@/types' 
 
 
 export const meetingApi = {
 
-// 1.分析页面
+// Analysis page
   async analyze(file: File, schemeId: string, meetingId: string):Promise<MeetingDetail> {
     const fd = new FormData();
     fd.append('file', file);
@@ -17,7 +17,7 @@ export const meetingApi = {
     return resp.data;
   },
 
-   // 3.导出 PDF
+  // Export PDF
   async exportPdf(schemeId: string, meetingId: string): Promise<Blob> {
     const resp = await http.post('/export/pdf', {}, {
       params: { scheme_id: schemeId, meeting_id: meetingId },
@@ -26,9 +26,8 @@ export const meetingApi = {
     return resp.data
   },
 
-  // 4.导出 Word（docx）
+  // Export Word (docx)
   async exportDocx(schemeId: string, meetingId: string): Promise<Blob> {
-    // 如果后端是 /export/docx 或其他路径，请替换
     const resp = await http.post('/export/docx', {}, {
       params: { scheme_id: schemeId, meeting_id: meetingId },
       responseType: 'blob',

@@ -9,10 +9,10 @@
 <script setup lang="ts">
 import { computed } from 'vue'
 
-// 接收 props
+// Receive props
 const props = defineProps<{ imageUrl: string }>()
 
-// 动态背景样式，防止图片路径被错处理
+// Dynamic background style, prevent incorrect image path handling
 const backgroundStyle = computed(() => ({
   backgroundImage: `url(${props.imageUrl})`,
   backgroundSize: 'cover',
@@ -26,7 +26,7 @@ const backgroundStyle = computed(() => ({
   height: 100vh;
 }
 
-/* 遮罩 + 内容容器 */
+/* Overlay + content container */
 .image-wrapper {
   width: 100%;
   height: 100%;

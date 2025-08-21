@@ -1,14 +1,13 @@
 <template>
   <div class="sidebar">
-    <!-- 顶部内容 -->
+    <!-- Top section -->
     <div @click="$emit('select', -1)" class="level-0">Meeting Details</div>
 
-    <!-- ✅ 改这里：发 open-trans 事件 -->
     <div @click="$emit('open-trans')" class="level-0">Transcription</div>
 
     <div class="level-1">Agenda</div>
 
-    <!-- Section 列表 -->
+    <!-- Section list -->
     <div
       v-for="(section, index) in sections"
       :key="index"
@@ -19,7 +18,7 @@
       <span class="item-title">{{ section.title }}</span>
     </div>
 
-    <!-- Download 下拉（原样） -->
+    <!-- Download dropdown -->
     <div class="download-area">
       <el-dropdown
         trigger="click"
@@ -51,7 +50,7 @@ defineProps<{
 const emit = defineEmits<{
   (e: 'select', index: number): void
   (e: 'download', format: 'pdf' | 'docx'): void
-  (e: 'open-trans'): void           // ✅ 新增事件
+  (e: 'open-trans'): void         
 }>()
 
 function onDownloadCommand(cmd: 'pdf' | 'docx') {
@@ -60,7 +59,7 @@ function onDownloadCommand(cmd: 'pdf' | 'docx') {
 </script>
 
 <style scoped>
-/* 侧边栏整体样式 */
+/* Sidebar container */
 .sidebar {
   width: 220px;
   background-color: #f0f8ff;
@@ -77,7 +76,7 @@ function onDownloadCommand(cmd: 'pdf' | 'docx') {
   padding-left: 0;
 }
 
-/* ============ 修改后的 Section 项 ============ */
+
 .level-2 {
   display: flex;
   align-items: center;
@@ -86,54 +85,51 @@ function onDownloadCommand(cmd: 'pdf' | 'docx') {
   margin-bottom: 10px;
   padding: 10px 14px;
 
-  background: #f8fafa;  /* 白色卡片感 */
+  background: #f8fafa; 
   border: 1px solid #e0e6ed;
   border-radius: 10px;
 
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08); /* 默认轻微阴影 */
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08); 
 
   transition: background-color 0.25s ease, box-shadow 0.25s ease, transform 0.12s ease;
   cursor: pointer;
 }
 
 .level-2:hover {
-  background: #f5f9ff;  /* hover 时微蓝背景 */
-  box-shadow: 0 4px 12px rgba(0, 80, 200, 0.15); /* 阴影更明显 */
-  transform: translateY(-2px); /* 微微浮起 */
+  background: #f5f9ff;  
+  box-shadow: 0 4px 12px rgba(0, 80, 200, 0.15); 
+  transform: translateY(-2px);
 }
 
 .level-2.active {
-  background: #e6f2ff;  /* 选中时更深的蓝背景 */
+  background: #e6f2ff; 
   border-color: #4a90e2;
-  box-shadow: 0 6px 14px rgba(0, 80, 200, 0.2); /* 内阴影更强，突出感 */
+  box-shadow: 0 6px 14px rgba(0, 80, 200, 0.2); 
 }
 
 
 
-/* 图标 */
 .item-icon {
   font-size: 1rem;
   color: #007acc;
 }
 
-/* 标题文字 */
+
 .item-title {
   color: #0f172a;
   font-weight: 600;
   font-size: 0.95rem;
   line-height: 1.4;
-  /* 一行溢出省略 */
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
 }
-/* ============ 修改结束 ============ */
 
 .download-area {
   display: flex;
 }
 
-/* Download 按钮（保持原样） */
+
 .download-btn {
   margin-left: 100px;
   padding: 6px 12px;
@@ -158,7 +154,7 @@ function onDownloadCommand(cmd: 'pdf' | 'docx') {
   cursor: pointer;
 }
 
-/* 下拉层级 */
+
 :deep(.sidebar-dropdown) {
   z-index: 4000;
 }

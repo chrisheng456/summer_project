@@ -1,6 +1,6 @@
 <template>
   <div class="layout">
-    <!-- 侧边栏 -->
+    <!-- Sidebar -->
     <aside class="sidebar">
      <Sidebar
   :sections="sections"
@@ -12,23 +12,23 @@
 
     </aside>
 
-    <!-- 主内容 -->
+    <!-- Main content -->
     <main class="content">
-      <!-- ✅ 返回按钮 -->
+      <!-- Back button -->
       <div class="back-btn">
         <button @click="goBack">Back</button>
       </div>
 
-      <!-- 未选择任何 section 时显示摘要 -->
+      <!-- Show abstract if no section selected -->
       <MeetingAbstract v-if="activeIndex === -1" :abstract="defaultAbstract" />
 
-      <!-- 选中某个 section 时显示详情 -->
+      <!-- Show details of selected section -->
       <SectionContent
         v-else-if="sections.length"
         :section="sections[activeIndex]"
       />
 
-      <!-- AI 交互 -->
+      <!-- AI interaction -->
       <div class="question-header">
         <h3 style="display:inline-block;">Do you have any questions for AI?</h3>
         <button class="toggle-btn" @click="showInput = !showInput">
@@ -37,7 +37,7 @@
       </div>
 
       <div v-if="showInput" class="bottom-input-area">
-        <!-- 用户输入指令 -->
+        <!-- User input -->
         <textarea
           v-model="newContent"
           rows="4"
@@ -47,7 +47,7 @@
           {{ loading ? 'Processing...' : 'Submit' }}
         </button>
 
-        <!-- 显示 AI 结果，允许应用 -->
+        <!-- AI reply with option to apply -->
         <div v-if="aiReply" class="ai-reply-box">
           <h4>AI Suggestion:</h4>
           <div class="ai-reply-text">{{ aiReply }}</div>
@@ -60,7 +60,7 @@
 
 <script setup lang="ts" name="MeetingNotes">
 import { ref, onMounted } from 'vue'
-import { useRoute, useRouter } from 'vue-router'  // ✅ 引入 router
+import { useRoute, useRouter } from 'vue-router'  
 import { ElMessage } from 'element-plus'
 
 import Sidebar from '@/components/Sidebar.vue'
@@ -82,16 +82,16 @@ const aiReply = ref('')
 const loading = ref(false)
 
 const route = useRoute()
-const router = useRouter()   // ✅ 获取 router 实例
+const router = useRouter()   
 
-/** 把 query 值规范为 string */
+/** Convert query param to string */
 function asString(v: unknown): string | undefined {
   if (Array.isArray(v)) return v[0] as string
   if (typeof v === 'string') return v
   return undefined
 }
 
-/** 页面加载 */
+/** On page load */
 onMounted(async () => {
   let schemeId = asString(route.query.scheme_id)
   let meetingId = asString(route.query.meeting_id)
@@ -117,19 +117,19 @@ onMounted(async () => {
   defaultAbstract.value = result.abstract || 'No abstract available.'
 })
 
-/** 选择侧边栏的 section */
+/** Handle section selection */
 function handleSelect(index: number) {
   activeIndex.value = index
 }
 
-/** ===== 返回按钮逻辑 ===== */
+/** Back button logic */
 function goBack() {
-  router.push({ name: 'UploadHistory' })  // ✅ 跳转到 UploadHistory 页面
+  router.push({ name: 'UploadHistory' }) 
 }
 
-/** ===== 下载相关逻辑 ===== */
 
-/** 获取 schemeId/meetingId */
+
+/** Get schemeId / meetingId */
 function getIds() {
   let schemeId = asString(route.query.scheme_id)
   let meetingId = asString(route.query.meeting_id)
@@ -146,7 +146,7 @@ function getIds() {
 }
 
 function goTransPage() {
-  const { schemeId, meetingId } = getIds() // 你已有的函数
+  const { schemeId, meetingId } = getIds() 
   if (!schemeId || !meetingId) return
   router.push({
     name: 'TransPage',
@@ -154,7 +154,7 @@ function goTransPage() {
   })
 }
 
-/** 把 Blob 下载到本地 */
+/** Download blob file */
 function downloadBlob(blob: Blob, filename: string) {
   const url = URL.createObjectURL(blob)
   const a = document.createElement('a')
@@ -166,7 +166,7 @@ function downloadBlob(blob: Blob, filename: string) {
   URL.revokeObjectURL(url)
 }
 
-/** 接收 Sidebar 发出的下载请求 */
+/** Handle download request from Sidebar */
 async function handleDownload(format: 'pdf' | 'docx') {
   const { schemeId, meetingId } = getIds()
   if (!schemeId || !meetingId) {
@@ -191,11 +191,11 @@ async function handleDownload(format: 'pdf' | 'docx') {
   }
 }
 
-/** ===== AI 功能保持不变 ===== */
+
 async function submitContent() {
   const prompt = newContent.value.trim()
   if (!prompt) {
-    ElMessage.warning('请输入你的 AI 指令')
+    ElMessage.warning('Please enter your AI instruction')
     return
   }
 
@@ -245,13 +245,13 @@ function applyAIContent() {
 </script>
 
 <style scoped>
-/* 页面基础布局 */
+
 .layout {
   display: flex;
   height: 100vh;
 }
 
-/* 侧边栏样式 */
+
 .sidebar {
   width: 240px;
   background-color: #f4f4f4;
@@ -259,14 +259,14 @@ function applyAIContent() {
   overflow-y: auto;
 }
 
-/* 主内容区域 */
+
 .content {
   flex: 1;
   padding: 20px;
   overflow-y: auto;
 }
 
-/* ✅ 返回按钮样式 */
+
 .back-btn {
   margin-bottom: 15px;
 }
@@ -282,7 +282,6 @@ function applyAIContent() {
   background-color: #444;
 }
 
-/* 问题区域标题 */
 .question-header {
   display: flex;
   align-items: center;
@@ -291,7 +290,7 @@ function applyAIContent() {
 }
 h3 { margin: 0; }
 
-/* 切换按钮 */
+
 .toggle-btn {
   margin-left: 10px;
   border: none;
@@ -300,7 +299,7 @@ h3 { margin: 0; }
   outline: none;
 }
 
-/* 底部输入区 */
+
 .bottom-input-area {
   margin-top: 10px;
   border-top: 1px solid #ddd;
@@ -325,7 +324,7 @@ button {
 }
 button:hover { background-color: #66b1ff; }
 
-/* AI 结果展示 */
+
 .ai-reply-box {
   margin-top: 15px;
   padding: 10px;

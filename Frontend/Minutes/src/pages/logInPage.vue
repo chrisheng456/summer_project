@@ -1,18 +1,18 @@
 <template>
   <div class="page-layout">
-    <!-- 左边：插画区 -->
+    <!-- Left side: illustration panel -->
     <LeftImagePanel :imageUrl="loginBg" />
 
-    <!-- 右边：登录框 -->
+    <!-- Right side: login form -->
     <div class="page-wrapper">
       <div class="login-container">
         <!-- LOGO -->
         <img src="@/assets/logo.png" alt="AutoMinute Logo" class="logo" />
 
-        <!-- 欢迎语 -->
+        <!-- Welcome text -->
         <h2 class="welcome-title">Welcome! <br />Let's get started.</h2>
 
-        <!-- 登录表单 -->
+        <!-- Login form inputs -->
         <input
           v-model.trim="username"
           type="text"
@@ -30,10 +30,10 @@
           {{ loading ? 'Logging in...' : 'Login' }}
         </button>
 
-        <!-- 错误信息 -->
+        <!-- Error message -->
         <p v-if="errorMessage" class="error">{{ errorMessage }}</p>
 
-        <!-- 其他链接 -->
+        <!-- Links -->
         <div class="links">
           <a @click.prevent="goToForgotPassword" style="cursor: pointer;">Forgot Password</a>
           <a @click.prevent="goToRegister" style="cursor: pointer;">Register Account</a>
@@ -48,11 +48,8 @@ import { ref } from 'vue'
 import { useRouter } from 'vue-router'
 import LeftImagePanel from '@/components/LeftImagePanel.vue'
 import loginBg from '@/assets/login-bg.jpg'
-
-//  使用你封装好的模块（在 modules/index.ts 里 re-export 了 authApi）
 import { authApi } from '@/api/modules/index'
 
-// 用户信息管理
 import { useAuthStore } from '@/stores/user'
 const auth = useAuthStore()
 
@@ -66,7 +63,7 @@ async function handleLogin() {
   if (loading.value) return
   errorMessage.value = ''
 
-  // 简单校验
+  // Basic validation
   if (!username.value || !password.value) {
     errorMessage.value = 'Please enter username and password'
     return
@@ -79,27 +76,20 @@ async function handleLogin() {
     })
 
       if (res.ok && res.token) {
-      // 后端未返回 user，这里用表单名兜底构造一个轻量用户对象
       const user = { id: 0, name: username.value }
-
-      // Pinia：全局保存
       auth.login(user, res.token)
 
-      // localStorage：给 axios 拦截器自动带 Authorization
       localStorage.setItem('token', res.token)
-
-      // 缓存会议（可选）
       if (res.meetings) {
         localStorage.setItem('meetings', JSON.stringify(res.meetings))
       }
 
       router.push('/UploadHistory')
     } else {
-      // 后端自定义 message 时兜底
       errorMessage.value = 'Login failed'
     }
   } catch (e: any) {
-    // 兜底错误信息
+    // Error handling
     errorMessage.value =
       e?.response?.data?.message ||
       e?.response?.data?.detail ||
@@ -119,7 +109,6 @@ function goToForgotPassword() {
 </script>
 
 <style scoped>
-/* 你的样式保持不变，只补一个禁用态友好点 */
 .page-layout {
   display: flex;
   flex-direction: row;

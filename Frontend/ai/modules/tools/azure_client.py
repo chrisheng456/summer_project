@@ -1,10 +1,10 @@
 from openai import AzureOpenAI
-from .get_env import load_azure_openai_config  # 绝对/相对都行
+from .get_env import load_azure_openai_config  
 
-#连接api
+# Connect to Azure OpenAI API
 def get_azure_client():
     """
-    获取 Azure OpenAI 客户端
+    Get Azure OpenAI client
     """
     config = load_azure_openai_config()
     client = AzureOpenAI(
@@ -14,7 +14,7 @@ def get_azure_client():
     )
     return client
 
-#获取模型名的
+# Get deployment (model) name
 def get_deployment_name():
     config = load_azure_openai_config()
     return config["deployment"]

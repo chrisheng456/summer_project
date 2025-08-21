@@ -1,4 +1,3 @@
-// src/api/fetchMeetingData.ts
 
 import { useMeetingStore } from '@/stores/meeting'
 import { mapMeetingDetailToMeetingData } from '@/api/transform/meeting'
@@ -6,7 +5,7 @@ import type { MeetingData, MeetingDetail } from '@/types'
 import type { MeetingRecord } from '@/types/interface'
 
 /**
- * 获取“单个会议”的渲染数据（从 Pinia 读取 + 修剪）
+ * Get render data for a single meeting (read from Pinia + trim)
  */
 export async function fetchMeetingsData(
   schemeId: string | number,
@@ -14,7 +13,7 @@ export async function fetchMeetingsData(
 ): Promise<MeetingData> {
   const store = useMeetingStore()
 
-  // ===== 调试开始 =====
+  // ===== Debug: start =====
   console.group('[fetchMeetingsData]')
   console.log('input schemeId=', schemeId, 'meetingId=', meetingId)
   const asNumSid = Number(schemeId)
@@ -26,7 +25,7 @@ export async function fetchMeetingsData(
   const keys = Object.keys(store.details ?? {})
   console.log('store.details keys =', keys)
 
-  // 试两种取法（数字 & 字符串），以免 key 维度不匹配
+  // Try both number & string keys to avoid key-type mismatch
   const byNum  = store.getByIds?.(asNumSid, asNumMid) as MeetingDetail | undefined
   const byStr  = store.getByIds?.(asStrSid, asStrMid) as MeetingDetail | undefined
   const detail = (byNum ?? byStr) ?? null
@@ -46,12 +45,12 @@ export async function fetchMeetingsData(
     console.groupEnd()
     return { abstract: '', meetings: [] }
   }
-  // ===== 调试结束（查找到 detail）=====
+  // ===== Debug: end (detail found) =====
 
-  // 映射为页面所需结构
+  // Map to the structure required by the page
   const result = mapMeetingDetailToMeetingData(detail)
 
-  // ===== transform 结果调试 =====
+  // ===== Debug transform result =====
   console.log('transform result.abstract length =', (result.abstract ?? '').length)
   console.log('transform result.meetings length =', (result.meetings ?? []).length)
   if (result.meetings?.length) {
@@ -67,7 +66,7 @@ export async function fetchMeetingsData(
     })
   }
   console.groupEnd()
-  // ===== 调试结束 =====
+  // ===== Debug: end =====
 
   return result
 }

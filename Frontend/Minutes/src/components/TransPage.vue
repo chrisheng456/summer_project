@@ -1,6 +1,6 @@
 <template>
   <div class="layout">
-    <!-- 左侧：自定义 TransSidebar，带 Back -->
+    <!-- Left: custom TransSidebar with Back -->
     <aside class="sidebar">
       <TransSidebar
         :sections="sideSections"
@@ -10,10 +10,10 @@
       />
     </aside>
 
-    <!-- 右侧：正文 -->
+    <!-- Right: main content -->
     <main class="content">
       <div class="topbar">
-        <!-- 侧边栏已放 Back，这里只保留搜索框 -->
+        <!-- Back button moved to sidebar, only keep search box here -->
         <div class="tools">
           <input
             v-model="keyword"
@@ -29,11 +29,11 @@
         <small v-if="detail && detail.name" class="subtitle">· {{ detail.name }}</small>
       </h2>
 
-      <!-- 无数据 -->
+      <!-- No data -->
       <div v-if="!detail" class="empty">No meeting selected or data not loaded.</div>
       <div v-else-if="!agendasWithLines.length" class="empty">No transcript lines in this meeting.</div>
 
-      <!-- 全部议题视图 -->
+      <!-- All agendas view -->
       <div v-else-if="activeIndex === -1" class="agenda-list">
         <section v-for="(ag, i) in filteredAgendasAll" :key="ag.id ?? i" class="agenda-card">
           <header class="agenda-header">
@@ -54,7 +54,7 @@
         </section>
       </div>
 
-      <!-- 单个议题视图（可编辑） -->
+      <!-- Single agenda view (editable) -->
       <div v-else class="agenda-single">
         <section class="agenda-card">
           <header class="agenda-header">
@@ -64,7 +64,7 @@
               <div class="count">{{ currentLines.length }} lines</div>
             </div>
 
-            <!-- 右上角：编辑动作 -->
+            <!-- Edit actions on the top right -->
             <div class="edit-actions">
               <button v-if="!isEditing" class="btn" @click="startEdit">Edit</button>
               <template v-else>
@@ -74,7 +74,7 @@
             </div>
           </header>
 
-          <!-- 时间 / 摘要（编辑或只读） -->
+          <!-- Time / Summary (editable or read-only) -->
           <div class="edit-fields">
             <div class="field">
               <label>Time:</label>
@@ -93,10 +93,9 @@
             </div>
           </div>
 
-          <!-- Summary 与台词之间的分隔 -->
           <div class="summary-divider"></div>
 
-          <!-- 台词列表：编辑或只读 -->
+          <!-- Divider between summary and transcript lines -->
           <ul class="line-list">
             <li v-for="(ln, j) in linesForView" :key="j" class="line-item">
               <span class="time" v-if="ln.start !== undefined">{{ toMMSS(ln.start) }}</span>
@@ -146,7 +145,7 @@ type Agenda = {
 }
 type MeetingDetailMini = { name?: string; agenda?: Agenda[] }
 
-/* 路由与 store */
+/* Router and store */
 const router = useRouter()
 const route = useRoute()
 const meetingStore = useMeetingStore()
@@ -154,7 +153,7 @@ const { details } = storeToRefs(meetingStore) as unknown as {
   details: Ref<Record<string, MeetingDetailMini>>
 }
 
-/* 当前会议 key 与 detail */
+/* Current meeting key and detail */
 function asString(v: unknown) {
   if (Array.isArray(v)) return v[0] as string
   if (typeof v === 'string') return v
@@ -179,10 +178,9 @@ const detail = computed<MeetingDetailMini | null>(() => {
   return details.value?.[currentKey.value] ?? null
 })
 
-/* 侧边栏与筛选状态 */
+/* Sidebar state and filters */
 const activeIndex = ref(-1)
 const keyword = ref('')
-// 不再展示“Only current agenda”按钮；逻辑保留默认 false
 const onlyCurrent = ref(false)
 
 function handleSelect(i: number) {
@@ -192,7 +190,7 @@ function goBack() {
   router.push({ name: 'MeetingNotes' })
 }
 
-/* 数据派生 */
+/* Data derivation */
 const agendasWithLines = computed<Agenda[]>(() => {
   const agendas = detail.value?.agenda || []
   return agendas.filter(a => Array.isArray(a?.lines) && a.lines!.length > 0)
@@ -234,7 +232,7 @@ const currentLines = computed<TL[]>(() => {
   return Array.isArray(a?.lines) ? (a!.lines as TL[]) : []
 })
 
-/* 搜索过滤（onlyCurrent 仍保留逻辑，但 UI 不再展示） */
+/* Search filter (onlyCurrent logic retained but no UI button) */
 const filteredAgendasAll = computed(() => {
   const kw = keyword.value.trim().toLowerCase()
   const cur = currentAgenda.value
@@ -254,7 +252,7 @@ const filteredAgendasAll = computed(() => {
     })
 })
 
-/* ======== 编辑：时间/摘要 + 每句台词 ======== */
+/* ======== Editing: time/summary + transcript lines ======== */
 const isEditing = ref(false)
 const editableAgenda = ref<{ calculatedStartTime: string; summary: string; lines: TL[] }>({
   calculatedStartTime: '',
@@ -303,7 +301,7 @@ const linesForView = computed<TL[]>(() => {
   )
 })
 
-/* 工具 */
+
 function formatAgendaTitle(a: Agenda) {
   const num = (a?.number ?? '').toString().trim()
   const title = (a?.title ?? '').toString().trim()
@@ -345,7 +343,7 @@ watch(activeIndex, () => {
 .meta .name { font-weight: 700; }
 .meta .count { font-size: 12px; color: #6b7280; }
 
-/* 右上角按钮 */
+
 .edit-actions { margin-left: auto; display: flex; gap: 8px; }
 .btn { padding: 6px 12px; border: 1px solid #cfd8e3; background: #aabcce; border-radius: 6px; cursor: pointer; }
 .btn.primary { background: #3b82f6; color: #fff; border-color: #3b82f6; }
@@ -357,7 +355,7 @@ watch(activeIndex, () => {
 .input { width: 100%; padding: 8px 10px; border: 1px solid #d1d5db; border-radius: 6px; }
 .textarea { min-height: 80px; resize: vertical; }
 
-/* Summary 与发言列表之间分隔 */
+
 .summary-divider { border-top: 1px dashed #e5e7eb; margin: 12px 0 16px; }
 
 /* ========== Transcript Lines ========== */
@@ -368,11 +366,11 @@ watch(activeIndex, () => {
 .speaker { font-weight: 700; color: #0f172a; }
 .text { white-space: pre-wrap; line-height: 1.6; }
 
-/* 编辑态下的输入 */
+
 .line-input { width: 100%; border: 1px solid #d1d5db; border-radius: 6px; padding: 6px 8px; }
 .speaker-input { max-width: 160px; }
 .text-input { min-height: 44px; resize: vertical; }
 
-/* 空数据提示 */
+
 .empty { color: #6b7280; }
 </style>

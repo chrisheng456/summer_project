@@ -1,10 +1,8 @@
-// src/api/transform/meeting.ts
-// 把后端 MeetingDetail → MeetingData（abstract + meetings[]）
 
-import type { MeetingDetail, AgendaItem } from '@/types'               // 后端返回类型
-import type { MeetingData, MeetingRecord } from '@/types/interface'    // 目标前端类型
+import type { MeetingDetail, AgendaItem } from '@/types'               
+import type { MeetingData, MeetingRecord } from '@/types/interface'    
 
-/** 主函数：MeetingDetail -> MeetingData */
+
 export function mapMeetingDetailToMeetingData(detail?: MeetingDetail | null): MeetingData {
   console.group('[transform.mapMeetingDetailToMeetingData]')
   console.log('detail exists?', !!detail)
@@ -14,7 +12,7 @@ export function mapMeetingDetailToMeetingData(detail?: MeetingDetail | null): Me
     return { abstract: '', meetings: [] }
   }
 
-  // ============= 修改部分开始：竖排拼接 abstract（英文标签） =============
+
   let abstractParts: string[] = []
 
   if (detail.name) {
@@ -35,7 +33,7 @@ export function mapMeetingDetailToMeetingData(detail?: MeetingDetail | null): Me
   }
 
   const abstract = abstractParts.join('\n')
-  // ============= 修改部分结束 =============
+
 
   const meetings: MeetingRecord[] = (detail.agenda ?? []).map(a =>
     mapAgendaItemToRecord(a, detail)
@@ -48,12 +46,11 @@ export function mapMeetingDetailToMeetingData(detail?: MeetingDetail | null): Me
   return { abstract, meetings }
 }
 
-/** 单个议程项 -> MeetingRecord */
+
+/** Single agenda item -> MeetingRecord */
 function mapAgendaItemToRecord(item: AgendaItem, detail: MeetingDetail): MeetingRecord {
   const label = (item.label ?? '').toString().toLowerCase().trim()
 
-  // ================= 修改部分 =================
-  // 根据 label 放入 actions / decisions / conflicts，存 explanation
   const actions: string[]   = label === 'action'
     ? [item.explanation?.trim() ?? ''] 
     : []
@@ -65,7 +62,6 @@ function mapAgendaItemToRecord(item: AgendaItem, detail: MeetingDetail): Meeting
   const conflicts: string[] = label === 'conflict'
     ? [item.explanation?.trim() ?? '']
     : []
-  // ================= 修改部分结束 =================
 
   return {
     title: item.title ?? '',

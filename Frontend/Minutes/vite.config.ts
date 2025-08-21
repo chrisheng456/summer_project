@@ -15,7 +15,7 @@ export default defineConfig({
       '@': fileURLToPath(new URL('./src', import.meta.url))
     },
   },
-  //解决开发式跨域问题
+  // Solve CORS issues during development
   server: {
     proxy: {
       "/api": {
@@ -24,7 +24,7 @@ export default defineConfig({
         rewrite: (p) => p.replace(/^\/api/, ""),
       },
       "/ai-api": {
-      target: "http://127.0.0.1:54232", //  AI 服务
+      target: "http://127.0.0.1:54232", // AI service
       changeOrigin: true,
       rewrite: (p) => p.replace(/^\/ai-api/, "/api"),
     },

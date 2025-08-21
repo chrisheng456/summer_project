@@ -1,9 +1,9 @@
 <template>
   <div class="page-layout">
-    <!-- 左边：图片+欢迎文字 -->
+    <!-- Left side: background image + welcome text -->
     <LeftImagePanel :imageUrl="loginBg" />
 
-    <!-- 右边：找回密码框 -->
+    <!-- Right side: reset password form -->
     <div class="page-wrapper">
       <div class="register-container">
         <!-- LOGO -->

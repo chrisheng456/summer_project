@@ -1,9 +1,9 @@
 <template>
   <div class="page-layout">
-    <!-- 左边：图片+欢迎文字 -->
+    <!-- Left: image + welcome text -->
     <LeftImagePanel :imageUrl="loginBg" />
 
-    <!-- 右边：注册框 -->
+    <!-- Right: register form -->
     <div class="page-wrapper">
       <div class="register-container">
         <!-- LOGO -->
@@ -32,19 +32,19 @@ import axios from 'axios'
 
 const router = useRouter()
 
-// 表单数据
+// Form data
 const username = ref('')
 const email = ref('')
 const password = ref('')
 const confirmPassword = ref('')
 const errorMessage = ref('')
 
-// 返回登录页面
+// Navigate back to login page
 function goBack() {
   router.push('/LoginPage')
 }
 
-// 注册逻辑
+// Register logic
 async function handleRegister() {
   if (password.value !== confirmPassword.value) {
     errorMessage.value = 'Passwords do not match'
@@ -58,7 +58,6 @@ async function handleRegister() {
     })
 
     if (res.data.code === 200) {
-      // 注册成功后跳转登录页面或其他逻辑
       router.push('/login')
     } else {
       errorMessage.value = res.data.message || 'Registration failed'

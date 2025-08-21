@@ -63,7 +63,7 @@ import { ref, watch } from 'vue'
 
 const props = defineProps<{ section: MeetingRecord }>()
 
-// 编辑模式切换
+// Edit mode toggle
 const isEditing = ref(false)
 const editableSection = ref<MeetingRecord | null>(null)
 
@@ -85,7 +85,6 @@ function resetEdit() {
 function toggleEdit() {
   if (isEditing.value) {
     console.log('Save Data:', editableSection.value)
-    // TODO: emit 或请求 API
   }
   isEditing.value = !isEditing.value
 }

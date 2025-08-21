@@ -1,13 +1,13 @@
 <template>
   <div class="sidebar">
-    <!-- Back 在侧边栏顶部 -->
+    <!-- Back button at the top of the sidebar -->
     <button class="back-btn" @click="$emit('back')">Back</button>
 
-    <!-- 顶部标题（点它回到“全部议题”） -->
+    <!-- Top title (click to go back to "All Agendas") -->
     <div @click="$emit('select', -1)" class="level-0 clickable">Transcription</div>
     <div class="level-1">Agenda</div>
 
-    <!-- 议题列表 -->
+    <!-- Agenda list -->
     <div
       v-for="(section, index) in sections"
       :key="index"
@@ -37,10 +37,9 @@ defineEmits<{
 </script>
 
 <style scoped>
-/* 侧边栏整体样式（去掉淡蓝底） */
 .sidebar {
   width: 240px;
-  background-color: #fff;            /* 原 #f0f8ff -> #fff */
+  background-color: #fff;          
   border-right: 1px solid #ddd;
   padding: 12px 14px;
   box-sizing: border-box;
@@ -61,7 +60,8 @@ defineEmits<{
 }
 .back-btn:hover { background-color: #3b6eb0; }
 
-/* 标题层级 */
+
+/* Title levels */
 .level-0,
 .level-1 {
   font-weight: 700;
@@ -72,10 +72,10 @@ defineEmits<{
 }
 .clickable { cursor: pointer; }
 .clickable:hover {
-  background-color: transparent;      /* 不要浅蓝高亮 */
+  background-color: transparent;     
 }
 
-/* 列表卡片 */
+/* Agenda item cards */
 .level-2 {
   display: flex;
   align-items: center;
@@ -100,7 +100,7 @@ defineEmits<{
   box-shadow: 0 6px 14px rgba(0, 80, 200, 0.2);
 }
 
-/* 图标与标题 */
+/* Icon and title */
 .item-icon {
   width: 18px;
   height: 18px;

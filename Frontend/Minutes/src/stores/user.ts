@@ -16,7 +16,6 @@ export const useAuthStore = defineStore('auth', {
     login(user: User, token: string) {
       this.user = user
       this.token = token
-      // 可选：持久化
       localStorage.setItem('auth_user', JSON.stringify(user))
       localStorage.setItem('auth_token', token)
     },

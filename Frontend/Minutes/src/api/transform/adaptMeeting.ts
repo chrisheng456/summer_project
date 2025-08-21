@@ -1,11 +1,11 @@
 import type { AgendaItem, MeetingDetail } from "@/types"
 
-// 将 analyze 返回的“总结果”适配为 MeetingDetail
+// Adapt the "overall result" returned by analyze into MeetingDetail
 export function adaptApiResultToMeetingDetail(resp: any): MeetingDetail {
-  // 1) 源数据候选（后端可能把会议信息放在 customer_meeting_detail 或 data_cleaning）
+  // 1) Source candidates (backend may put meeting info in customer_meeting_detail or data_cleaning)
   const src = resp?.customer_meeting_detail ?? resp?.data_cleaning ?? resp ?? {}
 
-  // 2) 会议元信息兜底
+  // 2) Meeting metadata fallback
   const id = Number(src?.id ?? src?.meeting_id ?? 0)
   const name = String(src?.name ?? src?.title ?? 'Untitled Meeting')
   const date = String(src?.date ?? src?.meeting_date ?? src?.start_time ?? '')
@@ -14,14 +14,15 @@ export function adaptApiResultToMeetingDetail(resp: any): MeetingDetail {
 
   const attendees: any[] = Array.isArray(src?.attendees) ? src.attendees : []
 
-  // 3) 议程候选路径：agenda / agenda_items / sections
+  // 3) Agenda candidate paths: agenda / agenda_items / sections
   let agendaRaw: any[] =
     (Array.isArray(src?.agenda) && src.agenda) ||
     (Array.isArray(src?.agenda_items) && src.agenda_items) ||
     (Array.isArray(src?.sections) && src.sections) ||
     []
 
-  // 如果是 sections 这种 {title, summary, items[]}，扁平化成 items；没有 items 就把 section 自身当作一条
+  // If it's "sections" (e.g. {title, summary, items[]}), flatten into items;
+  // if no items, treat the section itself as an agenda item
   if (Array.isArray(src?.sections) && src.sections.length) {
     agendaRaw = src.sections.flatMap((s: any, idx: number) =>
       Array.isArray(s?.items) && s.items.length
@@ -30,7 +31,7 @@ export function adaptApiResultToMeetingDetail(resp: any): MeetingDetail {
     )
   }
 
-  // 4) 若以上都没有，但有转写，则用 paragraphs 兜底生成“伪议程”
+  // 4) If no agenda above but transcript exists, use paragraphs to generate a "pseudo agenda"
   if ((!agendaRaw || agendaRaw.length === 0) && Array.isArray(resp?.speech_to_text?.paragraphs)) {
     agendaRaw = resp.speech_to_text.paragraphs.map((p: any, i: number) => ({
       id: i + 1,
@@ -42,7 +43,8 @@ export function adaptApiResultToMeetingDetail(resp: any): MeetingDetail {
     }))
   }
 
-  // 5) 规范化为 AgendaItem[]
+
+  // 5) Normalize into AgendaItem[]
   const agenda: AgendaItem[] = (agendaRaw ?? []).map((a: any, i: number) => ({
     id: Number(a?.id ?? i + 1),
     number: String(a?.number ?? i + 1),

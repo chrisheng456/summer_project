@@ -1,34 +1,33 @@
 import { defineStore } from 'pinia'
-import type { MeetingDetail } from '@/types' // 你的类型定义里导出的 MeetingDetail
+import type { MeetingDetail } from '@/types' 
 
-type Key = string // 形如 `${schemeId}:${meetingId}`
+type Key = string 
 
 export const useMeetingStore = defineStore('meeting', {
   state: () => ({
-    /** 每场会议的原始 analyze 结果，key = `${schemeId}:${meetingId}` */
+    /** Original analyze results of each meeting, key = `${schemeId}:${meetingId}` */
     details: {} as Record<Key, MeetingDetail>,
-    /** 已完成分析的 key 列表（可用于控制“View Details”是否可点） */
+    /** List of analyzed keys (used to control whether "View Details" is clickable) */
     analyzedKeys: [] as Key[],
   }),
 
   getters: {
-    /** 通过 key 取结果 */
+    /** Get result by key */
     getByKey: (state) => (key: Key) => state.details[key],
-    /** 通过两个 id 取结果 */
+    /** Get result by two IDs */
     getByIds: (state) => (schemeId: string | number, meetingId: string | number) =>
       state.details[`${schemeId}:${meetingId}`],
 
-    /** 是否已完成分析 */
+    /** Check if analysis is completed */
     isAnalyzed: (state) => (schemeId: string | number, meetingId: string | number) =>
       state.analyzedKeys.includes(`${schemeId}:${meetingId}`),
   },
 
   actions: {
-    /** 写入/覆盖一场会议的 analyze 结果 */
     setDetail(detail: MeetingDetail, schemeId: string | number, meetingId: string | number) {
       const key: Key = `${schemeId}:${meetingId}`
 
-      // ✅ 从后端总结果里“捞出”真正的议程，并统一归一化为数组
+      //  Extract "agenda" from backend response and normalize it to an array
       const raw: any = detail
       const extractedAgenda =
         raw?.agenda
@@ -46,7 +45,7 @@ export const useMeetingStore = defineStore('meeting', {
       this.details[key] = safeDetail
       if (!this.analyzedKeys.includes(key)) this.analyzedKeys.push(key)
 
-      // ===== 调试输出 =====
+
       console.group('[meetingStore.setDetail]')
       console.log('key =', key)
       console.log('detail.id =', (detail as any)?.id)
@@ -63,25 +62,24 @@ export const useMeetingStore = defineStore('meeting', {
       console.groupEnd()
     },
 
-    // ✅ 新增：方法风格
+   
     listAll(): MeetingDetail[] {
       return Object.values(this.details)
     },
 
-    /** 删除一场会议的结果 */
+    /** Remove result of a meeting */
     removeDetail(schemeId: string | number, meetingId: string | number) {
       const key: Key = `${schemeId}:${meetingId}`
       delete this.details[key]
       this.analyzedKeys = this.analyzedKeys.filter(k => k !== key)
     },
 
-    /** 清空 */
+    /** Clear all results */
     clearAll() {
       this.details = {}
       this.analyzedKeys = []
     },
   },
 
-  // ✅ 如果你装了 pinia-plugin-persistedstate，则打开持久化，刷新后也在
-  // persist: { paths: ['details', 'analyzedKeys'] },
+
 })

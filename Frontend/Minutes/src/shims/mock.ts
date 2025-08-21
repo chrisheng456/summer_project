@@ -1,4 +1,5 @@
-import Mock from 'mockjs'
+// @ts-ignore
+import Mock from 'mockjs';
 
 const rawMeetings = Mock.mock({
   'meetings|1-7': [
@@ -16,7 +17,7 @@ const rawMeetings = Mock.mock({
   ]
 })
 
-// 添加统一的 abstract 字段（模拟整场会议的总览摘要）
+
 const data = {
   abstract: Mock.mock('@paragraph(2, 3)'),
   meetings: rawMeetings.meetings.map((item: any) => ({
