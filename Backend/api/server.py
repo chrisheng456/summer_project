@@ -1,26 +1,35 @@
 # Backend/api/server.py
 from __future__ import annotations
 
+import os
 import json
-from typing import Any, Dict, Tuple, Optional, List
+from typing import Any, Dict, Optional, Tuple
 
 from fastapi import (
-    FastAPI, UploadFile, File, Depends, HTTPException, Body, Response, Query
+    FastAPI,
+    UploadFile,
+    File,
+    Depends,
+    HTTPException,
+    Body,
+    Response,
+    Query,
 )
-from fastapi.encoders import jsonable_encoder
 from fastapi.security import HTTPBearer, HTTPAuthorizationCredentials
+from fastapi.encoders import jsonable_encoder
 
 from .app.pipeline import process_pipeline
 from .app.utils.pp_client import PPClient
-from .app.utils.pdf_exporter import export_pdf_from_payload
-from .app.utils.word_exporter import export_docx_from_payload
-
-# 内存缓存：按 token / (token, scheme, meeting) 存最近一次结果
-_LAST_DETAIL_BY_KEY: Dict[Tuple[str, str, str], Dict[str, Any]] = {}
-_LAST_DETAIL_BY_TOKEN: Dict[str, Dict[str, Any]] = {}
+from .app.utils.pdf_exporter import export_to_pdf
+from .app.utils.word_exporter import export_to_word
 
 app = FastAPI(title="Meeting Pipeline API")
 security = HTTPBearer(auto_error=True)
+
+# ---- 简单内存缓存：按 (token, scheme_id, meeting_id) 保存最近一次的 meeting detail ----
+# 也保留一个“最近一次”的总缓存，便于用户只点导出不传任何参数
+_LAST_DETAIL_BY_KEY: Dict[Tuple[str, str, str], Dict[str, Any]] = {}
+_LAST_DETAIL_BY_TOKEN: Dict[str, Dict[str, Any]] = {}
 
 
 def _safe_len(x: Any) -> int:
@@ -29,65 +38,42 @@ def _safe_len(x: Any) -> int:
     except Exception:
         return 0
 
-def _finalize_minutes(detail: Dict[str, Any]) -> Dict[str, Any]:
+
+def _extract_detail(payload: Any) -> Dict[str, Any]:
     """
-    产出“最终版会议纪要”：
-    - agenda 仅保留基础元数据 + 我们生成的 label/label_score/explanation/summary
-    - 同时保留最终分配后的 lines（只留 start/end/text/speaker 四项）
+    兼容三种输入：
+    1) 直接是 meeting detail 对象（包含 agenda）
+    2) 外面包了一层 {"customer_meeting_detail": {...}}
+    3) payload 是 str/bytes/bytearray，需要先 json.loads
     """
-    if not isinstance(detail, dict):
-        return {}
+    if payload is None:
+        raise ValueError("empty body")
 
-    keep_top = detail.copy()
-    keep_top.pop("agenda", None)
+    if isinstance(payload, (bytes, bytearray, str)):
+        payload = json.loads(payload)
 
-    out_agenda: List[Dict[str, Any]] = []
-    for it in (detail.get("agenda") or []):
-        if not isinstance(it, dict):
-            continue
+    if not isinstance(payload, dict):
+        raise ValueError("body must be a JSON object")
 
-        # 1) 基础字段
-        slim = {}
-        for k in [
-            "id", "number", "title", "indent", "owner", "action",
-            "calculatedStartTime", "lengthMinutes", "action_colour",
-        ]:
-            if k in it:
-                slim[k] = it[k]
+    if "customer_meeting_detail" in payload and isinstance(payload["customer_meeting_detail"], dict):
+        return payload["customer_meeting_detail"]
 
-        # 2) 我们生成的字段
-        for k in ["label", "label_score", "explanation", "summary"]:
-            if k in it:
-                slim[k] = it[k]
+    if "agenda" in payload:
+        return payload
 
-        # 3) 最终版 lines（精简字段）
-        kept_lines = []
-        for ln in it.get("lines", []) or []:
-            kept_lines.append({
-                "start": float(ln.get("start")) if ln.get("start") is not None else None,
-                "end":   float(ln.get("end"))   if ln.get("end")   is not None else None,
-                "text":  (ln.get("text") or "").strip(),
-                "speaker": ln.get("speaker", "Unknown"),
-            })
-        kept_lines.sort(key=lambda x: (x["start"] if x["start"] is not None else float("inf"),
-                                       x["end"] if x["end"] is not None else float("inf")))
-        slim["lines"] = kept_lines
+    raise ValueError("not a valid meeting detail JSON (missing 'agenda')")
 
-        out_agenda.append(slim)
-
-    keep_top["agenda"] = out_agenda
-    return keep_top
 
 @app.get("/health")
 def health():
     return {"ok": True}
 
 
-# -------------- 登录 --------------
+# ---------------- 登录 ----------------
 @app.post("/auth/login")
 def login(
     payload: Dict[str, str] = Body(..., example={"username": "ruixiong", "password": "******"}),
-    include_meetings: bool = Query(True, description="是否在登录后立即返回会议列表"),
+    include_meetings: bool = Query(True),
 ):
     username = (payload.get("username") or "").strip()
     password = (payload.get("password") or "").strip()
@@ -110,7 +96,7 @@ def login(
     return resp
 
 
-# -------------- 会议列表 --------------
+# ---------------- 会议列表/详情 ----------------
 @app.get("/customer/meetings")
 def list_meetings(creds: HTTPAuthorizationCredentials = Depends(security)):
     token = creds.credentials
@@ -122,7 +108,6 @@ def list_meetings(creds: HTTPAuthorizationCredentials = Depends(security)):
     return {"ok": True, "meetings": meetings}
 
 
-# -------------- 会议详情 --------------
 @app.get("/customer/meetings/{scheme_id}/{meeting_id}")
 def get_meeting_detail(
     scheme_id: str,
@@ -138,8 +123,7 @@ def get_meeting_detail(
     return {"ok": True, "detail": detail}
 
 
-# -------------- 一体化分析 --------------
-# --- 完全替换原 /pipeline/analyze 路由 ---
+# ---------------- 跑流水线：把结果写入缓存 ----------------
 @app.post("/pipeline/analyze")
 async def analyze(
     scheme_id: str = Query(..., description="Scheme ID"),
@@ -161,40 +145,67 @@ async def analyze(
         raise HTTPException(status_code=500, detail=f"pipeline failed: {e}")
 
     meeting_detail = getattr(info, "customer_meeting_detail", None)
-    if not isinstance(meeting_detail, dict):
-        raise HTTPException(status_code=500, detail="no meeting detail produced")
+    if isinstance(meeting_detail, dict):
+        # 写入两层缓存
+        _LAST_DETAIL_BY_KEY[(bearer_token, str(scheme_id), str(meeting_id))] = meeting_detail
+        _LAST_DETAIL_BY_TOKEN[bearer_token] = meeting_detail
 
-    # 仅保留最终版
-    final_detail = _finalize_minutes(meeting_detail)
+    stt_lines = getattr(info, "transcription", None)
+    cleaned_lines = getattr(info, "cleaned_transcription", None)
+    diarization = getattr(info, "speaker_segments", None) or getattr(info, "diarization", None)
+    classification = getattr(info, "classified_lines", None)
+    label_counts = getattr(info, "label_counts", None)
+    summary = getattr(info, "summary", None)
 
-    # 缓存里也只存最终版，供 /export/pdf|docx 使用
-    token = bearer_token
-    _LAST_DETAIL_BY_TOKEN[token] = final_detail
-    _LAST_DETAIL_BY_KEY[(token, str(scheme_id), str(meeting_id))] = final_detail
-
-    return jsonable_encoder({
+    payload = {
         "ok": True,
-        "final_minutes": final_detail
-    })
+        "customer_meeting_detail": meeting_detail,
+        "speech_to_text": {"total": _safe_len(stt_lines), "lines": stt_lines},
+        "data_cleaning": {"total": _safe_len(cleaned_lines), "lines": cleaned_lines},
+        "speaker_diarization": {"total": _safe_len(diarization), "segments": diarization},
+        "text_classification": {
+            "total": _safe_len(classification),
+            "lines": classification,
+            "label_counts": label_counts,
+        },
+        "text_summary": summary,
+    }
+    return jsonable_encoder(payload)
 
 
-# ---------------- 导出：工具函数 ----------------
+# ---------------- 导出：PDF / DOCX ----------------
+# 现在 Body 改为可选；如果没给，就用“最近一次分析结果”
 def _try_extract_detail(payload: Any) -> Optional[Dict[str, Any]]:
+    """
+    尝试从 payload 中提取 meeting detail：
+    - 直接是 detail（有 agenda）
+    - 包了一层 {"customer_meeting_detail": {...}}
+    - payload 是 str/bytes 先 json.loads
+    解析失败或不合法则返回 None（让调用方回退到缓存）
+    """
     if payload is None:
         return None
+
     try:
         if isinstance(payload, (bytes, bytearray, str)):
             payload = json.loads(payload)
         if not isinstance(payload, dict):
             return None
-        detail = payload.get("customer_meeting_detail") if "customer_meeting_detail" in payload else payload
-        return detail if isinstance(detail, dict) and isinstance(detail.get("agenda"), list) else None
+
+        if "customer_meeting_detail" in payload and isinstance(payload["customer_meeting_detail"], dict):
+            detail = payload["customer_meeting_detail"]
+        else:
+            detail = payload
+
+        if isinstance(detail, dict) and isinstance(detail.get("agenda"), list):
+            return detail
+        return None
     except Exception:
         return None
 
 
 def _get_cached_detail_or_400(
-    creds: HTTPAuthorizationCredentials,
+    creds,
     scheme_id: Optional[str],
     meeting_id: Optional[str],
 ) -> Dict[str, Any]:
@@ -205,58 +216,120 @@ def _get_cached_detail_or_400(
             return _LAST_DETAIL_BY_KEY[key]
     if token in _LAST_DETAIL_BY_TOKEN:
         return _LAST_DETAIL_BY_TOKEN[token]
+    # 兜底：明确提示需要先跑 analyze
+    from fastapi import HTTPException
     raise HTTPException(status_code=400, detail="no cached result found; please run /pipeline/analyze first")
 
 
-# -------------- 导出 PDF --------------
+# ---- 替换：/export/pdf ----
 @app.post("/export/pdf")
 def export_pdf(
-    result: Optional[Dict[str, Any]] = Body(
-        None,
-        description="可选：完整响应或 customer_meeting_detail；为空或不合法将使用最近一次分析结果",
-    ),
-    scheme_id: Optional[str] = Query(None, description="同账号多会议时指定 scheme_id"),
-    meeting_id: Optional[str] = Query(None, description="同账号多会议时指定 meeting_id"),
+    result: Optional[Dict[str, Any]] = Body(None, description="可选：完整响应或 customer_meeting_detail；若为空或不合法则使用最近一次分析结果"),
+    scheme_id: Optional[str] = Query(None, description="可选：指定 scheme_id（当同一账号跑过多个会议时）"),
+    meeting_id: Optional[str] = Query(None, description="可选：指定 meeting_id（当同一账号跑过多个会议时）"),
     creds: HTTPAuthorizationCredentials = Depends(security),
 ):
     try:
-        detail = _try_extract_detail(result) or _get_cached_detail_or_400(creds, scheme_id, meeting_id)
-        pdf_bytes = export_pdf_from_payload(detail)
-    except HTTPException:
-        raise
+        detail = _try_extract_detail(result)
+        if detail is None:  # 解析失败/空壳 → 回退缓存
+            detail = _get_cached_detail_or_400(creds, scheme_id, meeting_id)
+
+        pdf_bytes = export_to_pdf(detail)
     except Exception as e:
         raise HTTPException(status_code=400, detail=f"export pdf failed: {e}")
 
     filename = (detail.get("name") or "meeting_minutes").replace('"', "").replace("'", "")
-    return Response(
-        content=pdf_bytes,
-        media_type="application/pdf",
-        headers={"Content-Disposition": f'attachment; filename="{filename}.pdf"'},
-    )
+    headers = {"Content-Disposition": f'attachment; filename="{filename}.pdf"'}
+    return Response(content=pdf_bytes, media_type="application/pdf", headers=headers)
 
 
-# -------------- 导出 Word --------------
+# ---- 替换：/export/docx ----
 @app.post("/export/docx")
 def export_docx(
-    result: Optional[Dict[str, Any]] = Body(
-        None,
-        description="可选：完整响应或 customer_meeting_detail；为空或不合法将使用最近一次分析结果",
-    ),
+    result: Optional[Dict[str, Any]] = Body(None, description="可选：完整响应或 customer_meeting_detail；若为空或不合法则使用最近一次分析结果"),
     scheme_id: Optional[str] = Query(None),
     meeting_id: Optional[str] = Query(None),
     creds: HTTPAuthorizationCredentials = Depends(security),
 ):
     try:
-        detail = _try_extract_detail(result) or _get_cached_detail_or_400(creds, scheme_id, meeting_id)
-        docx_bytes = export_docx_from_payload(detail)
-    except HTTPException:
-        raise
+        detail = _try_extract_detail(result)
+        if detail is None:  # 解析失败/空壳 → 回退缓存
+            detail = _get_cached_detail_or_400(creds, scheme_id, meeting_id)
+
+        docx_bytes = export_to_word(detail)
     except Exception as e:
         raise HTTPException(status_code=400, detail=f"export docx failed: {e}")
 
     filename = (detail.get("name") or "meeting_minutes").replace('"', "").replace("'", "")
+    headers = {"Content-Disposition": f'attachment; filename="{filename}.docx"'}
     return Response(
         content=docx_bytes,
         media_type="application/vnd.openxmlformats-officedocument.wordprocessingml.document",
-        headers={"Content-Disposition": f'attachment; filename="{filename}.docx"'},
+        headers=headers,
+    )
+
+
+# ---------------- 一步到位：上传→直接导出（保留） ----------------
+@app.post("/pipeline/analyze_export/pdf")
+async def analyze_export_pdf(
+    scheme_id: str = Query(...),
+    meeting_id: str = Query(...),
+    file: UploadFile = File(...),
+    creds: HTTPAuthorizationCredentials = Depends(security),
+):
+    bearer_token = creds.credentials
+    data = await file.read()
+    try:
+        info = process_pipeline(
+            input_file_content=data,
+            scheme_id=scheme_id,
+            meeting_id=meeting_id,
+            bearer_token=bearer_token,
+        )
+        detail = getattr(info, "customer_meeting_detail", None)
+        if not detail:
+            raise RuntimeError("empty customer_meeting_detail")
+        # 写缓存
+        _LAST_DETAIL_BY_KEY[(bearer_token, str(scheme_id), str(meeting_id))] = detail
+        _LAST_DETAIL_BY_TOKEN[bearer_token] = detail
+        pdf_bytes = export_to_pdf(detail)
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=f"analyze_export pdf failed: {e}")
+
+    filename = (detail.get("name") or "meeting_minutes").replace('"', "").replace("'", "")
+    headers = {"Content-Disposition": f'attachment; filename="{filename}.pdf"'}
+    return Response(content=pdf_bytes, media_type="application/pdf", headers=headers)
+
+
+@app.post("/pipeline/analyze_export/docx")
+async def analyze_export_docx(
+    scheme_id: str = Query(...),
+    meeting_id: str = Query(...),
+    file: UploadFile = File(...),
+    creds: HTTPAuthorizationCredentials = Depends(security),
+):
+    bearer_token = creds.credentials
+    data = await file.read()
+    try:
+        info = process_pipeline(
+            input_file_content=data,
+            scheme_id=scheme_id,
+            meeting_id=meeting_id,
+            bearer_token=bearer_token,
+        )
+        detail = getattr(info, "customer_meeting_detail", None)
+        if not detail:
+            raise RuntimeError("empty customer_meeting_detail")
+        _LAST_DETAIL_BY_KEY[(bearer_token, str(scheme_id), str(meeting_id))] = detail
+        _LAST_DETAIL_BY_TOKEN[bearer_token] = detail
+        docx_bytes = export_to_word(detail)
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=f"analyze_export docx failed: {e}")
+
+    filename = (detail.get("name") or "meeting_minutes").replace('"', "").replace("'", "")
+    headers = {"Content-Disposition": f'attachment; filename="{filename}.docx"'}
+    return Response(
+        content=docx_bytes,
+        media_type="application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+        headers=headers,
     )
