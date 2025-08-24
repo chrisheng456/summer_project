@@ -45,7 +45,7 @@ const routes =
     {
       name: 'TransPage',
       path: '/trans',
-      component: () => import('@/components/TransPage.vue') // 或 '@/pages/TransPage.vu
+      component: () => import('@/pages/TransPage.vue') // 或 '@/pages/TransPage.vu
     }
     ]
 
