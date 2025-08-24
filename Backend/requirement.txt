@@ -162,7 +162,7 @@ jellyfish==1.2.0
 llvmlite==0.44.0
 more-itertools==10.7.0
 openai==1.91.0
-# whisper 源码安装（保留你给的 commit）
+# whisper 
 openai-whisper @ git+https://github.com/openai/whisper.git@c0d2f624c09dc18e709e37c2ad90c039a4eb72a2
 segtok==1.5.11
 sentence-transformers==4.1.0
