@@ -42,16 +42,15 @@ project-root/
 ```bash
 cd Frontend/minutes
 npm install
-
 ```
 ### 2) Environment Variables
 
 You need to configure the backend/AI endpoints.
+
 ```
 # Used by the frontend (example)
 VITE_API_BASE=http://127.0.0.1:8000
 VITE_AI_BASE=http://127.0.0.1:54232
-
 ```
 Note: In the current Vite configuration, the AI port is fixed to http://127.0.0.1:54232. Make sure the AI service is started on this port as described below.
 
@@ -62,8 +61,11 @@ npm run dev
 ```
 Open the local URL shown in the terminal (typically http://127.0.0.1:5173 or a similar port).
 
+---
+
 ## III. Frontend/ai (AI Microservice)
 ### 1) Create and Activate a Virtual Environment
+
 ```
 cd Frontend/ai
 python -m venv venv
@@ -71,51 +73,47 @@ python -m venv venv
 .\venv\Scripts\activate
 # macOS / Linux
 source venv/bin/activate
-
 ```
 
 ### 2) Install Dependencies
+
 ```
 python -m pip install --upgrade pip setuptools wheel
 pip install -r requirements.txt
-
 ```
 
 ### 3) Create .env
 Create a .env file under Frontend/ai
+
 ```
 # Azure OpenAI
 AZURE_OPENAI_API_KEY="***********"
 AZURE_OPENAI_ENDPOINT="https://<your-cognitive>.cognitiveservices.azure.com/"
 AZURE_OPENAI_API_VERSION="2025-01-01-preview"  # API version
 AZURE_OPENAI_DEPLOYMENT="gpt-4o"
-
 ```
 
 ### 4) Start the AI Service (Port 54232)
-
 The minutes frontend expects the AI service at http://127.0.0.1:54232. 
 Use the following command (do not change the port unless you also update the frontend configuration):
 
 ```
 uvicorn modules.ai_content_edit.chat_api:app --reload --host 127.0.0.1 --port 54232
-
 ```
 
 After a successful start, the service is available at http://127.0.0.1:54232.
 
+---
 
 ## IV. Backend
 ### 1) Create and Activate a Virtual Environment
 ```
-
 cd Backend
 python -m venv venv
 # Windows
 .\venv\Scripts\activate
 # macOS / Linux
 source venv/bin/activate
-
 ```
 
 ### 2) Install Dependencies
@@ -155,14 +153,13 @@ RELOAD=true
 Option A: If the project has main.py
 ```
 python main.py
-
 ```
 
 Option B: Start directly with Uvicorn (recommended)
 ```
 uvicorn api.server:app --reload --host 127.0.0.1 --port 8000
-
 ```
+---
 ## VI. Quick Troubleshooting
 
 ModuleNotFoundError: Make sure you ran pip install -r requirements.txt within the correct directory’s virtual environment.
