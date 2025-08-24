@@ -1,6 +1,3 @@
-#!/usr/bin/env python3
-# text_summarization.py
-
 import os
 import json
 import torch
@@ -17,22 +14,26 @@ MAX_LENGTH  = 80
 MIN_LENGTH  = 20
 # ────────────────────────────────────────────────────────────────────────────────
 
+
 def load_data(path: str):
+    """Load JSON data from file."""
     with open(path, 'r', encoding='utf-8') as f:
         return json.load(f)
 
+
 def save_data(data, path: str):
+    """Save JSON data to file, ensuring parent directory exists."""
     os.makedirs(Path(path).parent, exist_ok=True)
     with open(path, 'w', encoding='utf-8') as f:
         json.dump(data, f, ensure_ascii=False, indent=2)
 
+
 def split_into_chunks(text: str, tokenizer, max_tokens: int):
     """
-    根据 tokenizer.model_max_length，把 text 拆成多个不超过 max_tokens 的子块。
-    这里先按句子拆，再累加句子直到接近 max_tokens。
+    Split long text into smaller chunks based on the model's max token limit.
+    Sentences are grouped until the token budget is reached.
     """
-    # 简单的句子分隔
-    sentences = re.split(r'(?<=[。？！\.!?])\s*', text)
+    sentences = re.split(r'(?<=[\.!?])\s*', text)  # simple sentence segmentation
     chunks, current = [], []
     current_len = 0
     for sent in sentences:
@@ -50,6 +51,7 @@ def split_into_chunks(text: str, tokenizer, max_tokens: int):
     if current:
         chunks.append("".join(current))
     return chunks
+
 
 def main():
     data = load_data(str(INPUT_PATH))
@@ -79,7 +81,7 @@ def main():
                 item["summary"] = ""
                 continue
 
-            # 如果文本过长，先拆分
+            # Split if text is too long
             chunks = split_into_chunks(text, tokenizer, max_input_tokens - 50)
             summaries = []
             for chunk in chunks:
@@ -90,10 +92,10 @@ def main():
                     do_sample=False
                 )
                 summaries.append(out[0]["summary_text"])
-            # 合并所有 chunk 的摘要，再做一次整体压缩（可选）
+
+            # Merge chunk-level summaries and compress again if needed
             joined = " ".join(summaries)
             if len(tokenizer.encode(joined, add_special_tokens=False)) > max_input_tokens:
-                # 如果合并后还是太长，再次摘要
                 out = summarizer(
                     joined,
                     max_length=MAX_LENGTH,
@@ -104,13 +106,10 @@ def main():
             else:
                 item["summary"] = joined
 
-    if wrap_key:
-        out_data = {wrap_key: meetings}
-    else:
-        out_data = meetings[0]
-
+    out_data = {wrap_key: meetings} if wrap_key else meetings[0]
     save_data(out_data, OUTPUT_JSON)
-    print(f"✅ Summarized {total_sections} sections → {OUTPUT_JSON}")
+    print(f" Summarized {total_sections} sections → {OUTPUT_JSON}")
+
 
 if __name__ == "__main__":
     main()

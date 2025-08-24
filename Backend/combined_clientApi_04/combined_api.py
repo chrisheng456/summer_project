@@ -60,7 +60,7 @@ def segment_transcript(all_meet_file, transcript_file, output_file):
     with open(output_file, 'w', encoding='utf-8') as f:
         json.dump(out_data, f, ensure_ascii=False, indent=2)
 
-    print(f"✅ generated {output_file}")
+    print(f" generated {output_file}")
 
 if __name__ == '__main__':
     # example invocation for single‐meeting 714.json:

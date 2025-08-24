@@ -9,33 +9,33 @@ from docx import Document
 
 app = FastAPI()
 
-# 跨域配置
+# CORS configuration
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],  # 前端调试阶段允许所有
+    allow_origins=["*"],  # Allow all origins during frontend debugging
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
 )
 
-# 创建文件保存目录
+# Temporary folder to save files
 TEMP_DIR = "temp"
 os.makedirs(TEMP_DIR, exist_ok=True)
 
-# 加载 Whisper 模型（建议使用 base，支持中英混合）
+# Load Whisper model
 model = whisper.load_model("base")
 
 
-# ✅ 1. 上传音频文件
+# 1. Upload audio file
 @app.post("/upload_audio")
 async def upload_audio(file: UploadFile):
     save_path = os.path.join(TEMP_DIR, file.filename)
     with open(save_path, "wb") as f:
         shutil.copyfileobj(file.file, f)
-    return {"message": "文件接收成功", "filename": file.filename}
+    return {"message": "File uploaded successfully", "filename": file.filename}
 
 
-# ✅ 2. Whisper 转录
+# 2. Transcribe audio using Whisper
 @app.post("/transcribe")
 async def transcribe_audio(filename: str):
     file_path = os.path.join(TEMP_DIR, filename)
@@ -46,7 +46,7 @@ async def transcribe_audio(filename: str):
         return {"error": str(e)}
 
 
-# ✅ 3. 生成 Markdown 纪要
+# 3. Export meeting summary as Markdown
 @app.post("/export_markdown")
 async def export_markdown(minutes_data: dict = Body(...)):
     now = datetime.datetime.now().strftime("%Y%m%d_%H%M%S")
@@ -54,16 +54,16 @@ async def export_markdown(minutes_data: dict = Body(...)):
 
     md = f"""# 📝 Meeting Summary
 
-## 🟨 Summary  
+## Summary  
 {minutes_data.get('summary', '')}
 
-## 🔹 Key Points  
+## Key Points  
 """ + "\n".join(f"- {kp}" for kp in minutes_data.get("key_points", [])) + """
 
-## ✅ Action Items  
+## Action Items  
 """ + "\n".join(f"- [ ] {ai}" for ai in minutes_data.get("action_items", [])) + f"""
 
-## 📊 Sentiment  
+## Sentiment  
 {minutes_data.get("sentiment", "N/A")}
 """
 
@@ -74,7 +74,7 @@ async def export_markdown(minutes_data: dict = Body(...)):
     return {"message": "Markdown exported", "filename": filename}
 
 
-# ✅ 4. 生成 Word 纪要
+# 4. Export meeting summary as Word document
 @app.post("/export_word")
 async def export_word(minutes_data: dict = Body(...)):
     now = datetime.datetime.now().strftime("%Y%m%d_%H%M%S")
@@ -103,10 +103,10 @@ async def export_word(minutes_data: dict = Body(...)):
     return {"message": "Word exported", "filename": filename}
 
 
-# ✅ 5. 下载文件（Markdown / Word）
+# 5. Download exported files (Markdown / Word)
 @app.get("/download/{filename}")
 async def download_file(filename: str):
     file_path = os.path.join(TEMP_DIR, filename)
     if not os.path.exists(file_path):
-        return {"error": "文件不存在"}
+        return {"error": "File does not exist"}
     return FileResponse(file_path, media_type="application/octet-stream", filename=filename)

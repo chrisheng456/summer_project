@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-# json_to_mysql.py
+# json_to_SQL.py
 
 import json
 import argparse
@@ -7,7 +7,9 @@ import mysql.connector
 from mysql.connector import errorcode
 from datetime import datetime
 
+
 def parse_args():
+    """Parse command-line arguments for database connection and input file."""
     p = argparse.ArgumentParser(description="Ingest meeting JSON into MySQL")
     p.add_argument("json_file", help="Path to summarized_classified_segmented_meeting_data.json")
     p.add_argument("--db_host", default="localhost", help="MySQL host")
@@ -17,14 +19,15 @@ def parse_args():
     p.add_argument("--db_name", default="meetings_db", help="MySQL database name")
     return p.parse_args()
 
+
 def main():
     args = parse_args()
 
-    # 1. 读取 JSON
+    # 1. Load meeting JSON
     with open(args.json_file, 'r', encoding='utf-8') as f:
         meeting = json.load(f)
 
-    # 2. 连接数据库
+    # 2. Connect to the database
     try:
         conn = mysql.connector.connect(
             host=args.db_host,
@@ -36,9 +39,9 @@ def main():
         )
     except mysql.connector.Error as err:
         if err.errno == errorcode.ER_ACCESS_DENIED_ERROR:
-            print("❌ 用户名或密码错误")
+            print(" Invalid username or password")
         elif err.errno == errorcode.ER_BAD_DB_ERROR:
-            print("❌ 数据库不存在，请先创建")
+            print(" Database does not exist, please create it first")
         else:
             print(err)
         return
@@ -46,12 +49,12 @@ def main():
     cursor = conn.cursor()
 
     try:
-        # ------------ 插入 event ------------
-        evt_id = meeting['id']
-        evt_name = meeting['name']
-        evt_date = meeting.get('date')
+        # ------------ Insert event ------------
+        evt_id    = meeting['id']
+        evt_name  = meeting['name']
+        evt_date  = meeting.get('date')
         evt_start = meeting.get('startTime')
-        evt_loc = meeting.get('location')
+        evt_loc   = meeting.get('location')
 
         cursor.execute("""
             INSERT INTO event (event_id, name, date, start_time, location)
@@ -69,7 +72,7 @@ def main():
             evt_loc
         ))
 
-        # ------------ 插入 attendee ------------
+        # ------------ Insert attendees ------------
         for a in meeting.get('attendees', []):
             cursor.execute("""
                 INSERT INTO attendee (attendee_id, event_id, name, attending, user_can_edit)
@@ -86,22 +89,22 @@ def main():
                 1 if a.get('userCanEdit') else 0
             ))
 
-        # ------------ 插入 agenda_item ------------
-        # 先清除本会议的旧议程项
+        # ------------ Insert agenda items ------------
+        # First clear old agenda items for this meeting
         cursor.execute("DELETE FROM agenda_item WHERE event_id = %s", (evt_id,))
 
         for item in meeting.get('agenda', []):
             agenda_id = item['id']
-            num        = item.get('number')
-            title      = item.get('title')
-            indent     = item.get('indent')
-            cstart     = item.get('calculatedStartTime')
-            length     = item.get('lengthMinutes')
-            owner      = item.get('owner')
-            label      = item.get('label')
-            score      = item.get('label_score')
-            summary    = item.get('summary')
-            explain    = item.get('explanation')
+            num       = item.get('number')
+            title     = item.get('title')
+            indent    = item.get('indent')
+            cstart    = item.get('calculatedStartTime')
+            length    = item.get('lengthMinutes')
+            owner     = item.get('owner')
+            label     = item.get('label')
+            score     = item.get('label_score')
+            summary   = item.get('summary')
+            explain   = item.get('explanation')
 
             cursor.execute("""
                 INSERT INTO agenda_item
@@ -114,22 +117,22 @@ def main():
                 length, owner, label, score, summary, explain
             ))
 
-        # ------------ 插入 speech_segment ------------
-        # 先清除本会议所有旧片段
+        # ------------ Insert speech segments ------------
+        # First clear old segments linked to this meeting
         cursor.execute("""
             DELETE s FROM speech_segment s
             JOIN agenda_item a USING(agenda_id)
             WHERE a.event_id = %s
         """, (evt_id,))
 
-        # JSON 最后一级结构：每条 “segments” 属于某个 agenda_item
+        # Final level of JSON: each "line" belongs to an agenda_item
         for item in meeting.get('agenda', []):
             aid = item['id']
-            for seg in item.get('lines', []):  # 如果你的最终 JSON 里字段不是 lines，请替换
+            for seg in item.get('lines', []):  # adjust if your JSON uses a different field name
                 speaker = seg.get('speaker')
-                st = seg.get('start')
-                ed = seg.get('end')
-                text = seg.get('text')
+                st      = seg.get('start')
+                ed      = seg.get('end')
+                text    = seg.get('text')
 
                 cursor.execute("""
                     INSERT INTO speech_segment
@@ -140,15 +143,16 @@ def main():
                 ))
 
         conn.commit()
-        print("✅ 数据已成功写入数据库！")
+        print(" Data successfully written to database!")
 
     except mysql.connector.Error as e:
-        print("❌ 执行出错，回滚：", e)
+        print(" Error occurred, rolling back:", e)
         conn.rollback()
 
     finally:
         cursor.close()
         conn.close()
+
 
 if __name__ == "__main__":
     main()

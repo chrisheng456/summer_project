@@ -1,10 +1,8 @@
 """
-speech_to_text_01.py
-------------------------------------
-• TrueText（自动标点 + 首字母大写）
-• 说话人分离（Diarization）
-• 保存为 Word 和 JSON（仅包含 start/end/text）
-• 用 ffmpeg 自动把 .m4a 转成 16kHz 单声道 WAV
+• TrueText (automatic punctuation + capitalization)
+• Speaker diarization
+• Save as both Word and JSON (with start/end/text only)
+• Automatically convert .m4a to 16kHz mono WAV via ffmpeg
 """
 import os
 import json
@@ -16,13 +14,13 @@ from pathlib import Path
 import azure.cognitiveservices.speech as speechsdk  # pip install -U azure-cognitiveservices-speech
 from docx import Document                         # pip install python-docx
 
-# 1. 读取密钥
+# 1. Read Azure keys from environment
 speech_key     = os.getenv("AZURE_SPEECH_KEY")
 service_region = os.getenv("AZURE_SPEECH_REGION", "ukwest")
 if not speech_key:
-    raise RuntimeError("❌ 找不到 AZURE_SPEECH_KEY，请先在系统变量或 .env 中设置")
+    raise RuntimeError(" AZURE_SPEECH_KEY not found. Please set it in environment variables or .env file.")
 
-# 2. SpeechConfig & 功能开关
+# 2. Configure Azure Speech settings
 speech_config = speechsdk.SpeechConfig(subscription=speech_key, region=service_region)
 speech_config.set_property(
     speechsdk.PropertyId.SpeechServiceResponse_PostProcessingOption,
@@ -34,15 +32,15 @@ speech_config.set_property(
 )
 speech_config.request_word_level_timestamps()
 
-# 3. 用 ffmpeg 自动把 .m4a 转成 16kHz 单声道 WAV
+# 3. Convert input audio (.m4a) into 16kHz mono WAV
 BASE_DIR = Path(__file__).parent
 src_path = BASE_DIR / "Trustee Meeting Recording (30 June 2025) V1.m4a"
 wav_path = BASE_DIR / "tmp_converted.wav"
 
 if not src_path.exists():
-    raise FileNotFoundError(f"找不到源文件：{src_path.resolve()}")
+    raise FileNotFoundError(f"Source audio file not found: {src_path.resolve()}")
 
-print(f"🔄 转换音频：{src_path.name} → {wav_path.name} （16kHz 单声道 WAV）")
+print(f" Converting audio: {src_path.name} → {wav_path.name} (16kHz mono WAV)")
 subprocess.run([
     "ffmpeg", "-y",
     "-i", str(src_path),
@@ -51,17 +49,18 @@ subprocess.run([
     str(wav_path)
 ], check=True)
 
-# 4. 准备 Azure 转写
+# 4. Prepare Azure transcriber
 audio_config = speechsdk.AudioConfig(filename=str(wav_path))
 transcriber  = speechsdk.transcription.ConversationTranscriber(
     speech_config=speech_config,
     audio_config=audio_config
 )
 
-lines   = []             # 存储每句的时间戳和文本
+lines   = []             # store recognized lines with timestamps
 is_done = threading.Event()
 
 def _on_transcribed(evt: speechsdk.SpeechRecognitionEventArgs):
+    """Callback for recognized speech."""
     if evt.result.reason != speechsdk.ResultReason.RecognizedSpeech:
         return
     text = evt.result.text.strip()
@@ -73,7 +72,7 @@ def _on_transcribed(evt: speechsdk.SpeechRecognitionEventArgs):
     print(f"[{start_sec:.2f}s - {end_sec:.2f}s] {text}")
 
 def _on_session_stopped(_):
-    print("=== 识别结束 ===")
+    print("=== Transcription complete ===")
     is_done.set()
 
 def _on_canceled(evt):
@@ -85,28 +84,28 @@ transcriber.transcribed.connect(_on_transcribed)
 transcriber.session_stopped.connect(_on_session_stopped)
 transcriber.canceled.connect(_on_canceled)
 
-# 5. 开始转写 & 等待结束
-print(f"▶ 开始识别 {wav_path.name} ...")
+# 5. Start transcription and wait for completion
+print(f"▶ Starting transcription for {wav_path.name} ...")
 transcriber.start_transcribing_async()
 is_done.wait()
 transcriber.stop_transcribing_async()
 
-# 6. 整理 & 保存输出（不加时间戳，使用输入文件名前缀）
+# 6. Save results (Word + JSON) using base filename
 lines.sort(key=lambda x: x["start"])
-base_name = src_path.stem  # 取音频文件名去掉扩展
+base_name = src_path.stem
 
 docx_name = f"{base_name}.docx"
 json_name = f"{base_name}.json"
 
-# (a) 保存为 Word
+# (a) Save as Word
 doc = Document()
-doc.add_heading("会议逐字稿", level=1)
+doc.add_heading("Meeting Transcript", level=1)
 for ln in lines:
     doc.add_paragraph(f"[{ln['start']:.2f}s - {ln['end']:.2f}s] {ln['text']}")
 doc.save(docx_name)
-print(f"✅ 已保存 Word：{docx_name}")
+print(f" Word file saved: {docx_name}")
 
-# (b) 保存为 JSON
+# (b) Save as JSON
 with open(json_name, "w", encoding="utf-8") as f:
     json.dump({"lines": lines}, f, ensure_ascii=False, indent=2)
-print(f"✅ 已保存 JSON：{json_name}")
+print(f" JSON file saved: {json_name}")
