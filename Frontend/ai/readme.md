@@ -66,7 +66,7 @@ AZURE_OPENAI_DEPLOYMENT=gpt-4o
 You can add other model deployments later as needed.
 ```
 ### 3.	Start the service
-`root：uvicorn modules.ai_content_edit.chat_api:app --reload`
+
 
 ### 4.	API 
 	•	POST /api/chat
