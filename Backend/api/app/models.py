@@ -26,4 +26,4 @@ models.append(ConversionTask)
 def initialize_database(config: DataBaseConfig = None):
     db.connect(reuse_if_open=True)
     db.create_tables(models, safe=True)
-    logger.info("数据库初始化完成")
+    logger.info("Database initialisation complete")

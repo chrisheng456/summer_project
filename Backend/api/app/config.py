@@ -2,41 +2,36 @@ import os
 from dotenv import load_dotenv
 from pydantic import Field, BaseModel
 
-
-# 加载环境变量
+# Load environment variables from a .env file if present
 load_dotenv(override=True)
-# 获取环境变量
+
+# Copy environment variables into a local dict
 env = os.environ.copy()
 
 
 class DataBaseConfig(BaseModel):
     """
-    数据库配置类。 Peewee ORM 使用的配置类。
+    Database configuration class for Peewee ORM.
 
-    通过环境变量配置数据库连接信息。
+    Values are loaded from environment variables.
     """
 
-    # 数据库名称
     db_name: str = Field(
         default="goofish",
         alias="DB_NAME",
     )
-    # 数据库用户名
     db_user: str = Field(
         default="root",
         alias="DB_USER",
     )
-    # 数据库密码
     db_password: str = Field(
         default="",
         alias="DB_PASS",
     )
-    # 数据库主机
     db_host: str = Field(
         default="localhost",
         alias="DB_HOST",
     )
-    # 数据库端口
     db_port: int = Field(
         default=3306,
         alias="DB_PORT",
@@ -44,54 +39,55 @@ class DataBaseConfig(BaseModel):
 
 
 class AzureSpeechConfig(BaseModel):
+    """
+    Azure Speech service configuration.
+    """
     speech_key: str = Field(..., alias="AZURE_SPEECH_KEY")
     service_region: str = Field(default="uksouth", alias="AZURE_SPEECH_REGION")
 
 
-
-# Huggingface Token 配置类
 class HuggingfaceConfig(BaseModel):
     """
-    Huggingface Token 配置类。
+    Hugging Face access token configuration.
 
-    通过环境变量配置 Huggingface 的访问令牌。
+    The token is loaded from environment variables.
     """
-
-    # Huggingface 访问令牌
     token: str = Field(..., alias="HUGGINGFACE_TOKEN")
 
 
 class CustomerApiConfig(BaseModel):
     """
-    客户API账号密码配置类，通过环境变量配置。
+    Customer API configuration.
+    Includes credentials for Azure Speech and Storage.
     """
-
     speech_key: str = Field(..., alias="AZURE_SPEECH_KEY")
     service_region: str = Field(default="uksouth", alias="AZURE_SPEECH_REGION")
     storage_connection_string: str = Field(..., alias="AZURE_STORAGE_CONNECTION_STRING")
     storage_container: str = Field(..., alias="AZURE_STORAGE_CONTAINER")
 
-class Config(BaseModel):
 
-    # 数据库配置
+class Config(BaseModel):
+    """
+    Main application configuration wrapper.
+    Combines all individual config sections into a single object.
+    """
+
     database: DataBaseConfig = Field(
         default_factory=lambda: DataBaseConfig(**env)
     )
 
-    # Azure 语音服务配置
     azure_speech: AzureSpeechConfig = Field(
         default_factory=lambda: AzureSpeechConfig(**env)
     )
 
-    # Huggingface Token
     huggingface: HuggingfaceConfig = Field(
         default_factory=lambda: HuggingfaceConfig(**env)
     )
-    # 客户API账号密码
+
     customer_api: CustomerApiConfig = Field(
         default_factory=lambda: CustomerApiConfig(**env)
     )
 
 
-# 创建配置实例
+# Create a global configuration instance
 app_config = Config()

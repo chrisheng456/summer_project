@@ -1,4 +1,3 @@
-# Backend/api/app/api_legacy.py
 from fastapi import APIRouter, UploadFile, File, BackgroundTasks, Depends
 from fastapi.responses import JSONResponse, Response
 from fastapi.security import HTTPBearer, HTTPAuthorizationCredentials
@@ -6,49 +5,57 @@ from fastapi.security import HTTPBearer, HTTPAuthorizationCredentials
 import uuid
 import datetime
 
-# 你项目里已有的导入，按需保留
 from .models import ConversionTask
 from .pipeline import process_pipeline as process
 from .utils.pdf_exporter import export_to_pdf
 from .utils.word_exporter import export_to_word
-from .utils.pp_client import PPClient  # 用于调用客户 API
+from .utils.pp_client import PPClient
 
 router = APIRouter()
-security = HTTPBearer()          # ✅ Swagger 顶部会出现 Authorize 按钮
-pp = PPClient()                  # 客户 API client 实例
+security = HTTPBearer()
+pp = PPClient()
 
 
-# ---------------------------
-# 登录：不需要 Bearer
-# ---------------------------
 @router.post("/auth/login")
 async def login(body: dict):
     """
-    body: { "username": "...", "password": "..." }
-    返回示例: { "ok": true, "token": "...", "meetings": [...] }
+    Login endpoint.
+
+    Expected body:
+        {
+            "username": "...",
+            "password": "..."
+        }
+
+    Response example:
+        {
+            "ok": true,
+            "token": "...",
+            "meetings": [...]
+        }
     """
     username = body.get("username", "")
     password = body.get("password", "")
 
-    # 你现有的登录逻辑（按你 PPClient 的方法名适配）
     token = pp.login(username=username, password=password)
 
-    # 登录后顺便拉一次会议列表（可选）
+    # Fetching meeting list immediately after login
     meetings = pp.list_meetings(token=token)
 
     return {"ok": True, "token": token, "meetings": meetings}
 
 
 # ---------------------------
-# 需要鉴权的接口（示例：会议列表/详情）
+# Auth-protected endpoints (meeting list / details)
 # ---------------------------
 @router.get("/customer/meetings")
 def list_meetings(creds: HTTPAuthorizationCredentials = Depends(security)):
     """
-    使用 Authorize 里填的 token（纯 token）调用客户 API
+    Fetch customer meeting list using the provided token.
+    The token comes from the `Authorize` header (without the "Bearer " prefix).
     """
-    token = creds.credentials  # 这里拿到的是纯 token，不带 "Bearer "
-    meetings = pp.list_meetings(token=token)  # 按你的方法名来
+    token = creds.credentials
+    meetings = pp.list_meetings(token=token)
     return meetings
 
 
@@ -56,12 +63,12 @@ def list_meetings(creds: HTTPAuthorizationCredentials = Depends(security)):
 def get_meeting_detail(meeting_id: str,
                        creds: HTTPAuthorizationCredentials = Depends(security)):
     token = creds.credentials
-    detail = pp.get_meeting_detail(meeting_id=meeting_id, token=token)  # 按你的方法名来
+    detail = pp.get_meeting_detail(meeting_id=meeting_id, token=token)
     return detail
 
 
 # ---------------------------
-# 文件转换 / 导出（原有接口，示例保留）
+# File conversion / export endpoints
 # ---------------------------
 @router.post("/convert")
 async def convert_file(background_tasks: BackgroundTasks, file: UploadFile = File(...)):

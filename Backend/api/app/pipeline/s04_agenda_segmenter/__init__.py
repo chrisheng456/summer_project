@@ -15,14 +15,19 @@ def _parse_iso(ts: str) -> Optional[datetime]:
         return None
 
 def _sec_between(a: datetime, b: datetime) -> float:
+    # Return the time difference between two datetimes in seconds.
     return (b - a).total_seconds()
 
 class AgendaSegmenterPipeline:
     """
-    把 info.transcription（start/end/text/speaker）按时间窗口分发到
-    info.customer_meeting_detail['agenda'][i]['lines']。
-    窗口 = [calculatedStartTime, calculatedStartTime + lengthMinutes)
-    以 meeting.startTime/meeting.date 作为 0 秒。
+    Distributes transcribed lines (with start/end times, text, and speaker info)
+    into the corresponding agenda items provided in `info.customer_meeting_detail`.
+
+    Each agenda item defines a time window:
+        [calculatedStartTime, calculatedStartTime + lengthMinutes)
+
+    Transcribed lines that fall into a window are assigned to that agenda item.
+    All times are relative to the meeting start time.
     """
     def process(self, info: ProcessInformation):
         detail = getattr(info, "customer_meeting_detail", None)
@@ -37,7 +42,7 @@ class AgendaSegmenterPipeline:
             logger.warning("AgendaSegmenter: 缺少 meeting startTime 或 agenda，跳过。")
             return
 
-        # 预计算每个议程窗口（相对秒）
+        # Precompute time windows for each agenda item (in seconds from meeting start)
         windows = []
         for it in agenda:
             a_start = _parse_iso(it.get("calculatedStartTime")) or meeting_start
@@ -48,9 +53,9 @@ class AgendaSegmenterPipeline:
                 "start_sec": max(0.0, _sec_between(meeting_start, a_start)),
                 "end_sec":   max(0.0, _sec_between(meeting_start, a_end)),
             })
-            it["lines"] = []  # 清空/创建承载字段
+            it["lines"] = []
 
-        # 分配每条识别行
+        # Assign each transcribed line to the correct agenda window
         for ln in lines:
             s = float(ln.get("start") or 0.0)
             e = float(ln.get("end") or s)
