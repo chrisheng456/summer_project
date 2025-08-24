@@ -18,11 +18,14 @@ from ...utils.azure_batch_diarizer import azure_batch_diarize
 
 USE_AZURE_BATCH: bool = True
 LOCALE = "en-US"
-MAX_SPEAKERS = 8
+MAX_SPEAKERS = 12
 POLL_SECONDS = 5
 TIMEOUT_SECONDS = 60 * 60
 
 def _to_seconds(v) -> float:
+    """
+    Convert Azure time fields to seconds.
+    """
     if isinstance(v, (int, float)):
         return float(v) / 10_000_000.0
     if isinstance(v, str) and v.startswith("PT"):
@@ -37,6 +40,10 @@ def _mask(s: str, head=3):
     return (s or "")[:head] + "****"
 
 def _upload_with_sas(local_wav: Path) -> str:
+    """
+    Upload a local audio file to Azure Blob storage
+    and return a SAS-enabled URL that Azure STT can access.
+    """
     conn_str = app_config.azure_storage.connection_string
     container = app_config.azure_storage.container
     bsc = BlobServiceClient.from_connection_string(conn_str)
@@ -62,6 +69,10 @@ def _upload_with_sas(local_wav: Path) -> str:
     return f"https://{blob.account_name}.blob.core.windows.net/{container}/{blob_name}?{sas}"
 
 def _azure_batch_transcribe(audio_url: str) -> List[Dict]:
+    """
+    Submit an audio file to Azure Batch STT API with diarization enabled.
+    Returns a list of recognized lines with speaker tags.
+    """
     region = app_config.azure_speech.service_region
     key    = app_config.azure_speech.speech_key
     base   = f"https://{region}.api.cognitive.microsoft.com/speechtotext/v3.1"
@@ -132,6 +143,11 @@ def _azure_batch_transcribe(audio_url: str) -> List[Dict]:
 
 
 class SpeakerDiarizationPipeline:
+    """
+    Pipeline step for speaker diarization.
+    Uses Azure Batch STT with diarization enabled to assign speaker labels
+    to transcribed text segments.
+    """
     def process(self, info: ProcessInformation):
         if getattr(info, "transcription", None):
             with_speaker = sum(1 for ln in info.transcription if "speaker" in ln) >= max(1, len(info.transcription)//3)

@@ -1,4 +1,3 @@
-# Backend/api/app/pipeline/__init__.py
 from __future__ import annotations
 import tempfile
 from .s00_customer_api import CustomerApiPipeline
@@ -18,9 +17,14 @@ def process_pipeline(
     bearer_token: str,
 ) -> ProcessInformation:
     """
-    精简版流水线（跳过 S01 实时识别）：
-    S00 客户API → S00 转 WAV → S03 Azure Batch(并行,含转写+说话人)
-      → S02 清洗 → S04 议程对齐 → S05 分类 → S06 摘要
+    Workflow:
+        S00  Fetch meeting detail & agenda from customer API
+        S01  Convert uploaded audio to WAV
+        S02  Run Azure Batch STT + diarization (parallel jobs)
+        S03  Clean text
+        S04  Align lines with agenda items
+        S05  Classify agenda items (action/decision/conflict/other)
+        S06  Generate summaries
     """
     with tempfile.TemporaryDirectory() as tmp_dir:
         info = ProcessInformation(
@@ -29,30 +33,16 @@ def process_pipeline(
             meeting_id=meeting_id,
             bearer_token=bearer_token,
         )
-        # 写入上传音频
         with tempfile.NamedTemporaryFile(dir=tmp_dir, suffix=".wav", delete=False) as f:
             f.write(input_file_content)
             info.input_file = f.name
 
-        # S00 客户 API（meeting detail/agenda）
         CustomerApiPipeline(scheme_id, meeting_id, bearer_token).process(info)
-
-        # S00 转 WAV（稳妥：转成 16kHz mono；若你确定 S03 内部会转，也可以注释掉这一行）
         AudioConverterPipeline().process(info)
-        # S02 清洗（就地覆盖 text）
         DataCleaningPipeline().process(info)
-        # S03 Azure Batch（多 Job 并行：一次拿转写+说话人）
         SpeakerDiarizationPipeline().process(info)
-
-
-
-        # S04 把行按时间窗口分配到 agenda[*].lines
         AgendaSegmenterPipeline().process(info)
-
-        # S05 分类（按议程）
         TextClassificationPipeline().process(info)
-
-        # S06 摘要（按议程）
         TextSummaryPipeline().process(info)
 
         return info
